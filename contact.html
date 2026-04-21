@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>お問い合わせ｜株式会社松本研磨工業</title>
+<meta name="description" content="株式会社松本研磨工業へのお問い合わせ・お見積りはこちらから。図面なしでも対応可能。最短即日回答。">
+<link rel="canonical" href="https://matsumoto-kenma.co.jp/contact.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:          '#0E0E10',
+        'ink-2':      '#1A1A1E',
+        paper:        '#F4F2ED',
+        'paper-2':    '#E9E6DE',
+        accent:       '#1B3A6B',
+        'accent-h':   '#142d54',
+        'accent-ink': '#2E5BA6',
+        muted:        '#6B6A66',
+        'muted-ink':  '#8A8A90',
+        'line-light': '#D9D4C8',
+      },
+      fontFamily: {
+        serif: ['"Noto Serif JP"', 'serif'],
+        mono:  ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+      },
+    }
+  }
+}
+</script>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#F4F2ED;color:#0E0E10;font-family:Inter,"Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Yu Gothic",sans-serif;font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+  .wrap{max-width:1360px;margin:0 auto;padding:0 20px}
+  @media(min-width:768px){.wrap{padding:0 40px}}
+
+  /* Form inputs */
+  .field input,
+  .field textarea,
+  .field select {
+    width:100%;
+    background:#F4F2ED;
+    border:1px solid #D9D4C8;
+    border-radius:2px;
+    padding:12px 14px;
+    font-family:inherit;
+    font-size:15px;
+    color:#0E0E10;
+    transition:border-color .2s, box-shadow .2s;
+    outline:none;
+    appearance:none;
+    -webkit-appearance:none;
+  }
+  @media(min-width:768px){
+    .field input,.field textarea,.field select{padding:14px 16px}
+  }
+  .field input:focus,
+  .field textarea:focus,
+  .field select:focus {
+    border-color:#1B3A6B;
+    box-shadow:0 0 0 3px rgba(27,58,107,.1);
+  }
+  .field textarea{resize:vertical;min-height:140px}
+  @media(min-width:768px){.field textarea{min-height:160px}}
+  .field select{
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B6A66' stroke-width='1.6'><polyline points='6 9 12 15 18 9'/></svg>");
+    background-repeat:no-repeat;background-position:right 14px center;padding-right:40px;cursor:pointer
+  }
+
+  .req{color:#1B3A6B;margin-left:4px;font-size:12px}
+
+  .check-group{display:flex;flex-wrap:wrap;gap:8px 16px}
+  @media(min-width:768px){.check-group{gap:10px 20px}}
+  .check-label{display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px}
+  .check-label input{width:16px;height:16px;accent-color:#1B3A6B;cursor:pointer;flex-shrink:0}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-paper/80 backdrop-blur-[14px] border-b border-ink/[0.08]">
+  <div class="wrap flex items-center justify-between h-[60px] md:h-[72px]">
+    <a href="index.html" class="flex items-center gap-3">
+      <span class="w-9 h-9 md:w-10 md:h-10 border-[1.5px] border-ink rounded-full grid place-items-center font-serif font-semibold text-lg md:text-xl bg-ink text-paper">松</span>
+      <span class="leading-[1.1]">
+        <div class="font-serif text-[13px] md:text-[15px] font-medium tracking-[.04em]">株式会社松本研磨工業</div>
+        <div class="hidden sm:block font-mono text-[10px] text-muted tracking-[.22em] mt-[2px]">創業58年・川崎</div>
+      </span>
+    </a>
+    <!-- Desktop menu -->
+    <div class="hidden md:flex gap-[2px] items-center">
+      <a href="index.html#home"     class="relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">ホーム</a>
+      <a href="index.html#services" class="relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">業務内容</a>
+      <a href="index.html#works"    class="relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">加工実績</a>
+      <a href="index.html#about"    class="relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">会社案内</a>
+      <a href="index.html#access"   class="relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">アクセス</a>
+      <a href="index.html#faq"      class="relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">よくある質問</a>
+    </div>
+    <div class="flex gap-2 items-center">
+      <a href="tel:0443338412" class="hidden md:inline-flex items-center gap-[10px] px-[18px] py-[11px] rounded-sm text-[13px] font-semibold tracking-[.06em] border border-ink hover:bg-ink hover:text-paper transition-all">
+        <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+        044-333-8412
+      </a>
+      <a href="contact.html" class="inline-flex items-center gap-[10px] px-3 py-2 md:px-[18px] md:py-[11px] rounded-sm text-[11px] md:text-[13px] font-semibold tracking-[.06em] bg-accent text-paper hover:bg-accent-h transition-all">お問い合わせ →</a>
+      <button class="flex md:hidden w-10 h-10 border border-ink rounded-sm items-center justify-center bg-paper" id="burgerBtn" aria-label="menu">
+        <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="fixed inset-0 z-[55] bg-ink text-paper pt-[80px] pb-10 px-6 flex flex-col gap-1 translate-x-full transition-transform duration-[350ms] ease-in-out" id="mobileMenu">
+  <a href="index.html#home"     data-close class="font-serif text-[26px] font-medium py-4 border-b border-paper/[.08]">ホーム</a>
+  <a href="index.html#services" data-close class="font-serif text-[26px] font-medium py-4 border-b border-paper/[.08]">業務内容</a>
+  <a href="index.html#works"    data-close class="font-serif text-[26px] font-medium py-4 border-b border-paper/[.08]">加工実績</a>
+  <a href="index.html#about"    data-close class="font-serif text-[26px] font-medium py-4 border-b border-paper/[.08]">会社案内</a>
+  <a href="index.html#access"   data-close class="font-serif text-[26px] font-medium py-4 border-b border-paper/[.08]">アクセス</a>
+  <a href="index.html#faq"      data-close class="font-serif text-[26px] font-medium py-4 border-b border-paper/[.08]">よくある質問</a>
+  <div class="mt-auto pt-6 flex flex-col gap-3">
+    <a href="tel:0443338412" data-close class="flex items-center gap-4 p-4 border border-paper/20">
+      <svg class="w-5 h-5 stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+      <span>
+        <div class="font-mono text-[9px] tracking-[.2em] text-muted-ink">平日 8:00–18:00</div>
+        <div class="font-mono text-lg font-medium">044-333-8412</div>
+      </span>
+    </a>
+    <a href="contact.html" data-close class="p-4 bg-accent text-paper text-center font-semibold tracking-[.08em]">お問い合わせ →</a>
+  </div>
+</div>
+
+<!-- ===== PAGE HEADER ===== -->
+<div class="pt-[60px] md:pt-[72px]">
+  <div class="bg-ink text-paper py-14 md:py-20">
+    <div class="wrap">
+      <div class="font-mono text-[11px] tracking-[.24em] text-accent-ink mb-4">お問い合わせ</div>
+      <h1 class="font-serif text-[clamp(32px,5vw,64px)] font-medium leading-[1.15] mb-4">まずは、<br/>ご相談ください。</h1>
+      <p class="font-serif text-muted-ink text-[14px] md:text-[15px] leading-[1.9] max-w-[560px]">お見積り無料。図面がなくても、写真・現物・寸法情報からご提案します。<br class="hidden sm:block"/>内容によっては最短即日でご回答可能です。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MAIN ===== -->
+<div class="py-14 md:py-20">
+  <div class="wrap">
+    <!-- Stack on mobile, 2-col on lg -->
+    <div class="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_340px] lg:gap-16 items-start">
+
+      <!-- Form -->
+      <div>
+        <form id="contactForm" novalidate class="space-y-6 md:space-y-7">
+
+          <!-- お名前 / 会社名 -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+            <div class="field">
+              <label class="block font-mono text-[11px] tracking-[.18em] text-muted mb-2">お名前<span class="req">必須</span></label>
+              <input type="text" name="name" placeholder="山田 太郎" required autocomplete="name"/>
+            </div>
+            <div class="field">
+              <label class="block font-mono text-[11px] tracking-[.18em] text-muted mb-2">会社名・屋号<span class="font-mono text-[11px] text-muted ml-2">任意</span></label>
+              <input type="text" name="company" placeholder="株式会社〇〇" autocomplete="organization"/>
+            </div>
+          </div>
+
+          <!-- メール / 電話 -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+            <div class="field">
+              <label class="block font-mono text-[11px] tracking-[.18em] text-muted mb-2">メールアドレス<span class="req">必須</span></label>
+              <input type="email" name="email" placeholder="example@mail.com" required autocomplete="email"/>
+            </div>
+            <div class="field">
+              <label class="block font-mono text-[11px] tracking-[.18em] text-muted mb-2">電話番号<span class="font-mono text-[11px] text-muted ml-2">任意</span></label>
+              <input type="tel" name="tel" placeholder="044-000-0000" autocomplete="tel"/>
+            </div>
+          </div>
+
+          <!-- 種別 -->
+          <div class="field">
+            <label class="block font-mono text-[11px] tracking-[.18em] text-muted mb-3">お問い合わせの種別<span class="req">必須</span></label>
+            <div class="check-group">
+              <label class="check-label"><input type="radio" name="type" value="見積依頼" required/> 見積依頼</label>
+              <label class="check-label"><input type="radio" name="type" value="技術相談"/> 技術相談</label>
+              <label class="check-label"><input type="radio" name="type" value="試作・1点もの"/> 試作・1点もの</label>
+              <label class="check-label"><input type="radio" name="type" value="補修・再仕上げ"/> 補修・再仕上げ</label>
+              <label class="check-label"><input type="radio" name="type" value="その他"/> その他</label>
+            </div>
+          </div>
+
+          <!-- 加工方法 -->
+          <div class="field">
+            <label class="block font-mono text-[11px] tracking-[.18em] text-muted mb-3">ご希望の加工<span class="font-mono text-[11px] text-muted ml-2">複数可</span></label>
+            <div class="check-group">
+              <label class="check-label"><input type="checkbox" name="process" value="バフ研磨（鏡面）"/> バフ研磨（鏡面）</label>
+              <label class="check-label"><input type="checkbox" name="process" value="ベルト研磨"/> ベルト研磨</label>
+              <label class="check-label"><input type="checkbox" name="process" value="ヘアライン加工"/> ヘアライン加工</label>
+              <label class="check-label"><input type="checkbox" name="process" value="フレキ・曲面研磨"/> フレキ・曲面研磨</label>
+              <label class="check-label"><input type="checkbox" name="process" value="未定・相談したい"/> 未定・相談したい</label>
+            </div>
+          </div>
+
+          <!-- 材質 / 数量 -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+            <div class="field">
+              <label class="block font-mono text-[11px] tracking-[.18em] text-muted mb-2">材質<span class="font-mono text-[11px] text-muted ml-2">任意</span></label>
+              <select name="material">
+                <option value="">選択してください</option>
+                <option>ステンレス</option>
+                <option>アルミ</option>
+                <option>鉄</option>
+                <option>真鍮</option>
+                <option>銅</option>
+                <option>チタン</option>
+                <option>その他の合金</option>
+                <option>未定・不明</option>
+              </select>
+            </div>
+            <div class="field">
+              <label class="block font-mono text-[11px] tracking-[.18em] text-muted mb-2">数量（概算）<span class="font-mono text-[11px] text-muted ml-2">任意</span></label>
+              <select name="quantity">
+                <option value="">選択してください</option>
+                <option>1点（単品・試作）</option>
+                <option>2〜10点</option>
+                <option>11〜30点（小ロット）</option>
+                <option>31〜200点（小量産）</option>
+                <option>未定・相談したい</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- 希望納期 -->
+          <div class="field">
+            <label class="block font-mono text-[11px] tracking-[.18em] text-muted mb-2">ご希望納期<span class="font-mono text-[11px] text-muted ml-2">任意</span></label>
+            <select name="deadline">
+              <option value="">選択してください</option>
+              <option>最短希望（3〜5営業日）</option>
+              <option>特急（5営業日）</option>
+              <option>通常（7〜10営業日）</option>
+              <option>余裕あり（2週間以上）</option>
+              <option>未定・相談したい</option>
+            </select>
+          </div>
+
+          <!-- 内容 -->
+          <div class="field">
+            <label class="block font-mono text-[11px] tracking-[.18em] text-muted mb-2">お問い合わせ内容<span class="req">必須</span></label>
+            <textarea name="message" required placeholder="加工内容、寸法、仕上げのご要望などをご記入ください。図面がない場合も、わかる範囲でご記入いただければ対応可能です。"></textarea>
+          </div>
+
+          <!-- 図面案内 -->
+          <div class="p-4 md:p-5 bg-paper-2 border border-line-light text-[13px] leading-[1.8] text-muted">
+            <div class="font-mono text-[10px] tracking-[.18em] mb-2">図面・参考画像について</div>
+            図面（PDF / DXF 等）や参考写真がある場合は、フォーム送信後にメールへの添付にてお送りください。<br/>
+            <span class="font-medium text-ink">送信先：<span id="contactEmail"></span></span>
+          </div>
+
+          <!-- エラー -->
+          <div id="formError" class="hidden p-4 bg-red-50 border border-red-200 text-[13px] text-red-700 rounded-sm"></div>
+
+          <!-- 送信 -->
+          <div class="pt-1">
+            <button type="submit" id="submitBtn" class="flex items-center justify-center gap-4 w-full px-6 py-4 md:py-5 bg-ink text-paper rounded-sm font-semibold tracking-[.08em] text-[13px] md:text-[14px] hover:bg-accent transition-all">
+              <span id="submitText">送信する</span>
+              <svg id="submitIcon" class="w-4 h-4 stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg id="submitSpinner" class="hidden w-4 h-4 animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" stroke-opacity=".25"/><path d="M12 2a10 10 0 0 1 10 10" stroke-opacity=".75"/></svg>
+            </button>
+            <p class="mt-4 text-center text-[12px] text-muted">送信後、確認メールをお送りします。営業時間外のお問い合わせは翌営業日に対応いたします。</p>
+          </div>
+        </form>
+
+        <!-- 完了メッセージ -->
+        <div id="formSuccess" class="hidden py-14 md:py-16 text-center border border-accent/30 bg-accent/[.04] rounded-sm px-6">
+          <div class="font-serif text-[24px] md:text-[28px] font-medium mb-4">ありがとうございます。</div>
+          <p class="font-serif text-muted text-[14px] md:text-[15px] leading-[2] mb-8">お問い合わせを受け付けました。<br/>確認メールをお送りしておりますのでご確認ください。<br/>内容を確認のうえ、担当よりご連絡いたします。</p>
+          <a href="index.html" class="inline-flex items-center gap-3 px-6 py-4 border border-ink rounded-sm text-[14px] font-medium hover:bg-ink hover:text-paper transition-all">← トップページへ戻る</a>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 md:gap-5 lg:gap-6">
+
+        <!-- 電話 -->
+        <div class="p-5 md:p-7 bg-ink text-paper">
+          <div class="font-mono text-[10px] tracking-[.22em] text-muted-ink mb-4">お電話でのお問い合わせ</div>
+          <a href="tel:0443338412" class="flex items-center gap-3 mb-3 hover:text-accent-ink transition-colors">
+            <svg class="w-5 h-5 stroke-current fill-none stroke-[1.6] shrink-0" viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+            <span class="font-mono text-[18px] md:text-[22px] font-medium">044-333-8412</span>
+          </a>
+          <div class="text-[12px] text-muted-ink leading-[1.8]">受付：平日 8:00–18:00<br/>土日祝日休み</div>
+        </div>
+
+        <!-- FAX -->
+        <div class="p-5 md:p-7 border border-line-light">
+          <div class="font-mono text-[10px] tracking-[.22em] text-muted mb-4">ファクス</div>
+          <div class="font-mono text-[18px] md:text-[20px] font-medium mb-3">044-333-3843</div>
+          <div class="text-[12px] md:text-[13px] text-muted leading-[1.8]">図面・仕様書はFAXでもお受けしています。会社名・担当者名・連絡先をご記入ください。</div>
+        </div>
+
+        <!-- 対応エリア -->
+        <div class="p-5 md:p-7 border border-line-light">
+          <div class="font-mono text-[10px] tracking-[.22em] text-muted mb-4">対応エリア</div>
+          <div class="font-serif text-[14px] md:text-[15px] font-medium mb-2">関東全域・全国対応</div>
+          <div class="text-[12px] md:text-[13px] text-muted leading-[1.8]">川崎・横浜・東京エリアは自社便対応可。宅配便・運送便でお送りいただければ全国から承ります。</div>
+        </div>
+
+        <!-- 所在地 -->
+        <div class="p-5 md:p-7 border border-line-light">
+          <div class="font-mono text-[10px] tracking-[.22em] text-muted mb-4">所在地</div>
+          <div class="font-serif text-[14px] md:text-[15px] font-medium mb-1">株式会社松本研磨工業</div>
+          <div class="text-[12px] md:text-[13px] text-muted leading-[1.8]">〒210-0851<br/>神奈川県川崎市川崎区浜町 3-9-22</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-ink text-paper pt-12 md:pt-[60px] pb-8 border-t border-paper/[.05]">
+  <div class="wrap">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1fr] gap-8 pb-8 md:pb-[50px] border-b border-paper/10">
+      <div class="sm:col-span-2 lg:col-span-1">
+        <div class="flex items-center gap-3">
+          <span class="w-10 h-10 border-[1.5px] border-paper rounded-full grid place-items-center font-serif font-semibold text-xl bg-paper text-ink">松</span>
+          <span class="leading-[1.1]">
+            <div class="font-serif text-[14px] md:text-[15px] font-medium tracking-[.04em] text-paper">株式会社松本研磨工業</div>
+            <div class="font-mono text-[10px] text-muted-ink tracking-[.22em] mt-[2px]">創業58年・川崎</div>
+          </span>
+        </div>
+        <p class="mt-5 text-[12px] text-muted-ink leading-[1.9]">〒210-0851<br/>神奈川県川崎市川崎区浜町 3-9-22<br/>電話 044-333-8412 ／ ファクス 044-333-3843</p>
+        <div class="mt-5 flex gap-3">
+          <a href="https://www.instagram.com/matsu_polish/" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 border border-paper/20 rounded-sm grid place-items-center text-muted-ink hover:text-paper hover:border-paper/50 transition-colors">
+            <svg class="w-[18px] h-[18px] stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UCIGiSzo9TyINLuygAsuP5ew/" target="_blank" rel="noopener" aria-label="YouTube" class="w-9 h-9 border border-paper/20 rounded-sm grid place-items-center text-muted-ink hover:text-paper hover:border-paper/50 transition-colors">
+            <svg class="w-[18px] h-[18px] fill-current" viewBox="0 0 24 24"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.3.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.9C6.8 19 12 19 12 19s4.8 0 7-.2c.4-.1 1.3-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.8 14.5V9.5l5.4 2.5-5.4 2.5z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-mono text-[10px] tracking-[.24em] text-muted-ink mb-4">メニュー</h4>
+        <ul class="space-y-[10px]">
+          <li><a href="index.html#home"     class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">ホーム</a></li>
+          <li><a href="index.html#services" class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">業務内容</a></li>
+          <li><a href="index.html#works"    class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">加工実績</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-mono text-[10px] tracking-[.24em] text-muted-ink mb-4">会社情報</h4>
+        <ul class="space-y-[10px]">
+          <li><a href="index.html#about"  class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">会社案内</a></li>
+          <li><a href="index.html#access" class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">アクセス</a></li>
+          <li><a href="index.html#faq"    class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">よくある質問</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-mono text-[10px] tracking-[.24em] text-muted-ink mb-4">お問い合わせ</h4>
+        <ul class="space-y-[10px]">
+          <li><a href="tel:0443338412" class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">044-333-8412</a></li>
+          <li><a href="contact.html"   class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">お問い合わせフォーム</a></li>
+          <li><a href="#"              class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row justify-between font-mono text-[10px] tracking-[.14em] text-muted-ink gap-2 text-center sm:text-left">
+      <div>© 2026 株式会社松本研磨工業</div>
+      <div>手仕事の金属研磨　・　川崎　・　創業58年</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Email obfuscation
+  (function() {
+    const u = 'matsumoto', d = ['matsumoto-kenma', 'co', 'jp'].join('.');
+    const addr = u + '\x40' + d;
+    const el = document.getElementById('contactEmail');
+    if (el) el.innerHTML = '<a href="mailto:' + addr + '" class="text-accent hover:underline">' + addr + '</a>';
+  })();
+
+  // Mobile menu
+  const burger = document.getElementById('burgerBtn');
+  const mmenu  = document.getElementById('mobileMenu');
+  if (burger && mmenu) {
+    burger.addEventListener('click', () => mmenu.classList.toggle('translate-x-full'));
+    mmenu.querySelectorAll('[data-close]').forEach(a =>
+      a.addEventListener('click', () => mmenu.classList.add('translate-x-full'))
+    );
+  }
+
+  // Form
+  const form    = document.getElementById('contactForm');
+  const success = document.getElementById('formSuccess');
+  const errBox  = document.getElementById('formError');
+  const btn     = document.getElementById('submitBtn');
+  const btnText = document.getElementById('submitText');
+  const btnIcon = document.getElementById('submitIcon');
+  const spinner = document.getElementById('submitSpinner');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    errBox.classList.add('hidden');
+
+    for (const name of ['name','email','message']) {
+      const el = form.elements[name];
+      if (!el || !el.value.trim()) {
+        errBox.textContent = '必須項目を入力してください。';
+        errBox.classList.remove('hidden');
+        el && el.focus();
+        return;
+      }
+    }
+    if (!form.querySelector('input[name="type"]:checked')) {
+      errBox.textContent = 'お問い合わせの種別を選択してください。';
+      errBox.classList.remove('hidden');
+      return;
+    }
+
+    btn.disabled = true;
+    btnText.textContent = '送信中...';
+    btnIcon.classList.add('hidden');
+    spinner.classList.remove('hidden');
+
+    // ---- Formspree 等の実エンドポイントに差し替えてください ----
+    await new Promise(r => setTimeout(r, 1500));
+    // -----------------------------------------------------------
+
+    form.classList.add('hidden');
+    success.classList.remove('hidden');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+</script>
+</body>
+</html>

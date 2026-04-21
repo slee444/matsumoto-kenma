@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>株式会社松本研磨工業｜手仕事の金属研磨・鏡面仕上げ（川崎）</title>
+<meta name="description" content="神奈川県川崎市の金属研磨専門工場。創業58年。ステンレス・アルミ・真鍮など、鏡面バフ研磨・ヘアライン・曲面研磨に対応。1点から小量産まで、図面がなくてもお見積り可能。">
+<link rel="canonical" href="https://matsumoto-kenma.co.jp/">
+<meta property="og:title" content="株式会社松本研磨工業｜手仕事の金属研磨">
+<meta property="og:description" content="神奈川県川崎市の金属研磨専門工場。創業58年。鏡面バフ研磨・ヘアライン・曲面研磨に対応。">
+<meta property="og:url" content="https://matsumoto-kenma.co.jp/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:          '#0E0E10',
+        'ink-2':      '#1A1A1E',
+        paper:        '#F4F2ED',
+        'paper-2':    '#E9E6DE',
+        accent:       '#1B3A6B',
+        'accent-h':   '#142d54',
+        'accent-ink': '#2E5BA6',
+        muted:        '#6B6A66',
+        'muted-ink':  '#8A8A90',
+        'line-light': '#D9D4C8',
+      },
+      fontFamily: {
+        serif: ['"Noto Serif JP"', 'serif'],
+        mono:  ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+      },
+    }
+  }
+}
+</script>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#F4F2ED;color:#0E0E10;font-family:Inter,"Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Yu Gothic",sans-serif;font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+
+  .wrap{max-width:1360px;margin:0 auto;padding:0 20px}
+  @media(min-width:768px){.wrap{padding:0 40px}}
+
+  .menu-link.active::after{content:"";position:absolute;left:16px;right:16px;bottom:4px;height:1px;background:#1B3A6B}
+
+  /* Hero title — fluid size */
+  .hero-title{font-family:"Noto Serif JP",serif;font-weight:500;font-size:clamp(44px,7.2vw,108px);line-height:1.02;letter-spacing:-.01em;margin-bottom:28px}
+  @media(min-width:768px){.hero-title{margin-bottom:34px}}
+
+  /* Section title — fluid size */
+  .sec-title{font-family:"Noto Serif JP",serif;font-size:clamp(30px,4.4vw,58px);font-weight:500;line-height:1.15;letter-spacing:-.005em;margin-bottom:12px}
+
+  /* Contact h2 — fluid size */
+  .cta-h2{font-family:"Noto Serif JP",serif;font-size:clamp(36px,6vw,80px);font-weight:500;line-height:1.1;margin-bottom:24px;letter-spacing:-.01em}
+  @media(min-width:768px){.cta-h2{margin-bottom:28px}}
+
+  /* Dropcap */
+  .ab-copy p:first-child::first-letter{font-family:"Noto Serif JP",serif;font-size:64px;float:left;line-height:.9;padding:6px 12px 0 0;color:#1B3A6B;font-weight:500}
+
+  /* Company table */
+  .ab-table{width:100%;border-top:1px solid #D9D4C8}
+  .ab-table > div{display:grid;grid-template-columns:120px 1fr;gap:0;align-items:start;border-bottom:1px solid #D9D4C8;padding:14px 0}
+  .ab-table dt{font-size:14px;color:#6B6A66;padding-right:12px;line-height:1.6}
+  .ab-table dd{font-size:14px;line-height:1.8;margin:0}
+  @media(min-width:768px){
+    .ab-table > div{grid-template-columns:150px 1fr;padding:18px 0}
+  }
+
+  /* FAQ */
+  .faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
+  .faq-item.open .faq-a{grid-template-rows:1fr}
+  .faq-a-in{overflow:hidden;min-height:0}
+  .faq-q .plus::before,.faq-q .plus::after{content:"";position:absolute;background:#0E0E10;left:50%;top:50%}
+  .faq-q .plus::before{width:14px;height:1.2px;translate:-50% -50%}
+  .faq-q .plus::after{width:1.2px;height:14px;translate:-50% -50%;transition:transform .25s}
+  .faq-item.open .faq-q .plus::after{transform:rotate(90deg)}
+
+
+  /* Contact watermark */
+  .contact-wm{position:absolute;left:50%;top:50%;translate:-50% -50%;font-family:"Noto Serif JP",serif;font-size:clamp(120px,25vw,380px);font-weight:600;color:rgba(14,14,16,.03);letter-spacing:-.02em;pointer-events:none;user-select:none;white-space:nowrap}
+
+  /* Noise */
+  .noise::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.035;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+
+  /* Work image zoom */
+  .wk:hover .wk-img{transform:scale(1.04)}
+
+  /* Hero vertical side label */
+  .hero-side{position:absolute;right:40px;top:130px;writing-mode:vertical-rl;font-family:"Noto Serif JP",serif;font-size:12px;letter-spacing:.5em;color:#6B6A66;display:none}
+  @media(min-width:1200px){.hero-side{display:block}}
+
+  /* text-wrap */
+  .text-pretty{text-wrap:pretty}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-paper/80 backdrop-blur-[14px] border-b border-ink/[0.08]">
+  <div class="wrap flex items-center justify-between h-[60px] md:h-[72px]">
+
+    <!-- Brand -->
+    <a href="#home" class="flex items-center gap-3 md:gap-[14px]">
+      <span class="w-9 h-9 md:w-10 md:h-10 border-[1.5px] border-ink rounded-full grid place-items-center font-serif font-semibold text-lg md:text-xl bg-ink text-paper">松</span>
+      <span class="leading-[1.1]">
+        <div class="font-serif text-[13px] md:text-[15px] font-medium tracking-[.04em]">株式会社松本研磨工業</div>
+        <div class="hidden sm:block font-mono text-[10px] text-muted tracking-[.22em] mt-[2px]">創業58年・川崎</div>
+      </span>
+    </a>
+
+    <!-- Desktop menu — hidden below md -->
+    <div class="hidden md:flex gap-[2px] items-center">
+      <a href="#home"     class="menu-link active relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">ホーム</a>
+      <a href="#services" class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">業務内容</a>
+      <a href="#works"    class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">加工実績</a>
+      <a href="#about"    class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">会社案内</a>
+      <a href="#access"   class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">アクセス</a>
+      <a href="#faq"      class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">よくある質問</a>
+    </div>
+
+    <!-- CTA -->
+    <div class="flex gap-2 md:gap-[10px] items-center">
+      <!-- Phone — hidden below md -->
+      <a href="tel:0443338412" class="hidden md:inline-flex items-center gap-[10px] px-[18px] py-[11px] rounded-sm text-[13px] font-semibold tracking-[.06em] border border-ink hover:bg-ink hover:text-paper transition-all">
+        <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+        044-333-8412
+      </a>
+      <a href="contact.html" class="inline-flex items-center gap-[10px] px-3 py-2 md:px-[18px] md:py-[11px] rounded-sm text-[11px] md:text-[13px] font-semibold tracking-[.06em] bg-ink text-paper hover:bg-accent transition-all">お問い合わせ →</a>
+      <!-- Burger — shown below md -->
+      <button class="flex md:hidden w-10 h-10 border border-ink rounded-sm items-center justify-center bg-paper" id="burgerBtn" aria-label="menu">
+        <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="fixed inset-0 z-[55] bg-ink text-paper pt-[80px] pb-10 px-6 flex flex-col gap-1 translate-x-full transition-transform duration-[350ms] ease-in-out" id="mobileMenu">
+  <a href="#home"     data-close class="font-serif text-[26px] font-medium py-4 border-b border-paper/[.08]">ホーム</a>
+  <a href="#services" data-close class="font-serif text-[26px] font-medium py-4 border-b border-paper/[.08]">業務内容</a>
+  <a href="#works"    data-close class="font-serif text-[26px] font-medium py-4 border-b border-paper/[.08]">加工実績</a>
+  <a href="#about"    data-close class="font-serif text-[26px] font-medium py-4 border-b border-paper/[.08]">会社案内</a>
+  <a href="#access"   data-close class="font-serif text-[26px] font-medium py-4 border-b border-paper/[.08]">アクセス</a>
+  <a href="#faq"      data-close class="font-serif text-[26px] font-medium py-4 border-b border-paper/[.08]">よくある質問</a>
+  <div class="mt-auto pt-6 flex flex-col gap-3">
+    <a href="tel:0443338412" data-close class="flex items-center gap-4 p-4 border border-paper/20">
+      <svg class="w-5 h-5 stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+      <span>
+        <div class="font-mono text-[9px] tracking-[.2em] text-muted-ink">お電話　平日 8:00–18:00</div>
+        <div class="font-mono text-lg font-medium">044-333-8412</div>
+      </span>
+    </a>
+    <a href="contact.html" data-close class="p-4 bg-accent text-paper text-center font-semibold tracking-[.08em]">お問い合わせ →</a>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="relative min-h-[100svh] pt-[80px] pb-[50px] md:pt-[110px] md:pb-[70px] lg:pt-[130px] lg:pb-[90px] bg-paper overflow-hidden noise" id="home">
+  <div class="hero-side">川崎　・　創業58年　・　手仕事の金属研磨</div>
+  <div class="wrap">
+    <!-- Mobile: stack, Desktop: 2-col -->
+    <div class="grid grid-cols-1 gap-10 items-start lg:grid-cols-[1.15fr_.85fr] lg:gap-14">
+
+      <!-- Copy -->
+      <div>
+        <div class="flex items-center gap-3 font-mono text-[11px] tracking-[.24em] text-muted mb-8 md:mb-[38px] before:content-[''] before:w-8 before:h-px before:bg-ink">
+          <span>神奈川・川崎</span><span class="font-sans text-[12px] tracking-[.3em]">手仕事の金属研磨</span>
+        </div>
+        <h1 class="hero-title">
+          <span class="block">磨き、</span>
+          <span class="block"><span class="text-accent font-semibold">光</span>をひきだす。</span>
+        </h1>
+        <p class="font-serif text-[15px] md:text-[17px] leading-[2.0] md:leading-[2.1] text-ink-2 max-w-[520px] mb-8 md:mb-[46px] text-pretty">
+          ステンレス・アルミ・真鍮・鉄。<br/>
+          一点ものから量産まで、川崎の小さな工場が<br/>
+          手作業で金属に最良の表情を与えます。
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-3 mb-10 md:mb-14">
+          <a href="contact.html" class="inline-flex items-center justify-between sm:justify-start gap-4 px-5 py-4 md:px-[26px] md:py-5 bg-ink text-paper rounded-sm font-semibold tracking-[.08em] text-[13px] md:text-[14px] hover:bg-accent hover:-translate-y-px transition-all">
+            無理なご依頼も、まずはご相談 <span>→</span>
+          </a>
+          <a href="tel:0443338412" class="inline-flex items-center gap-3 px-4 py-3 md:px-[22px] md:py-4 border border-ink rounded-sm hover:bg-ink hover:text-paper transition-all">
+            <svg class="w-4 h-4 md:w-5 md:h-5 stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+            <span>
+              <div class="font-mono text-[9px] tracking-[.2em] text-muted mb-[2px]">平日 8:00–18:00</div>
+              <div class="font-mono text-[15px] md:text-[18px] font-medium tracking-[.04em] leading-none">044-333-8412</div>
+            </span>
+          </a>
+        </div>
+
+        <!-- Metrics -->
+        <div class="grid grid-cols-3 border-t border-ink/[.15] pt-5 md:pt-7 max-w-[520px]">
+          <div class="pr-3 md:pr-5 border-r border-ink/10">
+            <div class="font-serif text-[22px] md:text-[32px] font-medium leading-none">58<span class="text-[11px] md:text-[14px] font-sans text-muted ml-1 font-normal">年</span></div>
+            <div class="text-[9px] md:text-[11px] text-muted tracking-[.1em] md:tracking-[.14em] mt-1.5">創業以来の不断の手仕事</div>
+          </div>
+          <div class="px-3 md:px-5 border-r border-ink/10">
+            <div class="font-serif text-[22px] md:text-[32px] font-medium leading-none">Ra0.2</div>
+            <div class="text-[9px] md:text-[11px] text-muted tracking-[.1em] md:tracking-[.14em] mt-1.5">鏡面仕上げの安定精度</div>
+          </div>
+          <div class="pl-3 md:pl-5">
+            <div class="font-serif text-[18px] md:text-[28px] font-medium leading-none">#240<span class="text-[9px] md:text-[12px] font-sans text-muted ml-0.5 font-normal">–#2000</span></div>
+            <div class="text-[9px] md:text-[11px] text-muted tracking-[.1em] md:tracking-[.14em] mt-1.5">粒度幅広い研磨範囲</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual card -->
+      <div class="relative aspect-[4/3] sm:aspect-[16/9] lg:aspect-[3/4] max-w-full lg:max-w-[520px] mx-auto lg:ml-auto w-full">
+        <div class="absolute inset-0 bg-gradient-to-br from-[#24242A] via-[#0E0E10] to-[#1a1a1f] rounded-sm overflow-hidden">
+          <img src="images/work-03.jpg" alt="研磨後のステンレス部品" class="absolute inset-0 w-full h-full object-cover"/>
+          <div class="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent to-black/55"></div>
+          <div class="absolute left-5 top-5 font-mono text-[10px] tracking-[.22em] text-paper/70">◉ 工場の一幕　001</div>
+          <div class="absolute left-5 right-5 bottom-5 text-paper">
+            <div class="font-serif text-lg md:text-2xl font-medium leading-[1.3] mb-2">一枚、一本、一点。<br/>手で覚える仕上げ。</div>
+            <div class="font-mono text-[10px] md:text-[11px] tracking-[.18em] text-paper/60">川崎区・職人の手仕事</div>
+          </div>
+        </div>
+        <!-- Seal -->
+        <div class="absolute -right-3 lg:-right-7 top-[40%] w-[80px] h-[80px] lg:w-[108px] lg:h-[108px] rounded-full bg-accent text-paper grid place-items-center text-center font-serif text-[11px] lg:text-[13px] leading-[1.4] font-medium tracking-[.1em] shadow-[0_20px_40px_-12px_rgba(27,58,107,.5)] -rotate-[8deg]">
+          <div><span class="block text-[16px] lg:text-[22px] font-semibold mb-[2px]">松</span>職人の<br/>手仕事</div>
+        </div>
+        <!-- Meta card — hidden on small mobile -->
+        <div class="hidden sm:flex absolute -left-3 lg:-left-4 -bottom-4 lg:-bottom-5 bg-paper border border-ink/[.14] px-4 lg:px-5 py-3 lg:py-[14px] gap-4 lg:gap-[22px] items-center">
+          <div><div class="font-mono text-[9px] md:text-[10px] tracking-[.18em] text-muted">仕上げ</div><div class="font-serif text-[13px] md:text-[15px] font-medium">ヘアライン #400</div></div>
+          <div><div class="font-mono text-[9px] md:text-[10px] tracking-[.18em] text-muted">材質</div><div class="font-serif text-[13px] md:text-[15px] font-medium">ステンレス</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== 業務内容 ===== -->
+<section class="py-16 md:py-20 lg:py-[130px] bg-ink text-paper relative" id="services">
+  <div class="wrap">
+
+    <!-- Section header -->
+    <div class="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-5 md:gap-10 mb-10 md:mb-[70px] items-end">
+      <div class="font-mono text-[12px] tracking-[.22em] text-muted-ink flex items-center gap-3 after:content-[''] after:flex-1 after:h-px after:bg-paper/[.15]">一つめ　業務内容</div>
+      <div>
+        <div class="font-mono text-[11px] tracking-[.24em] text-accent-ink mb-3">業務内容</div>
+        <h2 class="sec-title text-paper">四つの研磨、<br/>一つの手仕事。</h2>
+        <p class="font-serif text-muted-ink text-[14px] md:text-[15px] max-w-[640px] leading-[1.9]">材質・形状・仕上がりの要望に合わせ、最適な研磨方法を選定します。複雑な形状や一品一点の加工も承ります。</p>
+      </div>
+    </div>
+
+    <!-- Service grid: 1col → 2col → 4col -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-paper/10 border border-paper/10">
+      <div class="svc bg-ink p-6 md:p-8 pb-10 md:pb-11 relative min-h-[280px] md:min-h-[340px] flex flex-col">
+        <div class="font-mono text-[11px] text-muted-ink tracking-[.2em] mb-auto">その一</div>
+        <div class="w-10 h-10 md:w-12 md:h-12 border border-paper/30 rounded-full grid place-items-center my-4 md:my-5 font-serif text-xl md:text-[22px] text-paper">✦</div>
+        <div class="font-serif text-xl md:text-[22px] font-medium mb-2 leading-[1.35]">バフ研磨<span class="block font-mono text-[10px] text-muted-ink tracking-[.22em] mt-1.5 font-normal">鏡面仕上げ</span></div>
+        <div class="text-[13px] leading-[1.8] text-paper/[.72] flex-1">鏡面仕上げ（Ra0.2〜Ra0.4 相当）。高光沢・防錆性向上。装飾・産業・精密機器まで。</div>
+      </div>
+      <div class="svc bg-ink p-6 md:p-8 pb-10 md:pb-11 relative min-h-[280px] md:min-h-[340px] flex flex-col">
+        <div class="font-mono text-[11px] text-muted-ink tracking-[.2em] mb-auto">その二</div>
+        <div class="w-10 h-10 md:w-12 md:h-12 border border-paper/30 rounded-full grid place-items-center my-4 md:my-5 font-serif text-xl md:text-[22px] text-paper">≡</div>
+        <div class="font-serif text-xl md:text-[22px] font-medium mb-2 leading-[1.35]">ベルト研磨<span class="block font-mono text-[10px] text-muted-ink tracking-[.22em] mt-1.5 font-normal">バリ取り・形状補正</span></div>
+        <div class="text-[13px] leading-[1.8] text-paper/[.72] flex-1">バリ取り、形状補正、寸法公差の調整。粒度 #240〜#2000 で幅広く対応。</div>
+      </div>
+      <div class="svc bg-ink p-6 md:p-8 pb-10 md:pb-11 relative min-h-[280px] md:min-h-[340px] flex flex-col">
+        <div class="font-mono text-[11px] text-muted-ink tracking-[.2em] mb-auto">その三</div>
+        <div class="w-10 h-10 md:w-12 md:h-12 border border-paper/30 rounded-full grid place-items-center my-4 md:my-5 font-serif text-xl md:text-[22px] text-paper">∥</div>
+        <div class="font-serif text-xl md:text-[22px] font-medium mb-2 leading-[1.35]">ヘアライン加工<span class="block font-mono text-[10px] text-muted-ink tracking-[.22em] mt-1.5 font-normal">一方向のライン仕上げ</span></div>
+        <div class="text-[13px] leading-[1.8] text-paper/[.72] flex-1">方向性を統一した美しいライン形成（HL#240 / #400 等）。建築・意匠・家電の表面仕上げに。</div>
+      </div>
+      <div class="svc bg-ink p-6 md:p-8 pb-10 md:pb-11 relative min-h-[280px] md:min-h-[340px] flex flex-col">
+        <div class="font-mono text-[11px] text-muted-ink tracking-[.2em] mb-auto">その四</div>
+        <div class="w-10 h-10 md:w-12 md:h-12 border border-paper/30 rounded-full grid place-items-center my-4 md:my-5 font-serif text-xl md:text-[22px] text-paper">◇</div>
+        <div class="font-serif text-xl md:text-[22px] font-medium mb-2 leading-[1.35]">フレキ研磨／曲面研磨<span class="block font-mono text-[10px] text-muted-ink tracking-[.22em] mt-1.5 font-normal">複雑形状への手仕事</span></div>
+        <div class="text-[13px] leading-[1.8] text-paper/[.72] flex-1">複雑形状・R形状・球面・段差部へ均一仕上げ。補修・再仕上げにも対応。</div>
+      </div>
+    </div>
+
+    <!-- Note bar -->
+    <div class="mt-10 p-5 md:p-7 md:px-8 border border-paper/[.15] flex flex-col md:grid md:grid-cols-[auto_1fr_auto] gap-4 md:gap-8 items-start md:items-center">
+      <div class="font-serif text-[16px] md:text-[18px] font-medium">1 点の試作から、200 個までの小量産まで。</div>
+      <div class="text-[13px] text-muted-ink leading-[1.8]">材質：ステンレス／アルミ／鉄／真鍮／銅／チタン／各種合金。<br/>最大対応：板材〜1000mm、パイプ〜φ150×1000mm、長尺物〜1200mm。<br/>図面がなくても、写真・現物・寸法情報で最短即日お見積り。</div>
+      <a href="contact.html" class="inline-flex items-center gap-[10px] px-5 py-3 md:px-[18px] md:py-[11px] rounded-sm text-[13px] font-semibold tracking-[.06em] bg-accent text-paper hover:bg-accent-h transition-all whitespace-nowrap">見積を相談する →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 加工実績 ===== -->
+<section class="py-16 md:py-20 lg:py-[130px] bg-paper-2" id="works">
+  <div class="wrap">
+
+    <div class="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-5 md:gap-10 mb-10 md:mb-[70px] items-end">
+      <div class="font-mono text-[12px] tracking-[.22em] text-muted flex items-center gap-3 after:content-[''] after:flex-1 after:h-px after:bg-ink/20">二つめ　加工実績</div>
+      <div>
+        <div class="font-mono text-[11px] tracking-[.24em] text-accent mb-3">加工実績</div>
+        <h2 class="sec-title">手が覚えた、<br/>仕上がりの記録。</h2>
+        <p class="font-serif text-muted text-[14px] md:text-[15px] max-w-[640px] leading-[1.9]">建築金物、産業機器、食品機械、家具金物、美術工芸まで。素材と用途によって最適解は変わります。</p>
+      </div>
+    </div>
+
+    <!-- Works: 1col → 2col → 12col complex -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-5">
+      <div class="wk relative cursor-pointer overflow-hidden aspect-[4/3] sm:col-span-2 lg:col-span-7">
+        <div class="absolute inset-0 bg-ink overflow-hidden">
+          <img src="images/work-01.jpg" alt="タービンブレード 鏡面仕上げ" loading="lazy" class="wk-img absolute inset-0 w-full h-full object-cover transition-transform duration-[800ms] ease-out"/>
+          <div class="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent to-black/75 z-10"></div>
+        </div>
+        <div class="absolute top-4 left-4 font-mono text-[10px] tracking-[.2em] text-paper/60 z-20">実績 一</div>
+        <div class="absolute inset-x-0 bottom-0 p-5 md:p-6 text-paper z-20">
+          <div class="font-mono text-[10px] tracking-[.2em] text-accent-ink mb-2">タービンブレード</div>
+          <div class="font-serif text-[17px] md:text-xl font-medium leading-[1.4]">タービンブレード / 鏡面仕上げ<span class="block font-mono text-[10px] tracking-[.14em] text-paper/55 mt-1.5 font-normal">ステンレス — Ra0.4 安定達成</span></div>
+        </div>
+      </div>
+      <div class="wk relative cursor-pointer overflow-hidden aspect-[4/3] lg:col-span-5">
+        <div class="absolute inset-0 bg-ink overflow-hidden">
+          <img src="images/work-05.jpg" alt="ステンレス製モニュメント" loading="lazy" class="wk-img absolute inset-0 w-full h-full object-cover transition-transform duration-[800ms] ease-out"/>
+          <div class="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent to-black/75 z-10"></div>
+        </div>
+        <div class="absolute top-4 left-4 font-mono text-[10px] tracking-[.2em] text-paper/60 z-20">実績 二</div>
+        <div class="absolute inset-x-0 bottom-0 p-5 md:p-6 text-paper z-20">
+          <div class="font-mono text-[10px] tracking-[.2em] text-accent-ink mb-2">屋外モニュメント</div>
+          <div class="font-serif text-[17px] md:text-xl font-medium leading-[1.4]">屋外モニュメント / 鏡面バフ<span class="block font-mono text-[10px] tracking-[.14em] text-paper/55 mt-1.5 font-normal">ステンレス — 海辺設置・耐候仕上げ</span></div>
+        </div>
+      </div>
+      <div class="wk relative cursor-pointer overflow-hidden aspect-square lg:col-span-4">
+        <div class="absolute inset-0 bg-ink overflow-hidden">
+          <img src="images/work-02.jpg" alt="タービンノズル 曲面研磨" loading="lazy" class="wk-img absolute inset-0 w-full h-full object-cover transition-transform duration-[800ms] ease-out"/>
+          <div class="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent to-black/75 z-10"></div>
+        </div>
+        <div class="absolute top-4 left-4 font-mono text-[10px] tracking-[.2em] text-paper/60 z-20">実績 三</div>
+        <div class="absolute inset-x-0 bottom-0 p-5 text-paper z-20">
+          <div class="font-mono text-[10px] tracking-[.2em] text-accent-ink mb-2">タービンノズル</div>
+          <div class="font-serif text-[16px] md:text-xl font-medium leading-[1.4]">タービンノズル / 曲面研磨<span class="block font-mono text-[10px] tracking-[.14em] text-paper/55 mt-1.5 font-normal">フレキ — 三次曲面 手仕上げ</span></div>
+        </div>
+      </div>
+      <div class="wk relative cursor-pointer overflow-hidden aspect-square lg:col-span-4">
+        <div class="absolute inset-0 bg-ink overflow-hidden">
+          <img src="images/work-04.jpg" alt="反射鏡 鏡面仕上げ" loading="lazy" class="wk-img absolute inset-0 w-full h-full object-cover transition-transform duration-[800ms] ease-out"/>
+          <div class="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent to-black/75 z-10"></div>
+        </div>
+        <div class="absolute top-4 left-4 font-mono text-[10px] tracking-[.2em] text-paper/60 z-20">実績 四</div>
+        <div class="absolute inset-x-0 bottom-0 p-5 text-paper z-20">
+          <div class="font-mono text-[10px] tracking-[.2em] text-accent-ink mb-2">反射鏡</div>
+          <div class="font-serif text-[16px] md:text-xl font-medium leading-[1.4]">反射鏡 / 鏡面バフ<span class="block font-mono text-[10px] tracking-[.14em] text-paper/55 mt-1.5 font-normal">バフ — Ra0.2 達成</span></div>
+        </div>
+      </div>
+      <div class="wk relative cursor-pointer overflow-hidden aspect-square lg:col-span-4">
+        <div class="absolute inset-0 bg-ink overflow-hidden">
+          <img src="images/work-03.jpg" alt="スクリュー バリ取り" loading="lazy" class="wk-img absolute inset-0 w-full h-full object-cover transition-transform duration-[800ms] ease-out"/>
+          <div class="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent to-black/75 z-10"></div>
+        </div>
+        <div class="absolute top-4 left-4 font-mono text-[10px] tracking-[.2em] text-paper/60 z-20">実績 五</div>
+        <div class="absolute inset-x-0 bottom-0 p-5 text-paper z-20">
+          <div class="font-mono text-[10px] tracking-[.2em] text-accent-ink mb-2">スクリュー</div>
+          <div class="font-serif text-[16px] md:text-xl font-medium leading-[1.4]">スクリュー / バリ取り・形状補正<span class="block font-mono text-[10px] tracking-[.14em] text-paper/55 mt-1.5 font-normal">ベルト — 溶接前開先加工</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 会社案内 ===== -->
+<section class="py-16 md:py-20 lg:py-[130px] bg-paper" id="about">
+  <div class="wrap">
+
+    <div class="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-5 md:gap-10 mb-10 md:mb-[70px] items-end">
+      <div class="font-mono text-[12px] tracking-[.22em] text-muted flex items-center gap-3 after:content-[''] after:flex-1 after:h-px after:bg-ink/20">三つめ　会社案内</div>
+      <div>
+        <div class="font-mono text-[11px] tracking-[.24em] text-accent mb-3">会社案内</div>
+        <h2 class="sec-title">川崎の片隅で、<br/>磨き続けて半世紀。</h2>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 gap-10 lg:grid-cols-[1.1fr_.9fr] lg:gap-20">
+      <div class="ab-copy">
+        <p class="font-serif text-[15px] md:text-[16px] leading-[2.1] md:leading-[2.2] text-ink-2 mb-5 text-pretty">1967 年、川崎区で金属研磨を営む小さな工場として歩みはじめました。創業以来、熟練の職人技による手作業と機械研磨を融合させ、ステンレス・アルミ・鉄・真鍮・銅・チタンといったあらゆる金属の表面処理に取り組んでいます。</p>
+        <p class="font-serif text-[15px] md:text-[16px] leading-[2.1] md:leading-[2.2] text-ink-2 mb-5 text-pretty">タービンブレードの鏡面仕上げから展示車のアルミボンネット、エレベーターの真鍮額縁の修復まで——機械化では届かない曲面、一点ものの装飾、短納期の補修は、職人の手と目でなければ出せない仕上がりがあります。図面のないお問い合わせ、試作 1 点のご相談もお気軽にどうぞ。</p>
+        <p class="font-serif text-[15px] md:text-[16px] leading-[2.1] md:leading-[2.2] text-ink-2 mb-5 text-pretty">「もう一度この輝きを見たい」という期待に応えること。それが私たちの仕事です。</p>
+        <!-- 代表写真 -->
+        <div class="relative mt-8 overflow-hidden bg-paper-2 aspect-[3/4] max-w-[220px]">
+          <img src="images/representative.jpg" alt="代表取締役 松本 昌浩" class="w-full h-full object-cover object-top" onerror="this.parentElement.classList.add('placeholder-ph')"/>
+          <div class="absolute inset-0 hidden items-center justify-center flex-col gap-2 text-muted placeholder-ph:flex">
+            <svg class="w-10 h-10 stroke-current fill-none stroke-[1.2] opacity-40" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            <span class="text-[11px] tracking-[.14em] opacity-40">representative.jpg</span>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 bg-ink/60 px-4 py-2.5 text-paper">
+            <div class="font-serif text-[13px] font-medium">代表取締役　松本 昌浩</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <dl class="ab-table">
+        <div><dt>社名</dt><dd>株式会社松本研磨工業</dd></div>
+        <div><dt>代表者</dt><dd>代表取締役 松本 昌浩</dd></div>
+        <div><dt>創業・設立</dt><dd>創業 1967 年 ／ 設立 1977 年 6 月 16 日</dd></div>
+        <div><dt>資本金</dt><dd>1,000 万円</dd></div>
+        <div><dt>事業内容</dt><dd>金属研磨加工全般（バフ・ベルト・ヘアライン・フレキ／曲面）</dd></div>
+        <div><dt>主要取引先</dt><dd>富士電機(株)／JFE エンジニアリング(株)／(株)池田工業所／横浜機工(株) 他</dd></div>
+        <div><dt>所在地</dt><dd>〒210-0851 神奈川県川崎市川崎区浜町 3-9-22</dd></div>
+        <div><dt>連絡先</dt><dd>電話 044-333-8412 ／ ファクス 044-333-3843</dd></div>
+      </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== アクセス ===== -->
+<section class="py-16 md:py-20 lg:py-[130px] bg-ink text-paper" id="access">
+  <div class="wrap">
+
+    <div class="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-5 md:gap-10 mb-10 md:mb-[70px] items-end">
+      <div class="font-mono text-[12px] tracking-[.22em] text-muted-ink flex items-center gap-3 after:content-[''] after:flex-1 after:h-px after:bg-paper/[.15]">四つめ　アクセス</div>
+      <div>
+        <div class="font-mono text-[11px] tracking-[.24em] text-accent-ink mb-3">アクセス</div>
+        <h2 class="sec-title text-paper">川崎区浜町、<br/>小さな町工場へ。</h2>
+        <p class="font-serif text-muted-ink text-[14px] md:text-[15px] max-w-[640px] leading-[1.9]">川崎区浜町、多摩川ほど近く。納品・引取のご相談もお気軽にどうぞ。</p>
+      </div>
+    </div>
+
+    <!-- Stack on mobile, 2-col on md -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-[60px] items-start">
+      <div class="aspect-[4/3] relative overflow-hidden">
+        <iframe
+          src="https://maps.google.com/maps?q=神奈川県川崎市川崎区浜町3-9-22&output=embed&z=17&hl=ja"
+          width="100%" height="100%"
+          style="border:0;display:block;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="株式会社松本研磨工業 所在地">
+        </iframe>
+      </div>
+
+      <div class="divide-y divide-paper/[.12]">
+        <!-- 所在地 -->
+        <div class="py-4 md:py-[22px] grid grid-cols-[100px_1fr] md:grid-cols-[120px_1fr] gap-4 md:gap-6">
+          <div class="font-mono text-[10px] md:text-[11px] tracking-[.18em] text-muted-ink pt-1">所在地</div>
+          <div class="font-serif text-[14px] md:text-[16px] leading-[1.7]">神奈川県川崎市川崎区浜町 3-9-22<br/><span class="font-sans text-[12px] text-muted-ink mt-1 block">〒210-0851</span></div>
+        </div>
+        <!-- 電車 -->
+        <div class="py-4 md:py-[22px] grid grid-cols-[100px_1fr] md:grid-cols-[120px_1fr] gap-4 md:gap-6">
+          <div class="font-mono text-[10px] md:text-[11px] tracking-[.18em] text-muted-ink pt-1 flex items-start gap-1.5">
+            <svg class="w-3.5 h-3.5 mt-0.5 shrink-0 stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M4 14h16M8 18h.01M16 18h.01M9 2v4M15 2v4"/></svg>
+            電車
+          </div>
+          <div class="text-[13px] md:text-[14px] leading-[1.85] text-paper/90">
+            JR線川崎駅東口より、臨港バス8番線「川22 三井埠頭行き」乗車。<br/>
+            「浜町三丁目」バス停下車、徒歩約1分。
+          </div>
+        </div>
+        <!-- お車 -->
+        <div class="py-4 md:py-[22px] grid grid-cols-[100px_1fr] md:grid-cols-[120px_1fr] gap-4 md:gap-6">
+          <div class="font-mono text-[10px] md:text-[11px] tracking-[.18em] text-muted-ink pt-1 flex items-start gap-1.5">
+            <svg class="w-3.5 h-3.5 mt-0.5 shrink-0 stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><path d="M5 17H3v-5l2-5h14l2 5v5h-2"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/><path d="M5 12h14"/></svg>
+            お車
+          </div>
+          <div class="text-[13px] md:text-[14px] leading-[1.85] text-paper/90">
+            首都高速横羽線・大師出口より産業道路を直進し約3.5km。<br/>
+            「浅野工業団地入口（交差点）」を右折、176m直進後に右折し78m。
+          </div>
+        </div>
+        <!-- 駐車場 -->
+        <div class="py-4 md:py-[22px] grid grid-cols-[100px_1fr] md:grid-cols-[120px_1fr] gap-4 md:gap-6">
+          <div class="font-mono text-[10px] md:text-[11px] tracking-[.18em] text-muted-ink pt-1">駐車場</div>
+          <div class="text-[13px] md:text-[14px] leading-[1.85] text-paper/90">
+            1台あり<span class="font-sans text-[12px] text-muted-ink ml-2">※事前にご連絡ください</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="py-16 md:py-20 lg:py-[130px] bg-paper-2" id="faq">
+  <div class="wrap">
+
+    <div class="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-5 md:gap-10 mb-10 md:mb-[70px] items-end">
+      <div class="font-mono text-[12px] tracking-[.22em] text-muted flex items-center gap-3 after:content-[''] after:flex-1 after:h-px after:bg-ink/20">五つめ　よくある質問</div>
+      <div>
+        <div class="font-mono text-[11px] tracking-[.24em] text-accent mb-3">よくある質問</div>
+        <h2 class="sec-title">お問い合わせ前に、<br/>ひとつ目を通してみてください。</h2>
+      </div>
+    </div>
+
+    <div class="border-t border-line-light">
+      <div class="faq-item border-b border-line-light">
+        <button class="faq-q w-full grid grid-cols-[36px_1fr_24px] md:grid-cols-[60px_1fr_40px] gap-3 md:gap-5 py-4 md:py-[26px] text-left items-center font-serif">
+          <span class="font-serif text-xl md:text-2xl text-accent font-medium">Q</span>
+          <span class="text-[14px] md:text-[17px] font-medium leading-[1.5]">図面がなくても見積は可能ですか。</span>
+          <span class="plus relative w-5 h-5 justify-self-end"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-in"><div class="grid grid-cols-[36px_1fr_24px] md:grid-cols-[60px_1fr_40px] gap-3 md:gap-5 pb-5 md:pb-7 text-[13px] md:text-[14px] leading-[1.9] text-ink-2">
+          <span class="font-serif text-xl md:text-2xl text-muted font-medium">A</span>
+          <span>もちろん可能です。図面（PDF / DXF 等）をいただける場合はスムーズですが、現物サンプル・写真・寸法メモだけでもお見積りいたします。内容によっては最短即日でご回答可能です。</span>
+        </div></div></div>
+      </div>
+      <div class="faq-item border-b border-line-light">
+        <button class="faq-q w-full grid grid-cols-[36px_1fr_24px] md:grid-cols-[60px_1fr_40px] gap-3 md:gap-5 py-4 md:py-[26px] text-left items-center font-serif">
+          <span class="font-serif text-xl md:text-2xl text-accent font-medium">Q</span>
+          <span class="text-[14px] md:text-[17px] font-medium leading-[1.5]">小ロットや 1 点ものでも対応してもらえますか。</span>
+          <span class="plus relative w-5 h-5 justify-self-end"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-in"><div class="grid grid-cols-[36px_1fr_24px] md:grid-cols-[60px_1fr_40px] gap-3 md:gap-5 pb-5 md:pb-7 text-[13px] md:text-[14px] leading-[1.9] text-ink-2">
+          <span class="font-serif text-xl md:text-2xl text-muted font-medium">A</span>
+          <span>1 個（単品・試作）から、小ロット（〜30 個）、小量産（〜200 個）までお引き受けしています。試作品・補修品・美術工芸品・DIY の一点ものまで幅広く対応可能です。</span>
+        </div></div></div>
+      </div>
+      <div class="faq-item border-b border-line-light">
+        <button class="faq-q w-full grid grid-cols-[36px_1fr_24px] md:grid-cols-[60px_1fr_40px] gap-3 md:gap-5 py-4 md:py-[26px] text-left items-center font-serif">
+          <span class="font-serif text-xl md:text-2xl text-accent font-medium">Q</span>
+          <span class="text-[14px] md:text-[17px] font-medium leading-[1.5]">対応できる素材を教えてください。</span>
+          <span class="plus relative w-5 h-5 justify-self-end"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-in"><div class="grid grid-cols-[36px_1fr_24px] md:grid-cols-[60px_1fr_40px] gap-3 md:gap-5 pb-5 md:pb-7 text-[13px] md:text-[14px] leading-[1.9] text-ink-2">
+          <span class="font-serif text-xl md:text-2xl text-muted font-medium">A</span>
+          <span>ステンレス、アルミ、鉄、真鍮、銅、チタン、各種合金に対応しています。メッキ品・塗装品の下地処理もご相談ください。</span>
+        </div></div></div>
+      </div>
+      <div class="faq-item border-b border-line-light">
+        <button class="faq-q w-full grid grid-cols-[36px_1fr_24px] md:grid-cols-[60px_1fr_40px] gap-3 md:gap-5 py-4 md:py-[26px] text-left items-center font-serif">
+          <span class="font-serif text-xl md:text-2xl text-accent font-medium">Q</span>
+          <span class="text-[14px] md:text-[17px] font-medium leading-[1.5]">最大どのくらいの大きさまで対応できますか。</span>
+          <span class="plus relative w-5 h-5 justify-self-end"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-in"><div class="grid grid-cols-[36px_1fr_24px] md:grid-cols-[60px_1fr_40px] gap-3 md:gap-5 pb-5 md:pb-7 text-[13px] md:text-[14px] leading-[1.9] text-ink-2">
+          <span class="font-serif text-xl md:text-2xl text-muted font-medium">A</span>
+          <span>板材は〜1000mm、パイプは〜φ150 × 1000mm、長尺物は〜1200mm が目安です。これを超える大物や現地仕上げが必要な案件も、事前にご相談いただければ対応を検討いたします。</span>
+        </div></div></div>
+      </div>
+      <div class="faq-item border-b border-line-light">
+        <button class="faq-q w-full grid grid-cols-[36px_1fr_24px] md:grid-cols-[60px_1fr_40px] gap-3 md:gap-5 py-4 md:py-[26px] text-left items-center font-serif">
+          <span class="font-serif text-xl md:text-2xl text-accent font-medium">Q</span>
+          <span class="text-[14px] md:text-[17px] font-medium leading-[1.5]">納期はどのくらいかかりますか。</span>
+          <span class="plus relative w-5 h-5 justify-self-end"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-in"><div class="grid grid-cols-[36px_1fr_24px] md:grid-cols-[60px_1fr_40px] gap-3 md:gap-5 pb-5 md:pb-7 text-[13px] md:text-[14px] leading-[1.9] text-ink-2">
+          <span class="font-serif text-xl md:text-2xl text-muted font-medium">A</span>
+          <span>通常 7〜10 営業日、特急便は 5 営業日が目安です。スケジュール調整により最短 3 日〜のご相談も可能ですので、お急ぎの場合はお電話にてご連絡ください。</span>
+        </div></div></div>
+      </div>
+      <div class="faq-item border-b border-line-light">
+        <button class="faq-q w-full grid grid-cols-[36px_1fr_24px] md:grid-cols-[60px_1fr_40px] gap-3 md:gap-5 py-4 md:py-[26px] text-left items-center font-serif">
+          <span class="font-serif text-xl md:text-2xl text-accent font-medium">Q</span>
+          <span class="text-[14px] md:text-[17px] font-medium leading-[1.5]">遠方でも依頼できますか。</span>
+          <span class="plus relative w-5 h-5 justify-self-end"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-in"><div class="grid grid-cols-[36px_1fr_24px] md:grid-cols-[60px_1fr_40px] gap-3 md:gap-5 pb-5 md:pb-7 text-[13px] md:text-[14px] leading-[1.9] text-ink-2">
+          <span class="font-serif text-xl md:text-2xl text-muted font-medium">A</span>
+          <span>関東全域（川崎・横浜・東京中心）をメインに、全国対応可能です。宅配便・運送便でお送りいただければ遠方からも承ります。梱包・返送についてもお気軽にご相談ください。</span>
+        </div></div></div>
+      </div>
+      <div class="faq-item border-b border-line-light">
+        <button class="faq-q w-full grid grid-cols-[36px_1fr_24px] md:grid-cols-[60px_1fr_40px] gap-3 md:gap-5 py-4 md:py-[26px] text-left items-center font-serif">
+          <span class="font-serif text-xl md:text-2xl text-accent font-medium">Q</span>
+          <span class="text-[14px] md:text-[17px] font-medium leading-[1.5]">最低料金や個人からの依頼はできますか。</span>
+          <span class="plus relative w-5 h-5 justify-self-end"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-in"><div class="grid grid-cols-[36px_1fr_24px] md:grid-cols-[60px_1fr_40px] gap-3 md:gap-5 pb-5 md:pb-7 text-[13px] md:text-[14px] leading-[1.9] text-ink-2">
+          <span class="font-serif text-xl md:text-2xl text-muted font-medium">A</span>
+          <span>法人様は 5,000 円（税込）〜、個人様は 10,000 円（税込）〜が最低料金の目安です。DIY・趣味・インテリア用途の個人のお客様からのご依頼も承っております。</span>
+        </div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT CTA ===== -->
+<section class="py-16 md:py-20 lg:py-[140px] bg-paper relative overflow-hidden" id="contact">
+  <div class="contact-wm">研磨</div>
+  <div class="wrap text-center max-w-[820px] mx-auto relative z-10">
+    <div class="font-mono text-[11px] tracking-[.26em] text-accent mb-5">お問い合わせ</div>
+    <h2 class="cta-h2">まずは、<br/>お気軽にご相談ください。</h2>
+    <p class="font-serif text-muted text-[14px] md:text-[16px] leading-[2] mb-10 md:mb-12 max-w-[600px] mx-auto text-pretty">お見積り無料。お電話・フォームどちらからでも受け付けております。<br/>図面がない状態でも、ご要望をお聞かせいただければ最適な仕上げをご提案します。</p>
+    <div class="flex flex-col sm:flex-row gap-3 md:gap-[14px] justify-center">
+      <a href="contact.html" class="inline-flex items-center justify-center gap-4 px-6 py-4 md:px-8 md:py-6 bg-ink text-paper rounded-sm font-semibold tracking-[.08em] text-[13px] md:text-[14px] hover:bg-accent hover:-translate-y-px transition-all">
+        フォームで問い合わせる <span>→</span>
+      </a>
+      <a href="tel:0443338412" class="inline-flex items-center justify-center gap-4 px-5 py-4 md:px-7 md:py-5 border border-ink rounded-sm hover:bg-ink hover:text-paper transition-all">
+        <svg class="w-5 h-5 stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+        <span>
+          <div class="font-mono text-[9px] tracking-[.2em] text-muted mb-1">平日 8:00–18:00</div>
+          <div class="font-mono text-[18px] md:text-[22px] font-medium">044-333-8412</div>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-ink text-paper pt-14 md:pt-[90px] pb-8 md:pb-[30px] border-t border-paper/[.05]">
+  <div class="wrap">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1fr] gap-8 md:gap-10 pb-10 md:pb-[60px] border-b border-paper/10">
+      <div class="sm:col-span-2 lg:col-span-1">
+        <div class="flex items-center gap-3">
+          <span class="w-10 h-10 border-[1.5px] border-paper rounded-full grid place-items-center font-serif font-semibold text-xl bg-paper text-ink">松</span>
+          <span class="leading-[1.1]">
+            <div class="font-serif text-[14px] md:text-[15px] font-medium tracking-[.04em] text-paper">株式会社松本研磨工業</div>
+            <div class="font-mono text-[10px] text-muted-ink tracking-[.22em] mt-[2px]">創業58年・川崎</div>
+          </span>
+        </div>
+        <p class="mt-5 text-[12px] text-muted-ink leading-[1.9]">〒210-0851<br/>神奈川県川崎市川崎区浜町 3-9-22<br/>電話 044-333-8412 ／ ファクス 044-333-3843<br/>matsumoto-kenma.co.jp</p>
+        <div class="mt-5 flex gap-3">
+          <a href="https://www.instagram.com/matsu_polish/" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 border border-paper/20 rounded-sm grid place-items-center text-muted-ink hover:text-paper hover:border-paper/50 transition-colors">
+            <svg class="w-[18px] h-[18px] stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UCIGiSzo9TyINLuygAsuP5ew/" target="_blank" rel="noopener" aria-label="YouTube" class="w-9 h-9 border border-paper/20 rounded-sm grid place-items-center text-muted-ink hover:text-paper hover:border-paper/50 transition-colors">
+            <svg class="w-[18px] h-[18px] fill-current" viewBox="0 0 24 24"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.3.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.9C6.8 19 12 19 12 19s4.8 0 7-.2c.4-.1 1.3-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.8 14.5V9.5l5.4 2.5-5.4 2.5z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-mono text-[10px] tracking-[.24em] text-muted-ink mb-4 md:mb-5">メニュー</h4>
+        <ul class="space-y-[10px]">
+          <li><a href="#home"     class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">ホーム</a></li>
+          <li><a href="#services" class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">業務内容</a></li>
+          <li><a href="#works"    class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">加工実績</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-mono text-[10px] tracking-[.24em] text-muted-ink mb-4 md:mb-5">会社情報</h4>
+        <ul class="space-y-[10px]">
+          <li><a href="#about"  class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">会社案内</a></li>
+          <li><a href="#access" class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">アクセス</a></li>
+          <li><a href="#faq"    class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">よくある質問</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-mono text-[10px] tracking-[.24em] text-muted-ink mb-4 md:mb-5">お問い合わせ</h4>
+        <ul class="space-y-[10px]">
+          <li><a href="tel:0443338412" class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">044-333-8412</a></li>
+          <li><a href="contact.html"   class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">お問い合わせフォーム</a></li>
+          <li><a href="#"              class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-6 md:pt-[30px] flex flex-col sm:flex-row justify-between font-mono text-[10px] tracking-[.14em] text-muted-ink gap-2 sm:gap-[10px] text-center sm:text-left">
+      <div>© 2026 株式会社松本研磨工業</div>
+      <div>手仕事の金属研磨　・　川崎　・　創業58年</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  const burger = document.getElementById('burgerBtn');
+  const mmenu  = document.getElementById('mobileMenu');
+  if (burger && mmenu) {
+    burger.addEventListener('click', () => mmenu.classList.toggle('translate-x-full'));
+    mmenu.querySelectorAll('[data-close]').forEach(a =>
+      a.addEventListener('click', () => mmenu.classList.add('translate-x-full'))
+    );
+  }
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(it => {
+    it.querySelector('.faq-q').addEventListener('click', () => it.classList.toggle('open'));
+  });
+
+  // Active nav
+  const menuLinks = document.querySelectorAll('.menu-link');
+  const secs = ['home','services','works','about','access','faq'].map(id => document.getElementById(id));
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting)
+        menuLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+    });
+  }, {rootMargin:'-40% 0px -55% 0px'});
+  secs.forEach(s => s && io.observe(s));
+
+  // Reveal
+  const rv = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); rv.unobserve(e.target); }});
+  }, {threshold:.08});
+  document.querySelectorAll('section').forEach(el => { el.classList.add('reveal'); rv.observe(el); });
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if (id.length > 1) {
+        const t = document.querySelector(id);
+        if (t) { e.preventDefault(); window.scrollTo({top: t.getBoundingClientRect().top + window.scrollY - 60, behavior:'smooth'}); }
+      }
+    });
+  });
+</script>
+</body>
+</html>
