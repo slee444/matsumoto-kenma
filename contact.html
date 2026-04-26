@@ -6,6 +6,7 @@
 <title>お問い合わせ｜株式会社松本研磨工業</title>
 <meta name="description" content="株式会社松本研磨工業へのお問い合わせ・お見積りはこちらから。図面なしでも対応可能。最短即日回答。">
 <link rel="canonical" href="https://matsumoto-kenma.co.jp/contact.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,13 +18,15 @@ tailwind.config = {
       colors: {
         ink:          '#0E0E10',
         'ink-2':      '#1A1A1E',
+        navy:         '#0D1E35',
+        'navy-2':     '#162843',
         paper:        '#F4F2ED',
         'paper-2':    '#E9E6DE',
         accent:       '#1B3A6B',
         'accent-h':   '#142d54',
         'accent-ink': '#2E5BA6',
-        muted:        '#6B6A66',
-        'muted-ink':  '#8A8A90',
+        muted:        '#4A4A47',
+        'muted-ink':  '#5E5E65',
         'line-light': '#D9D4C8',
       },
       fontFamily: {
@@ -80,7 +83,7 @@ tailwind.config = {
   .check-group{display:flex;flex-wrap:wrap;gap:8px 16px}
   @media(min-width:768px){.check-group{gap:10px 20px}}
   .check-label{display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px}
-  .check-label input{width:16px;height:16px;accent-color:#1B3A6B;cursor:pointer;flex-shrink:0}
+  .check-label input{width:16px;height:16px;accent-color:#1B3A6B;cursor:pointer;flex-shrink:0;appearance:auto;-webkit-appearance:auto}
 </style>
 </head>
 <body>
@@ -105,9 +108,12 @@ tailwind.config = {
       <a href="index.html#faq"      class="relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">よくある質問</a>
     </div>
     <div class="flex gap-2 items-center">
-      <a href="tel:0443338412" class="hidden md:inline-flex items-center gap-[10px] px-[18px] py-[11px] rounded-sm text-[13px] font-semibold tracking-[.06em] border border-ink hover:bg-ink hover:text-paper transition-all">
+      <a href="tel:0443338412" class="hidden md:flex items-center gap-[10px] px-[18px] py-[9px] rounded-sm border border-ink hover:bg-ink hover:text-paper transition-all">
         <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
-        044-333-8412
+        <span>
+          <div class="font-mono text-[9px] tracking-[.12em] opacity-60 font-normal">平日 8:30–18:00 / 土日祝休</div>
+          <div class="font-mono text-[12px] font-semibold">044-333-8412</div>
+        </span>
       </a>
       <a href="contact.html" class="inline-flex items-center gap-[10px] px-3 py-2 md:px-[18px] md:py-[11px] rounded-sm text-[11px] md:text-[13px] font-semibold tracking-[.06em] bg-accent text-paper hover:bg-accent-h transition-all">お問い合わせ →</a>
       <button class="flex md:hidden w-10 h-10 border border-ink rounded-sm items-center justify-center bg-paper" id="burgerBtn" aria-label="menu">
@@ -129,8 +135,9 @@ tailwind.config = {
     <a href="tel:0443338412" data-close class="flex items-center gap-4 p-4 border border-paper/20">
       <svg class="w-5 h-5 stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
       <span>
-        <div class="font-mono text-[9px] tracking-[.2em] text-muted-ink">平日 8:00–18:00</div>
+        <div class="font-mono text-[9px] tracking-[.2em] text-muted-ink">平日 8:30–18:00 / 土日祝休</div>
         <div class="font-mono text-lg font-medium">044-333-8412</div>
+        <div class="font-mono text-[9px] tracking-[.1em] text-muted-ink/60 mt-1">※ 営業・勧誘のお電話はお断りしています</div>
       </span>
     </a>
     <a href="contact.html" data-close class="p-4 bg-accent text-paper text-center font-semibold tracking-[.08em]">お問い合わせ →</a>
@@ -287,18 +294,19 @@ tailwind.config = {
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 md:gap-5 lg:gap-6">
 
         <!-- 電話 -->
-        <div class="p-5 md:p-7 bg-ink text-paper">
+        <div class="p-5 md:p-7 bg-navy text-paper">
           <div class="font-mono text-[10px] tracking-[.22em] text-muted-ink mb-4">お電話でのお問い合わせ</div>
           <a href="tel:0443338412" class="flex items-center gap-3 mb-3 hover:text-accent-ink transition-colors">
             <svg class="w-5 h-5 stroke-current fill-none stroke-[1.6] shrink-0" viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
             <span class="font-mono text-[18px] md:text-[22px] font-medium">044-333-8412</span>
           </a>
-          <div class="text-[12px] text-muted-ink leading-[1.8]">受付：平日 8:00–18:00<br/>土日祝日休み</div>
+          <div class="text-[12px] text-muted-ink leading-[1.8]">受付：平日 8:30–18:00<br/>土日祝日休み</div>
+          <div class="mt-3 text-[11px] text-muted-ink/70 leading-[1.7]">※ 職人2名での対応のため、<br/>営業・勧誘のお電話はお断りしています。</div>
         </div>
 
         <!-- FAX -->
         <div class="p-5 md:p-7 border border-line-light">
-          <div class="font-mono text-[10px] tracking-[.22em] text-muted mb-4">ファクス</div>
+          <div class="font-mono text-[10px] tracking-[.22em] text-muted mb-4">FAX</div>
           <div class="font-mono text-[18px] md:text-[20px] font-medium mb-3">044-333-3843</div>
           <div class="text-[12px] md:text-[13px] text-muted leading-[1.8]">図面・仕様書はFAXでもお受けしています。会社名・担当者名・連絡先をご記入ください。</div>
         </div>
@@ -323,7 +331,7 @@ tailwind.config = {
 </div>
 
 <!-- ===== FOOTER ===== -->
-<footer class="bg-ink text-paper pt-12 md:pt-[60px] pb-8 border-t border-paper/[.05]">
+<footer class="bg-navy text-paper pt-12 md:pt-[60px] pb-8 border-t border-paper/[.05]">
   <div class="wrap">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1fr] gap-8 pb-8 md:pb-[50px] border-b border-paper/10">
       <div class="sm:col-span-2 lg:col-span-1">
@@ -334,7 +342,7 @@ tailwind.config = {
             <div class="font-mono text-[10px] text-muted-ink tracking-[.22em] mt-[2px]">創業58年・川崎</div>
           </span>
         </div>
-        <p class="mt-5 text-[12px] text-muted-ink leading-[1.9]">〒210-0851<br/>神奈川県川崎市川崎区浜町 3-9-22<br/>電話 044-333-8412 ／ ファクス 044-333-3843</p>
+        <p class="mt-5 text-[12px] text-muted-ink leading-[1.9]">〒210-0851<br/>神奈川県川崎市川崎区浜町 3-9-22<br/>電話 044-333-8412 ／ FAX 044-333-3843</p>
         <div class="mt-5 flex gap-3">
           <a href="https://www.instagram.com/matsu_polish/" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 border border-paper/20 rounded-sm grid place-items-center text-muted-ink hover:text-paper hover:border-paper/50 transition-colors">
             <svg class="w-[18px] h-[18px] stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
@@ -363,15 +371,18 @@ tailwind.config = {
       <div>
         <h4 class="font-mono text-[10px] tracking-[.24em] text-muted-ink mb-4">お問い合わせ</h4>
         <ul class="space-y-[10px]">
-          <li><a href="tel:0443338412" class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">044-333-8412</a></li>
+          <li>
+            <a href="tel:0443338412" class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">044-333-8412</a>
+            <div class="font-mono text-[10px] text-muted-ink leading-[1.8] mt-1">平日 8:30–18:00 / 土日祝休<br/>※ 営業・勧誘のお電話はお断りしています</div>
+          </li>
           <li><a href="contact.html"   class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">お問い合わせフォーム</a></li>
-          <li><a href="#"              class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">プライバシーポリシー</a></li>
+          <li><a href="privacy.html"   class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">プライバシーポリシー</a></li>
         </ul>
       </div>
     </div>
     <div class="pt-6 flex flex-col sm:flex-row justify-between font-mono text-[10px] tracking-[.14em] text-muted-ink gap-2 text-center sm:text-left">
       <div>© 2026 株式会社松本研磨工業</div>
-      <div>手仕事の金属研磨　・　川崎　・　創業58年</div>
+      <div>手作業の金属研磨　・　川崎　・　創業58年</div>
     </div>
   </div>
 </footer>
@@ -428,13 +439,31 @@ tailwind.config = {
     btnIcon.classList.add('hidden');
     spinner.classList.remove('hidden');
 
-    // ---- Formspree 等の実エンドポイントに差し替えてください ----
-    await new Promise(r => setTimeout(r, 1500));
-    // -----------------------------------------------------------
+    const data = new FormData(form);
+    const type = data.get('type') || 'お問い合わせ';
+    const lines = [
+      `【お名前】${data.get('name') || ''}`,
+      `【会社名】${data.get('company') || '（なし）'}`,
+      `【メール】${data.get('email') || ''}`,
+      `【電話】${data.get('tel') || '（なし）'}`,
+      `【種別】${type}`,
+      `【ご希望の加工】${data.getAll('process').join('、') || '（未選択）'}`,
+      `【材質】${data.get('material') || '（未選択）'}`,
+      `【数量】${data.get('quantity') || '（未選択）'}`,
+      `【希望納期】${data.get('deadline') || '（未選択）'}`,
+      ``,
+      `【お問い合わせ内容】`,
+      data.get('message') || '',
+    ];
+    const subject = encodeURIComponent(`【お問い合わせ】${type} ／ ${data.get('company') || data.get('name') || ''}`);
+    const body = encodeURIComponent(lines.join('\n'));
+    window.location.href = `mailto:matsumoto@matsumoto-kenma.co.jp?subject=${subject}&body=${body}`;
 
-    form.classList.add('hidden');
-    success.classList.remove('hidden');
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    setTimeout(() => {
+      form.classList.add('hidden');
+      success.classList.remove('hidden');
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }, 800);
   });
 </script>
 </body>
