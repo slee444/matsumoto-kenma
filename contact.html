@@ -425,6 +425,8 @@ tailwind.config = {
   const btnIcon = document.getElementById('submitIcon');
   const spinner = document.getElementById('submitSpinner');
 
+  const GAS_URL = 'https://script.google.com/macros/s/AKfycby5UOuulDECILbwh__PwOUlomEdycp6CNJ-68v96PbJB4_T1JEIpxYtFy_8Xq66GrGlmg/exec';
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     errBox.classList.add('hidden');
@@ -450,30 +452,37 @@ tailwind.config = {
     spinner.classList.remove('hidden');
 
     const data = new FormData(form);
-    const type = data.get('type') || 'お問い合わせ';
-    const lines = [
-      `【お名前】${data.get('name') || ''}`,
-      `【会社名】${data.get('company') || '（なし）'}`,
-      `【メール】${data.get('email') || ''}`,
-      `【電話】${data.get('tel') || '（なし）'}`,
-      `【種別】${type}`,
-      `【ご希望の加工】${data.getAll('process').join('、') || '（未選択）'}`,
-      `【材質】${data.get('material') || '（未選択）'}`,
-      `【数量】${data.get('quantity') || '（未選択）'}`,
-      `【希望納期】${data.get('deadline') || '（未選択）'}`,
-      ``,
-      `【お問い合わせ内容】`,
-      data.get('message') || '',
-    ];
-    const subject = encodeURIComponent(`【お問い合わせ】${type} ／ ${data.get('company') || data.get('name') || ''}`);
-    const body = encodeURIComponent(lines.join('\n'));
-    window.location.href = `mailto:matsumoto@matsumoto-kenma.co.jp?subject=${subject}&body=${body}`;
+    const payload = {
+      name:     data.get('name')    || '',
+      company:  data.get('company') || '',
+      email:    data.get('email')   || '',
+      tel:      data.get('tel')     || '',
+      type:     data.get('type')    || '',
+      process:  data.getAll('process').join('、'),
+      material: data.get('material')  || '',
+      quantity: data.get('quantity')  || '',
+      deadline: data.get('deadline')  || '',
+      message:  data.get('message')   || '',
+    };
 
-    setTimeout(() => {
+    try {
+      await fetch(GAS_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
       form.classList.add('hidden');
       success.classList.remove('hidden');
-      window.scrollTo({top: 0, behavior: 'smooth'});
-    }, 800);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch {
+      errBox.textContent = '送信に失敗しました。お手数ですがお電話にてご連絡ください。';
+      errBox.classList.remove('hidden');
+      btn.disabled = false;
+      btnText.textContent = '送信する';
+      btnIcon.classList.remove('hidden');
+      spinner.classList.add('hidden');
+    }
   });
 </script>
 </body>
