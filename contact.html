@@ -402,7 +402,7 @@ tailwind.config = {
 <script>
   // Email obfuscation
   (function() {
-    const u = 'matsumoto', d = ['matsumoto-kenma', 'co', 'jp'].join('.');
+    const u = 'm.m', d = ['matsumoto-kenma', 'co', 'jp'].join('.');
     const addr = u + '\x40' + d;
     const el = document.getElementById('contactEmail');
     if (el) el.innerHTML = '<a href="mailto:' + addr + '" class="text-accent hover:underline">' + addr + '</a>';
