@@ -196,8 +196,8 @@ tailwind.config = {
               <input type="email" name="email" placeholder="example@mail.com" required autocomplete="email"/>
             </div>
             <div class="field">
-              <label class="block font-mono text-[11px] tracking-[.18em] text-muted mb-2">電話番号<span class="font-mono text-[11px] text-muted ml-2">任意</span></label>
-              <input type="tel" name="tel" placeholder="044-000-0000" autocomplete="tel"/>
+              <label class="block font-mono text-[11px] tracking-[.18em] text-muted mb-2">電話番号<span class="req">必須</span></label>
+              <input type="tel" name="tel" placeholder="044-000-0000" required autocomplete="tel"/>
             </div>
           </div>
 
@@ -433,7 +433,7 @@ tailwind.config = {
     e.preventDefault();
     errBox.classList.add('hidden');
 
-    for (const name of ['name','email','message']) {
+    for (const name of ['name','email','tel','message']) {
       const el = form.elements[name];
       if (!el || !el.value.trim()) {
         errBox.textContent = '必須項目を入力してください。';
