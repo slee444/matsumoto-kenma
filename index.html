@@ -182,12 +182,12 @@ tailwind.config = {
 
     <!-- Desktop menu — hidden below md -->
     <div class="hidden md:flex gap-[2px] items-center">
-      <a href="#home"     class="menu-link active relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">ホーム</a>
-      <a href="#services" class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">業務内容</a>
-      <a href="#works"    class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">加工実績</a>
-      <a href="#about"    class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">会社案内</a>
-      <a href="#access"   class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">アクセス</a>
-      <a href="#faq"      class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">よくある質問</a>
+      <a href="https://matsumoto-kenma.co.jp/#home"     class="menu-link active relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">ホーム</a>
+      <a href="https://matsumoto-kenma.co.jp/#services" class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">業務内容</a>
+      <a href="https://matsumoto-kenma.co.jp/#works"    class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">加工実績</a>
+      <a href="https://matsumoto-kenma.co.jp/#about"    class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">会社案内</a>
+      <a href="https://matsumoto-kenma.co.jp/#access"   class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">アクセス</a>
+      <a href="https://matsumoto-kenma.co.jp/#faq"      class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">よくある質問</a>
     </div>
 
     <!-- CTA -->
@@ -318,7 +318,7 @@ tailwind.config = {
     <div class="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-5 md:gap-10 mb-8 md:mb-12 items-end">
       <div class="font-mono text-[12px] tracking-[.22em] text-muted-ink flex items-center gap-3 after:content-[''] after:flex-1 after:h-px after:bg-paper/[.15]">業務内容</div>
       <div>
-        <h2 class="sec-title text-paper">四つの研磨、<br/>一つの手作業。</h2>
+        <h2 id="services-heading" class="sec-title text-paper">四つの研磨、<br/>一つの手作業。</h2>
         <p class="font-serif text-muted-ink text-[14px] md:text-[15px] max-w-[640px] leading-[1.9]">材質・形状・仕上がりの要望に合わせ、最適な研磨方法を選定します。複雑な形状や一品一点の加工も承ります。</p>
       </div>
     </div>
@@ -367,7 +367,7 @@ tailwind.config = {
     <div class="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-5 md:gap-10 mb-8 md:mb-12 items-end">
       <div class="font-mono text-[12px] tracking-[.22em] text-muted flex items-center gap-3 after:content-[''] after:flex-1 after:h-px after:bg-ink/20">加工実績</div>
       <div>
-        <h2 class="sec-title">手が覚えた、<br/>仕上がりの記録。</h2>
+        <h2 id="works-heading" class="sec-title">手が覚えた、<br/>仕上がりの記録。</h2>
         <p class="font-serif text-muted text-[14px] md:text-[15px] max-w-[640px] leading-[1.9]">精密機器の部品からエネルギー設備の構造材、楽器・工芸品の鏡面仕上げまで。素材と用途によって最適解は変わります。</p>
         <div class="flex flex-wrap gap-2 mt-5">
           <span class="font-mono text-[10px] tracking-[.18em] text-muted border border-ink/20 px-3 py-1.5 rounded-sm">精密機械 / 計測機器</span>
@@ -452,7 +452,7 @@ tailwind.config = {
     <div class="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-5 md:gap-10 mb-8 md:mb-12 items-end">
       <div class="font-mono text-[12px] tracking-[.22em] text-muted flex items-center gap-3 after:content-[''] after:flex-1 after:h-px after:bg-ink/20">会社案内</div>
       <div>
-        <h2 class="sec-title">川崎の片隅で、<br/>磨き続けて半世紀。</h2>
+        <h2 id="about-heading" class="sec-title">川崎の片隅で、<br/>磨き続けて半世紀。</h2>
       </div>
     </div>
 
@@ -497,7 +497,7 @@ tailwind.config = {
     <div class="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-5 md:gap-10 mb-8 md:mb-12 items-end">
       <div class="font-mono text-[12px] tracking-[.22em] text-muted-ink flex items-center gap-3 after:content-[''] after:flex-1 after:h-px after:bg-paper/[.15]">アクセス</div>
       <div>
-        <h2 class="sec-title text-paper">川崎区浜町、<br/>小さな町工場へ。</h2>
+        <h2 id="access-heading" class="sec-title text-paper">川崎区浜町、<br/>小さな町工場へ。</h2>
         <p class="font-serif text-muted-ink text-[14px] md:text-[15px] max-w-[640px] leading-[1.9]">全国各地からのご依頼に対応しています。まずはお気軽にご相談ください。</p>
       </div>
     </div>
@@ -605,7 +605,7 @@ tailwind.config = {
     <div class="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-5 md:gap-10 mb-8 md:mb-12 items-end">
       <div class="font-mono text-[12px] tracking-[.22em] text-muted flex items-center gap-3 after:content-[''] after:flex-1 after:h-px after:bg-ink/20">よくある質問</div>
       <div>
-        <h2 class="sec-title">お問い合わせ前に、<br/>ひとつ目を通してみてください。</h2>
+        <h2 id="faq-heading" class="sec-title">お問い合わせ前に、<br/>ひとつ目を通してみてください。</h2>
       </div>
     </div>
 
@@ -747,17 +747,17 @@ tailwind.config = {
       <div>
         <h4 class="font-mono text-[10px] tracking-[.24em] text-muted-ink mb-4 md:mb-5">メニュー</h4>
         <ul class="space-y-[10px]">
-          <li><a href="#home"     class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">ホーム</a></li>
-          <li><a href="#services" class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">業務内容</a></li>
-          <li><a href="#works"    class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">加工実績</a></li>
+          <li><a href="https://matsumoto-kenma.co.jp/#home"     class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">ホーム</a></li>
+          <li><a href="https://matsumoto-kenma.co.jp/#services" class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">業務内容</a></li>
+          <li><a href="https://matsumoto-kenma.co.jp/#works"    class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">加工実績</a></li>
         </ul>
       </div>
       <div>
         <h4 class="font-mono text-[10px] tracking-[.24em] text-muted-ink mb-4 md:mb-5">会社情報</h4>
         <ul class="space-y-[10px]">
-          <li><a href="#about"  class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">会社案内</a></li>
-          <li><a href="#access" class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">アクセス</a></li>
-          <li><a href="#faq"    class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">よくある質問</a></li>
+          <li><a href="https://matsumoto-kenma.co.jp/#about"  class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">会社案内</a></li>
+          <li><a href="https://matsumoto-kenma.co.jp/#access" class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">アクセス</a></li>
+          <li><a href="https://matsumoto-kenma.co.jp/#faq"    class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-accent-ink transition-all">よくある質問</a></li>
         </ul>
       </div>
       <div>
