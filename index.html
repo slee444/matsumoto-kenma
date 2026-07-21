@@ -289,7 +289,7 @@ tailwind.config = {
       <!-- Visual card -->
       <div class="relative aspect-[4/3] sm:aspect-[16/9] lg:aspect-[3/4] max-w-full lg:max-w-[520px] mx-auto lg:ml-auto w-full">
         <div class="absolute inset-0 bg-gradient-to-br from-[#24242A] via-[#0E0E10] to-[#1a1a1f] rounded-sm overflow-hidden">
-          <img src="images/work-05.jpg" alt="研磨後のステンレス部品" class="absolute inset-0 w-full h-full object-cover"/>
+          <picture><source srcset="images/work-05.webp" type="image/webp"><img src="images/work-05.jpg" alt="研磨後のステンレス部品" class="absolute inset-0 w-full h-full object-cover" fetchpriority="high"/></picture>
           <div class="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent to-black/55"></div>
           <div class="absolute left-5 top-5 font-mono text-[10px] tracking-[.22em] text-paper/70">◉ 施工実績　001</div>
           <div class="absolute left-5 right-5 bottom-5 text-paper">
@@ -383,7 +383,7 @@ tailwind.config = {
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-5">
       <div class="wk relative cursor-pointer overflow-hidden aspect-[4/3] lg:col-span-6">
         <div class="absolute inset-0 bg-ink overflow-hidden">
-          <img src="images/work-01.jpg" alt="タービンブレード 鏡面仕上げ" loading="lazy" class="wk-img absolute inset-0 w-full h-full object-cover transition-transform duration-[800ms] ease-out"/>
+          <picture><source srcset="images/work-01.webp" type="image/webp"><img src="images/work-01.jpg" alt="タービンブレード 鏡面仕上げ" loading="lazy" class="wk-img absolute inset-0 w-full h-full object-cover transition-transform duration-[800ms] ease-out"/></picture>
           <div class="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent to-black/75 z-10"></div>
         </div>
         <div class="absolute top-4 left-4 font-mono text-[10px] tracking-[.2em] text-paper/60 z-20">実績 一</div>
@@ -394,7 +394,7 @@ tailwind.config = {
       </div>
       <div class="wk relative cursor-pointer overflow-hidden aspect-[4/3] lg:col-span-6">
         <div class="absolute inset-0 bg-ink overflow-hidden">
-          <img src="images/work-05.jpg" alt="ステンレス製モニュメント" loading="lazy" class="wk-img absolute inset-0 w-full h-full object-cover transition-transform duration-[800ms] ease-out"/>
+          <picture><source srcset="images/work-05.webp" type="image/webp"><img src="images/work-05.jpg" alt="ステンレス製モニュメント" loading="lazy" class="wk-img absolute inset-0 w-full h-full object-cover transition-transform duration-[800ms] ease-out"/></picture>
           <div class="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent to-black/75 z-10"></div>
         </div>
         <div class="absolute top-4 left-4 font-mono text-[10px] tracking-[.2em] text-paper/60 z-20">実績 二</div>
@@ -405,7 +405,7 @@ tailwind.config = {
       </div>
       <div class="wk relative cursor-pointer overflow-hidden aspect-square lg:col-span-6">
         <div class="absolute inset-0 bg-ink overflow-hidden">
-          <img src="images/work-02.jpg" alt="タービンノズル 曲面研磨" loading="lazy" class="wk-img absolute inset-0 w-full h-full object-cover transition-transform duration-[800ms] ease-out"/>
+          <picture><source srcset="images/work-02.webp" type="image/webp"><img src="images/work-02.jpg" alt="タービンノズル 曲面研磨" loading="lazy" class="wk-img absolute inset-0 w-full h-full object-cover transition-transform duration-[800ms] ease-out"/></picture>
           <div class="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent to-black/75 z-10"></div>
         </div>
         <div class="absolute top-4 left-4 font-mono text-[10px] tracking-[.2em] text-paper/60 z-20">実績 三</div>
@@ -416,7 +416,7 @@ tailwind.config = {
       </div>
       <div class="wk relative cursor-pointer overflow-hidden aspect-square lg:col-span-6">
         <div class="absolute inset-0 bg-ink overflow-hidden">
-          <img src="images/work-04.jpg" alt="反射鏡 鏡面仕上げ" loading="lazy" class="wk-img absolute inset-0 w-full h-full object-cover transition-transform duration-[800ms] ease-out"/>
+          <picture><source srcset="images/work-04.webp" type="image/webp"><img src="images/work-04.jpg" alt="反射鏡 鏡面仕上げ" loading="lazy" class="wk-img absolute inset-0 w-full h-full object-cover transition-transform duration-[800ms] ease-out"/></picture>
           <div class="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent to-black/75 z-10"></div>
         </div>
         <div class="absolute top-4 left-4 font-mono text-[10px] tracking-[.2em] text-paper/60 z-20">実績 四</div>
@@ -465,7 +465,7 @@ tailwind.config = {
         <p class="font-serif text-[15px] md:text-[16px] leading-[2.1] md:leading-[2.2] text-ink-2 mb-5 text-pretty">「もう一度この輝きを見たい」という期待に応えること。それが私たちの仕事です。</p>
         <!-- 代表写真 -->
         <div class="relative mt-8 overflow-hidden bg-paper-2 aspect-[3/4] max-w-[220px] mx-auto">
-          <img src="images/representative.jpg" alt="代表取締役 松本 昌浩" class="w-full h-full object-cover object-top" onerror="this.parentElement.classList.add('placeholder-ph')"/>
+          <picture><source srcset="images/representative.webp" type="image/webp"><img src="images/representative.jpg" alt="代表取締役 松本 昌浩" class="w-full h-full object-cover object-top" onerror="this.parentElement.parentElement.classList.add('placeholder-ph')"/></picture>
           <div class="absolute inset-0 hidden items-center justify-center flex-col gap-2 text-muted placeholder-ph:flex">
             <svg class="w-10 h-10 stroke-current fill-none stroke-[1.2] opacity-40" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
             <span class="text-[11px] tracking-[.14em] opacity-40">representative.jpg</span>
