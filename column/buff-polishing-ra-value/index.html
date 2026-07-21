@@ -106,14 +106,29 @@ tailwind.config = {
 
     <p>「バフ研磨とは何か」と調べても、専門用語が多くてイメージしにくい——そんな声をお客様からよく耳にします。本記事では、創業58年・川崎の金属研磨工場として現場で積み重ねてきた経験をもとに、バフ研磨の基本から工程・Ra値の見方まで、できるだけわかりやすくお伝えします。</p>
 
-    <h2>バフ研磨とは</h2>
+<nav aria-label="目次" class="bg-paper-2 border-l-[3px] border-accent px-5 py-4 mb-2">
+  <p class="font-mono text-[10px] tracking-[.2em] text-muted mb-3">目次</p>
+  <ol class="list-decimal pl-4 space-y-1.5 font-serif text-[14px] leading-[1.7] text-accent-ink marker:text-muted marker:font-mono marker:text-[11px]">
+    <li><a href="#what-is" class="hover:underline underline-offset-2">バフ研磨とは</a></li>
+    <li><a href="#buff-types" class="hover:underline underline-offset-2">バフの種類と使い分け</a></li>
+    <li><a href="#compound" class="hover:underline underline-offset-2">研磨剤（コンパウンド）の種類</a></li>
+    <li><a href="#process" class="hover:underline underline-offset-2">バフ研磨の工程</a></li>
+    <li><a href="#ra-value" class="hover:underline underline-offset-2">Ra値とは何か——仕上がりの「粗さ」を数値で見る</a></li>
+    <li><a href="#materials" class="hover:underline underline-offset-2">バフ研磨が適した素材</a></li>
+    <li><a href="#pros-cons" class="hover:underline underline-offset-2">バフ研磨のメリット・デメリット</a></li>
+    <li><a href="#about-us" class="hover:underline underline-offset-2">松本研磨工業のバフ研磨について</a></li>
+  </ol>
+</nav>
+
+
+    <h2 id="what-is">バフ研磨とは</h2>
     <p>バフ研磨とは、布・ウール・スポンジなどの柔軟な素材でできた「バフ」と呼ばれる研磨輪を高速回転させ、研磨剤（コンパウンド）とともに金属表面を磨き上げる加工法です。</p>
     <p>研削（けずる加工）とは異なり、表面の微細な凹凸を整えながら光沢を引き出すのがバフ研磨の特徴です。ステンレス・アルミ・真鍮・銅・鉄など、幅広い金属素材に対応できます。</p>
     <div class="note">
       「バフ」は英語の "buff"（磨く）が語源で、もともと柔らかい革製の研磨具を指していました。現在は布製やウール製が主流ですが、用途に応じてさまざまな素材のものが使われています。
     </div>
 
-    <h2>バフの種類と使い分け</h2>
+    <h2 id="buff-types">バフの種類と使い分け</h2>
     <p>バフは素材によって研磨力と仕上がりが大きく異なります。目的に合わせて使い分けるのが、きれいな仕上がりへの近道です。</p>
     <table>
       <tr><th>バフの種類</th><th>特徴</th><th>主な用途</th></tr>
@@ -124,7 +139,7 @@ tailwind.config = {
       <tr><td>スポンジバフ</td><td>最も柔らかく傷がつきにくい</td><td>最終仕上げ・鏡面</td></tr>
     </table>
 
-    <h2>研磨剤（コンパウンド）の種類</h2>
+    <h2 id="compound">研磨剤（コンパウンド）の種類</h2>
     <p>バフと組み合わせて使う研磨剤は「コンパウンド」とも呼ばれ、棒状に固めたものが現場では一般的です。研磨力の強い順に使い分けます。</p>
     <ul>
       <li><strong>赤棒（荒仕上げ用）</strong>：研磨粒子が粗く、傷・錆・スケールの除去に使う。最初の工程で使用。</li>
@@ -132,7 +147,7 @@ tailwind.config = {
       <li><strong>青棒（鏡面仕上げ用）</strong>：粒子が最も細かく、鏡のような光沢を出す最終工程で使用。</li>
     </ul>
 
-    <h2>バフ研磨の工程</h2>
+    <h2 id="process">バフ研磨の工程</h2>
     <p>バフ研磨は一工程ではなく、複数の段階を経て仕上がりに近づけていくのが基本です。</p>
     <ul>
       <li><strong>1. 前処理</strong>：油脂・汚れ・酸化皮膜の除去。洗浄や脱脂処理を行う。</li>
@@ -145,7 +160,7 @@ tailwind.config = {
       工程を省略すると前工程の傷が残ります。「早く仕上げたい」というご要望はよくありますが、きれいな鏡面を出すには各工程を丁寧に積み重ねることが大切です。
     </div>
 
-    <h2>Ra値とは何か——仕上がりの「粗さ」を数値で見る</h2>
+    <h2 id="ra-value">Ra値とは何か——仕上がりの「粗さ」を数値で見る</h2>
     <p>Ra（算術平均粗さ）は、表面の凹凸の平均的な高さを示す数値です。単位はμm（マイクロメートル）で、数値が小さいほど表面が滑らかです。</p>
     <table>
       <tr><th>Ra値の目安</th><th>仕上がりの状態</th><th>主な用途・特徴</th></tr>
@@ -158,7 +173,7 @@ tailwind.config = {
     <h3>Ra値だけで判断するのは難しい</h3>
     <p>図面にRa値が記載されていても、実際の見た目や触り心地は「どのバフと研磨剤を使ったか」「何工程かけたか」によっても変わります。松本研磨工業では、Ra値の数値とともに用途・見た目のご要望をお聞きし、最適な工程をご提案しています。</p>
 
-    <h2>バフ研磨が適した素材</h2>
+    <h2 id="materials">バフ研磨が適した素材</h2>
     <p>バフ研磨は金属全般に対応できますが、素材ごとに研磨の難易度や仕上がりの特性が異なります。</p>
     <ul>
       <li><strong>ステンレス</strong>：最もご依頼が多い素材。鏡面〜ヘアラインまで幅広く対応可能。</li>
@@ -168,7 +183,7 @@ tailwind.config = {
       <li><strong>チタン</strong>：硬く研磨しにくいが、バフで美しい光沢を出せる。航空・医療分野での需要あり。</li>
     </ul>
 
-    <h2>バフ研磨のメリット・デメリット</h2>
+    <h2 id="pros-cons">バフ研磨のメリット・デメリット</h2>
     <h3>メリット</h3>
     <ul>
       <li>鏡面仕上げ（Ra0.2以下）が実現できる</li>
@@ -183,12 +198,36 @@ tailwind.config = {
       <li>研磨剤が残留しやすいため、精密機器・食品用途では後洗浄が必須</li>
     </ul>
 
-    <h2>松本研磨工業のバフ研磨について</h2>
+    <h2 id="about-us">松本研磨工業のバフ研磨について</h2>
     <p>川崎区で1967年に創業した松本研磨工業は、バフ研磨を主力に、ベルト研磨・ヘアライン加工・フレキ研磨まで一貫して対応しています。職人2名の小さな工場ですが、タービンブレードの鏡面仕上げからモニュメントの大型ステンレス部材まで、機械化では対応しにくい一点ものや特急案件に強みがあります。</p>
     <p>「図面はないけど現物がある」「Ra値は指定されているが工法はお任せしたい」といったご相談も歓迎です。まずはお気軽にご連絡ください。</p>
 
   </div>
 </article>
+
+<aside class="border-t border-line-light pt-10 pb-2">
+  <div class="wrap">
+    <p class="font-mono text-[10px] tracking-[.2em] text-muted mb-4">関連記事</p>
+    <div class="border-t border-line-light">
+      <a href="../metal-machining/" class="block border-b border-line-light py-4 pl-0 hover:pl-2 transition-all group">
+        <div class="font-mono text-[10px] tracking-[.16em] text-muted mb-1">2026.07.22　加工基礎知識</div>
+        <p class="font-serif text-[14px] font-medium leading-[1.6] group-hover:text-accent transition-colors">金属加工とは？種類・方法・素材の選び方を神奈川県川崎市の職人が解説</p>
+      </a>
+      <a href="../flexible-polishing/" class="block border-b border-line-light py-4 pl-0 hover:pl-2 transition-all group">
+        <div class="font-mono text-[10px] tracking-[.16em] text-muted mb-1">2026.07.20　仕上げ技術</div>
+        <p class="font-serif text-[14px] font-medium leading-[1.6] group-hover:text-accent transition-colors">フレキ研磨とは？特徴・用途・他の研磨との違いを神奈川県川崎市の職人が解説</p>
+      </a>
+      <a href="../hairline-finish/" class="block border-b border-line-light py-4 pl-0 hover:pl-2 transition-all group">
+        <div class="font-mono text-[10px] tracking-[.16em] text-muted mb-1">2026.07.20　仕上げ技術</div>
+        <p class="font-serif text-[14px] font-medium leading-[1.6] group-hover:text-accent transition-colors">ヘアライン仕上げとは？特徴・工程・バフ研磨との違いを神奈川県川崎市の職人が解説</p>
+      </a>
+      <a href="../belt-polishing/" class="block border-b border-line-light py-4 pl-0 hover:pl-2 transition-all group">
+        <div class="font-mono text-[10px] tracking-[.16em] text-muted mb-1">2026.07.20　仕上げ技術</div>
+        <p class="font-serif text-[14px] font-medium leading-[1.6] group-hover:text-accent transition-colors">ベルト研磨とは？番手・工程・バフ研磨との違いを神奈川県川崎市の職人が解説</p>
+      </a>
+    </div>
+  </div>
+</aside>
 
 <div class="border-t border-line-light py-8">
   <div class="wrap flex items-center justify-between">
