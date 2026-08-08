@@ -21,6 +21,30 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://matsumoto-kenma.co.jp/column/prototype-surface-finish/</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://matsumoto-kenma.co.jp/column/small-lot-polishing/</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://matsumoto-kenma.co.jp/column/prototype-polishing/</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://matsumoto-kenma.co.jp/column/polishing-single-piece/</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://matsumoto-kenma.co.jp/column/aluminum-polishing/</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>yearly</changefreq>
