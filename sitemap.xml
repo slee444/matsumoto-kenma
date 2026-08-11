@@ -21,6 +21,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://matsumoto-kenma.co.jp/column/stainless-buff-finish/</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://matsumoto-kenma.co.jp/column/buff-finish/</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://matsumoto-kenma.co.jp/column/buff-polishing-grinder/</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://matsumoto-kenma.co.jp/column/prototype-surface-finish/</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>yearly</changefreq>
