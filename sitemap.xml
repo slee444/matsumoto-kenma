@@ -21,6 +21,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://matsumoto-kenma.co.jp/column/brass-polishing/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://matsumoto-kenma.co.jp/column/titanium-polishing/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://matsumoto-kenma.co.jp/column/copper-polishing/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://matsumoto-kenma.co.jp/column/yokohama-metal-polishing/</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>yearly</changefreq>
