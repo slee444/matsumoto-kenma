@@ -21,6 +21,30 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://matsumoto-kenma.co.jp/column/iron-steel-polishing/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://matsumoto-kenma.co.jp/column/rust-removal/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://matsumoto-kenma.co.jp/column/butsugu-polishing/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://matsumoto-kenma.co.jp/column/nameplate-polishing/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://matsumoto-kenma.co.jp/column/buff-polishing-tips/</loc>
     <lastmod>2026-08-17</lastmod>
     <changefreq>yearly</changefreq>
