@@ -21,6 +21,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://matsumoto-kenma.co.jp/column/buff-polishing-machine/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://matsumoto-kenma.co.jp/column/buff-kake/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://matsumoto-kenma.co.jp/column/aluminum-buff-finish/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://matsumoto-kenma.co.jp/column/polishing-types/</loc>
     <lastmod>2026-08-22</lastmod>
     <changefreq>yearly</changefreq>
