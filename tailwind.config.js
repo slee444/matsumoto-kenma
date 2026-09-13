@@ -18,7 +18,7 @@ module.exports = {
         'line-light': '#D9D4C8',
       },
       fontFamily: {
-        serif: ['"Noto Serif JP"', 'serif'],
+        serif: ['"Noto Sans JP"', 'sans-serif'],
         mono:  ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
     }

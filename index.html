@@ -60,14 +60,14 @@
   }
 }
 </script>
-<link rel="preload" as="font" type="font/woff2" href="/fonts/noto-serif-jp-500.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/noto-sans-jp-500.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
 <style>
-@font-face {font-family:'Noto Serif JP';font-style:normal;font-weight:300;font-display:swap;src:url(/fonts/noto-serif-jp-300.woff2) format('woff2');}
-@font-face {font-family:'Noto Serif JP';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/noto-serif-jp-400.woff2) format('woff2');}
-@font-face {font-family:'Noto Serif JP';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/noto-serif-jp-500.woff2) format('woff2');}
-@font-face {font-family:'Noto Serif JP';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/noto-serif-jp-600.woff2) format('woff2');}
-@font-face {font-family:'Noto Serif JP';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/noto-serif-jp-700.woff2) format('woff2');}
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:300;font-display:swap;src:url(/fonts/noto-sans-jp-300.woff2) format('woff2');}
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/noto-sans-jp-400.woff2) format('woff2');}
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/noto-sans-jp-500.woff2) format('woff2');}
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/noto-sans-jp-600.woff2) format('woff2');}
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/noto-sans-jp-700.woff2) format('woff2');}
 @font-face {font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;src:url(/fonts/inter-300.woff2) format('woff2');}
 @font-face {font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/inter-400.woff2) format('woff2');}
 @font-face {font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/inter-500.woff2) format('woff2');}
@@ -91,18 +91,18 @@
   .menu-link.active::after{content:"";position:absolute;left:16px;right:16px;bottom:4px;height:1px;background:#1B3A6B}
 
   /* Hero title — fluid size */
-  .hero-title{font-family:"Noto Serif JP",serif;font-weight:500;font-size:clamp(44px,7.2vw,108px);line-height:1.02;letter-spacing:-.01em;margin-bottom:28px}
+  .hero-title{font-family:"Noto Sans JP",serif;font-weight:500;font-size:clamp(44px,7.2vw,108px);line-height:1.02;letter-spacing:-.01em;margin-bottom:28px}
   @media(min-width:768px){.hero-title{margin-bottom:34px}}
 
   /* Section title — fluid size */
-  .sec-title{font-family:"Noto Serif JP",serif;font-size:clamp(30px,4.4vw,58px);font-weight:500;line-height:1.15;letter-spacing:-.005em;margin-bottom:12px}
+  .sec-title{font-family:"Noto Sans JP",serif;font-size:clamp(30px,4.4vw,58px);font-weight:500;line-height:1.15;letter-spacing:-.005em;margin-bottom:12px}
 
   /* Contact h2 — fluid size */
-  .cta-h2{font-family:"Noto Serif JP",serif;font-size:clamp(36px,6vw,80px);font-weight:500;line-height:1.1;margin-bottom:24px;letter-spacing:-.01em}
+  .cta-h2{font-family:"Noto Sans JP",serif;font-size:clamp(36px,6vw,80px);font-weight:500;line-height:1.1;margin-bottom:24px;letter-spacing:-.01em}
   @media(min-width:768px){.cta-h2{margin-bottom:28px}}
 
   /* Dropcap */
-  .ab-copy p:first-child::first-letter{font-family:"Noto Serif JP",serif;font-size:64px;float:left;line-height:.9;padding:6px 12px 0 0;color:#1B3A6B;font-weight:500}
+  .ab-copy p:first-child::first-letter{font-family:"Noto Sans JP",serif;font-size:64px;float:left;line-height:.9;padding:6px 12px 0 0;color:#1B3A6B;font-weight:500}
 
   /* Company table */
   .ab-table{width:100%;border-top:1px solid #D9D4C8}
@@ -124,7 +124,7 @@
 
 
   /* Contact watermark */
-  .contact-wm{position:absolute;left:50%;top:50%;translate:-50% -50%;font-family:"Noto Serif JP",serif;font-size:clamp(120px,25vw,380px);font-weight:600;color:rgba(14,14,16,.03);letter-spacing:-.02em;pointer-events:none;user-select:none;white-space:nowrap}
+  .contact-wm{position:absolute;left:50%;top:50%;translate:-50% -50%;font-family:"Noto Sans JP",serif;font-size:clamp(120px,25vw,380px);font-weight:600;color:rgba(14,14,16,.03);letter-spacing:-.02em;pointer-events:none;user-select:none;white-space:nowrap}
 
   /* Noise */
   .noise::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.035;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
@@ -138,7 +138,7 @@
   .wk:hover .wk-img{transform:scale(1.04)}
 
   /* Hero vertical side label */
-  .hero-side{position:absolute;right:40px;top:130px;writing-mode:vertical-rl;font-family:"Noto Serif JP",serif;font-size:12px;letter-spacing:.5em;color:#6B6A66;display:none}
+  .hero-side{position:absolute;right:40px;top:130px;writing-mode:vertical-rl;font-family:"Noto Sans JP",serif;font-size:12px;letter-spacing:.5em;color:#6B6A66;display:none}
   @media(min-width:1200px){.hero-side{display:block}}
 
   /* Serif body readability */
