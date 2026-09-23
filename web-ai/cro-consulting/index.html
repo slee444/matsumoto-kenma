@@ -1,0 +1,776 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5F157JYQD2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-5F157JYQD2');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CVR改善／CROコンサルティング｜マツケンスタジオ by 松本研磨工業</title>
+<meta name="description" content="見てもらえているのに問い合わせが来ないサイトの改善。製造業・中小企業のサイトの、つまずいている場所を見つけて直します。">
+<link rel="canonical" href="https://matsumoto-kenma.co.jp/web-ai/cro-consulting/">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<meta property="og:title" content="CVR改善／CROコンサルティング｜マツケンスタジオ by 松本研磨工業">
+<meta property="og:description" content="見てもらえているのに問い合わせが来ないサイトの改善。製造業・中小企業のサイトの、つまずいている場所を見つけて直します。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://matsumoto-kenma.co.jp/web-ai/cro-consulting/">
+<meta property="og:image" content="https://matsumoto-kenma.co.jp/images/ogp.png">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/noto-sans-jp-500.woff2" crossorigin>
+<style>
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/noto-sans-jp-400.woff2) format('woff2');}
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/noto-sans-jp-500.woff2) format('woff2');}
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/noto-sans-jp-600.woff2) format('woff2');}
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/noto-sans-jp-700.woff2) format('woff2');}
+@font-face {font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/jetbrains-mono-400.woff2) format('woff2');}
+@font-face {font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/jetbrains-mono-500.woff2) format('woff2');}
+</style>
+<link rel="stylesheet" href="/css/tailwind.css">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#F4F2ED;color:#0E0E10;font-family:'Noto Sans JP',sans-serif;font-size:15px;line-height:1.7}
+  a{color:inherit;text-decoration:none}
+  .pwrap{max-width:960px;margin:0 auto;padding:0 20px}
+  @media(min-width:768px){.pwrap{padding:0 40px}}
+  .sec-label{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.14em;color:#4A4A47;margin-bottom:16px}
+  .sec-ttl{font-size:24px;font-weight:600;line-height:1.4;margin-bottom:20px}
+  @media(min-width:768px){.sec-ttl{font-size:28px}}
+
+  /* Hero */
+  .hero-wrap{position:relative;overflow:hidden}
+  .wm{position:absolute;right:-.4em;top:-.12em;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:min(38vw,340px);line-height:1;color:rgba(244,242,237,.045);pointer-events:none;user-select:none;white-space:nowrap;z-index:0}
+  .icon-badge{width:64px;height:64px;border-radius:9999px;border:1.5px solid rgba(244,242,237,.35);display:grid;place-items:center;font-size:26px;color:#F4F2ED;flex-shrink:0}
+
+  /* Cards with accent bar */
+  .card2{position:relative;border:1px solid rgba(14,14,16,.1);background:#fff;padding:30px 24px 26px;border-top:3px solid #1B3A6B}
+  .card2.alt{border-top-color:#2E5BA6}
+  .card2 .idx{font-family:'JetBrains Mono',monospace;font-size:11px;color:#8a8a86;letter-spacing:.15em;margin-bottom:14px}
+
+  /* Spec box */
+  .spec-box{background:#E9E6DE;border-radius:4px;padding:4px 28px}
+  .spec-box div{display:grid;grid-template-columns:140px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid rgba(14,14,16,.08)}
+  .spec-box div:last-child{border-bottom:none}
+  .spec-box dt{font-size:13px;color:#4A4A47}
+  .spec-box dd{font-size:14px}
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+  .tag-pill{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;border:1px solid rgba(14,14,16,.15);padding:6px 12px;border-radius:2px;color:#4A4A47}
+
+  /* Process */
+  .step2{position:relative;padding:6px 0 30px 32px;border-left:2px solid #D9D4C8}
+  .step2:last-child{border-left:2px solid transparent;padding-bottom:2px}
+  .step2::before{content:'';position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:#1B3A6B}
+  .step2.alt::before{background:#2E5BA6}
+  .step2 .pnum{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:#8a8a86;margin-bottom:4px}
+
+  /* FAQ (matches homepage Q/A style) */
+  .faq2{display:grid;grid-template-columns:36px 1fr;gap:16px;padding:22px 0;border-top:1px solid #D9D4C8}
+  .faq2:last-child{border-bottom:1px solid #D9D4C8}
+  .faq2 .qa{font-family:'Noto Sans JP',sans-serif;font-size:22px;font-weight:600;line-height:1}
+  .faq2 .q{color:#1B3A6B}
+  .faq2 .a{color:#8a8a86}
+
+  /* Note / caution list */
+  .note-list{border-left:2px solid #0E0E10}
+  .note-list li{list-style:none;padding:18px 0 18px 22px;border-bottom:1px solid #D9D4C8}
+  .note-list li:last-child{border-bottom:none}
+  .note-list .note-ttl{font-weight:600;font-size:14px;margin-bottom:6px}
+
+  .wrap{max-width:1360px;margin:0 auto;padding:0 20px}
+  @media(min-width:768px){.wrap{padding:0 40px}}
+  .menu-link.active::after{content:"";position:absolute;left:16px;right:16px;bottom:4px;height:1px;background:#1B3A6B}
+  .mega.open .mega-panel, .mega:hover .mega-panel{opacity:1;visibility:visible;--tw-translate-y:0}
+  .mega.open .mega-caret{transform:rotate(180deg)}
+  .mega:hover .mega-caret{transform:rotate(180deg)}
+  .drawer-acc summary::-webkit-details-marker{display:none}
+  .drawer-acc[open] .drawer-acc-icon{transform:rotate(180deg)}
+  .mega-panel .grid>div{min-width:0}
+  .mega-panel li a{word-break:break-word}
+  .bg-navy .text-muted-ink,.bg-navy-2 .text-muted-ink{color:rgba(244,242,237,0.72)!important}
+</style>
+<style>
+/* site-chrome: match homepage header/footer */
+@font-face {font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/inter-400.woff2) format('woff2');}
+@font-face {font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/inter-500.woff2) format('woff2');}
+@font-face {font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/inter-600.woff2) format('woff2');}
+nav.fixed,#mobileMenu,footer{font-family:Inter,"Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Yu Gothic",sans-serif;font-size:15px;line-height:1.75;letter-spacing:.03em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+nav.fixed :is(p,li,dd,span),#mobileMenu :is(p,li,dd,span),footer :is(p,li,dd,span){letter-spacing:.035em}
+nav.fixed .font-serif,#mobileMenu .font-serif,footer .font-serif{font-weight:500}
+nav.fixed .font-serif.font-medium,#mobileMenu .font-serif.font-medium,footer .font-serif.font-medium{font-weight:600}
+nav.fixed .font-serif.font-semibold,#mobileMenu .font-serif.font-semibold,footer .font-serif.font-semibold{font-weight:700}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://matsumoto-kenma.co.jp/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Web集客・AI活用支援",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "CVR改善／CROコンサルティング",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/cro-consulting/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "費用はどれくらいかかりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "お手伝いする範囲によって変わるため、無料相談でお話をお聞きしてからお見積りします。相談だけでも費用はかかりません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "アクセスが少なくても意味はありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。少ないアクセスでも、問い合わせにつながる割合を上げることは大事です。あわせて集客の方法もご提案します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "サイトを作り直す必要はありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "多くの場合、作り直さなくても直せるところがあります。まずは今のサイトを確認します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "どれくらいで効果が出ますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "直す内容によりますが、ボタンやフォームの改善は比較的早く変化が見えることが多いです。"
+      }
+    }
+  ]
+}
+</script>
+<style>
+  /* Matsuken Studio: light theme */
+  html,body{background:#FFFFFF}
+  .pwrap.max-w-\[800px\]{max-width:880px}
+  .st-alt{background:#F4F6F9}
+  .st-cta{background:#FFF9D6}
+  .sec-label{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.14em;color:#1B3A6B;margin-bottom:16px}
+  .sec-ttl{font-size:24px;font-weight:700;line-height:1.45;margin-bottom:20px;color:#0E0E10}
+  @media(min-width:768px){.sec-ttl{font-size:30px}}
+  .st-logo{display:inline-flex;align-items:center;gap:12px}
+  .st-mark{width:40px;height:40px;border-radius:10px;background:#1B3A6B;color:#fff;display:grid;place-items:center;font-weight:700;font-size:22px;position:relative;flex-shrink:0}
+  .st-mark::after{content:'';position:absolute;right:-3px;top:-3px;width:12px;height:12px;border-radius:50%;background:#F5DE00;border:2px solid #fff}
+  .st-name{display:block;font-weight:800;font-size:20px;letter-spacing:.04em;color:#0E0E10;line-height:1.2}
+  .st-by{display:block;font-size:11px;letter-spacing:.14em;color:#5E5E65;margin-top:3px}
+  .st-hero{position:relative;overflow:hidden;background:#fff;border-bottom:1px solid #E6E9EE}
+  .st-hero::before{content:'';position:absolute;right:-120px;top:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,#FFF4B0 0%,rgba(255,244,176,0) 70%);pointer-events:none}
+  .st-hero::after{content:'';position:absolute;right:40px;bottom:40px;width:260px;height:180px;background-image:radial-gradient(#C9D2DF 1.2px,transparent 1.2px);background-size:14px 14px;opacity:.7;pointer-events:none}
+  .trust{display:grid;grid-template-columns:1fr;border-top:1px solid #E6E9EE}
+  @media(min-width:768px){.trust{grid-template-columns:repeat(3,1fr)}}
+  .trust>div{padding:20px 0}
+  @media(min-width:768px){.trust>div{padding:24px 28px}.trust>div+div{border-left:1px solid #E6E9EE}.trust>div:first-child{padding-left:0}}
+  .trust .t-big{font-size:17px;font-weight:700;color:#0E0E10;margin-bottom:4px}
+  .trust .t-sub{font-size:13px;color:#5E5E65;line-height:1.8}
+  .card2{position:relative;border:1px solid #E1E5EB;background:#fff;padding:30px 24px 26px;border-top:3px solid #1B3A6B;border-radius:6px}
+  .card2.alt{border-top-color:#2E5BA6}
+  .card2 .idx{font-family:'JetBrains Mono',monospace;font-size:11px;color:#8a8a86;letter-spacing:.15em;margin-bottom:14px}
+  .svc-list{background:#fff;border:1px solid #E1E5EB;border-radius:8px;padding:10px 28px}
+  .svc-list li{list-style:none;display:grid;grid-template-columns:22px 1fr;gap:10px;padding:14px 0;border-bottom:1px solid #EEF1F5;font-size:14px;line-height:1.8}
+  .svc-list li:last-child{border-bottom:none}
+  .svc-list li::before{content:'';width:10px;height:10px;margin-top:8px;border-radius:3px;background:#F5DE00;box-shadow:0 0 0 2px #1B3A6B inset}
+  .step2{position:relative;padding:6px 0 30px 32px;border-left:2px solid #DDE3EB}
+  .step2:last-child{border-left:2px solid transparent;padding-bottom:2px}
+  .step2::before{content:'';position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:#1B3A6B}
+  .step2.alt::before{background:#2E5BA6}
+  .step2 .pnum{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:#8a8a86;margin-bottom:4px}
+  .faq2{display:grid;grid-template-columns:36px 1fr;gap:16px;padding:22px 0;border-top:1px solid #E1E5EB}
+  .faq2:last-child{border-bottom:1px solid #E1E5EB}
+  .faq2 .qa{font-size:22px;font-weight:700;line-height:1;color:#1B3A6B}
+  .price-box{border:1px solid #E1E5EB;border-radius:8px;background:#fff;padding:32px 28px;display:grid;grid-template-columns:1fr;gap:18px}
+  @media(min-width:768px){.price-box{grid-template-columns:1fr auto;align-items:center;padding:36px 40px}}
+  .case-card{display:grid;grid-template-columns:1fr;border:1px solid #E1E5EB;border-radius:8px;overflow:hidden;background:#fff;transition:border-color .2s,box-shadow .2s}
+  .case-card:hover{border-color:#1B3A6B;box-shadow:0 10px 30px -14px rgba(27,58,107,.35)}
+  .case-card .c-img{background:linear-gradient(135deg,#EAF0F8,#FFF6C4);min-height:160px;display:grid;place-items:center;color:#1B3A6B;font-size:13px;font-weight:600;letter-spacing:.14em}
+  @media(min-width:768px){.case-card{grid-template-columns:280px 1fr}}
+  .rel-grid{display:grid;grid-template-columns:1fr;gap:28px}
+  @media(min-width:768px){.rel-grid{grid-template-columns:repeat(4,1fr)}}
+  .rel-grid a{display:block;padding:9px 0;border-bottom:1px solid #E1E5EB;font-size:14px;transition:color .15s}
+  .rel-grid a:hover{color:#2E5BA6}
+  .rel-grid a.current{color:#8a8a86;pointer-events:none}
+  .svc-card{display:block;background:#fff;border:1px solid #E1E5EB;border-radius:8px;padding:26px 24px;transition:border-color .2s,box-shadow .2s,transform .2s}
+  a.svc-card:hover{border-color:#1B3A6B;box-shadow:0 10px 30px -14px rgba(27,58,107,.35);transform:translateY(-2px)}
+  .story p{font-size:15px;line-height:2.1;color:#26262B;margin-bottom:20px}
+  @media(min-width:768px){.story p{font-size:16px}}
+  .story-quote{font-size:clamp(20px,2.6vw,28px);font-weight:700;line-height:1.6;color:#0E0E10;padding-left:20px;border-left:4px solid #F5DE00}
+  .target-card{background:#fff;border:1px solid #E1E5EB;border-radius:8px;padding:24px}
+  .target-card .tg{display:inline-block;font-size:12px;font-weight:700;color:#1B3A6B;background:#FFF4B0;border-radius:999px;padding:4px 12px;margin-bottom:12px}
+</style>
+</head>
+<body>
+<nav class="fixed top-0 left-0 right-0 z-50 bg-paper/80 backdrop-blur-[14px] border-b border-ink/[0.08]">
+  <div class="wrap flex items-center justify-between h-[60px] md:h-[72px]">
+
+    <!-- Brand -->
+    <a href="../../#home" class="flex items-center gap-3 md:gap-[14px]">
+      <span class="w-9 h-9 md:w-10 md:h-10 border-[1.5px] border-ink rounded-full grid place-items-center font-serif font-semibold text-lg md:text-xl bg-ink text-paper">松</span>
+      <span class="leading-[1.1]">
+        <div class="font-serif text-[13px] md:text-[15px] font-medium tracking-[.04em]">株式会社松本研磨工業</div>
+        <div class="hidden sm:block font-mono text-[10px] text-muted tracking-[.22em] mt-[2px]">創業58年・川崎</div>
+      </span>
+    </a>
+
+    <!-- Desktop menu — hidden below md -->
+    <div class="hidden md:flex gap-[2px] items-center">
+      <a href="../../#home" class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">ホーム</a>
+
+      <!-- 金属研磨技術 メガメニュー -->
+      <div class="mega relative">
+        <button class="mega-btn flex items-center gap-1 px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors" aria-expanded="false">
+          金属研磨技術
+          <svg class="w-3 h-3 stroke-current fill-none stroke-[2] mega-caret transition-transform" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="mega-panel absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[320px] bg-navy text-paper rounded-sm shadow-[0_24px_48px_-12px_rgba(0,0,0,.35)] p-2 opacity-0 invisible translate-y-1 transition-all duration-150">
+          <div class="pb-2 mb-1 border-b border-paper/10">
+            <a href="../../polishing/" class="block px-4 py-2.5 rounded-sm text-[13px] font-semibold hover:bg-paper/10 hover:text-paper hover:underline underline-offset-4 transition-colors">金属研磨技術 一覧 →</a>
+          </div>
+          <a href="../../polishing/buff-polishing/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">バフ研磨</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">鏡面仕上げ</div>
+          </a>
+          <a href="../../polishing/belt-polishing/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">ベルト研磨</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">バリ取り・形状補正</div>
+          </a>
+          <a href="../../polishing/hairline-finish/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">ヘアライン加工</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">一方向のライン仕上げ</div>
+          </a>
+          <a href="../../polishing/flexible-polishing/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">フレキ研磨／曲面研磨</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">複雑形状への手作業</div>
+          </a>
+        </div>
+      </div>
+
+      <a href="../../#works" class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">加工実績</a>
+
+      <!-- Web集客・AI活用支援 メガメニュー -->
+      <div class="mega relative">
+        <button class="mega-btn flex items-center gap-1 px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors" aria-expanded="false">
+          Web集客・AI活用支援
+          <svg class="w-3 h-3 stroke-current fill-none stroke-[2] mega-caret transition-transform" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="mega-panel fixed left-1/2 -translate-x-1/2 top-[72px] mt-2 w-[860px] max-w-[92vw] bg-navy text-paper rounded-sm shadow-[0_24px_48px_-12px_rgba(0,0,0,.35)] p-7 opacity-0 invisible translate-y-1 transition-all duration-150">
+          <div class="mb-6 pb-5 border-b border-paper/10 flex items-center justify-between">
+            <a href="../../web-ai/" class="font-serif text-[13px] font-semibold hover:text-paper hover:underline underline-offset-4 transition-colors">Web集客・AI活用支援 トップ →</a>
+            <a href="../../web-ai/case/" class="font-serif text-[13px] font-semibold hover:text-paper hover:underline underline-offset-4 transition-colors">実績・事例 →</a>
+          </div>
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">戦略・コンサルティング</div>
+              <ul class="space-y-2">
+                <li><a href="../../web-ai/consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">デジタルマーケティングコンサルティング</a></li>
+                <li><a href="../../web-ai/btob-marketing/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">BtoBマーケティング支援</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">集客・改善</div>
+              <ul class="space-y-2">
+                <li><a href="../../web-ai/seo-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">SEOコンサルティング</a></li>
+                <li><a href="../../web-ai/ad-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">Web広告コンサルティング</a></li>
+                <li><a href="../../web-ai/cro-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">CVR改善／CROコンサルティング</a></li>
+                <li><a href="../../web-ai/llmo-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">LLMOコンサルティング</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">制作</div>
+              <ul class="space-y-2">
+                <li><a href="../../web-ai/website/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">サイト制作</a></li>
+                <li><a href="../../web-ai/lp/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">LP制作</a></li>
+                <li><a href="../../web-ai/seo-writing/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">SEO/LLMO記事制作代行</a></li>
+                <li><a href="../../web-ai/case-interview/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">事例インタビュー記事制作</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">AI活用支援</div>
+              <ul class="space-y-2">
+                <li><a href="../../web-ai/ai-katsuyo/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">AI活用支援（業務効率化・自動化）</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- コラム メガメニュー -->
+      <div class="mega relative">
+        <button class="mega-btn flex items-center gap-1 px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors" aria-expanded="false">
+          コラム
+          <svg class="w-3 h-3 stroke-current fill-none stroke-[2] mega-caret transition-transform" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="mega-panel absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[320px] bg-navy text-paper rounded-sm shadow-[0_24px_48px_-12px_rgba(0,0,0,.35)] p-2 opacity-0 invisible translate-y-1 transition-all duration-150">
+          <a href="../../column/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">研磨・金属加工コラム</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">工法・材料別の技術記事</div>
+          </a>
+          <a href="../../web-ai/column/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">Web集客・AI活用支援コラム</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">製造業のためのWeb集客・AI活用</div>
+          </a>
+        </div>
+      </div>
+
+      <a href="../../company/" class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">会社情報</a>
+    </div>
+
+    <!-- CTA -->
+    <div class="flex gap-2 md:gap-[10px] items-center">
+      <a href="../../web-ai/contact/" class="inline-flex items-center gap-[10px] px-3 py-2 md:px-[18px] md:py-[11px] rounded-sm text-[11px] md:text-[13px] font-semibold tracking-[.06em] bg-ink text-paper hover:bg-accent transition-all">お問い合わせ →</a>
+      <!-- Burger — shown below md -->
+      <button class="flex md:hidden w-10 h-10 border border-ink rounded-sm items-center justify-center bg-paper" id="burgerBtn" aria-label="menu">
+        <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="fixed inset-0 z-[55] bg-navy text-paper pt-[80px] pb-8 px-6 flex flex-col gap-1 translate-x-full transition-transform duration-[350ms] ease-in-out" id="mobileMenu">
+  <button data-close class="absolute top-5 right-5 w-10 h-10 flex items-center justify-center text-paper/80 hover:text-paper" aria-label="close menu">
+    <svg class="w-6 h-6 stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+
+  <!-- LANY風：上部にCTAピル2つ -->
+  <div class="flex gap-2 mb-5">
+    <a href="../../web-ai/contact/" data-close class="flex-1 flex items-center justify-center gap-2 py-3 rounded-full bg-accent text-paper text-[13px] font-semibold tracking-[.04em]">お問い合わせ →</a>
+  </div>
+
+  <div class="overflow-y-auto flex-1 -mr-6 pr-6">
+  <a href="../../#home" data-close class="font-serif text-[17px] font-medium py-3 border-b border-paper/[.08] flex items-center justify-between">ホーム</a>
+
+  <details class="drawer-acc border-b border-paper/[.08]">
+    <summary class="font-serif text-[17px] font-medium py-3 flex items-center justify-between cursor-pointer list-none">
+      金属研磨技術
+      <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6] drawer-acc-icon transition-transform shrink-0" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="pb-4 flex flex-col gap-1">
+      <a href="../../polishing/" data-close class="text-[13px] py-1.5 mb-1 pb-2.5 border-b border-paper/[.08] font-semibold text-paper">金属研磨技術 一覧 →</a>
+      <a href="../../polishing/buff-polishing/" data-close class="text-[13px] py-1.5 opacity-85">バフ研磨</a>
+      <a href="../../polishing/belt-polishing/" data-close class="text-[13px] py-1.5 opacity-85">ベルト研磨</a>
+      <a href="../../polishing/hairline-finish/" data-close class="text-[13px] py-1.5 opacity-85">ヘアライン加工</a>
+      <a href="../../polishing/flexible-polishing/" data-close class="text-[13px] py-1.5 opacity-85">フレキ研磨／曲面研磨</a>
+    </div>
+  </details>
+
+  <a href="../../#works" data-close class="font-serif text-[17px] font-medium py-3 border-b border-paper/[.08] flex items-center justify-between">加工実績</a>
+
+  <details class="drawer-acc border-b border-paper/[.08]">
+    <summary class="font-serif text-[17px] font-medium py-3 flex items-center justify-between cursor-pointer list-none">
+      Web集客・AI活用支援
+      <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6] drawer-acc-icon transition-transform shrink-0" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="pb-4 flex flex-col gap-1">
+      <div class="flex items-center justify-between mb-1 pb-2.5 border-b border-paper/[.08]">
+        <a href="../../web-ai/" data-close class="text-[13px] font-semibold text-paper">Web集客・AI活用支援 トップ →</a>
+        <a href="../../web-ai/case/" data-close class="text-[13px] font-semibold text-paper">実績・事例 →</a>
+      </div>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-2 mb-1">戦略・コンサルティング</div>
+      <a href="../../web-ai/consulting/" data-close class="text-[13px] py-1.5 opacity-85">デジタルマーケティングコンサルティング</a>
+      <a href="../../web-ai/btob-marketing/" data-close class="text-[13px] py-1.5 opacity-85">BtoBマーケティング支援</a>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-3 mb-1">集客・改善</div>
+      <a href="../../web-ai/seo-consulting/" data-close class="text-[13px] py-1.5 opacity-85">SEOコンサルティング</a>
+      <a href="../../web-ai/ad-consulting/" data-close class="text-[13px] py-1.5 opacity-85">Web広告コンサルティング</a>
+      <a href="../../web-ai/cro-consulting/" data-close class="text-[13px] py-1.5 opacity-85">CVR改善／CROコンサルティング</a>
+      <a href="../../web-ai/llmo-consulting/" data-close class="text-[13px] py-1.5 opacity-85">LLMOコンサルティング</a>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-3 mb-1">制作</div>
+      <a href="../../web-ai/website/" data-close class="text-[13px] py-1.5 opacity-85">サイト制作</a>
+      <a href="../../web-ai/lp/" data-close class="text-[13px] py-1.5 opacity-85">LP制作</a>
+      <a href="../../web-ai/seo-writing/" data-close class="text-[13px] py-1.5 opacity-85">SEO/LLMO記事制作代行</a>
+      <a href="../../web-ai/case-interview/" data-close class="text-[13px] py-1.5 opacity-85">事例インタビュー記事制作</a>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-3 mb-1">AI活用支援</div>
+      <a href="../../web-ai/ai-katsuyo/" data-close class="text-[13px] py-1.5 opacity-85">AI活用支援（業務効率化・自動化）</a>
+    </div>
+  </details>
+
+  <details class="drawer-acc border-b border-paper/[.08]">
+    <summary class="font-serif text-[17px] font-medium py-3 flex items-center justify-between cursor-pointer list-none">
+      コラム
+      <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6] drawer-acc-icon transition-transform shrink-0" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="pb-4 flex flex-col gap-1">
+      <a href="../../column/" data-close class="text-[13px] py-2 opacity-85">研磨・金属加工コラム</a>
+      <a href="../../web-ai/column/" data-close class="text-[13px] py-2 opacity-85">Web集客・AI活用支援コラム</a>
+    </div>
+  </details>
+
+  <a href="../../company/" data-close class="font-serif text-[17px] font-medium py-3 border-b border-paper/[.08] flex items-center justify-between">会社情報</a>
+  </div>
+
+  <div class="pt-5 text-[11px] text-muted-ink/80 text-center">マツケンスタジオへのご相談は、お問い合わせフォームで受け付けています</div>
+</div>
+
+
+<main class="pt-[60px]">
+
+  <section class="st-hero pt-7 pb-12 md:py-20">
+    <div class="pwrap relative z-10">
+      <p class="font-mono text-[11px] tracking-[.2em] text-muted mb-4 md:mb-8">
+        <a href="../../" class="hover:text-accent transition-colors">ホーム</a>
+        <span class="mx-2 opacity-40">/</span>
+        <a href="../" class="hover:text-accent transition-colors">Web集客・AI活用支援</a>
+        <span class="mx-2 opacity-40">/</span>CVR改善／CROコンサルティング
+      </p>
+      <div class="mb-4 md:mb-8"><div class="st-logo"><span class="st-mark">松</span><span><span class="st-name">マツケンスタジオ</span><span class="st-by">by 松本研磨工業</span></span></div></div>
+      <div class="font-mono text-[12px] font-bold tracking-[.16em] text-accent-ink mb-3">集客・改善</div>
+      <h1 class="font-bold leading-[1.3] mb-3 md:mb-5 text-ink" style="font-size:clamp(28px,4.8vw,50px)">CVR改善／CROコンサルティング</h1>
+      <p class="text-[16px] md:text-[19px] font-bold text-ink leading-[1.7] max-w-[680px] mb-3">見てもらえているのに、問い合わせが来ない方へ。</p>
+      <p class="hidden md:block text-[14px] md:text-[15px] text-muted leading-[1.9] max-w-[680px]">サイトへの訪問はあるのに、問い合わせにつながらない。そんなサイトの「どこでお客様が帰ってしまっているか」を見つけて直します。</p>
+      <div class="mt-6 md:mt-9 flex flex-col sm:flex-row gap-2.5 md:gap-3 sm:items-center"><a href="../contact/" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] shadow-[0_10px_24px_-10px_rgba(200,170,0,.7)] rounded-full font-bold tracking-[.04em] bg-cta-yellow text-ink hover:bg-cta-yellow-h hover:-translate-y-0.5 transition-all">1分で問い合わせ →</a></div>
+      <div class="trust mt-12">
+        <div><div class="t-big">有効なお問い合わせ 3倍</div><div class="t-sub">自社サイトの制作・SEO対策で出した成果です</div></div>
+        <div><div class="t-big">マーケティング歴10年以上</div><div class="t-sub">数百社の支援経験を持つ責任者が担当します</div></div>
+        <div><div class="t-big">上場企業出身のマーケター</div><div class="t-sub">大きな会社のやり方と、現場の両方を知っています</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 md:py-20">
+    <div class="pwrap max-w-[800px]">
+      <h2 class="sec-ttl">CVR改善／CROコンサルティングとは</h2>
+      <p class="text-[17px] md:text-[19px] font-bold text-ink leading-[1.7] mb-5">訪れた人が、問い合わせまでたどり着けるようにする仕事です。</p>
+      <p class="text-[14px] md:text-[15px] leading-[2] text-ink-2 mb-4">CVR（コンバージョン率）とは、サイトに来た人のうち、問い合わせなどの行動をした人の割合のことです。これを上げるための取り組みをCRO（コンバージョン率の最適化）と呼びます。</p>
+      <p class="text-[14px] md:text-[15px] leading-[2] text-ink-2 mb-4">問い合わせボタンが見つけにくい、知りたい情報が載っていない、フォームの入力が面倒など、つまずく場所はサイトごとに違います。数字と実際の画面を見ながら、一つずつ直していきます。</p>
+    </div>
+  </section>
+
+  <section class="py-14 md:py-20 st-alt">
+    <div class="pwrap">
+      <h2 class="sec-ttl">CVR改善／CROコンサルティングで得られること</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="card2">
+          <div class="idx">01</div>
+          <div class="font-bold text-[16px] mb-2">今のアクセスのまま問い合わせが増える</div>
+          <p class="text-[13px] leading-[1.9] text-muted">集客を増やさなくても、問い合わせにつながる割合を上げられます。</p>
+        </div>
+        <div class="card2 alt">
+          <div class="idx">02</div>
+          <div class="font-bold text-[16px] mb-2">つまずいている場所が分かる</div>
+          <p class="text-[13px] leading-[1.9] text-muted">どのページで帰ってしまっているかが見えるようになります。</p>
+        </div>
+        <div class="card2">
+          <div class="idx">03</div>
+          <div class="font-bold text-[16px] mb-2">スマホでも問い合わせしやすくなる</div>
+          <p class="text-[13px] leading-[1.9] text-muted">スマホで見たときの分かりにくさも合わせて直します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-14 st-cta text-center">
+    <div class="pwrap">
+      <p class="text-ink text-[15px] md:text-[16px] font-semibold mb-5">今のサイトのつまずき、見つけてみませんか。</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3"><a href="../contact/" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] shadow-[0_10px_24px_-10px_rgba(200,170,0,.7)] rounded-full font-bold tracking-[.04em] bg-cta-yellow text-ink hover:bg-cta-yellow-h hover:-translate-y-0.5 transition-all">1分で問い合わせ →</a></div>
+    </div>
+  </section>
+
+  <section class="py-14 md:py-20">
+    <div class="pwrap max-w-[800px]">
+      <h2 class="sec-ttl">CVR改善／CROコンサルティングでお手伝いできること</h2>
+      <ul class="svc-list">
+        <li>アクセスの流れの分析</li>
+        <li>ページごとの課題の洗い出し</li>
+        <li>問い合わせボタン・導線の改善</li>
+        <li>お問い合わせフォームの見直し</li>
+        <li>スマホ表示の改善</li>
+        <li>直したあとの効果の確認</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-14 st-cta text-center">
+    <div class="pwrap">
+      <p class="text-ink text-[15px] md:text-[16px] font-semibold mb-5">「見てもらえているのに問い合わせが来ない」方へ。</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3"><a href="../contact/" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] shadow-[0_10px_24px_-10px_rgba(200,170,0,.7)] rounded-full font-bold tracking-[.04em] bg-cta-yellow text-ink hover:bg-cta-yellow-h hover:-translate-y-0.5 transition-all">1分で問い合わせ →</a></div>
+    </div>
+  </section>
+
+  <section class="py-14 md:py-20 st-alt" id="flow">
+    <div class="pwrap max-w-[800px]">
+      <h2 class="sec-ttl">CVR改善／CROコンサルティングの支援の流れ</h2>
+      <div class="step2">
+        <div class="pnum">01</div>
+        <div class="font-bold text-[15px] mb-1">無料相談</div>
+        <p class="text-[13px] leading-[1.9] text-muted">今の状況や、困っていることをお聞きします。</p>
+      </div>
+      <div class="step2 alt">
+        <div class="pnum">02</div>
+        <div class="font-bold text-[15px] mb-1">現状の確認</div>
+        <p class="text-[13px] leading-[1.9] text-muted">サイトや集客の状況を調べ、課題を整理します。</p>
+      </div>
+      <div class="step2">
+        <div class="pnum">03</div>
+        <div class="font-bold text-[15px] mb-1">進め方のご提案</div>
+        <p class="text-[13px] leading-[1.9] text-muted">優先順位をつけて、何から手をつけるかをご提案します。</p>
+      </div>
+      <div class="step2 alt">
+        <div class="pnum">04</div>
+        <div class="font-bold text-[15px] mb-1">実行</div>
+        <p class="text-[13px] leading-[1.9] text-muted">決めたことを、一緒に進めます。作業もお任せいただけます。</p>
+      </div>
+      <div class="step2">
+        <div class="pnum">05</div>
+        <div class="font-bold text-[15px] mb-1">振り返りと次の一手</div>
+        <p class="text-[13px] leading-[1.9] text-muted">結果を見ながら、次にやることを決めていきます。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 md:py-20">
+    <div class="pwrap">
+      <h2 class="sec-ttl">マツケンスタジオのCVR改善／CROコンサルティングの特徴</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="card2">
+          <div class="idx">01</div>
+          <div class="font-bold text-[16px] mb-2">自社サイトで実践済み</div>
+          <p class="text-[13px] leading-[1.9] text-muted">自社サイトの改善で、有効なお問い合わせを3倍にしました。</p>
+        </div>
+        <div class="card2 alt">
+          <div class="idx">02</div>
+          <div class="font-bold text-[16px] mb-2">小さな改善から始める</div>
+          <p class="text-[13px] leading-[1.9] text-muted">作り直しではなく、すぐに直せるところから手をつけます。</p>
+        </div>
+        <div class="card2">
+          <div class="idx">03</div>
+          <div class="font-bold text-[16px] mb-2">専門用語を使わずに説明</div>
+          <p class="text-[13px] leading-[1.9] text-muted">難しい言葉は普段の言葉に置きかえて説明します。社内で共有しやすい形でお伝えします。</p>
+        </div>
+        <div class="card2 alt">
+          <div class="idx">04</div>
+          <div class="font-bold text-[16px] mb-2">直すところまで対応</div>
+          <p class="text-[13px] leading-[1.9] text-muted">提案だけでなく、ページの修正まで一緒に対応します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 md:py-20 st-alt">
+    <div class="pwrap">
+      <h2 class="sec-ttl">マツケンスタジオについて</h2>
+      <div class="grid grid-cols-1 md:grid-cols-[1fr_260px] gap-8 items-center">
+        <div>
+          <p class="text-[14px] md:text-[15px] leading-[2] text-ink-2 mb-4">マツケンスタジオは、金属研磨の町工場・松本研磨工業の新しい事業です。担当するのは、デジタルマーケティングの仕事を10年以上続けてきた責任者です。</p>
+          <p class="text-[14px] md:text-[15px] leading-[2] text-ink-2 mb-5">数百社の集客を支援してきた経験と、町工場の現場の両方を知っているからこそ、製造業・職人・小さな会社の方に、分かる言葉で、無理のない範囲からCVR改善／CROコンサルティングをお手伝いします。</p>
+          <a href="../#story" class="text-[14px] font-bold text-accent-ink hover:underline">私たちがWebの仕事をする理由 →</a>
+        </div>
+        <div class="flex md:justify-end"><div class="st-logo"><span class="st-mark">松</span><span><span class="st-name">マツケンスタジオ</span><span class="st-by">by 松本研磨工業</span></span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-14 st-cta text-center">
+    <div class="pwrap">
+      <p class="text-ink text-[15px] md:text-[16px] font-semibold mb-5">作り直す前に、直せるところから始めましょう。</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3"><a href="../contact/" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] shadow-[0_10px_24px_-10px_rgba(200,170,0,.7)] rounded-full font-bold tracking-[.04em] bg-cta-yellow text-ink hover:bg-cta-yellow-h hover:-translate-y-0.5 transition-all">1分で問い合わせ →</a></div>
+    </div>
+  </section>
+
+  <section class="py-14 md:py-20">
+    <div class="pwrap max-w-[800px]">
+      <h2 class="sec-ttl">CVR改善／CROコンサルティングの料金</h2>
+      <div class="price-box">
+        <p class="text-[14px] leading-[2] text-ink-2">会社の規模や、今の状況によって必要な作業が変わるため、お話をお聞きしてから個別にお見積りします。まずは無料相談で、今の状況をお聞かせください。</p>
+        <a href="../contact/" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] shadow-[0_10px_24px_-10px_rgba(200,170,0,.7)] rounded-full font-bold tracking-[.04em] bg-cta-yellow text-ink hover:bg-cta-yellow-h hover:-translate-y-0.5 transition-all">1分で問い合わせ →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 md:py-20 st-alt">
+    <div class="pwrap max-w-[800px]">
+      <h2 class="sec-ttl">実績・事例</h2>
+      <a href="../case/" class="case-card">
+        <div class="c-img">有効なお問い合わせ 3倍</div>
+        <div class="p-6 md:p-8">
+          <div class="font-mono text-[11px] tracking-[.14em] text-muted mb-2">株式会社松本研磨工業</div>
+          <div class="font-bold text-[17px] mb-3">サイト制作とSEO対策で、有効なお問い合わせが3倍に</div>
+          <p class="text-[13px] leading-[1.9] text-muted mb-4">松本研磨工業のサイトを作り直し、SEO対策を進めたことで、有効なお問い合わせの数は3倍に増えました。</p>
+          <span class="text-[13px] font-bold text-accent-ink">事例を読む →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-14 md:py-20">
+    <div class="pwrap max-w-[800px]">
+      <h2 class="sec-ttl">CVR改善／CROコンサルティングのよくある質問</h2>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">費用はどれくらいかかりますか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">お手伝いする範囲によって変わるため、無料相談でお話をお聞きしてからお見積りします。相談だけでも費用はかかりません。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">アクセスが少なくても意味はありますか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">はい。少ないアクセスでも、問い合わせにつながる割合を上げることは大事です。あわせて集客の方法もご提案します。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">サイトを作り直す必要はありますか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">多くの場合、作り直さなくても直せるところがあります。まずは今のサイトを確認します。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">どれくらいで効果が出ますか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">直す内容によりますが、ボタンやフォームの改善は比較的早く変化が見えることが多いです。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 md:py-20 st-alt">
+    <div class="pwrap">
+      <h2 class="sec-ttl">関連サービス</h2>
+      <div class="rel-grid">
+        <div>
+          <div class="font-mono text-[12px] font-semibold tracking-[.14em] text-accent mb-3">戦略・コンサルティング</div>
+          <a href="../consulting/">デジタルマーケティングコンサルティング</a><a href="../btob-marketing/">BtoBマーケティング支援</a>
+        </div>
+        <div>
+          <div class="font-mono text-[12px] font-semibold tracking-[.14em] text-accent mb-3">集客・改善</div>
+          <a href="../seo-consulting/">SEOコンサルティング</a><a href="../ad-consulting/">Web広告コンサルティング</a><a class="current">CVR改善／CROコンサルティング</a><a href="../llmo-consulting/">LLMOコンサルティング</a>
+        </div>
+        <div>
+          <div class="font-mono text-[12px] font-semibold tracking-[.14em] text-accent mb-3">制作</div>
+          <a href="../website/">サイト制作</a><a href="../lp/">LP制作</a><a href="../seo-writing/">SEO/LLMO記事制作代行</a><a href="../case-interview/">事例インタビュー記事制作</a>
+        </div>
+        <div>
+          <div class="font-mono text-[12px] font-semibold tracking-[.14em] text-accent mb-3">AI活用支援</div>
+          <a href="../ai-katsuyo/">AI活用支援（業務効率化・自動化）</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 st-cta text-center">
+    <div class="pwrap">
+      <div class="flex justify-center mb-6"><div class="st-logo"><span class="st-mark">松</span><span><span class="st-name">マツケンスタジオ</span><span class="st-by">by 松本研磨工業</span></span></div></div>
+      <p class="font-bold leading-[1.5] mb-4 text-ink" style="font-size:clamp(22px,3.2vw,32px)">Webのお悩み、<br class="sm:hidden"/>まずは気軽にご相談ください。</p>
+      <p class="text-[14px] md:text-[15px] text-muted leading-[1.9] mb-8 max-w-[560px] mx-auto">何から始めればいいか分からない、という段階でも大丈夫です。町工場・職人・小さな会社の方の相談を、同じつくり手としてお聞きします。</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3"><a href="../contact/" class="inline-flex items-center justify-center gap-[10px] px-10 py-5 md:px-12 md:py-[22px] text-[17px] md:text-[18px] shadow-[0_12px_30px_-10px_rgba(200,170,0,.7)] rounded-full font-bold tracking-[.04em] bg-cta-yellow text-ink hover:bg-cta-yellow-h hover:-translate-y-0.5 transition-all">1分で問い合わせ →</a></div>
+    </div>
+  </section>
+
+</main>
+<footer class="bg-navy text-paper pt-14 md:pt-[90px] pb-8 md:pb-[30px] border-t border-paper/[.05]">
+  <div class="wrap">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.1fr_.8fr_.8fr_1fr_.8fr] gap-8 md:gap-10 pb-10 md:pb-[60px] border-b border-paper/10">
+      <div class="sm:col-span-2 lg:col-span-1">
+        <div class="flex items-center gap-3">
+          <span class="w-10 h-10 border-[1.5px] border-paper rounded-full grid place-items-center font-serif font-semibold text-xl bg-paper text-ink">松</span>
+          <span class="leading-[1.1]">
+            <div class="font-serif text-[14px] md:text-[15px] font-medium tracking-[.04em] text-paper">株式会社松本研磨工業</div>
+            <div class="font-mono text-[10px] text-muted-ink tracking-[.22em] mt-[2px]">創業58年・川崎</div>
+          </span>
+        </div>
+        <p class="mt-5 text-[12px] text-muted-ink leading-[1.9]">〒210-0851<br/>神奈川県川崎市川崎区浜町 3-9-22<br/>matsumoto-kenma.co.jp</p>
+        <div class="mt-6 flex gap-4">
+          <a href="https://www.instagram.com/matsu_polish/" target="_blank" rel="noopener" aria-label="Instagram" class="flex flex-col items-center gap-1.5 group">
+            <span class="w-12 h-12 bg-paper/10 border border-paper/30 rounded-md grid place-items-center text-paper group-hover:bg-[#E1306C] group-hover:border-[#E1306C] transition-all">
+              <svg class="w-6 h-6 stroke-current fill-none stroke-[1.5]" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </span>
+            <span class="font-mono text-[9px] tracking-[.14em] text-muted-ink group-hover:text-paper transition-colors">Instagram</span>
+          </a>
+          <a href="https://www.youtube.com/channel/UCIGiSzo9TyINLuygAsuP5ew/" target="_blank" rel="noopener" aria-label="YouTube" class="flex flex-col items-center gap-1.5 group">
+            <span class="w-12 h-12 bg-paper/10 border border-paper/30 rounded-md grid place-items-center text-paper group-hover:bg-[#FF0000] group-hover:border-[#FF0000] transition-all">
+              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.3.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.9C6.8 19 12 19 12 19s4.8 0 7-.2c.4-.1 1.3-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.8 14.5V9.5l5.4 2.5-5.4 2.5z"/></svg>
+            </span>
+            <span class="font-mono text-[9px] tracking-[.14em] text-muted-ink group-hover:text-paper transition-colors">YouTube</span>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h3 class="font-mono text-[10px] tracking-[.24em] text-muted-ink mb-4 md:mb-5">メニュー</h3>
+        <ul class="space-y-[10px]">
+          <li><a href="../../#home"     class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-paper hover:underline underline-offset-4 transition-all">ホーム</a></li>
+          <li><a href="../../polishing/" class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-paper hover:underline underline-offset-4 transition-all">金属研磨技術</a></li>
+          <li><a href="../../#works"    class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-paper hover:underline underline-offset-4 transition-all">加工実績</a></li>
+          <li><a href="../../column/"   class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-paper hover:underline underline-offset-4 transition-all">コラム</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-mono text-[10px] tracking-[.24em] text-muted-ink mb-4 md:mb-5">会社情報</h3>
+        <ul class="space-y-[10px]">
+          <li><a href="../../company/"  class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-paper hover:underline underline-offset-4 transition-all">会社情報</a></li>
+          <li><a href="../../company/#access" class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-paper hover:underline underline-offset-4 transition-all">アクセス</a></li>
+          <li><a href="../../#faq"    class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-paper hover:underline underline-offset-4 transition-all">よくある質問</a></li>
+          <li><a href="../../news/"    class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-paper hover:underline underline-offset-4 transition-all">お知らせ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-mono text-[10px] tracking-[.24em] text-muted-ink mb-4 md:mb-5">Web集客・AI活用支援</h3>
+        <ul class="space-y-[10px]">
+          <li><a href="../../web-ai/" class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-paper hover:underline underline-offset-4 transition-all">サービス概要</a></li>
+          <li><a href="../../web-ai/seo-consulting/" class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-paper hover:underline underline-offset-4 transition-all">SEO・集客対策</a></li>
+          <li><a href="../../web-ai/website/" class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-paper hover:underline underline-offset-4 transition-all">サイト制作・LP制作</a></li>
+          <li><a href="../../web-ai/case/" class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-paper hover:underline underline-offset-4 transition-all">実績・事例</a></li>
+          <li><a href="../../web-ai/column/" class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-paper hover:underline underline-offset-4 transition-all">コラム</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-mono text-[10px] tracking-[.24em] text-muted-ink mb-4 md:mb-5">お問い合わせ</h3>
+        <ul class="space-y-[10px]">
+          <li><a href="../../web-ai/contact/"   class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-paper hover:underline underline-offset-4 transition-all">お問い合わせフォーム</a></li>
+          <li><a href="../../privacy/"   class="font-serif text-[14px] text-paper opacity-85 hover:opacity-100 hover:text-paper hover:underline underline-offset-4 transition-all">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-6 md:pt-[30px] flex flex-col sm:flex-row justify-between font-mono text-[10px] tracking-[.14em] text-muted-ink gap-2 sm:gap-[10px] text-center sm:text-left">
+      <div>© 2026 株式会社松本研磨工業</div>
+      <div>手作業の金属研磨　・　川崎　・　創業58年</div>
+    </div>
+  </div>
+</footer>
+<script>
+  const burger = document.getElementById('burgerBtn');
+  const mmenu  = document.getElementById('mobileMenu');
+  if (burger && mmenu) {
+    burger.addEventListener('click', () => mmenu.classList.toggle('translate-x-full'));
+    mmenu.querySelectorAll('[data-close]').forEach(a =>
+      a.addEventListener('click', () => mmenu.classList.add('translate-x-full'))
+    );
+  }
+  document.querySelectorAll('.mega-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const mega = btn.closest('.mega');
+      const isOpen = mega.classList.contains('open');
+      document.querySelectorAll('.mega.open').forEach(m => { m.classList.remove('open'); m.querySelector('.mega-btn').setAttribute('aria-expanded','false'); });
+      if (!isOpen) { mega.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+    });
+  });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.mega')) {
+      document.querySelectorAll('.mega.open').forEach(m => { m.classList.remove('open'); m.querySelector('.mega-btn').setAttribute('aria-expanded','false'); });
+    }
+  });
+</script>
+</body>
+</html>
