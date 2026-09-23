@@ -43,7 +43,7 @@ RENEW_DO = [
 WHY_NOW = [
     ('応募する人は、まず会社を調べます', '求人を見た人は、応募する前にスマホで会社の名前を検索します。何も出てこないと、それだけで候補から外れてしまうことがあります。'),
     ('新しい取引先も、ネットで確かめます', '初めて取引する会社は、どんな設備で、何ができるのかをホームページで確認します。ないと、話を進めにくくなります。'),
-    ('元請けだけに頼らない入口になります', '「この加工ができる会社」を探している人に、御社を見つけてもらえるようになります。'),
+    ('元請けだけに頼らない入口になります', '「この加工ができる会社」を探している人に、見つけてもらえるようになります。'),
 ]
 
 STRENGTHS = [
@@ -60,7 +60,7 @@ STRENGTHS = [
 COMPARE = [
     ('加工や図面の話', 'その都度、説明が必要', 'そのまま通じる'),
     ('ドメイン・サーバー', '自分で契約・管理することが多い', '手続きはすべて代行'),
-    ('ドメイン・サイトの名義', '制作会社の名義のことも', 'いつでも御社の名義'),
+    ('ドメイン・サイトの名義', '制作会社の名義のことも', 'いつでもお客様の名義'),
     ('作ったあと', '更新は別料金・放置になりがち', '3か月無料、その後も月額で'),
     ('窓口', '営業・制作・保守で担当が変わる', '最初から最後まで同じ担当'),
 ]
@@ -117,7 +117,7 @@ FAQ = [
     ('本当に毎月3社までですか？', 'はい。制作に責任を持てる数にしているためです。4社目以降のお申し込みは、翌月の枠でお受けします。'),
     ('どれくらいで公開できますか？', 'お申し込みから1〜2か月が目安です。お申し込みの順に制作を始めます。'),
     ('パソコンやネットのことがまったく分かりません。', '大丈夫です。ドメインやサーバー、Googleマップの手続きは、私たちがすべて行います。社長にお願いするのは、聞き取りと確認、お支払いの手続きだけです。'),
-    ('ドメインやサーバーの費用はどうなりますか？', '御社の名義で、御社から直接お支払いいただきます。サイトだけなら年数千円ほど、会社のメールアドレスも使う場合は月1,000円前後が目安です。'),
+    ('ドメインやサーバーの費用はどうなりますか？', 'お客様の名義で、お客様から直接お支払いいただきます。サイトだけなら年数千円ほど、会社のメールアドレスも使う場合は月1,000円前後が目安です。'),
     ('月額サポートはやめられますか？', 'はい。公開後3か月の無料期間のあと、続けるかどうかをお選びいただけます。有料で続ける場合は6か月からのご契約で、その後は1か月前までのご連絡でやめられます。やめるときは、管理の権限とWeb台帳をすべてお返しします。'),
     ('事例に載せたくない内容がある場合は？', '取引先の名前、図面、製品など、載せられないものは事前にご相談のうえで外します。'),
     ('今のサイトのドメインやメールは、そのまま使えますか？', 'はい、基本的にそのまま使えます。今の契約の状況を確認して、切り替えの手続きもこちらで行います。検索での評価もできるだけ引き継げるように作り直します。'),
@@ -207,9 +207,22 @@ mark{background:linear-gradient(transparent 62%,var(--y) 62%);color:inherit;padd
 .sp img{border-radius:14px}
 .stamp{position:absolute;left:-34px;top:-58px;width:112px;height:112px;border-radius:50%;background:var(--y);display:grid;place-items:center;text-align:center;font-weight:700;line-height:1.3;box-shadow:0 18px 30px -14px rgba(140,120,0,.8);transform:rotate(-8deg);z-index:2}
 .stamp small{display:block;font-size:11px}
-.stamp b{display:block;font-size:30px;line-height:1}
+.stamp b{display:block;font-size:26px;line-height:1.1}
 .cap{font-size:12px;color:var(--muted);margin-top:14px;max-width:64%}
 @media(max-width:959px){.visual{margin:44px 8px 30px}.stamp{width:92px;height:92px;left:-6px;top:-50px}.stamp b{font-size:26px}.stamp small{font-size:10px}}
+
+@media(max-width:767px){
+  .hero{padding:14px 0 30px}
+  .tags{gap:6px;margin-bottom:10px}.tag{font-size:11px;padding:4px 10px}.tag.o{display:none}
+  .kick{font-size:13px;margin-bottom:6px}
+  .hero h1{font-size:34px;margin-bottom:10px}
+  .hero .sub{font-size:14px;line-height:1.8;margin-bottom:12px}
+  .hero .sub .pc-only{display:none}
+  .proof{gap:6px;margin-bottom:12px}.proof div{padding:7px 4px}.proof b{font-size:16px}.proof span{font-size:10px;line-height:1.4}
+  .price-tease{margin-bottom:10px;gap:6px}.price-tease .v{font-size:30px}.price-tease .l,.price-tease .t{font-size:12px}
+  .btn.lg{padding:16px 24px;font-size:17px;width:100%}
+  .micro{margin-top:8px;font-size:12px}
+}
 
 /* pains */
 .checks{display:grid;gap:10px;margin-top:24px}
@@ -390,7 +403,7 @@ mark{background:linear-gradient(transparent 62%,var(--y) 62%);color:inherit;padd
 .line-box{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:16px 18px;font-size:14px}
 .line-txt{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
 .line-pc{display:none;font-size:13px;color:rgba(255,255,255,.75)}
-.line-qr{display:none;width:132px;height:132px;background:#fff;border-radius:10px;padding:8px;flex:none}
+.line-qr{display:none;width:132px;height:132px;background:#fff;border-radius:10px;padding:6px;flex:none}
 @media(min-width:768px){.line-pc{display:block}.line-qr{display:block}.line-box{padding:18px 22px}}
 .line-btn{display:inline-flex;align-items:center;gap:8px;background:#06C755;color:#fff;font-weight:700;border-radius:999px;padding:10px 20px;text-decoration:none}
 .line-btn:hover{background:#05b34c}
@@ -439,8 +452,8 @@ def plan_cards(items, unit, kind):
 def page():
     pains = ''.join(f'<li>{x}</li>' for x in PAINS)
     line_hero = (f'<p class="line-link"><a href="{LINE_URL}" target="_blank" rel="noopener">LINEで気軽に質問する</a></p>'
-                 f'<div class="line-hero-qr"><img src="../../images/lp/line-qr.svg" alt="LINE友だち追加のQRコード" width="96" height="96"><div><b>LINEでも気軽に相談できます</b><span>スマホのカメラで読み取ると、友だち追加できます。</span></div></div>' if LINE_URL else '')
-    line_form = (f'<div class="line-box"><div class="line-txt"><span>フォームが面倒な方は、LINEでも相談できます。</span><span class="line-pc">スマホのカメラでQRコードを読み取ると、友だち追加できます。</span><a href="{LINE_URL}" target="_blank" rel="noopener" class="line-btn">LINEで相談する</a></div><img class="line-qr" src="../../images/lp/line-qr.svg" alt="LINE友だち追加のQRコード" width="150" height="150" loading="lazy"></div>' if LINE_URL else '')
+                 f'<div class="line-hero-qr"><img src="../../images/lp/line-qr.png" alt="LINE友だち追加のQRコード" width="360" height="360"><div><b>LINEでも気軽に相談できます</b><span>スマホのカメラで読み取ると、友だち追加できます。</span></div></div>' if LINE_URL else '')
+    line_form = (f'<div class="line-box"><div class="line-txt"><span>フォームが面倒な方は、LINEでも相談できます。</span><span class="line-pc">スマホのカメラでQRコードを読み取ると、友だち追加できます。</span><a href="{LINE_URL}" target="_blank" rel="noopener" class="line-btn">LINEで相談する</a></div><img class="line-qr" src="../../images/lp/line-qr.png" alt="LINE友だち追加のQRコード" width="360" height="360" loading="lazy"></div>' if LINE_URL else '')
     renew_pains = ''.join(f'<li>{x}</li>' for x in RENEW_PAINS)
     renew_do = ''.join(f'<div><b>{t}</b><span>{d}</span></div>' for t, d in RENEW_DO)
     why = ''.join(f'<div class="card"><h3>{t}</h3><p>{d}</p></div>' for t, d in WHY_NOW)
@@ -500,10 +513,10 @@ def page():
       <div class="tags"><span class="tag y">毎月3社まで</span><span class="tag">新規制作・リニューアル</span><span class="tag o">町工場・製造業</span></div>
       <p class="kick">金属研磨の松本研磨工業が始めた、Webの新事業</p>
       <h1><span class="small">町工場のホームページは、</span><mark>町工場</mark>がつくる。</h1>
-      <p class="sub">図面も、公差も、加工の話もそのまま通じる担当が、ドメインの取得から公開後の更新まで、まるごと引き受けます。これから作る会社も、今のサイトを作り直したい会社も。</p>
+      <p class="sub">図面も、公差も、加工の話もそのまま通じる担当が、ドメインの取得から公開後の更新まで、まるごと引き受けます。<span class="pc-only">これから作る会社も、今のサイトを作り直したい会社も。</span></p>
       <div class="proof">
-        <div><b>3倍</b><span>自社サイトの<br>有効なお問い合わせ</span></div>
-        <div><b>御社名義</b><span>ドメインも<br>サイトも</span></div>
+        <div><b>3倍増</b><span>自社サイトの<br>有効なお問い合わせ</span></div>
+        <div><b>お客様名義</b><span>ドメインも<br>サイトも</span></div>
         <div><b>3か月</b><span>公開後の<br>サポート無料</span></div>
       </div>
       <div class="price-tease"><span class="l">モニター価格</span><span class="v">15<small>万円〜</small></span><span class="t">（税別）</span></div>
@@ -511,7 +524,7 @@ def page():
       <p class="micro">相談だけでも大丈夫です。無理な営業はしません。</p>{line_hero}
     </div>
     <div class="visual">
-      <div class="stamp"><div><small>有効な<br>お問い合わせ</small><b>3倍</b></div></div>
+      <div class="stamp"><div><small>有効な<br>お問い合わせ</small><b>3倍増</b></div></div>
       <div class="pc"><div class="chrome"><i></i><i></i><i></i></div><img src="../../images/lp/case-pc.jpg" alt="松本研磨工業のホームページ（パソコン表示）" width="1280" height="800" fetchpriority="high"></div>
       <div class="sp"><img src="../../images/lp/case-sp.jpg" alt="松本研磨工業のホームページ（スマホ表示）" width="585" height="1266"></div>
       <p class="cap">制作実績：株式会社松本研磨工業（自社）</p>
@@ -576,7 +589,7 @@ def page():
       <div class="buff"></div>
       <div style="position:relative;z-index:1">
         <p class="eyebrow" style="color:var(--y)">実績</p>
-        <div class="num">3<small>倍</small></div>
+        <div class="num">3<small>倍増</small></div>
         <p class="lbl">有効なお問い合わせの数</p>
         <p>松本研磨工業のホームページを作り直し、検索対策を進めたことで、有効なお問い合わせの数が3倍になりました。お客様のサイトも、このやり方で作ります。</p>
       </div>
@@ -615,9 +628,9 @@ def page():
     <h2 class="h2">面倒な手続きは、<br>まるごとお任せください。</h2>
     <div class="inc">{inc}</div>
     <div class="own">
-      <p class="msg">ドメインもサーバーも、<em>御社の名義</em>です。<br>やめても、サイトは御社のものとして残ります。</p>
+      <p class="msg">ドメインもサーバーも、<em>お客様の名義</em>です。<br>やめても、サイトはお客様のものとして残ります。</p>
       <div>
-        <p style="font-size:14px;color:var(--ink2);line-height:1.9;margin-bottom:10px">外部のサービスの費用は、御社から直接お支払いいただきます（手続きは私たちが行います）。</p>
+        <p style="font-size:14px;color:var(--ink2);line-height:1.9;margin-bottom:10px">外部のサービスの費用は、お客様から直接お支払いいただきます（手続きは私たちが行います）。</p>
         <table>
           <tr><th>サイトだけ（メールは今のまま）</th><td>ドメイン代のみ<br><b>年数千円</b>ほど</td></tr>
           <tr><th>サイト＋会社のメールアドレス</th><td>レンタルサーバー代<br><b>月1,000円前後</b></td></tr>
