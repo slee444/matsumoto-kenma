@@ -387,7 +387,11 @@ mark{background:linear-gradient(transparent 62%,var(--y) 62%);color:inherit;padd
 /* line */
 .line-link{margin-top:10px;font-size:14px}
 .line-link a{color:#06C755;font-weight:700;text-decoration:underline;text-underline-offset:3px}
-.line-box{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:14px 18px;font-size:14px}
+.line-box{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:16px 18px;font-size:14px}
+.line-txt{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.line-pc{display:none;font-size:13px;color:rgba(255,255,255,.75)}
+.line-qr{display:none;width:132px;height:132px;background:#fff;border-radius:10px;padding:8px;flex:none}
+@media(min-width:768px){.line-pc{display:block}.line-qr{display:block}.line-box{padding:18px 22px}}
 .line-btn{display:inline-flex;align-items:center;gap:8px;background:#06C755;color:#fff;font-weight:700;border-radius:999px;padding:10px 20px;text-decoration:none}
 .line-btn:hover{background:#05b34c}
 
@@ -432,7 +436,7 @@ def plan_cards(items, unit, kind):
 def page():
     pains = ''.join(f'<li>{x}</li>' for x in PAINS)
     line_hero = (f'<p class="line-link"><a href="{LINE_URL}" target="_blank" rel="noopener">LINEで気軽に質問する</a></p>' if LINE_URL else '')
-    line_form = (f'<div class="line-box"><span>フォームが面倒な方は、LINEでも相談できます。</span><a href="{LINE_URL}" target="_blank" rel="noopener" class="line-btn">LINEで相談する</a></div>' if LINE_URL else '')
+    line_form = (f'<div class="line-box"><div class="line-txt"><span>フォームが面倒な方は、LINEでも相談できます。</span><span class="line-pc">スマホのカメラでQRコードを読み取ると、友だち追加できます。</span><a href="{LINE_URL}" target="_blank" rel="noopener" class="line-btn">LINEで相談する</a></div><img class="line-qr" src="../../images/lp/line-qr.svg" alt="LINE友だち追加のQRコード" width="150" height="150" loading="lazy"></div>' if LINE_URL else '')
     renew_pains = ''.join(f'<li>{x}</li>' for x in RENEW_PAINS)
     renew_do = ''.join(f'<div><b>{t}</b><span>{d}</span></div>' for t, d in RENEW_DO)
     why = ''.join(f'<div class="card"><h3>{t}</h3><p>{d}</p></div>' for t, d in WHY_NOW)
