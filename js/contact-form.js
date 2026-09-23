@@ -20,6 +20,12 @@
     var btn = form.querySelector('button[type="submit"]');
     var src = sourcePage();
 
+    // キャンペーンページ（?from=monitor）から来たときは、内容欄に下書きを入れておく
+    var msg = form.querySelector('textarea[name="message"]');
+    if (msg && !msg.value && /[?&]from=monitor\b/.test(location.search)) {
+      msg.value = '事例づくりモニターについて相談したいです。\n希望のプラン：\n今のホームページ：ある／ない';
+    }
+
     function showError(msg, el) {
       errBox.textContent = msg;
       errBox.classList.remove('hidden');
@@ -89,7 +95,9 @@
           window.scrollTo({ top: box.getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' });
         })
         .catch(function () {
-          showError('送信できませんでした。お手数ですが、お電話（044-333-8412）かメールでご連絡ください。');
+          showError(form.dataset.contactForm === 'web'
+            ? '送信できませんでした。お手数ですが、時間をおいてもう一度お試しください。'
+            : '送信できませんでした。お手数ですが、お電話（044-333-8412）かメールでご連絡ください。');
           btn.disabled = false;
           if (label) label.textContent = '送信する';
         });

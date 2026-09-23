@@ -86,7 +86,8 @@ CSS = '''<style>/* site-footer */
 
 def apply(html, pre, studio=False):
     html = re.sub(r'<footer\b.*?</footer>', lambda m: render(pre, studio), html, count=1, flags=re.S)
-    html = re.sub(r'<style>/\* site-footer \*/.*?</style>\n?', '', html, flags=re.S)
+    if '<style>/* site-footer */' in html:   # 既にあれば、その場で置きかえる（位置を動かさない）
+        return re.sub(r'<style>/\* site-footer \*/.*?</style>\n?', lambda m: CSS, html, count=1, flags=re.S)
     return html.replace('</head>', CSS + '</head>', 1)
 
 def prefix_of(html):

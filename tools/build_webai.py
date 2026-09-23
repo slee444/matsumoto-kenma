@@ -364,6 +364,16 @@ def build_hub():
     </div>
   </section>
 
+  <section class="py-10 md:py-12 st-cta">
+    <div class="pwrap flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+      <div>
+        <div class="inline-block text-[12px] font-bold text-accent-ink bg-white rounded-full px-3 py-1 mb-2">毎月3社まで</div>
+        <p class="font-bold text-[18px] md:text-[20px] text-ink leading-[1.6]">事例づくりモニター 受付中</p>
+        <p class="text-[13px] md:text-[14px] text-muted leading-[1.8]">事例として紹介させていただくことを条件に、特別な価格で制作します。作った後の月額サポートもご案内しています。</p>
+      </div>
+      <a href="monitor/" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-bold text-[15px] border-2 border-ink text-ink bg-white hover:bg-ink hover:text-white transition-all shrink-0">くわしく見る →</a>
+    </div>
+  </section>
 {section("こんな方へ", "こんなお悩み、ありませんか。", '      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">' + chr(10) + target_html + chr(10) + '      </div>', alt=True, narrow=False)}
   <section class="py-16 md:py-24" id="story">
     <div class="pwrap max-w-[800px]">
