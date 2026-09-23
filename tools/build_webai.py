@@ -1,4 +1,5 @@
 import ogp_meta
+import footer
 import os, re, json, glob
 
 SERVICE_SHELL = 'polishing/buff-polishing/index.html'   # depth-2 shell (nav links already ../../)
@@ -434,6 +435,7 @@ def studio_chrome(s, pre):
     s = re.sub(r'<a href="#line"[^>]*>.*?</a>', '', s, flags=re.S)
     s = re.sub(r'<style>\s*/\* studio-chrome \*/.*?</style>\s*', '', s, flags=re.S)
     s = s.replace('フォームかLINEで受け付けています', 'お問い合わせフォームで受け付けています')
+    s = footer.apply(s, pre, studio=True)
     return s
 
 def studio_chrome_all():
