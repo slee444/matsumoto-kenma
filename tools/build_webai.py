@@ -1,3 +1,4 @@
+import ogp_meta
 import os, re, json, glob
 
 SERVICE_SHELL = 'polishing/buff-polishing/index.html'   # depth-2 shell (nav links already ../../)
@@ -201,6 +202,7 @@ def set_meta(head, title, desc, url, ld_blocks):
     head = re.sub(r'<meta property="og:url" content="[^"]*">', f'<meta property="og:url" content="{url}">', head)
     head = re.sub(r'\s*<script type="application/ld\+json">.*?</script>', '', head, flags=re.S)
     head = re.sub(r'\s*<style>\s*/\* Matsuken Studio.*?</style>', '', head, flags=re.S)
+    head = ogp_meta.apply(head, 'studio')
     lds = ''.join('<script type="application/ld+json">\n' + json.dumps(b, ensure_ascii=False, indent=2) + '\n</script>\n' for b in ld_blocks)
     return head.replace('</head>', lds + STUDIO_CSS + '</head>', 1)
 
@@ -368,7 +370,7 @@ def build_hub():
       <p class="story-quote my-10">技術があるのに、知られていない。<br/>それは、もったいない。</p>
       <div class="story">
         <p>松本研磨工業は、1967年から川崎で金属を磨いてきた小さな工場です。マツケンスタジオを担当する私は、その社長の息子です。鏡のように仕上げる父たちの技術には、今も誇りを持っています。</p>
-        <p>一方で私自身は、上場企業に勤めるなど、10年以上デジタルマーケティングの仕事をしてきました。自分でオウンドメディアを50万PVまで育て、数百社の集客をお手伝いし、1,000万人以上が使うサービスのマーケティングも担当してきました。</p>
+        <p>一方で私自身は、上場企業に勤めるなど、10年以上デジタルマーケティングの仕事をしてきました。マーケターとして企業のオウンドメディアを50万PVまで育て、数百社の集客をお手伝いし、1,000万人以上が使うサービスのマーケティングも担当してきました。</p>
         <p>その目で家業を見たとき、もどかしさを感じました。いい技術があるのに、それを知ってもらう手段がほとんどない。町工場の仕事は長く紹介や付き合いが中心でしたが、いまは発注する側も、まずインターネットで探します。</p>
         <p>そこで、まず自分の家のサイトを一つずつ直すことから始めました。文字の読みやすさ、最初に目に入る画面、検索で見つけてもらうための書き方。担当者も大きな予算もない中で、何から手をつけるかを考えながら進めてきました。その結果、有効なお問い合わせの数は3倍に増えました。</p>
         <p>やってみて分かったのは、同じように困っている町工場や職人、小さな会社がたくさんあるということです。大きな会社のやり方をそのまま持ち込んでも、うまくいきません。予算も人手も限られた中で、何を優先するか。その両方を知っているからこそ、できるお手伝いがあると考えました。</p>
@@ -388,7 +390,7 @@ def build_hub():
         <ul class="svc-list">
           <li>デジタルマーケティング業界で10年以上</li>
           <li>上場企業に勤務</li>
-          <li>自ら運営するオウンドメディアを50万PVまで育成</li>
+          <li>マーケターとして、企業のオウンドメディアを50万PVまで育成</li>
           <li>これまでに数百社の集客を支援</li>
           <li>事業会社で、1,000万人以上が使うサービスのマーケティングを担当</li>
         </ul>
