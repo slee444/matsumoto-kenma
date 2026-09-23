@@ -140,12 +140,12 @@ a{color:inherit}
 @media(min-width:768px){.wrap{padding:0 40px}}
 .narrow{max-width:860px}
 h1,h2,h3{text-wrap:balance;letter-spacing:.01em}
-.sec{padding:60px 0}
-@media(min-width:768px){.sec{padding:84px 0}}
+.sec{padding:44px 0}
+@media(min-width:768px){.sec{padding:60px 0}}
 .sec.mist{background:var(--mist)}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:700;color:var(--navy);margin-bottom:12px}
 .eyebrow::before{content:'';width:28px;height:3px;background:var(--y);border-radius:2px}
-.h2{font-size:clamp(26px,4vw,42px);font-weight:700;line-height:1.35;margin-bottom:14px}
+.h2{font-size:clamp(24px,3.6vw,38px);font-weight:700;line-height:1.35;margin-bottom:10px}
 .lead{font-size:16px;color:var(--ink2);line-height:2;max-width:720px}
 @media(min-width:768px){.lead{font-size:17px}}
 mark{background:linear-gradient(transparent 62%,var(--y) 62%);color:inherit;padding:0 .05em}
@@ -173,8 +173,8 @@ mark{background:linear-gradient(transparent 62%,var(--y) 62%);color:inherit;padd
 .micro{font-size:13px;color:var(--muted);margin-top:12px}
 
 /* hero */
-.hero{position:relative;overflow:hidden;padding:28px 0 48px}
-@media(min-width:960px){.hero{padding:40px 0 64px}}
+.hero{position:relative;overflow:hidden;padding:24px 0 36px}
+@media(min-width:960px){.hero{padding:32px 0 48px}}
 .hero .grid{display:grid;gap:44px;align-items:center;position:relative;z-index:1}
 @media(min-width:960px){.hero .grid{grid-template-columns:1.05fr .95fr;gap:40px}}
 .buff{position:absolute;pointer-events:none;border-radius:50%;background:repeating-radial-gradient(circle at center,rgba(27,58,107,.07) 0 1px,transparent 1px 14px)}
@@ -216,7 +216,7 @@ mark{background:linear-gradient(transparent 62%,var(--y) 62%);color:inherit;padd
 @media(min-width:768px){.checks{grid-template-columns:1fr 1fr;gap:16px}}
 .checks li{list-style:none;display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 20px;font-size:16px;font-weight:500;line-height:1.7}
 .checks li::before{content:'';width:24px;height:24px;border-radius:6px;background:var(--navy) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M5 12l5 5 9-10'/></svg>") center/15px no-repeat;margin-top:2px}
-.turn{margin-top:28px;text-align:center;font-size:clamp(20px,2.8vw,28px);font-weight:700;line-height:1.6}
+.turn{margin-top:20px;text-align:center;font-size:clamp(20px,2.8vw,28px);font-weight:700;line-height:1.6}
 .turn::before{content:'';display:block;width:2px;height:28px;background:var(--navy);margin:0 auto 14px}
 
 /* why now */
@@ -348,13 +348,13 @@ mark{background:linear-gradient(transparent 62%,var(--y) 62%);color:inherit;padd
 .faq details p{padding:0 4px 22px 46px;font-size:15px;color:var(--ink2);line-height:1.95}
 
 /* mid cta */
-.mid{background:var(--ysoft);padding:40px 0;text-align:center;position:relative;overflow:hidden}
+.mid{background:var(--ysoft);padding:30px 0;text-align:center;position:relative;overflow:hidden}
 .mid .buff{width:420px;height:420px;left:-160px;top:-160px}
 .mid p{font-size:clamp(18px,2.4vw,24px);font-weight:700;line-height:1.6;margin-bottom:16px;position:relative}
 
 /* form */
-.formsec{background:var(--ink);color:#fff;padding:60px 0 64px;position:relative;overflow:hidden}
-@media(min-width:768px){.formsec{padding:84px 0}}
+.formsec{background:var(--ink);color:#fff;padding:44px 0 48px;position:relative;overflow:hidden}
+@media(min-width:768px){.formsec{padding:60px 0}}
 .formsec .buff{width:700px;height:700px;right:-260px;top:-240px;background:repeating-radial-gradient(circle,rgba(255,255,255,.06) 0 1px,transparent 1px 16px)}
 .formsec .h2{color:#fff}
 .formsec .lead{color:rgba(255,255,255,.8)}
@@ -395,8 +395,11 @@ mark{background:linear-gradient(transparent 62%,var(--y) 62%);color:inherit;padd
 .line-btn{display:inline-flex;align-items:center;gap:8px;background:#06C755;color:#fff;font-weight:700;border-radius:999px;padding:10px 20px;text-decoration:none}
 .line-btn:hover{background:#05b34c}
 
+.line-hero-qr{display:none}
+@media(min-width:768px){.line-link{display:none}.line-hero-qr{display:flex;align-items:center;gap:14px;margin-top:16px;padding:10px 16px 10px 10px;border:1px solid var(--line);border-radius:12px;background:#fff;width:max-content}.line-hero-qr img{width:96px;height:96px}.line-hero-qr b{display:block;font-size:15px;color:#06A049}.line-hero-qr span{font-size:13px;color:var(--muted)}}
+
 /* footer */
-.foot{padding:28px 0 100px;font-size:13px;color:var(--muted);text-align:center;line-height:1.9}
+.foot{padding:22px 0 96px;font-size:13px;color:var(--muted);text-align:center;line-height:1.9}
 @media(min-width:768px){.foot{padding:40px 0}}
 .foot a{text-decoration:underline}
 
@@ -435,7 +438,8 @@ def plan_cards(items, unit, kind):
 
 def page():
     pains = ''.join(f'<li>{x}</li>' for x in PAINS)
-    line_hero = (f'<p class="line-link"><a href="{LINE_URL}" target="_blank" rel="noopener">LINEで気軽に質問する</a></p>' if LINE_URL else '')
+    line_hero = (f'<p class="line-link"><a href="{LINE_URL}" target="_blank" rel="noopener">LINEで気軽に質問する</a></p>'
+                 f'<div class="line-hero-qr"><img src="../../images/lp/line-qr.svg" alt="LINE友だち追加のQRコード" width="96" height="96"><div><b>LINEでも気軽に相談できます</b><span>スマホのカメラで読み取ると、友だち追加できます。</span></div></div>' if LINE_URL else '')
     line_form = (f'<div class="line-box"><div class="line-txt"><span>フォームが面倒な方は、LINEでも相談できます。</span><span class="line-pc">スマホのカメラでQRコードを読み取ると、友だち追加できます。</span><a href="{LINE_URL}" target="_blank" rel="noopener" class="line-btn">LINEで相談する</a></div><img class="line-qr" src="../../images/lp/line-qr.svg" alt="LINE友だち追加のQRコード" width="150" height="150" loading="lazy"></div>' if LINE_URL else '')
     renew_pains = ''.join(f'<li>{x}</li>' for x in RENEW_PAINS)
     renew_do = ''.join(f'<div><b>{t}</b><span>{d}</span></div>' for t, d in RENEW_DO)
@@ -493,7 +497,7 @@ def page():
   <div class="glow"></div><div class="buff b1"></div>
   <div class="wrap grid">
     <div>
-      <div class="tags"><span class="tag y">毎月3社まで</span><span class="tag">新規制作・リニューアル</span><span class="tag o">関東の町工場・製造業</span></div>
+      <div class="tags"><span class="tag y">毎月3社まで</span><span class="tag">新規制作・リニューアル</span><span class="tag o">町工場・製造業</span></div>
       <p class="kick">金属研磨の松本研磨工業が始めた、Webの新事業</p>
       <h1><span class="small">町工場のホームページは、</span><mark>町工場</mark>がつくる。</h1>
       <p class="sub">図面も、公差も、加工の話もそのまま通じる担当が、ドメインの取得から公開後の更新まで、まるごと引き受けます。これから作る会社も、今のサイトを作り直したい会社も。</p>
