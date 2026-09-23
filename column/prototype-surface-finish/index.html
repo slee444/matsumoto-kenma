@@ -270,7 +270,7 @@ nav.fixed .font-serif.font-semibold,#mobileMenu .font-serif.font-semibold,footer
         "@type": "ImageObject",
         "url": "https://matsumoto-kenma.co.jp/images/ogp.jpg"
       },
-      "dateModified": "2026-08-08"
+      "dateModified": "2026-09-23"
     }
   ]
 }
@@ -547,7 +547,7 @@ nav.fixed .font-serif.font-semibold,#mobileMenu .font-serif.font-semibold,footer
       <tr><td>食品衛生・清潔性が重要な面</td><td>Ra 0.2〜0.8μm</td><td>バフ研磨・電解研磨</td></tr>
       <tr><td>摺動部・シール面</td><td>Ra 0.4〜1.6μm</td><td>バフ研磨・研削</td></tr>
       <tr><td>外観面（ヘアライン）</td><td>Ra 0.4〜1.6μm</td><td>ベルト研磨・フレキ研磨</td></tr>
-      <tr><td>アルマイト前処理</td><td>Ra 0.2〜0.8μm</td><td>バフ研磨（番手#400〜#800）</td></tr>
+      <tr><td>アルマイト前処理</td><td>Ra 0.2〜0.8μm</td><td>バフ研磨</td></tr>
       <tr><td>コーティング下地</td><td>Ra 1.6〜3.2μm</td><td>ベルト研磨・ショットブラスト</td></tr>
       <tr><td>一般的な外観面（傷取り・均一化）</td><td>Ra 0.8〜3.2μm</td><td>ベルト研磨・バフ研磨</td></tr>
     </table>
@@ -561,17 +561,17 @@ nav.fixed .font-serif.font-semibold,#mobileMenu .font-serif.font-semibold,footer
     <h3>形状による工法の絞り込み</h3>
     <table>
       <tr><th>形状の特徴</th><th>適した工法</th></tr>
-      <tr><td>平面・単純形状</td><td>ベルト研磨 → バフ研磨</td></tr>
-      <tr><td>曲面・パイプ・複雑断面</td><td><a href="../flexible-polishing/">フレキ研磨</a> → バフ研磨</td></tr>
+      <tr><td>平面・単純形状</td><td>ベルト研磨・バフ研磨</td></tr>
+      <tr><td>曲面・パイプ・複雑断面</td><td><a href="../flexible-polishing/">フレキ研磨</a>・バフ研磨</td></tr>
       <tr><td>狭小部・フィレット・溝</td><td>フレキ研磨・手研磨</td></tr>
       <tr><td>量産・大ロットの小物部品</td><td><a href="../barrel-polishing/">バレル研磨</a></td></tr>
     </table>
 
     <h3>素材による注意点</h3>
     <ul>
-      <li><strong>ステンレス</strong>：加工硬化しやすい。専用砥粒が必要。<a href="../stainless-polishing/">ステンレス研磨の詳細はこちら</a></li>
-      <li><strong>アルミ</strong>：目詰まりしやすい。オープンコート砥粒・アルミ専用コンパウンドを使用。<a href="../aluminum-polishing/">アルミ研磨の詳細はこちら</a></li>
-      <li><strong>チタン・ニッケル合金</strong>：熱伝導率が低く加工変質しやすい。低速・低切込みで管理</li>
+      <li><strong>ステンレス</strong>：加工硬化しやすく、鋼種によって仕上がりが変わる。<a href="../stainless-polishing/">ステンレス研磨の詳細はこちら</a></li>
+      <li><strong>アルミ</strong>：やわらかく傷がつきやすい。<a href="../aluminum-polishing/">アルミ研磨の詳細はこちら</a></li>
+      <li><strong>チタン・ニッケル合金</strong>：熱伝導率が低く加工変質しやすい。熱がこもらないよう管理しながら仕上げる</li>
     </ul>
 
     <h2 id="common-mistakes">よくある設計ミスと現場からのアドバイス</h2>
@@ -586,7 +586,7 @@ nav.fixed .font-serif.font-semibold,#mobileMenu .font-serif.font-semibold,footer
     <p>「試作は形状確認だけでいい」として研磨を省くと、量産時に初めて研磨の問題が発覚します。試作品に対して量産と同じ研磨工程を施し、仕上がりを確認することが試作の本来の目的のひとつです。</p>
 
     <h3>ミス④ 後処理との相性を確認していない</h3>
-    <p>アルマイト・メッキ・塗装などの後処理がある場合、研磨の仕上げ番手が後処理の品質に影響します。アルマイト後に傷が浮き出る・メッキの密着が悪いといった問題は、研磨と後処理業者の間での仕様すり合わせ不足が原因であることがほとんどです。試作段階で後処理業者と研磨仕様を確認しておくことが重要です。</p>
+    <p>アルマイト・メッキ・塗装などの後処理がある場合、研磨の仕上がり具合が後処理の品質に影響します。アルマイト後に傷が浮き出る・メッキの密着が悪いといった問題は、研磨と後処理業者の間での仕様すり合わせ不足が原因であることがほとんどです。試作段階で後処理業者と研磨仕様を確認しておくことが重要です。</p>
 
     <h2 id="summary">まとめ</h2>
     <p>試作品の表面仕上げ仕様は、用途・素材・コストのバランスからRa値を決め、形状・素材に合った工法を選定し、試作品の現物で達成確認を行うという流れで進めるのが基本です。全面一律指定・工法の未指定・試作での省略は量産での手戻りリスクを高めます。</p>
@@ -619,11 +619,11 @@ nav.fixed .font-serif.font-semibold,#mobileMenu .font-serif.font-semibold,footer
       </a>
       <a href="../aluminum-polishing/" class="block border-b border-line-light py-4 pl-0 hover:pl-2 transition-all group">
         <div class="font-mono text-[10px] tracking-[.16em] text-muted mb-1">2026.08.03　素材・仕上げ</div>
-        <p class="font-serif text-[14px] font-medium leading-[1.6] group-hover:text-accent transition-colors">アルミ研磨とは？工法・番手・アルマイト前処理の注意点</p>
+        <p class="font-serif text-[14px] font-medium leading-[1.6] group-hover:text-accent transition-colors">アルミ研磨とは？工法・Ra値・アルマイト前処理の注意点</p>
       </a>
       <a href="../stainless-polishing/" class="block border-b border-line-light py-4 pl-0 hover:pl-2 transition-all group">
         <div class="font-mono text-[10px] tracking-[.16em] text-muted mb-1">2026.07.22　素材・仕上げ</div>
-        <p class="font-serif text-[14px] font-medium leading-[1.6] group-hover:text-accent transition-colors">ステンレス研磨とは？種類・番手・仕上げの選び方</p>
+        <p class="font-serif text-[14px] font-medium leading-[1.6] group-hover:text-accent transition-colors">ステンレス研磨とは？種類・Ra値・仕上げの選び方</p>
       </a>
     </div>
   </div>
