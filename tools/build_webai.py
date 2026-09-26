@@ -220,6 +220,12 @@ def set_meta(head, title, desc, url, ld_blocks):
     lds = ''.join('<script type="application/ld+json">\n' + json.dumps(b, ensure_ascii=False, indent=2) + '\n</script>\n' for b in ld_blocks)
     return head.replace('</head>', lds + STUDIO_CSS + '</head>', 1)
 
+def industry_section():
+    """サイト制作ページに置く、業種別ページへの入口"""
+    from industry_pages import INDUSTRIES
+    links = ''.join(f'<a href="{i["slug"]}/" class="svc-card"><div class="font-bold text-[16px] mb-1">{i["title"]}</div><p class="text-[13px] leading-[1.8] text-muted">{i["catch"]}</p><span class="text-[13px] font-bold text-accent-ink">詳しく見る →</span></a>' for i in INDUSTRIES)
+    return section("", "業種別のホームページ制作", '      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">' + links + '</div>', alt=True, narrow=False)
+
 def crumbs(items):
     return {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": i + 1, "name": n, "item": u} for i, (n, u) in enumerate(items)]}
@@ -285,6 +291,7 @@ def build(p):
 {section("", "マツケンスタジオの" + p["name"] + "の特徴", cards(p["features"], cols=2), narrow=False)}
 {section("", "マツケンスタジオについて", story, alt=True, narrow=False)}
 {mid_cta(p["cta"][2], C)}
+{industry_section() if p["slug"] == "website" else ""}
 {section("", p["name"] + "の料金", f"""      <div class="price-box">
         <p class="text-[14px] leading-[2] text-ink-2">{p["price"]}</p>
         <div class="flex flex-col sm:flex-row gap-3">{btn_main(C)}{btn_line()}</div>

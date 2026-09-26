@@ -173,3 +173,23 @@ def bars_3x():
         + t(110, 210, '作り直す前', 12, weight=500) + t(210, 210, '作り直した後', 12, weight=500)
         + '<path d="M150 120q14-40 26-50"/><path d="M168 66l9 4-3 9"/>',
         '有効な問い合わせが、作り直す前の3倍になったことを示す棒グラフ')
+
+
+def sitemap(pages, label):
+    """業種別ページ：おすすめのページ構成（トップ → 各ページ）"""
+    body = f'<rect x="220" y="8" width="120" height="36" rx="8" fill="{N}" stroke="none"/>' + t(280, 31, 'トップ', 14, fill='#fff')
+    body += f'<path d="M280 44v14M40 58h480" stroke="{G}"/>'
+    n = len(pages)
+    per_row = 4
+    for i, p in enumerate(pages):
+        row, col = divmod(i, per_row)
+        cx = 70 + col * 140
+        y = 72 + row * 58
+        if row == 0:
+            body += f'<path d="M{cx} 58v14" stroke="{G}"/>'
+        fill = Y if p.startswith('お問い合わせ') or p.startswith('お見積り') else L
+        body += f'<rect x="{cx - 62}" y="{y}" width="124" height="40" rx="8" fill="{fill}" stroke="none"/>'
+        size = 12 if len(p) > 7 else 13
+        body += t(cx, y + 25, p, size)
+    h = 72 + ((n - 1) // per_row + 1) * 58
+    return svg(body, label, vb=f'0 0 560 {h}').replace('class="st-illu"', 'class="st-illu" style="max-width:560px"')

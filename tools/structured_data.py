@@ -135,7 +135,7 @@ def graph_for(rel, s, mods):
                       'category': '金属研磨', 'description': desc, 'url': url, 'provider': {'@id': ORG_ID},
                       'areaServed': {'@type': 'Country', 'name': '日本'}})
         page['mainEntity'] = {'@id': url + '#service'}
-    if studio and len(parts) == 2 and parts[1] not in NOT_SERVICE:
+    if studio and len(parts) >= 2 and parts[1] not in NOT_SERVICE:
         name = H.unescape(title).split('｜')[0]
         nodes.append({'@type': 'Service', '@id': url + '#service', 'name': name, 'serviceType': name,
                       'category': 'Web集客・AI活用支援', 'description': desc, 'url': url,
