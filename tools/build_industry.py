@@ -11,7 +11,20 @@ exec(open(os.path.join(HERE, 'build_webai.py'), encoding='utf-8').read())
 from industry_pages import INDUSTRIES
 
 LP = '../../monitor/'
+HERO_POS = {'manufacturing': '50% 50%', 'construction': '62% 40%', 'home-builder': '55% 50%', 'logistics': '75% 60%'}
+
 EXTRA_CSS = '''<style>
+  .ind-hero::after{display:none}
+  .ind-bg{position:absolute;top:0;right:0;bottom:0;width:50%;background-size:cover;z-index:0;
+    -webkit-mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.55) 32%,#000 62%);mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.55) 32%,#000 62%)}
+  .ind-hero .trust{background:rgba(255,255,255,.9);border-radius:10px;padding:0 20px}
+  @media(min-width:768px){.ind-hero .trust>div:first-child{padding-left:4px}}
+  @media(max-width:767px){
+    .ind-bg{left:0;width:100%;bottom:auto;height:210px;
+      -webkit-mask-image:linear-gradient(to bottom,#000 45%,transparent 100%);mask-image:linear-gradient(to bottom,#000 45%,transparent 100%)}
+    .ind-hero .pwrap{padding-top:120px}
+    .ind-hero .crumb{display:none}
+  }
   .vw-list li{list-style:none;display:grid;grid-template-columns:28px 1fr;gap:10px;padding:12px 0;border-bottom:1px solid #EEF1F5;font-size:15px;line-height:1.8}
   .vw-list li::before{content:'';width:22px;height:22px;border-radius:50%;margin-top:3px;background:#1B3A6B url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M6 12l4 4 8-9'/></svg>") center/14px no-repeat}
   .mock{display:grid;grid-template-columns:1fr;gap:18px;align-items:end}
@@ -69,9 +82,10 @@ def build_industry(p):
       </div>'''
     main = f'''<main class="pt-[60px]">
 
-  <section class="st-hero pt-7 pb-12 md:py-20">
+  <section class="st-hero ind-hero pt-7 pb-12 md:py-20">
+    <div class="ind-bg" style="background-image:url(../../../images/web-ai/industry/hero-{p["slug"]}.jpg);background-position:{HERO_POS[p["slug"]]}" aria-hidden="true"></div>
     <div class="pwrap relative z-10">
-      <p class="font-mono text-[11px] tracking-[.2em] text-muted mb-4 md:mb-8">
+      <p class="crumb font-mono text-[11px] tracking-[.2em] text-muted mb-4 md:mb-8">
         <a href="../../../" class="hover:text-accent transition-colors">ホーム</a>
         <span class="mx-2 opacity-40">/</span>
         <a href="../../" class="hover:text-accent transition-colors">Web集客・AI活用支援</a>
