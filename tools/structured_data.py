@@ -51,10 +51,10 @@ STUDIO = {
     'alternateName': 'マツケンスタジオ by 松本研磨工業',
     'url': f'{BASE}/web-ai/',
     'image': f'{BASE}/images/ogp-studio.jpg',
-    'description': '株式会社松本研磨工業のWeb集客・AI活用支援。製造業・町工場・中小企業・個人事業主の、サイト制作、SEO・LLMO対策、Web広告、AI活用をお手伝いします。',
+    'description': '株式会社松本研磨工業が運営する、町工場発のWeb事業。製造業・建設業・工務店・運送業など、現場と技術のある中小企業のホームページ制作・リニューアル、検索対策、Web広告、AI活用をお手伝いします。',
     'parentOrganization': {'@id': ORG_ID},
     'areaServed': {'@type': 'Country', 'name': '日本'},
-    'knowsAbout': ['Web集客', 'SEO', 'LLMO', 'サイト制作', 'LP制作', 'Web広告', 'CVR改善', 'BtoBマーケティング', 'AI活用'],
+    'knowsAbout': ['ホームページ制作', 'ホームページリニューアル', 'Web集客', 'SEO', 'LLMO', 'サイト制作', 'LP制作', 'Web広告', 'CVR改善', 'BtoBマーケティング', 'AI活用'],
 }
 
 # Service を入れないページ（一覧・事例・問い合わせなど）

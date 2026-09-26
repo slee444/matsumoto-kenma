@@ -14,13 +14,13 @@ BASE = 'https://matsumoto-kenma.co.jp'
 URL = f'{BASE}/web-ai/monitor/'
 # LINE公式アカウントの友だち追加URL（例: https://lin.ee/xxxxxxx）。空のあいだはLINEのボタンを出さない
 LINE_URL = 'https://page.line.me/115rhdee'
-TITLE = '町工場のホームページ制作｜事例づくりモニター（毎月3社まで）｜マツケンスタジオ by 松本研磨工業'
-DESC = ('金属研磨の町工場・松本研磨工業が始めた、町工場・製造業のためのホームページ制作。'
-        '事例として紹介させていただくことを条件に、特別な価格で制作します。ドメイン・サーバー・Googleマップの手続きから、公開後の更新までまとめてお任せください。毎月3社まで。')
+TITLE = 'ホームページ制作・リニューアル｜事例づくりモニター（毎月3社まで）｜マツケンスタジオ by 松本研磨工業'
+DESC = ('町工場発のホームページ制作「マツケンスタジオ」（運営：株式会社松本研磨工業）。製造業・建設業・工務店・運送業など、現場と技術のある中小企業のホームページを、'
+        '事例づくりモニターとして特別な価格で制作します。ドメイン・サーバー・Googleマップの手続きから公開後の更新まで。毎月3社まで。')
 
 PAINS = [
     '「うちは紹介で回ってるから」と、後回しにしてきた',
-    '制作会社に話しても、図面や加工の話が通じない',
+    '制作会社に話しても、現場の話や専門用語が通じない',
     '求人を出しても、若い人からの応募が来ない',
     'いくらかかるのか、何が必要なのかが分からない',
     'ドメインやサーバーと言われても、正直よく分からない',
@@ -43,12 +43,12 @@ RENEW_DO = [
 WHY_NOW = [
     ('応募する人は、まず会社を調べます', '求人を見た人は、応募する前にスマホで会社の名前を検索します。何も出てこないと、それだけで候補から外れてしまうことがあります。'),
     ('新しい取引先も、ネットで確かめます', '初めて取引する会社は、どんな設備で、何ができるのかをホームページで確認します。ないと、話を進めにくくなります。'),
-    ('元請けだけに頼らない入口になります', '「この加工ができる会社」を探している人に、見つけてもらえるようになります。'),
+    ('紹介だけに頼らない入口になります', '「この仕事を頼める会社」を探している人に、見つけてもらえるようになります。'),
 ]
 
 STRENGTHS = [
-    ('図面も、公差も、そのまま通じます',
-     '私たちも毎日、金属を磨いている町工場です。加工法、材質、公差、納期の感覚まで、説明しなくても分かります。社長が専門用語の説明に疲れることはありません。'),
+    ('現場の言葉が、そのまま通じます',
+     '私たちも毎日、金属を磨いている町工場です。図面、材料、工期や納期の感覚、現場の段取りまで、説明しなくても分かります。社長が専門用語の説明に疲れることはありません。'),
     ('自分の会社で、結果を出したやり方です',
      '松本研磨工業のホームページを作り直し、検索対策を進めたことで、有効なお問い合わせが3倍になりました。机の上の理屈ではなく、町工場で実際に効いたやり方で作ります。'),
     ('面倒な手続きは、まるごと引き受けます',
@@ -58,7 +58,7 @@ STRENGTHS = [
 ]
 
 COMPARE = [
-    ('加工や図面の話', 'その都度、説明が必要', 'そのまま通じる'),
+    ('現場の話・専門用語', 'その都度、説明が必要', 'そのまま通じる'),
     ('ドメイン・サーバー', '自分で契約・管理することが多い', '手続きはすべて代行'),
     ('ドメイン・サイトの名義', '制作会社の名義のことも', 'いつでもお客様の名義'),
     ('作ったあと', '更新は別料金・放置になりがち', '3か月無料、その後も月額で'),
@@ -187,7 +187,8 @@ mark{background:linear-gradient(transparent 62%,var(--y) 62%);color:inherit;padd
 .kick{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:12px}
 @media(min-width:768px){.kick{font-size:17px}}
 .hero h1{font-size:clamp(38px,5.6vw,66px);font-weight:700;line-height:1.22;letter-spacing:0;margin-bottom:24px}
-.hero h1 .small{display:block;font-size:.5em;line-height:1.5;margin-bottom:.2em;color:var(--ink2)}
+.hero h1 .small{display:block;font-size:.42em;line-height:1.5;margin-bottom:.25em;color:var(--ink2)}
+@media(min-width:960px){.hero h1 .small{white-space:nowrap}}
 .hero .sub{font-size:16px;line-height:1.95;color:var(--ink2);max-width:560px;margin-bottom:22px}
 @media(min-width:768px){.hero .sub{font-size:17px}}
 .proof{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:24px;max-width:560px}
@@ -510,10 +511,10 @@ def page():
   <div class="glow"></div><div class="buff b1"></div>
   <div class="wrap grid">
     <div>
-      <div class="tags"><span class="tag y">毎月3社まで</span><span class="tag">新規制作・リニューアル</span><span class="tag o">町工場・製造業</span></div>
+      <div class="tags"><span class="tag y">毎月3社まで</span><span class="tag">新規制作・リニューアル</span><span class="tag o">製造業・建設・工務店・運送</span></div>
       <p class="kick">金属研磨の松本研磨工業が始めた、Webの新事業</p>
-      <h1><span class="small">町工場のホームページは、</span><mark>町工場</mark>がつくる。</h1>
-      <p class="sub">図面も、公差も、加工の話もそのまま通じる担当が、ドメインの取得から公開後の更新まで、まるごと引き受けます。<span class="pc-only">これから作る会社も、今のサイトを作り直したい会社も。</span></p>
+      <h1><span class="small">現場と技術のある会社のホームページを、</span><mark>町工場</mark>がつくる。</h1>
+      <p class="sub">製造業・建設業・工務店・運送業など、現場のある会社の話がそのまま通じる担当が、ドメインの取得から公開後の更新まで、まるごと引き受けます。</p>
       <div class="proof">
         <div><b>3倍増</b><span>自社サイトの<br>有効なお問い合わせ</span></div>
         <div><b>お客様名義</b><span>ドメインも<br>サイトも</span></div>
@@ -537,7 +538,7 @@ def page():
     <p class="eyebrow">こんなこと、ありませんか</p>
     <h2 class="h2">ホームページ、<br>ずっと後回しにしていませんか。</h2>
     <ul class="checks">{pains}</ul>
-    <p class="turn">その「分からない」「面倒」を、<br><mark>同じ町工場</mark>が引き受けます。</p>
+    <p class="turn">その「分からない」「面倒」を、<br><mark>現場を知る私たち</mark>が引き受けます。</p>
   </div>
 </section>
 
@@ -568,7 +569,7 @@ def page():
       <p class="eyebrow">マツケンスタジオとは</p>
       <p class="big">毎日、金属を磨いている<br>町工場の、Webの事業です。</p>
       <p>マツケンスタジオは、神奈川県川崎市で金属研磨を営む株式会社松本研磨工業が始めた、新しい事業です。</p>
-      <p>町工場の仕事の良さは、なかなか外に伝わりません。私たち自身も、そう感じてきました。だからこそ、自社のホームページを作り直し、検索対策を進め、有効なお問い合わせを3倍にしてきました。</p>
+      <p>現場のある会社の仕事の良さは、なかなか外に伝わりません。町工場である私たち自身も、そう感じてきました。だからこそ、自社のホームページを作り直し、検索対策を進め、有効なお問い合わせを3倍にしてきました。</p>
       <p>そのやり方を、同じように「いい仕事をしているのに、知られていない」会社のために使いたい。それが、この事業を始めた理由です。</p>
       <div class="sign"><span class="logo"><span class="mark">松</span><span><b>マツケンスタジオ</b><small>by 松本研磨工業</small></span></span></div>
     </div>

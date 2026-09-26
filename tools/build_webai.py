@@ -128,7 +128,7 @@ def final_cta(contact):
     <div class="pwrap">
       <div class="flex justify-center mb-6">{LOGO}</div>
       <p class="font-bold leading-[1.5] mb-4 text-ink" style="font-size:clamp(22px,3.2vw,32px)">Webのお悩み、<br class="sm:hidden"/>まずは気軽にご相談ください。</p>
-      <p class="text-[14px] md:text-[15px] text-muted leading-[1.9] mb-8 max-w-[560px] mx-auto">何から始めればいいか分からない、という段階でも大丈夫です。町工場・職人・小さな会社の方の相談を、同じつくり手としてお聞きします。</p>
+      <p class="text-[14px] md:text-[15px] text-muted leading-[1.9] mb-8 max-w-[560px] mx-auto">何から始めればいいか分からない、という段階でも大丈夫です。製造業・建設業・工務店など、現場のある会社の相談を、同じつくり手としてお聞きします。</p>
       {cta_pair(contact, 'lg')}
     </div>
   </section>
@@ -237,7 +237,7 @@ def build(p):
     story = f'''      <div class="grid grid-cols-1 md:grid-cols-[1fr_260px] gap-8 items-center">
         <div>
           <p class="text-[14px] md:text-[15px] leading-[2] text-ink-2 mb-4">マツケンスタジオは、金属研磨の町工場・松本研磨工業の新しい事業です。担当するのは、デジタルマーケティングの仕事を10年以上続けてきた責任者です。</p>
-          <p class="text-[14px] md:text-[15px] leading-[2] text-ink-2 mb-5">数百社の集客を支援してきた経験と、町工場の現場の両方を知っているからこそ、製造業・職人・小さな会社の方に、分かる言葉で、無理のない範囲から{p["name"]}をお手伝いします。</p>
+          <p class="text-[14px] md:text-[15px] leading-[2] text-ink-2 mb-5">数百社の集客を支援してきた経験と、町工場の現場の両方を知っているからこそ、現場と技術のある中小企業の方に、分かる言葉で、無理のない範囲から{p["name"]}をお手伝いします。</p>
           <a href="../#story" class="text-[14px] font-bold text-accent-ink hover:underline">私たちがWebの仕事をする理由 →</a>
         </div>
         <div class="flex md:justify-end">{LOGO}</div>
@@ -291,8 +291,8 @@ def build_hub():
     src = open(f, encoding='utf-8').read()
     head, tail = src[:src.index('<main')], src[src.index('</main>'):]
     url = f'{BASE}/web-ai/'
-    desc = '製造業・町工場・職人、中小企業や個人事業主のためのWeb集客・AI活用支援。川崎の研磨工場・松本研磨工業のWeb部門「マツケンスタジオ」が、サイトづくりから検索対策、AI活用まで分かる言葉でお手伝いします。'
-    head = set_meta(head, 'Web集客・AI活用支援｜マツケンスタジオ by 松本研磨工業', desc, url,
+    desc = '製造業・建設業・工務店・運送業など、現場と技術のある中小企業のためのホームページ制作・Web集客・AI活用支援。町工場発のWeb事業「マツケンスタジオ」（運営：株式会社松本研磨工業）が、サイトづくりから検索対策、AI活用まで分かる言葉でお手伝いします。'
+    head = set_meta(head, 'ホームページ制作・Web集客・AI活用支援｜マツケンスタジオ by 松本研磨工業', desc, url,
                     [crumbs([('ホーム', f'{BASE}/'), ('Web集客・AI活用支援', url)])])
     C = 'contact/'
 
@@ -320,10 +320,10 @@ def build_hub():
       </div>''')
 
     targets = [
-        ('製造業・町工場', '技術には自信があるのに、サイトが古いまま。新しい取引先から見つけてもらえない。'),
-        ('職人・工房', '仕事の良さを伝えたいけれど、何をどう発信すればいいのか分からない。'),
-        ('中小企業', 'Webの担当者がいない。制作会社に頼んだけれど、作ったあと放ったらかしになっている。'),
-        ('個人事業主', '予算は限られている。まずは小さく始めて、少しずつ育てていきたい。'),
+        ('製造業', '技術には自信があるのに、サイトが古いまま。新しい取引先から見つけてもらえない。'),
+        ('建設業・工務店', '施工事例や仕事ぶりを伝えたいけれど、どう見せればいいか分からない。採用にもつなげたい。'),
+        ('運送業・設備工事など', '求人を出しても応募が来ない。会社の信用を、ホームページできちんと伝えたい。'),
+        ('中小企業・個人事業主', 'Webの担当者がいない。作ったあと放ったらかしになっている。まずは小さく始めたい。'),
     ]
     target_html = '\n'.join(f'''        <div class="target-card">
           <span class="tg">{t}</span>
@@ -358,7 +358,7 @@ def build_hub():
       </p>
       <div class="mb-4 md:mb-8">{LOGO}</div>
       <h1 class="font-bold leading-[1.35] mb-4 md:mb-6 text-ink max-w-[820px]" style="font-size:clamp(24px,7vw,54px)">いい仕事をしている会社の<br/>「知ってもらう」を、<br/>研磨工場が手伝います。</h1>
-      <p class="text-[14px] md:text-[17px] text-muted leading-[1.8] md:leading-[1.9] max-w-[640px]"><span class="md:hidden">製造業・町工場・職人、中小企業や個人事業主のためのWeb集客・AI活用支援です。</span><span class="hidden md:inline">製造業・町工場・職人、中小企業や個人事業主のためのWeb集客・AI活用支援。サイトづくりから検索対策、AIの活用まで、同じつくり手の目線でお手伝いします。</span></p>
+      <p class="text-[14px] md:text-[17px] text-muted leading-[1.8] md:leading-[1.9] max-w-[640px]"><span class="md:hidden">製造業・建設業・工務店など、現場と技術のある中小企業のホームページ制作・Web集客です。</span><span class="hidden md:inline">製造業・建設業・工務店・運送業など、現場と技術のある中小企業のためのホームページ制作・Web集客・AI活用支援。サイトづくりから検索対策、AIの活用まで、同じつくり手の目線でお手伝いします。</span></p>
       <div class="mt-6 md:mt-9 flex flex-col sm:flex-row gap-2.5 md:gap-3 sm:items-center">{btn_main(C)}{btn_line()}</div>
 {trust()}
     </div>
@@ -384,7 +384,7 @@ def build_hub():
         <p>一方で私自身は、上場企業に勤めるなど、10年以上デジタルマーケティングの仕事をしてきました。マーケターとして企業のオウンドメディアを50万PVまで育て、数百社の集客をお手伝いし、1,000万人以上が使うサービスのマーケティングも担当してきました。</p>
         <p>その目で家業を見たとき、もどかしさを感じました。いい技術があるのに、それを知ってもらう手段がほとんどない。町工場の仕事は長く紹介や付き合いが中心でしたが、いまは発注する側も、まずインターネットで探します。</p>
         <p>そこで、まず自分の家のサイトを一つずつ直すことから始めました。文字の読みやすさ、最初に目に入る画面、検索で見つけてもらうための書き方。担当者も大きな予算もない中で、何から手をつけるかを考えながら進めてきました。その結果、有効なお問い合わせの数は3倍に増えました。</p>
-        <p>やってみて分かったのは、同じように困っている町工場や職人、小さな会社がたくさんあるということです。大きな会社のやり方をそのまま持ち込んでも、うまくいきません。予算も人手も限られた中で、何を優先するか。その両方を知っているからこそ、できるお手伝いがあると考えました。</p>
+        <p>やってみて分かったのは、同じように困っている、現場と技術のある中小企業がたくさんあるということです。大きな会社のやり方をそのまま持ち込んでも、うまくいきません。予算も人手も限られた中で、何を優先するか。その両方を知っているからこそ、できるお手伝いがあると考えました。</p>
         <p>マツケンスタジオは、そうして生まれた松本研磨工業の新しい事業です。金属を少しずつ磨いて光らせるように、あなたの会社の良さを、分かりやすい言葉で、無理のない範囲から磨いていきます。</p>
       </div>
       <div class="mt-10">{LOGO}</div>
