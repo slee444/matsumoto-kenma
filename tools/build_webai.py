@@ -1,5 +1,6 @@
 import ogp_meta
 import footer
+import illust
 import os, re, json, glob
 
 SERVICE_SHELL = 'polishing/buff-polishing/index.html'   # depth-2 shell (nav links already ../../)
@@ -91,6 +92,8 @@ STUDIO_CSS = '''<style>
   .rel-grid a.current{color:#8a8a86;pointer-events:none}
   .svc-card{display:block;background:#fff;border:1px solid #E1E5EB;border-radius:8px;padding:26px 24px;transition:border-color .2s,box-shadow .2s,transform .2s}
   a.svc-card:hover{border-color:#1B3A6B;box-shadow:0 10px 30px -14px rgba(27,58,107,.35);transform:translateY(-2px)}
+  .st-illu{display:block;width:100%;height:auto;max-width:300px;margin:0 auto}
+  .st-icon{display:block;margin-bottom:12px}
   .story p{font-size:15px;line-height:2.1;color:#26262B;margin-bottom:20px}
   @media(min-width:768px){.story p{font-size:16px}}
   .story-quote{font-size:clamp(20px,2.6vw,28px);font-weight:700;line-height:1.6;color:#0E0E10;padding-left:20px;border-left:4px solid #F5DE00}
@@ -143,11 +146,12 @@ def final_cta(contact):
   </section>
 '''
 
-def cards(items, cols=3):
+def cards(items, cols=3, icons=None):
     out = [f'      <div class="grid grid-cols-1 md:grid-cols-{cols} gap-5">']
     for i, (t, d) in enumerate(items):
+        top = illust.icon(icons[i]) if icons else f'<div class="idx">{i+1:02d}</div>'
         out.append(f'''        <div class="card2{' alt' if i % 2 else ''}">
-          <div class="idx">{i+1:02d}</div>
+          {top}
           <div class="font-bold text-[16px] mb-2">{t}</div>
           <p class="text-[13px] leading-[1.9] text-muted">{d}</p>
         </div>''')
@@ -272,7 +276,7 @@ def build(p):
     </div>
   </section>
 
-{section("", p["name"] + "とは", '      <p class="text-[17px] md:text-[19px] font-bold text-ink leading-[1.7] mb-5">' + p["what_title"] + '</p>' + chr(10) + what)}
+{section("", p["name"] + "とは", '      <div class="grid grid-cols-1 md:grid-cols-[1fr_280px] gap-6 md:gap-10 items-center"><div>' + chr(10) + '      <p class="text-[17px] md:text-[19px] font-bold text-ink leading-[1.7] mb-5">' + p["what_title"] + '</p>' + chr(10) + what + '</div>' + chr(10) + '      <div class="max-w-[260px] md:max-w-none mx-auto w-full">' + illust.ILLUST.get(p["slug"], '') + '</div></div>')}
 {section("得られること", p["name"] + "で得られること", cards(p["benefits"]), alt=True, narrow=False)}
 {mid_cta(p["cta"][0], C)}
 {section("", p["name"] + "でお手伝いできること", '      <ul class="svc-list">' + chr(10) + items + chr(10) + '      </ul>')}
@@ -388,6 +392,7 @@ def build_hub():
     <div class="pwrap max-w-[800px]">
       <h2 class="sec-ttl">研磨工場が、Webの仕事をはじめた理由</h2>
       <p class="story-quote my-10">技術があるのに、知られていない。<br/>それは、もったいない。</p>
+      <div class="my-8 max-w-[440px]">{illust.flow_story().replace('max-width:300px','').replace('class="st-illu"','class="st-illu" style="max-width:440px"')}</div>
       <div class="story">
         <p>松本研磨工業は、1967年から川崎で金属を磨いてきた小さな工場です。マツケンスタジオを担当する私は、その社長の息子です。鏡のように仕上げる父たちの技術には、今も誇りを持っています。</p>
         <p>一方で私自身は、上場企業に勤めるなど、10年以上デジタルマーケティングの仕事をしてきました。マーケターとして企業のオウンドメディアを50万PVまで育て、数百社の集客をお手伝いし、1,000万人以上が使うサービスのマーケティングも担当してきました。</p>
@@ -418,7 +423,7 @@ def build_hub():
     </div>
   </section>
 
-{section("大切にしていること", "マツケンスタジオの3つの約束", cards(values), narrow=False)}
+{section("大切にしていること", "マツケンスタジオの3つの約束", cards(values, icons=['talk', 'step', 'loop']), narrow=False)}
 {mid_cta("まずは、今の状況をお聞かせください。相談は無料です。", C)}
   <section class="py-14 md:py-20" id="services">
     <div class="pwrap">

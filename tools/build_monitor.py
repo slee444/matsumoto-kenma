@@ -9,6 +9,7 @@ import os, sys, json
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import ogp_meta
+import illust
 
 BASE = 'https://matsumoto-kenma.co.jp'
 URL = f'{BASE}/web-ai/monitor/'
@@ -303,6 +304,9 @@ mark{background:linear-gradient(transparent 62%,var(--y) 62%);color:inherit;padd
 .plan.rec .pick:hover{background:var(--yh);color:var(--ink)}
 .note{font-size:13px;color:var(--muted);line-height:1.8;margin-top:16px}
 
+/* icons */
+.st-icon{display:block;margin-bottom:10px}
+
 /* renewal */
 .renew{display:grid;gap:16px;margin-top:24px}
 @media(min-width:900px){.renew{grid-template-columns:.9fr 1.1fr;gap:22px;align-items:stretch}}
@@ -457,8 +461,8 @@ def page():
     line_form = (f'<div class="line-box"><div class="line-txt"><span>フォームが面倒な方は、LINEでも相談できます。</span><span class="line-pc">スマホのカメラでQRコードを読み取ると、友だち追加できます。</span><a href="{LINE_URL}" target="_blank" rel="noopener" class="line-btn">LINEで相談する</a></div><img class="line-qr" src="../../images/lp/line-qr.png" alt="LINE友だち追加のQRコード" width="360" height="360" loading="lazy"></div>' if LINE_URL else '')
     renew_pains = ''.join(f'<li>{x}</li>' for x in RENEW_PAINS)
     renew_do = ''.join(f'<div><b>{t}</b><span>{d}</span></div>' for t, d in RENEW_DO)
-    why = ''.join(f'<div class="card"><h3>{t}</h3><p>{d}</p></div>' for t, d in WHY_NOW)
-    strengths = ''.join(f'<div class="card"><h3>{t}</h3><p>{d}</p></div>' for t, d in STRENGTHS)
+    why = ''.join(f'<div class="card">{illust.icon(ic, 44)}<h3>{t}</h3><p>{d}</p></div>' for (t, d), ic in zip(WHY_NOW, ['person', 'handshake', 'search']))
+    strengths = ''.join(f'<div class="card">{illust.icon(ic, 44)}<h3>{t}</h3><p>{d}</p></div>' for (t, d), ic in zip(STRENGTHS, ['talk', 'arrowup', 'tool', 'check']))
     cmp_rows = ''.join(f'<tr><th>{a}</th><td class="them">{b}</td><td class="us">{c}</td></tr>' for a, b, c in COMPARE)
     inc = ''.join(f'<div><b>{t}</b><span>{d}</span></div>' for t, d in INCLUDED)
     cond = ''.join(f'<li>{x}</li>' for x in CONDITIONS)

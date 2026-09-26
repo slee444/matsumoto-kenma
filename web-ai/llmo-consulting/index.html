@@ -234,6 +234,8 @@ nav.fixed .font-serif.font-semibold,#mobileMenu .font-serif.font-semibold,footer
   .rel-grid a.current{color:#8a8a86;pointer-events:none}
   .svc-card{display:block;background:#fff;border:1px solid #E1E5EB;border-radius:8px;padding:26px 24px;transition:border-color .2s,box-shadow .2s,transform .2s}
   a.svc-card:hover{border-color:#1B3A6B;box-shadow:0 10px 30px -14px rgba(27,58,107,.35);transform:translateY(-2px)}
+  .st-illu{display:block;width:100%;height:auto;max-width:300px;margin:0 auto}
+  .st-icon{display:block;margin-bottom:12px}
   .story p{font-size:15px;line-height:2.1;color:#26262B;margin-bottom:20px}
   @media(min-width:768px){.story p{font-size:16px}}
   .story-quote{font-size:clamp(20px,2.6vw,28px);font-weight:700;line-height:1.6;color:#0E0E10;padding-left:20px;border-left:4px solid #F5DE00}
@@ -645,9 +647,11 @@ nav.fixed .font-serif.font-semibold,#mobileMenu .font-serif.font-semibold,footer
   <section class="py-14 md:py-20">
     <div class="pwrap max-w-[800px]">
       <h2 class="sec-ttl">LLMOコンサルティングとは</h2>
+      <div class="grid grid-cols-1 md:grid-cols-[1fr_280px] gap-6 md:gap-10 items-center"><div>
       <p class="text-[17px] md:text-[19px] font-bold text-ink leading-[1.7] mb-5">AIに、自社の情報を正しく読み取ってもらうための仕事です。</p>
       <p class="text-[14px] md:text-[15px] leading-[2] text-ink-2 mb-4">LLMO（大規模言語モデル最適化）は、ChatGPTなどのAIが答えを作るときに、自社のサイトの情報を正しく参考にしてもらうための取り組みです。</p>
-      <p class="text-[14px] md:text-[15px] leading-[2] text-ink-2 mb-4">AIは、分かりやすく整理された情報や、はっきりした事実を好んで使います。会社の情報、できること、実績、よくある質問などを、AIにも人にも伝わる形で整えていきます。</p>
+      <p class="text-[14px] md:text-[15px] leading-[2] text-ink-2 mb-4">AIは、分かりやすく整理された情報や、はっきりした事実を好んで使います。会社の情報、できること、実績、よくある質問などを、AIにも人にも伝わる形で整えていきます。</p></div>
+      <div class="max-w-[260px] md:max-w-none mx-auto w-full"><svg viewBox="0 0 300 220" role="img" aria-label="サイトの内容がAIの答えに正しく使われる図" class="st-illu" fill="none" stroke="#1B3A6B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="40" width="110" height="140" rx="8" fill="#fff"/><path d="M36 64h60M36 84h78M36 104h70M36 124h78M36 144h50" stroke="#C9D2DF"/><text x="75" y="200" text-anchor="middle" font-size="12" font-weight="700" fill="#1B3A6B" stroke="none">会社のサイト</text><path d="M140 110h26"/><path d="M160 104l6 6-6 6"/><path d="M176 56h104a10 10 0 0 1 10 10v70a10 10 0 0 1-10 10h-60l-18 16v-16h-26a10 10 0 0 1-10-10V66a10 10 0 0 1 10-10z" fill="#EEF2F8" stroke="none"/><text x="228" y="86" text-anchor="middle" font-size="12" font-weight="700" fill="#1B3A6B" stroke="none">AIの答え</text><text x="228" y="110" text-anchor="middle" font-size="12" font-weight="500" fill="#1B3A6B" stroke="none">「〇〇が得意な</text><text x="228" y="128" text-anchor="middle" font-size="12" font-weight="500" fill="#1B3A6B" stroke="none">　会社です」</text><circle cx="278" cy="52" r="12" fill="#F5DE00" stroke="none"/><text x="278" y="57" text-anchor="middle" font-size="11" font-weight="700" fill="#1B3A6B" stroke="none">AI</text></svg></div></div>
     </div>
   </section>
 
