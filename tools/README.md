@@ -10,3 +10,6 @@
 - `python3 tools/llms_txt.py` … AI検索向けの案内ファイル `llms.txt` を作り直す。ページを追加したら実行。
 - `python3 tools/footer.py` … 全ページのフッターを共通の形に置きかえる。フッターを直すときはこのファイルを直して実行。
 - `python3 tools/ogp_meta.py` … OGP（SNSで共有したときの画像など）のタグを全ページに入れ直す。元画像のデザインは `tools/ogp-source.html`。
+- `python3 tools/build_industry.py` … 業種別ホームページ制作ページ（/web-ai/website/<業種>/）を作り直す。原稿は `industry_pages.py`。制作イメージの画像は `node output/industry-mock/render.js`（写真の出典は output/industry-mock/photos/CREDITS.md）。実行後は structured_data.py・llms_txt.py・Tailwind も実行。
+- `python3 tools/build_monitor.py` … 事例づくりモニターのLP（/web-ai/monitor/）を作り直す。
+- 図（SVG）は `tools/illust.py` にまとめている。
