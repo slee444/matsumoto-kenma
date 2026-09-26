@@ -108,8 +108,15 @@ def btn_main(href, size='md'):
     }[size]
     return f'<a href="{href}" class="inline-flex items-center justify-center gap-[10px] {cls} rounded-full font-bold tracking-[.04em] bg-cta-yellow text-ink hover:bg-cta-yellow-h hover:-translate-y-0.5 transition-all">1分で問い合わせ →</a>'
 
+LINE_URL = 'https://page.line.me/115rhdee'
+
 def btn_line(size='md'):
-    return ''  # LINEは使わない方針
+    cls = {
+        'lg': 'px-10 py-5 md:px-12 md:py-[22px] text-[17px] md:text-[18px]',
+        'md': 'px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px]',
+    }[size]
+    return (f'<a href="{LINE_URL}" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-[10px] {cls} '
+            f'rounded-full font-bold tracking-[.04em] bg-[#06C755] text-white hover:bg-[#05B34C] hover:-translate-y-0.5 transition-all">{LINE_ICON}LINEで相談する</a>')
 
 def cta_pair(contact, size='md'):
     return f'<div class="flex flex-col sm:flex-row items-center justify-center gap-3">{btn_main(contact, size)}{btn_line(size)}</div>'
@@ -274,7 +281,7 @@ def build(p):
 {mid_cta(p["cta"][2], C)}
 {section("", p["name"] + "の料金", f"""      <div class="price-box">
         <p class="text-[14px] leading-[2] text-ink-2">{p["price"]}</p>
-        {btn_main(C)}
+        <div class="flex flex-col sm:flex-row gap-3">{btn_main(C)}{btn_line()}</div>
       </div>""")}
 {section("実績", "実績・事例", CASE_CARD.format(href="../case/"), alt=True)}
 {section("", p["name"] + "のよくある質問", faqs)}
