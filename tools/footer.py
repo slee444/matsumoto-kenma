@@ -10,6 +10,7 @@ import re, pathlib
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
 IG = '<svg class="w-5 h-5 stroke-current fill-none stroke-[1.5]" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>'
+LINE = '<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.4 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>'
 YT = '<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.3.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.2.9C6.8 19 12 19 12 19s4.8 0 7-.2c.4-.1 1.3-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.8 14.5V9.5l5.4 2.5-5.4 2.5z"/></svg>'
 
 def _col(title, links, pre):
@@ -35,15 +36,19 @@ def render(pre, studio=False):
     links = ''.join(_col(t, l, pre) for t, l in cols)
     if studio:
         contact = f'''
-        <p class="text-[14px] leading-[1.9] text-paper/80 mb-5">マツケンスタジオへのご相談は、お問い合わせフォームで受け付けています。</p>
+        <p class="text-[14px] leading-[1.9] text-paper/80 mb-5">マツケンスタジオへのご相談は、お問い合わせフォームかLINEで受け付けています。</p>
         <a href="{pre}web-ai/contact/" class="ft-btn">1分で問い合わせ</a>'''
         address = '〒210-0851 神奈川県川崎市川崎区浜町3-9-22'
+        sns = (f'<a href="https://www.instagram.com/matsuken_studio/" target="_blank" rel="noopener" class="ft-sns">{IG}<span>@matsuken_studio</span></a>'
+               f'<a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="ft-sns">{LINE}<span>LINEで相談</span></a>')
     else:
         contact = f'''
         <a href="tel:0443338412" class="block text-[26px] md:text-[28px] font-bold tracking-[.02em] text-paper leading-none hover:underline underline-offset-4">044-333-8412</a>
         <p class="text-[13px] leading-[1.8] text-paper/70 mt-2 mb-5">平日 8:30〜18:00（土日祝休み）<br/>※営業・勧誘のお電話はお断りしています</p>
         <a href="{pre}contact/" class="ft-btn">お問い合わせフォーム</a>'''
         address = '〒210-0851 神奈川県川崎市川崎区浜町3-9-22<br/>電話 044-333-8412 ／ FAX 044-333-3843'
+        sns = (f'<a href="https://www.instagram.com/matsu_polish/" target="_blank" rel="noopener" class="ft-sns">{IG}<span>Instagram</span></a>'
+               f'<a href="https://www.youtube.com/channel/UCIGiSzo9TyINLuygAsuP5ew/" target="_blank" rel="noopener" class="ft-sns">{YT}<span>YouTube</span></a>')
     return f'''<footer class="site-footer bg-navy text-paper pt-14 md:pt-20 pb-8">
   <div class="wrap">
     <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-16 pb-10 md:pb-14 border-b border-paper/15">
@@ -53,10 +58,7 @@ def render(pre, studio=False):
           <span class="text-[18px] md:text-[20px] font-bold tracking-[.04em] text-paper">株式会社松本研磨工業</span>
         </a>
         <p class="mt-5 text-[14px] leading-[1.9] text-paper/75">{address}</p>
-        <div class="mt-6 flex gap-3">
-          <a href="https://www.instagram.com/matsu_polish/" target="_blank" rel="noopener" class="ft-sns">{IG}<span>Instagram</span></a>
-          <a href="https://www.youtube.com/channel/UCIGiSzo9TyINLuygAsuP5ew/" target="_blank" rel="noopener" class="ft-sns">{YT}<span>YouTube</span></a>
-        </div>
+        <div class="mt-6 flex flex-wrap gap-3">{sns}</div>
       </div>
       <div class="lg:border-l lg:border-paper/15 lg:pl-16">
         <h3 class="ft-head">お問い合わせ</h3>{contact}

@@ -53,6 +53,7 @@ STUDIO = {
     'image': f'{BASE}/images/ogp-studio.jpg',
     'description': '株式会社松本研磨工業が運営する、町工場発のWeb事業。製造業・建設業・工務店・運送業など、現場と技術のある中小企業のホームページ制作・リニューアル、検索対策、Web広告、AI活用をお手伝いします。',
     'parentOrganization': {'@id': ORG_ID},
+    'sameAs': ['https://www.instagram.com/matsuken_studio/', 'https://page.line.me/115rhdee'],
     'areaServed': {'@type': 'Country', 'name': '日本'},
     'knowsAbout': ['ホームページ制作', 'ホームページリニューアル', 'Web集客', 'SEO', 'LLMO', 'サイト制作', 'LP制作', 'Web広告', 'CVR改善', 'BtoBマーケティング', 'AI活用'],
 }
