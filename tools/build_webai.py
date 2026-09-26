@@ -41,6 +41,8 @@ CATEGORIES = [
 STUDIO_CSS = '''<style>
   /* Matsuken Studio: light theme */
   html,body{background:#FFFFFF}
+  .pwrap{max-width:960px;margin:0 auto;padding:0 20px}
+  @media(min-width:768px){.pwrap{padding:0 40px}}
   .pwrap.max-w-\[800px\]{max-width:880px}
   .st-alt{background:#F4F6F9}
   .st-cta{background:#FFF9D6}
