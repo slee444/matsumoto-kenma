@@ -13,3 +13,4 @@
 - `python3 tools/build_industry.py` … 業種別ホームページ制作ページ（/web-ai/website/<業種>/）を作り直す。原稿は `industry_pages.py`。制作イメージの画像は `node output/industry-mock/render.js`（写真の出典は output/industry-mock/photos/CREDITS.md）。実行後は structured_data.py・llms_txt.py・Tailwind も実行。
 - `python3 tools/build_monitor.py` … 事例づくりモニターのLP（/web-ai/monitor/）を作り直す。
 - 図（SVG）は `tools/illust.py` にまとめている。
+- `python3 tools/build_column.py` … Web集客コラム（/web-ai/column/：トップ・カテゴリ・記事・著者）を作り直す。記事の原稿は `column_posts.py`（本文はHTML、`{{fig:名前}}` で図を入れる）。記事が3本未満のカテゴリは自動で noindex。実行後は structured_data.py・footer.py・llms_txt.py・subset_fonts.py・Tailwind も実行。
