@@ -226,6 +226,14 @@ def industry_section():
     links = ''.join(f'<a href="{i["slug"]}/" class="svc-card"><div class="font-bold text-[16px] mb-1">{i["title"]}</div><p class="text-[13px] leading-[1.8] text-muted">{i["catch"]}</p><span class="text-[13px] font-bold text-accent-ink">詳しく見る →</span></a>' for i in INDUSTRIES)
     return section("", "業種別のホームページ制作", '      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">' + links + '</div>', alt=True, narrow=False)
 
+def column_latest():
+    """Web集客トップに置く、コラムの新着3本"""
+    from column_posts import POSTS, CATEGORIES
+    cat = {k: n for k, n, _ in CATEGORIES}
+    posts = sorted(POSTS, key=lambda p: p['date'], reverse=True)[:3]
+    cards_ = ''.join(f'<a href="column/{p["slug"]}/" class="svc-card"><span class="text-[12px] font-bold text-accent-ink">{cat[p["category"]]}</span><div class="font-bold text-[15px] leading-[1.6] mt-2">{p["title"]}</div></a>' for p in posts)
+    return section("", "Web集客コラム", '      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">' + cards_ + '</div>' + chr(10) + '      <p class="mt-5 text-[14px]"><a href="column/" class="font-bold text-accent-ink hover:underline">コラムの一覧を見る →</a></p>', alt=True, narrow=False)
+
 def crumbs(items):
     return {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": i + 1, "name": n, "item": u} for i, (n, u) in enumerate(items)]}
@@ -442,6 +450,7 @@ def build_hub():
 
 {section("実績", "実績・事例", CASE_CARD.format(href="case/"), alt=True)}
 {section("流れ", "ご相談の流れ", step_html)}
+{column_latest()}
 {final_cta(C)}
 '''
     open(f, 'w', encoding='utf-8').write(studio_chrome(head + main + tail, '../'))

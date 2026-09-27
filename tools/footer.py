@@ -31,7 +31,7 @@ def render(pre, studio=False):
                         ('お知らせ', 'news/'), ('コラム', 'column/')]),
         ('Web集客・AI活用支援', [('サービス一覧', 'web-ai/'), ('SEO・集客対策', 'web-ai/seo-consulting/'),
                               ('サイト制作・LP制作', 'web-ai/website/'), ('AI活用支援', 'web-ai/ai-katsuyo/'),
-                              ('実績・事例', 'web-ai/case/')]),
+                              ('実績・事例', 'web-ai/case/'), ('Web集客コラム', 'web-ai/column/')]),
     ]
     links = ''.join(_col(t, l, pre) for t, l in cols)
     if studio:

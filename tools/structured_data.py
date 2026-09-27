@@ -115,7 +115,7 @@ def graph_for(rel, s, mods):
         ptype = 'AboutPage'
     elif parts in [('contact',), ('web-ai', 'contact')]:
         ptype = 'ContactPage'
-    elif parts in [('column',), ('news',), ('web-ai', 'column'), ('polishing',)]:
+    elif parts in [('column',), ('news',), ('web-ai', 'column'), ('polishing',)] or parts[:3] == ('web-ai', 'column', 'category'):
         ptype = 'CollectionPage'
     else:
         ptype = 'WebPage'
@@ -174,7 +174,7 @@ def managed_blocks(rel, s, mods):
     return blocks
 
 
-def fix_existing(s):
+def fix_existing(s, studio=False):
     """前からある JSON-LD を整理する（会社情報の重複を消し、記事の発行元を会社につなぐ）"""
     def repl(m):
         try:
@@ -184,6 +184,8 @@ def fix_existing(s):
         t = j.get('@type')
         if t in ('LocalBusiness', 'Organization'):
             return ''  # 会社情報は managed の @graph に一本化
+        if t == 'BlogPosting' and studio:
+            return m[0]  # マツケンスタジオのコラムは、著者＝マツケンスタジオのまま
         if t == 'BlogPosting':
             j['author'] = {'@type': 'Organization', '@id': ORG_ID, 'name': '株式会社松本研磨工業', 'url': f'{BASE}/'}
             j['publisher'] = {'@id': ORG_ID}
@@ -195,7 +197,7 @@ def fix_existing(s):
 
 
 def apply(rel, s, mods):
-    s = fix_existing(s)
+    s = fix_existing(s, 'web-ai' in rel.parts)
     lds = ''.join('<script type="application/ld+json" data-sd="managed">\n' +
                   json.dumps(b, ensure_ascii=False, indent=2) + '\n</script>\n'
                   for b in managed_blocks(rel, s, mods))

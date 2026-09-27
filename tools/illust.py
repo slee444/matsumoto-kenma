@@ -193,3 +193,55 @@ def sitemap(pages, label):
         body += t(cx, y + 25, p, size)
     h = 72 + ((n - 1) // per_row + 1) * 58
     return svg(body, label, vb=f'0 0 560 {h}').replace('class="st-illu"', 'class="st-illu" style="max-width:560px"')
+
+
+# ---- Web集客コラム用の図 ----
+def fig(body, label, vb='0 0 560 240'):
+    return svg(body, label, vb=vb).replace('class="st-illu"', 'class="st-illu" style="max-width:560px"')
+
+
+def cost_blocks():
+    """費用が決まる5つの要素（積み木）"""
+    items = [('ページ数', 150), ('原稿・写真', 110), ('デザイン', 90), ('機能', 70), ('作ったあと', 60)]
+    body, x = '', 30
+    for i, (name, h) in enumerate(items):
+        fill = Y if i == 0 else L
+        body += f'<rect x="{x}" y="{200 - h}" width="92" height="{h}" rx="8" fill="{fill}" stroke="none"/>' + t(x + 46, 200 - h / 2 + 5, name, 13)
+        x += 104
+    body += f'<path d="M20 200h520" stroke="{G}"/>' + t(280, 228, '費用は、この5つの組み合わせで決まる', 13, weight=500)
+    return fig(body, 'ホームページ制作の費用が決まる5つの要素の図')
+
+
+def checklist(items, label):
+    body = ''
+    for i, s in enumerate(items):
+        row, col = divmod(i, 2)
+        x, y = 20 + col * 270, 18 + row * 52
+        body += f'<rect x="{x}" y="{y}" width="256" height="40" rx="8" fill="#fff" stroke="{G}"/>'
+        body += f'<rect x="{x + 12}" y="{y + 10}" width="20" height="20" rx="4" fill="{Y}" stroke="none"/><path d="M{x + 16} {y + 20}l4 4 8-9"/>'
+        body += t(x + 42, y + 26, s, 13, anchor='start', weight=500)
+    h = 18 + ((len(items) - 1) // 2 + 1) * 52
+    return fig(body, label, vb=f'0 0 560 {h}')
+
+
+def pages_compare():
+    """1ページ／5ページ／20ページのサイトの形"""
+    def tree(cx, n, label):
+        b = f'<rect x="{cx - 34}" y="30" width="68" height="26" rx="6" fill="{N}" stroke="none"/>' + t(cx, 48, 'トップ', 11, fill='#fff')
+        if n > 1:
+            cols = min(n - 1, 4)
+            rows = (n - 2) // 4 + 1
+            for i in range(n - 1):
+                r, c = divmod(i, cols)
+                x = cx - (cols - 1) * 18 + c * 36
+                b += f'<rect x="{x - 14}" y="{76 + r * 26}" width="28" height="18" rx="4" fill="{L}" stroke="none"/>'
+            b += f'<path d="M{cx} 56v14" stroke="{G}"/>'
+        return b + t(cx, 200, label, 13)
+    body = tree(90, 1, '1ページ') + tree(280, 5, '2〜5ページ') + tree(470, 17, '6〜20ページ')
+    body += t(90, 222, '1枚で伝える', 11, weight=500) + t(280, 222, '会社の顔として', 11, weight=500) + t(470, 222, '事業ごとに詳しく', 11, weight=500)
+    return fig(body, '1ページ・2〜5ページ・6〜20ページのサイトの形を比べた図')
+
+
+def six_signs():
+    signs = ['スマホで見づらい', '「保護されていない通信」', 'お知らせが何年も前', '問い合わせが来ない', '情報が今と違う', '自分たちで直せない']
+    return checklist(signs, 'ホームページのリニューアルを考えたい6つのサインの図')

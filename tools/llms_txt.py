@@ -42,6 +42,7 @@ out = f'''# 株式会社松本研磨工業
 out += section('金属研磨', ['', 'polishing'] + subdirs('polishing'))
 out += section('会社情報・お知らせ', ['company', 'news'])
 out += section('研磨・金属加工コラム', ['column'] + subdirs('column'))
-out += section('Web集客・AI活用支援（マツケンスタジオ）', ['web-ai'] + subdirs('web-ai', exclude=('contact',)) + subdirs('web-ai/website'))
+out += section('Web集客・AI活用支援（マツケンスタジオ）', ['web-ai'] + subdirs('web-ai', exclude=('contact', 'column')) + subdirs('web-ai/website'))
+out += section('Web集客コラム（マツケンスタジオ）', ['web-ai/column'] + subdirs('web-ai/column', exclude=('category',)))
 (ROOT / 'llms.txt').write_text(out, encoding='utf-8')
 print(f'llms.txt: {out.count(chr(10))} lines')
