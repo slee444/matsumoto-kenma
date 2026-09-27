@@ -53,6 +53,10 @@ CSS = '''<style>
   .art-body li::marker,.points li::marker{color:#1B3A6B}
   .art-body a{color:#1B3A6B;font-weight:700;text-decoration:underline;text-underline-offset:3px}
   .art-body .st-illu{margin:26px auto}
+  .art-table{width:100%;border-collapse:collapse;margin:8px 0 24px;font-size:14px;background:#fff;border:1px solid #E1E5EB}
+  .art-table th,.art-table td{padding:12px 14px;border-bottom:1px solid #EEF1F5;text-align:left;vertical-align:top;line-height:1.7}
+  .art-table th{background:#F4F6F9;font-weight:700;color:#1B3A6B}
+  .art-body p.ask{font-size:14px;line-height:1.8;background:#F4F6F9;border-left:4px solid #1B3A6B;border-radius:0 8px 8px 0;padding:10px 14px;color:#26262B}
   .points{background:#FFF9D6;border-radius:10px;padding:20px 24px;margin:26px 0}
   .points b{display:block;font-size:14px;margin-bottom:8px;color:#1B3A6B}
   .points li{font-size:15px;line-height:1.8;margin-left:1.2em}

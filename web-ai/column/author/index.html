@@ -233,6 +233,10 @@ nav.fixed .font-serif.font-semibold,#mobileMenu .font-serif.font-semibold,footer
   .art-body li::marker,.points li::marker{color:#1B3A6B}
   .art-body a{color:#1B3A6B;font-weight:700;text-decoration:underline;text-underline-offset:3px}
   .art-body .st-illu{margin:26px auto}
+  .art-table{width:100%;border-collapse:collapse;margin:8px 0 24px;font-size:14px;background:#fff;border:1px solid #E1E5EB}
+  .art-table th,.art-table td{padding:12px 14px;border-bottom:1px solid #EEF1F5;text-align:left;vertical-align:top;line-height:1.7}
+  .art-table th{background:#F4F6F9;font-weight:700;color:#1B3A6B}
+  .art-body p.ask{font-size:14px;line-height:1.8;background:#F4F6F9;border-left:4px solid #1B3A6B;border-radius:0 8px 8px 0;padding:10px 14px;color:#26262B}
   .points{background:#FFF9D6;border-radius:10px;padding:20px 24px;margin:26px 0}
   .points b{display:block;font-size:14px;margin-bottom:8px;color:#1B3A6B}
   .points li{font-size:15px;line-height:1.8;margin-left:1.2em}
@@ -634,7 +638,7 @@ nav.fixed .font-serif.font-semibold,#mobileMenu .font-serif.font-semibold,footer
   <section class="py-14 md:py-20 st-alt">
     <div class="pwrap">
       <h2 class="sec-ttl">書いている記事</h2>
-      <div class="col-grid three"><a href="../homepage-cost/" class="col-card"><span><span class="chip">費用・発注</span></span><h3>ホームページ制作の費用は何で決まる？中小企業が知っておきたい5つの要素</h3><p>ホームページ制作の費用は、ページ数・原稿と写真・デザイン・機能・作ったあとの管理の5つで決まります。中小企業が見積りを取る前に知っておきたい…</p><time datetime="2026-09-27">2026.09.27</time></a><a href="../choose-web-company/" class="col-card"><span><span class="chip">費用・発注</span></span><h3>ホームページ制作会社の選び方｜依頼する前に確かめたい7つのこと</h3><p>ホームページ制作会社を選ぶときに、依頼する前に確かめたい7つのことをまとめました。実績の業種、任せられる範囲、ドメインの名義、作ったあとの管…</p><time datetime="2026-09-27">2026.09.27</time></a><a href="../renewal-signs/" class="col-card"><span><span class="chip">リニューアル</span></span><h3>ホームページのリニューアルを考えたい6つのサイン</h3><p>スマホで見づらい、「保護されていない通信」と出る、お知らせが何年も前のまま——。ホームページのリニューアルを考えたい6つのサインと、それぞれ…</p><time datetime="2026-09-27">2026.09.27</time></a><a href="../homepage-pages/" class="col-card"><span><span class="chip">ホームページ制作</span></span><h3>ホームページは何ページ必要？1ページ・5ページ・20ページの違いと選び方</h3><p>ホームページは何ページあればいいのか。1ページ（LP）、2〜5ページ（名刺代わり）、6〜20ページ（標準的な会社のサイト）、21ページ以上の…</p><time datetime="2026-09-27">2026.09.27</time></a><a href="../case-kenma-3x/" class="col-card"><span><span class="chip">事例</span></span><h3>研磨工場のホームページを作り直して、1か月で有効な問い合わせが3倍になった話</h3><p>金属研磨の町工場・松本研磨工業のホームページを作り直したところ、リニューアルから1か月で有効なお問い合わせが3倍になりました。何を変えたのか…</p><time datetime="2026-09-27">2026.09.27</time></a></div>
+      <div class="col-grid three"><a href="../homepage-cost/" class="col-card"><span><span class="chip">費用・発注</span></span><h3>ホームページ制作の費用は何で決まる？中小企業が知っておきたい5つの要素</h3><p>ホームページ制作の費用は、ページ数・原稿と写真・デザイン・機能・作ったあとの管理の5つで決まります。中小企業が見積りを取る前に知っておきたい…</p><time datetime="2026-09-27">2026.09.27</time></a><a href="../choose-web-company/" class="col-card"><span><span class="chip">費用・発注</span></span><h3>ホームページ制作会社の選び方｜依頼する前に確かめたい7つのこと</h3><p>ホームページ制作会社を選ぶときに、依頼する前に確かめたい7つのことをまとめました。実績の業種、任せられる範囲、ドメインの名義、作ったあとの管…</p><time datetime="2026-09-27">2026.09.27</time></a><a href="../renewal-signs/" class="col-card"><span><span class="chip">リニューアル</span></span><h3>ホームページのリニューアルを考えたい6つのサイン</h3><p>スマホで見づらい、「保護されていない通信」と出る、お知らせが何年も前のまま——。ホームページのリニューアルを考えたい6つのサインと、自分で確…</p><time datetime="2026-09-27">2026.09.27</time></a><a href="../homepage-pages/" class="col-card"><span><span class="chip">ホームページ制作</span></span><h3>ホームページは何ページ必要？1ページ・5ページ・20ページの違いと選び方</h3><p>ホームページは何ページあればいいのか。1ページ（LP）、2〜5ページ（名刺代わり）、6〜20ページ（標準的な会社のサイト）、21ページ以上の…</p><time datetime="2026-09-27">2026.09.27</time></a><a href="../case-kenma-3x/" class="col-card"><span><span class="chip">事例</span></span><h3>研磨工場のホームページを作り直して、1か月で有効な問い合わせが3倍になった話</h3><p>金属研磨の町工場・松本研磨工業のホームページを作り直したところ、リニューアルから1か月で有効なお問い合わせが3倍になりました。作り直す前に考…</p><time datetime="2026-09-27">2026.09.27</time></a></div>
     </div>
   </section>
 
