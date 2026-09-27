@@ -26,6 +26,11 @@ FIGS = {
     'signs': lambda: illust.six_signs(),
     'pages': lambda: illust.pages_compare(),
     'story': lambda: illust.flow_story(),
+    'estimate': lambda: illust.checklist(['ページ数と中身', '原稿は誰が書くか', '写真・撮影', '自分で更新できる範囲', 'ドメインの名義', '公開後の修正の扱い'], '見積りで確かめたい6つのことの図'),
+    'ai': lambda: illust.ILLUST['llmo-consulting'],
+    'gbp': lambda: illust.checklist(['会社名・住所・電話', 'カテゴリ', '営業時間', 'ホームページのURL', '写真', '口コミへの返信'], 'Googleビジネスプロフィールで整えたい6つのことの図'),
+    'recruit': lambda: illust.checklist(['仕事内容', '一日の流れ', '覚えていく流れ', '給与・休日', '現場の写真', '先輩の声'], '採用ページに載せたい6つのことの図'),
+    'mfg': lambda: illust.sitemap(['加工内容', '設備一覧', '加工事例', '品質管理', '会社概要', '採用', 'よくある質問', 'お問い合わせ'], '製造業のホームページのページ構成の図'),
 }
 
 CSS = '''<style>
