@@ -245,3 +245,29 @@ def pages_compare():
 def six_signs():
     signs = ['スマホで見づらい', '「保護されていない通信」', 'お知らせが何年も前', '問い合わせが来ない', '情報が今と違う', '自分たちで直せない']
     return checklist(signs, 'ホームページのリニューアルを考えたい6つのサインの図')
+
+
+def llms_file():
+    """llms.txt のイメージ（案内文つきの目次）"""
+    body = (f'<rect x="150" y="14" width="260" height="210" rx="10" fill="#fff"/>'
+            f'<rect x="150" y="14" width="260" height="34" rx="10" fill="{N}" stroke="none"/><rect x="150" y="36" width="260" height="12" fill="{N}" stroke="none"/>'
+            + t(280, 37, 'llms.txt', 15, fill='#fff')
+            + t(170, 74, '# 会社名', 13, anchor='start') + t(170, 96, '> 何をしている会社か（概要）', 12, anchor='start', weight=500)
+            + t(170, 124, '## 基本情報', 13, anchor='start') + t(170, 146, '- 所在地・連絡先・受付時間', 12, anchor='start', weight=500)
+            + t(170, 174, '## 主なページ', 13, anchor='start') + t(170, 196, '- [ページ名](URL): 何が分かるか', 12, anchor='start', weight=500)
+            + f'<circle cx="470" cy="120" r="34" fill="{Y}" stroke="none"/>' + t(470, 126, 'AI', 18)
+            + '<path d="M416 120h18"/><path d="M428 114l6 6-6 6"/>'
+            + f'<circle cx="80" cy="120" r="34" fill="{L}" stroke="none"/>' + t(80, 116, 'サイト', 12) + t(80, 132, 'の中身', 12)
+            + '<path d="M118 120h24"/><path d="M136 114l6 6-6 6"/>')
+    return fig(body, 'サイトの中身をまとめたllms.txtを、AIが読むイメージの図', vb='0 0 560 240')
+
+
+def three_factors():
+    """Googleマップの表示で大事な3つ"""
+    body = ''
+    for i, (name, sub, c) in enumerate((('関連性', '探されている内容と合う', Y), ('距離', '探している場所から近い', L), ('知名度', '口コミ・情報の多さ', L))):
+        cx = 100 + i * 180
+        body += f'<circle cx="{cx}" cy="100" r="62" fill="{c}" stroke="none"/>' + t(cx, 106, name, 18)
+        body += t(cx, 196, sub, 12, weight=500)
+    body += t(280, 226, '距離は変えられない。関連性と知名度は、整え方で高められる', 12, weight=500)
+    return fig(body, 'Googleマップの表示で大事な関連性・距離・知名度の3つの図')

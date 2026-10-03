@@ -68,13 +68,19 @@
   </url>
   <url>
     <loc>https://matsumoto-kenma.co.jp/column/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://matsumoto-kenma.co.jp/column/food-medical-equipment-polishing/</loc>
     <lastmod>2026-09-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://matsumoto-kenma.co.jp/column/polishing-cost/</loc>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -398,6 +404,26 @@
   </url>
   <url>
     <loc>https://matsumoto-kenma.co.jp/web-ai/column/category/cost/</loc>
+    <lastmod>2026-09-27</lastmod>
+  </url>
+  <url>
+    <loc>https://matsumoto-kenma.co.jp/web-ai/column/llms-txt/</loc>
+    <lastmod>2026-09-27</lastmod>
+  </url>
+  <url>
+    <loc>https://matsumoto-kenma.co.jp/web-ai/column/meo/</loc>
+    <lastmod>2026-09-27</lastmod>
+  </url>
+  <url>
+    <loc>https://matsumoto-kenma.co.jp/web-ai/column/renewal-cost/</loc>
+    <lastmod>2026-09-27</lastmod>
+  </url>
+  <url>
+    <loc>https://matsumoto-kenma.co.jp/web-ai/column/recruit-interview/</loc>
+    <lastmod>2026-09-27</lastmod>
+  </url>
+  <url>
+    <loc>https://matsumoto-kenma.co.jp/web-ai/column/koumuten-design/</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
 </urlset>

@@ -30,6 +30,11 @@ FIGS = {
     'ai': lambda: illust.ILLUST['llmo-consulting'],
     'gbp': lambda: illust.checklist(['会社名・住所・電話', 'カテゴリ', '営業時間', 'ホームページのURL', '写真', '口コミへの返信'], 'Googleビジネスプロフィールで整えたい6つのことの図'),
     'recruit': lambda: illust.checklist(['仕事内容', '一日の流れ', '覚えていく流れ', '給与・休日', '現場の写真', '先輩の声'], '採用ページに載せたい6つのことの図'),
+    'llms': lambda: illust.llms_file(),
+    'meo': lambda: illust.three_factors(),
+    'rcost': lambda: illust.checklist(['ページ数', '原稿と写真', 'デザイン・機能', '今のサイトの確認', '内容の引っ越し', 'アドレスの引き継ぎ'], 'リニューアル費用が決まる要素の図'),
+    'interview': lambda: illust.checklist(['入社のきっかけ', '今の仕事', '一日の流れ', '覚えていく流れ', '大変なこと', '求職者へひとこと'], '社員インタビューで聞きたい6つのことの図'),
+    'hbmock': lambda: '<figure style="margin:26px 0"><img src="../../../images/web-ai/industry/home-builder-pc.jpg" alt="工務店のホームページの制作イメージ" width="1440" height="900" loading="lazy" style="width:100%;height:auto;border-radius:10px;border:1px solid #E1E5EB"><figcaption style="font-size:12px;color:#5E5E65;margin-top:6px">制作イメージ（マツケンスタジオ）</figcaption></figure>',
     'mfg': lambda: illust.sitemap(['加工内容', '設備一覧', '加工事例', '品質管理', '会社概要', '採用', 'よくある質問', 'お問い合わせ'], '製造業のホームページのページ構成の図'),
 }
 
