@@ -73,6 +73,30 @@ CSS = '''<style>
   .author .av{width:56px;height:56px;border-radius:14px;background:#1B3A6B;color:#fff;display:grid;place-items:center;font-weight:700;font-size:24px;position:relative}
   .author .av::after{content:'';position:absolute;right:-3px;top:-3px;width:14px;height:14px;border-radius:50%;background:#F5DE00;border:2px solid #fff}
   .author b{font-size:15px}.author p{font-size:13px;line-height:1.9;color:#4A4A50;margin-top:6px}
+  .art-body .cta-mid a{text-decoration:none}
+  .art-body .cta-mid a.bg-cta-yellow{color:#0E0E10}
+  .art-body .cta-mid a[href*="line.me"]{color:#fff}
+  .cta-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;border:1px solid #E1E5EB;border-radius:12px;padding:14px 18px;margin:-8px 0 26px;background:#fff}
+  .cta-top p{font-size:14px;font-weight:700;color:#0E0E10}
+  .cta-top .bt{display:flex;gap:8px;flex-wrap:wrap}
+  .cta-top a.btn-s{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;border-radius:999px;padding:9px 16px}
+  .cta-mid{margin:36px 0;border-radius:14px;background:#FFF9D6;padding:24px 24px 22px;position:relative;overflow:hidden}
+  .cta-mid::after{content:'';position:absolute;right:-50px;top:-50px;width:160px;height:160px;border-radius:50%;background:repeating-radial-gradient(circle,rgba(27,58,107,.08) 0 1px,transparent 1px 10px)}
+  .cta-mid .lb{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:#1B3A6B;border-radius:999px;padding:3px 10px;margin-bottom:10px}
+  .cta-mid b{display:block;font-size:18px;line-height:1.6;margin-bottom:6px;color:#0E0E10}
+  .cta-mid p{font-size:14px;line-height:1.8;color:#3A3A40;margin-bottom:16px;position:relative;z-index:1}
+  .cta-mid .bt{display:flex;flex-direction:column;gap:10px;position:relative;z-index:1}
+  @media(min-width:640px){.cta-mid .bt{flex-direction:row}}
+  .cta-end{border-radius:16px;background:#1B3A6B;color:#fff;padding:28px 26px}
+  .cta-end b{display:block;font-size:20px;line-height:1.6;margin-bottom:8px}
+  .cta-end p{font-size:14px;line-height:1.9;color:rgba(255,255,255,.85);margin-bottom:18px}
+  .cta-end .bt{display:flex;flex-direction:column;gap:10px}
+  @media(min-width:640px){.cta-end .bt{flex-direction:row;align-items:center}}
+  .cta-end .lp{font-size:14px;font-weight:700;color:#F5DE00;text-decoration:underline;text-underline-offset:3px}
+  .col-stick{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid #E1E5EB;transform:translateY(110%);transition:transform .25s}
+  .col-stick.show{transform:none}
+  .col-stick a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:999px;padding:12px 8px;font-size:14px;font-weight:700}
+  @media(min-width:768px){.col-stick{display:none}}
   .soft-cta{background:#fff;border:1px solid #E1E5EB;border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:14px}
   @media(min-width:768px){.soft-cta{flex-direction:row;align-items:center;justify-content:space-between}}
   .soft-cta p{font-size:14px;line-height:1.8;color:#26262B}
@@ -111,6 +135,12 @@ def crumb_html(items, pre):
             + '<span class="mx-2 opacity-40">/</span>'.join(parts) + '</p>')
 
 
+def updated_html(p):
+    """書き直した記事だけ、更新日を表示する（updated を column_posts.py に書く）"""
+    u = p.get('updated')
+    return f'　／　更新日 <time datetime="{u}">{fmt_date(u)}</time>' if u and u != p['date'] else ''
+
+
 def fmt_date(d):
     return d.replace('-', '.')
 
@@ -143,6 +173,54 @@ def hero(title, lead, crumbs_html, pre_logo=True):
       <p class="text-[14px] md:text-[15px] text-muted leading-[1.9] max-w-[680px]">{lead}</p>
     </div>
   </section>'''
+
+
+MID_CTA = {
+    'cost': ('費用や見積りで迷ったら', '見積りの内容が分からない、何にいくらかかるのか知りたい。そんな段階でも、気軽にご相談ください。'),
+    'renewal': ('今のサイト、作り直したほうがいい？', '今のホームページを見て、直したほうがいいところを無料でお伝えします。ドメインもメールもそのままで作り直せます。'),
+    'homepage': ('何から始めればいいか分からない方へ', '載せたい内容がまとまっていなくても大丈夫です。聞き取りをしながら、合うページ構成をご提案します。'),
+    'ai': ('自社がAIにどう紹介されるか、気になったら', '今のホームページが、AIや検索にどう伝わっているかを確かめて、直すところをお伝えします。'),
+    'seo': ('Googleマップや検索で見つけてもらいたい方へ', 'Googleマップの登録・整備から、検索で見つけてもらうためのホームページづくりまでお手伝いします。'),
+    'recruit': ('応募が来ない、と感じたら', '採用ページだけを先に作ることもできます。現場の様子が伝わるページづくりをお手伝いします。'),
+    'industry': ('業種に合ったホームページを作りたい方へ', '業種ごとに、取引先や求職者が見るところは違います。現場の話が通じる担当が、構成から一緒に考えます。'),
+    'case': ('同じやり方で、御社のサイトも', '研磨工場のサイトで問い合わせを増やしたやり方で、ホームページづくりをお手伝いします。'),
+}
+
+
+def link_btns(C, size='md'):
+    return f'{btn_main(C, size)}{btn_line(size)}'
+
+
+def cta_top(C):
+    return (f'<div class="cta-top"><p>ホームページのご相談は無料です</p><div class="bt">'
+            f'<a href="{C}" class="btn-s bg-cta-yellow text-ink hover:bg-cta-yellow-h">1分で問い合わせ →</a>'
+            f'<a href="{LINE_URL}" target="_blank" rel="noopener" class="btn-s bg-[#06C755] text-white hover:bg-[#05B34C]">LINEで相談</a></div></div>')
+
+
+def cta_mid(cat, C):
+    t, d = MID_CTA.get(cat, MID_CTA['homepage'])
+    return f'<div class="cta-mid"><span class="lb">無料相談</span><b>{t}</b><p>{d}</p><div class="bt">{link_btns(C)}</div></div>'
+
+
+def cta_end(C, LP):
+    return (f'<div class="cta-end"><b>ホームページのこと、まずは気軽にご相談ください。</b>'
+            f'<p>「何から始めればいいか分からない」という段階でも大丈夫です。町工場発のマツケンスタジオが、ドメインの取得から公開後の更新まで、まるごとお手伝いします。いまは毎月3社まで、特別な価格で制作する「事例づくりモニター」も受け付けています。</p>'
+            f'<div class="bt">{link_btns(C)}<a href="{LP}" class="lp">事例づくりモニターを見る →</a></div></div>')
+
+
+def sticky(C):
+    return (f'<div class="col-stick" id="colStick"><a href="{C}" class="bg-cta-yellow text-ink">1分で問い合わせ</a>'
+            f'<a href="{LINE_URL}" target="_blank" rel="noopener" class="bg-[#06C755] text-white">LINEで相談</a></div>'
+            '<script>(function(){var s=document.getElementById("colStick");if(!s)return;function u(){s.classList.toggle("show",window.scrollY>500&&(window.innerHeight+window.scrollY)<document.body.scrollHeight-700)}window.addEventListener("scroll",u,{passive:true});u()})();</script>')
+
+
+def insert_mid(body, block):
+    """記事の真ん中あたりの見出し（h2）の前に入れる"""
+    pos = [m.start() for m in re.finditer(r'<h2 id=', body)]
+    if len(pos) < 3:
+        return body + block
+    i = pos[len(pos) // 2]
+    return body[:i] + block + body[i:]
 
 
 def soft_cta(C):
@@ -213,6 +291,7 @@ def build_post(p):
     related += [x for x in POSTS if x['slug'] != p['slug'] and x not in related]
     rel_html = ''.join(card(x, '../') for x in related[:3])
     C = '../../contact/'
+    body = insert_mid(body, cta_mid(p['category'], C))
     main = f'''<main class="pt-[60px]">
   <section class="pt-8 pb-10 md:pt-12 md:pb-14">
     <div class="pwrap">
@@ -220,19 +299,21 @@ def build_post(p):
 {crumb_html([('ホーム', '../../../'), ('Web集客・AI活用支援', '../../'), ('コラム', '../'), (name, f'../category/{p["category"]}/')], pre)}
         <a href="../category/{p["category"]}/" class="chip">{name}</a>
         <h1 class="font-bold leading-[1.45] mt-3 mb-4 text-ink" style="font-size:clamp(24px,3.6vw,34px)">{p["title"]}</h1>
-        <p class="text-[13px] text-muted mb-6"><time datetime="{p["date"]}">{fmt_date(p["date"])}</time>　|　{AUTHOR_NAME}</p>
+        <p class="text-[13px] text-muted mb-6">公開日 <time datetime="{p["date"]}">{fmt_date(p["date"])}</time>{updated_html(p)}　|　{AUTHOR_NAME}</p>
         <div class="points"><b>この記事で分かること</b><ul>{points}</ul></div>
+        {cta_top(C)}
         <nav class="toc" aria-label="目次"><b>目次</b><ol>{toc}<li><a href="#faq">よくある質問</a></li></ol></nav>
         <div class="art-body">{body}</div>
         <h2 id="faq" class="font-bold text-[22px] mt-12 mb-4" style="scroll-margin-top:90px">よくある質問</h2>
 {faqs}
         <div class="mt-10">{author_box('../author/')}</div>
-        <div class="mt-6">{soft_cta(C)}</div>
+        <div class="mt-8">{cta_end(C, '../../monitor/')}</div>
       </article>
     </div>
   </section>
 {section("", "あわせて読みたい記事", '      <div class="col-grid three">' + rel_html + '</div>', alt=True, narrow=False)}
 {section("", "カテゴリから探す", '      ' + cat_nav('../'), narrow=False)}
+{sticky(C)}
 '''
     url = f'{COL}{p["slug"]}/'
     blog = {"@context": "https://schema.org", "@type": "BlogPosting", "headline": p['title'], "description": p['description'],
