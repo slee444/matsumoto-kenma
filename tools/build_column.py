@@ -36,6 +36,8 @@ FIGS = {
     'interview': lambda: illust.checklist(['入社のきっかけ', '今の仕事', '一日の流れ', '覚えていく流れ', '大変なこと', '求職者へひとこと'], '社員インタビューで聞きたい6つのことの図'),
     'hbmock': lambda: '<figure style="margin:26px 0"><img src="../../../images/web-ai/industry/home-builder-pc.jpg" alt="工務店のホームページの制作イメージ" width="1440" height="900" loading="lazy" style="width:100%;height:auto;border-radius:10px;border:1px solid #E1E5EB"><figcaption style="font-size:12px;color:#5E5E65;margin-top:6px">制作イメージ（マツケンスタジオ）</figcaption></figure>',
     'mfg': lambda: illust.sitemap(['加工内容', '設備一覧', '加工事例', '品質管理', '会社概要', '採用', 'よくある質問', 'お問い合わせ'], '製造業のホームページのページ構成の図'),
+    'flow': lambda: illust.checklist(['相談', '構成', '文章と写真', 'デザイン', '確認と修正', '公開'], 'ホームページ制作の6つの段階の図'),
+    'photos': lambda: illust.checklist(['建物の外観', '作業の様子', '設備', '製品・事例', '働く人', '代表者'], 'ホームページ用に撮っておきたい6つの写真の図'),
 }
 
 CSS = '''<style>
