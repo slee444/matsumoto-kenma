@@ -1,0 +1,1050 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5F157JYQD2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-5F157JYQD2');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Studioの不正アクセス・個人情報流出｜利用企業が今すぐやること【10月18日時点】｜マツケンスタジオ</title>
+<meta name="description" content="ノーコードのWeb制作サービス「Studio」で起きた不正アクセスと情報流出の可能性について、2026年10月18日時点の公式発表をもとにまとめました。流出した可能性のある情報、自社が対象か確かめる方法、すべての利用者と機能ごとにやること、フォームで個人情報を集めていた会社の個人情報保護法上の対応を紹介します。">
+<link rel="canonical" href="https://matsumoto-kenma.co.jp/web-ai/column/studio-unauthorized-access/">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<meta property="og:title" content="Studioの不正アクセス・個人情報流出｜利用企業が今すぐやること【10月18日時点】｜マツケンスタジオ">
+<meta property="og:description" content="ノーコードのWeb制作サービス「Studio」で起きた不正アクセスと情報流出の可能性について、2026年10月18日時点の公式発表をもとにまとめました。流出した可能性のある情報、自社が対象か確かめる方法、すべての利用者と機能ごとにやること、フォームで個人情報を集めていた会社の個人情報保護法上の対応を紹介します。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://matsumoto-kenma.co.jp/web-ai/column/studio-unauthorized-access/">
+<meta property="og:site_name" content="マツケンスタジオ by 松本研磨工業">
+<meta property="og:image" content="https://matsumoto-kenma.co.jp/images/ogp-studio.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="マツケンスタジオ by 松本研磨工業｜Web集客・AI活用支援">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Studioの不正アクセス・個人情報流出｜利用企業が今すぐやること【10月18日時点】｜マツケンスタジオ">
+<meta name="twitter:description" content="ノーコードのWeb制作サービス「Studio」で起きた不正アクセスと情報流出の可能性について、2026年10月18日時点の公式発表をもとにまとめました。流出した可能性のある情報、自社が対象か確かめる方法、すべての利用者と機能ごとにやること、フォームで個人情報を集めていた会社の個人情報保護法上の対応を紹介します。">
+<meta name="twitter:image" content="https://matsumoto-kenma.co.jp/images/ogp-studio.jpg">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/noto-sans-jp-500.woff2" crossorigin>
+<style>
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/noto-sans-jp-400.woff2) format('woff2');}
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/noto-sans-jp-500.woff2) format('woff2');}
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/noto-sans-jp-600.woff2) format('woff2');}
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/noto-sans-jp-700.woff2) format('woff2');}
+@font-face {font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/jetbrains-mono-400.woff2) format('woff2');}
+@font-face {font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/jetbrains-mono-500.woff2) format('woff2');}
+</style>
+<link rel="stylesheet" href="/css/tailwind.css">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#F4F2ED;color:#0E0E10;font-family:'Noto Sans JP',sans-serif;font-size:15px;line-height:1.7}
+  a{color:inherit;text-decoration:none}
+  .pwrap{max-width:960px;margin:0 auto;padding:0 20px}
+  @media(min-width:768px){.pwrap{padding:0 40px}}
+  .sec-label{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.14em;color:#4A4A47;margin-bottom:16px}
+  .sec-ttl{font-size:24px;font-weight:600;line-height:1.4;margin-bottom:20px}
+  @media(min-width:768px){.sec-ttl{font-size:28px}}
+
+  /* Hero */
+  .hero-wrap{position:relative;overflow:hidden}
+  .wm{position:absolute;right:-.4em;top:-.12em;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:min(38vw,340px);line-height:1;color:rgba(244,242,237,.045);pointer-events:none;user-select:none;white-space:nowrap;z-index:0}
+  .icon-badge{width:64px;height:64px;border-radius:9999px;border:1.5px solid rgba(244,242,237,.35);display:grid;place-items:center;font-size:26px;color:#F4F2ED;flex-shrink:0}
+
+  /* Cards with accent bar */
+  .card2{position:relative;border:1px solid rgba(14,14,16,.1);background:#fff;padding:30px 24px 26px;border-top:3px solid #1B3A6B}
+  .card2.alt{border-top-color:#2E5BA6}
+  .card2 .idx{font-family:'JetBrains Mono',monospace;font-size:11px;color:#8a8a86;letter-spacing:.15em;margin-bottom:14px}
+
+  /* Spec box */
+  .spec-box{background:#E9E6DE;border-radius:4px;padding:4px 28px}
+  .spec-box div{display:grid;grid-template-columns:140px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid rgba(14,14,16,.08)}
+  .spec-box div:last-child{border-bottom:none}
+  .spec-box dt{font-size:13px;color:#4A4A47}
+  .spec-box dd{font-size:14px}
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+  .tag-pill{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;border:1px solid rgba(14,14,16,.15);padding:6px 12px;border-radius:2px;color:#4A4A47}
+
+  /* Process */
+  .step2{position:relative;padding:6px 0 30px 32px;border-left:2px solid #D9D4C8}
+  .step2:last-child{border-left:2px solid transparent;padding-bottom:2px}
+  .step2::before{content:'';position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:#1B3A6B}
+  .step2.alt::before{background:#2E5BA6}
+  .step2 .pnum{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:#8a8a86;margin-bottom:4px}
+
+  /* FAQ (matches homepage Q/A style) */
+  .faq2{display:grid;grid-template-columns:36px 1fr;gap:16px;padding:22px 0;border-top:1px solid #D9D4C8}
+  .faq2:last-child{border-bottom:1px solid #D9D4C8}
+  .faq2 .qa{font-family:'Noto Sans JP',sans-serif;font-size:22px;font-weight:600;line-height:1}
+  .faq2 .q{color:#1B3A6B}
+  .faq2 .a{color:#8a8a86}
+
+  /* Note / caution list */
+  .note-list{border-left:2px solid #0E0E10}
+  .note-list li{list-style:none;padding:18px 0 18px 22px;border-bottom:1px solid #D9D4C8}
+  .note-list li:last-child{border-bottom:none}
+  .note-list .note-ttl{font-weight:600;font-size:14px;margin-bottom:6px}
+
+  .wrap{max-width:1360px;margin:0 auto;padding:0 20px}
+  @media(min-width:768px){.wrap{padding:0 40px}}
+  .menu-link.active::after{content:"";position:absolute;left:16px;right:16px;bottom:4px;height:1px;background:#1B3A6B}
+  .mega.open .mega-panel, .mega:hover .mega-panel{opacity:1;visibility:visible;--tw-translate-y:0}
+  .mega.open .mega-caret{transform:rotate(180deg)}
+  .mega:hover .mega-caret{transform:rotate(180deg)}
+  .drawer-acc summary::-webkit-details-marker{display:none}
+  .drawer-acc[open] .drawer-acc-icon{transform:rotate(180deg)}
+  .mega-panel .grid>div{min-width:0}
+  .mega-panel li a{word-break:break-word}
+  .bg-navy .text-muted-ink,.bg-navy-2 .text-muted-ink{color:rgba(244,242,237,0.72)!important}
+</style>
+<style>
+/* site-chrome: match homepage header/footer */
+@font-face {font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/inter-400.woff2) format('woff2');}
+@font-face {font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/inter-500.woff2) format('woff2');}
+@font-face {font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/inter-600.woff2) format('woff2');}
+nav.fixed,#mobileMenu,footer{font-family:Inter,"Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Yu Gothic",sans-serif;font-size:15px;line-height:1.75;letter-spacing:.03em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+nav.fixed :is(p,li,dd,span),#mobileMenu :is(p,li,dd,span),footer :is(p,li,dd,span){letter-spacing:.035em}
+nav.fixed .font-serif,#mobileMenu .font-serif,footer .font-serif{font-weight:500}
+nav.fixed .font-serif.font-medium,#mobileMenu .font-serif.font-medium,footer .font-serif.font-medium{font-weight:600}
+nav.fixed .font-serif.font-semibold,#mobileMenu .font-serif.font-semibold,footer .font-serif.font-semibold{font-weight:700}
+</style>
+<style>/* site-footer */
+.site-footer .ft-head{font-size:15px;font-weight:700;color:#F4F2ED;letter-spacing:.04em;padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid rgba(244,242,237,.2)}
+.site-footer .ft-link{font-size:15px;color:rgba(244,242,237,.82);line-height:1.6}
+.site-footer .ft-link:hover{color:#F4F2ED;text-decoration:underline;text-underline-offset:4px}
+.site-footer .ft-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:240px;padding:15px 24px;border-radius:4px;background:#F4F2ED;color:#0E0E10;font-size:15px;font-weight:700;transition:background .2s}
+.site-footer .ft-btn::after{content:"→"}
+.site-footer .ft-btn:hover{background:#fff}
+.site-footer .ft-sns{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid rgba(244,242,237,.3);border-radius:4px;font-size:13px;color:#F4F2ED}
+.site-footer .ft-sns:hover{background:rgba(244,242,237,.1)}
+.site-footer a:focus-visible{outline:2px solid #F4F2ED;outline-offset:3px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://matsumoto-kenma.co.jp/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Web集客・AI活用支援",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Web集客コラム",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/column/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "ホームページ制作",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/column/category/homepage/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Studioの不正アクセス・個人情報流出｜利用企業が今すぐやること【10月18日時点】",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/column/studio-unauthorized-access/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Studioの不正アクセス・個人情報流出｜利用企業が今すぐやること【10月18日時点】",
+  "description": "ノーコードのWeb制作サービス「Studio」で起きた不正アクセスと情報流出の可能性について、2026年10月18日時点の公式発表をもとにまとめました。流出した可能性のある情報、自社が対象か確かめる方法、すべての利用者と機能ごとにやること、フォームで個人情報を集めていた会社の個人情報保護法上の対応を紹介します。",
+  "url": "https://matsumoto-kenma.co.jp/web-ai/column/studio-unauthorized-access/",
+  "image": "https://matsumoto-kenma.co.jp/images/ogp-studio.jpg",
+  "datePublished": "2026-10-18",
+  "dateModified": "2026-10-18",
+  "articleSection": "ホームページ制作",
+  "inLanguage": "ja",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://matsumoto-kenma.co.jp/web-ai/#studio",
+    "name": "マツケンスタジオ",
+    "url": "https://matsumoto-kenma.co.jp/web-ai/column/author/"
+  },
+  "publisher": {
+    "@id": "https://matsumoto-kenma.co.jp/#organization"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://matsumoto-kenma.co.jp/web-ai/column/studio-unauthorized-access/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Studioの不正アクセスで、自社は対象ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Studioに登録しているすべての利用者が対象とされています。どの機能のどのプロジェクトが関わるかは、2026年10月16日にプロジェクトのオーナーへ送られた個別のメールか、Studioにログインしたときのお知らせで確かめられます。見当たらない場合は、不正アクセスに関する専用のお問い合わせ窓口で教えてもらえます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "GoogleログインでStudioを使っています。パスワードの変更は必要ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GoogleログインまたはFacebookログインだけを使い、Studioのパスワードを設定していなければ不要とされています。ただし、以前にメールアドレスとパスワードで登録したことがある場合はパスワードが残っていることがあるため、ログイン画面の「パスワードをお忘れですか？」から再設定してください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Googleフォームを埋め込んでいる場合も、回答は流出しましたか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "外部サービスのフォームを埋め込んでいる場合、回答はStudioを通らずに外部サービスへ直接送られるため、対象には含まれないとされています。ただし、Studioに貼り付けた埋め込みのコードはデザインの内容として対象なので、コードにAPIキーなどを書いていた場合は外部サービス側で切り替えてください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "個人情報保護委員会への報告は、今すぐ出すべきですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Studioは2026年10月17日、個人情報保護委員会からの要請を受けたとして、これから報告する予定の利用者に、個別の報告をいったん保留するようお願いしています。連名での報告や期限の扱いは、委員会に確かめたうえで改めて案内するとしているので、続報を確かめてください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "フォームに入力した人への通知も、保留してよいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "保留をお願いされているのは、個人情報保護委員会への報告だけです。入力した本人への通知は保留の対象に含まれず、必要になる場合があるとされています。不正アクセスによる漏えいのおそれでは人数の条件がないため、対象が少なくても、専門家に相談しながら対応を考えておきましょう。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "制作会社にStudioでサイトを作ってもらいました。何をすればいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Studioのアカウントやメールが制作会社のものになっていると、案内が自社に届いていないことがあります。まず制作会社に連絡し、対象のプロジェクト、届いているメールの内容、すでにとった対応を共有してもらいましょう。フォームで個人情報を集めていた場合、本人への通知を考えるのはサイトを運営する自社です。"
+      }
+    }
+  ]
+}
+</script>
+<style>
+  /* Matsuken Studio: light theme */
+  html,body{background:#FFFFFF}
+  .pwrap{max-width:960px;margin:0 auto;padding:0 20px}
+  @media(min-width:768px){.pwrap{padding:0 40px}}
+  .pwrap.max-w-\[800px\]{max-width:880px}
+  .st-alt{background:#F4F6F9}
+  .st-cta{background:#FFF9D6}
+  .sec-label{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.14em;color:#1B3A6B;margin-bottom:16px}
+  .sec-ttl{font-size:24px;font-weight:700;line-height:1.45;margin-bottom:20px;color:#0E0E10}
+  @media(min-width:768px){.sec-ttl{font-size:30px}}
+  .st-logo{display:inline-flex;align-items:center;gap:12px}
+  .st-mark{width:40px;height:40px;border-radius:10px;background:#1B3A6B;color:#fff;display:grid;place-items:center;font-weight:700;font-size:22px;position:relative;flex-shrink:0}
+  .st-mark::after{content:'';position:absolute;right:-3px;top:-3px;width:12px;height:12px;border-radius:50%;background:#F5DE00;border:2px solid #fff}
+  .st-name{display:block;font-weight:800;font-size:20px;letter-spacing:.04em;color:#0E0E10;line-height:1.2}
+  .st-by{display:block;font-size:11px;letter-spacing:.14em;color:#5E5E65;margin-top:3px}
+  .st-hero{position:relative;overflow:hidden;background:#fff;border-bottom:1px solid #E6E9EE}
+  .st-hero::before{content:'';position:absolute;right:-120px;top:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,#FFF4B0 0%,rgba(255,244,176,0) 70%);pointer-events:none}
+  .st-hero::after{content:'';position:absolute;right:40px;bottom:40px;width:260px;height:180px;background-image:radial-gradient(#C9D2DF 1.2px,transparent 1.2px);background-size:14px 14px;opacity:.7;pointer-events:none}
+  .trust{display:grid;grid-template-columns:1fr;border-top:1px solid #E6E9EE}
+  @media(min-width:768px){.trust{grid-template-columns:repeat(3,1fr)}}
+  .trust>div{padding:20px 0}
+  @media(min-width:768px){.trust>div{padding:24px 28px}.trust>div+div{border-left:1px solid #E6E9EE}.trust>div:first-child{padding-left:0}}
+  .trust .t-big{font-size:17px;font-weight:700;color:#0E0E10;margin-bottom:4px}
+  .trust .t-sub{font-size:13px;color:#5E5E65;line-height:1.8}
+  .card2{position:relative;border:1px solid #E1E5EB;background:#fff;padding:30px 24px 26px;border-top:3px solid #1B3A6B;border-radius:6px}
+  .card2.alt{border-top-color:#2E5BA6}
+  .card2 .idx{font-family:'JetBrains Mono',monospace;font-size:11px;color:#8a8a86;letter-spacing:.15em;margin-bottom:14px}
+  .svc-list{background:#fff;border:1px solid #E1E5EB;border-radius:8px;padding:10px 28px}
+  .svc-list li{list-style:none;display:grid;grid-template-columns:22px 1fr;gap:10px;padding:14px 0;border-bottom:1px solid #EEF1F5;font-size:14px;line-height:1.8}
+  .svc-list li:last-child{border-bottom:none}
+  .svc-list li::before{content:'';width:10px;height:10px;margin-top:8px;border-radius:3px;background:#F5DE00;box-shadow:0 0 0 2px #1B3A6B inset}
+  .step2{position:relative;padding:6px 0 30px 32px;border-left:2px solid #DDE3EB}
+  .step2:last-child{border-left:2px solid transparent;padding-bottom:2px}
+  .step2::before{content:'';position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:#1B3A6B}
+  .step2.alt::before{background:#2E5BA6}
+  .step2 .pnum{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:#8a8a86;margin-bottom:4px}
+  .faq2{display:grid;grid-template-columns:36px 1fr;gap:16px;padding:22px 0;border-top:1px solid #E1E5EB}
+  .faq2:last-child{border-bottom:1px solid #E1E5EB}
+  .faq2 .qa{font-size:22px;font-weight:700;line-height:1;color:#1B3A6B}
+  .price-box{border:1px solid #E1E5EB;border-radius:8px;background:#fff;padding:32px 28px;display:grid;grid-template-columns:1fr;gap:18px}
+  @media(min-width:768px){.price-box{grid-template-columns:1fr auto;align-items:center;padding:36px 40px}}
+  .case-card{display:grid;grid-template-columns:1fr;border:1px solid #E1E5EB;border-radius:8px;overflow:hidden;background:#fff;transition:border-color .2s,box-shadow .2s}
+  .case-card:hover{border-color:#1B3A6B;box-shadow:0 10px 30px -14px rgba(27,58,107,.35)}
+  .case-card .c-img{background:linear-gradient(135deg,#EAF0F8,#FFF6C4);min-height:160px;display:grid;place-items:center;color:#1B3A6B;font-size:13px;font-weight:600;letter-spacing:.14em}
+  @media(min-width:768px){.case-card{grid-template-columns:280px 1fr}}
+  .rel-grid{display:grid;grid-template-columns:1fr;gap:28px}
+  @media(min-width:768px){.rel-grid{grid-template-columns:repeat(4,1fr)}}
+  .rel-grid a{display:block;padding:9px 0;border-bottom:1px solid #E1E5EB;font-size:14px;transition:color .15s}
+  .rel-grid a:hover{color:#2E5BA6}
+  .rel-grid a.current{color:#8a8a86;pointer-events:none}
+  .svc-card{display:block;background:#fff;border:1px solid #E1E5EB;border-radius:8px;padding:26px 24px;transition:border-color .2s,box-shadow .2s,transform .2s}
+  a.svc-card:hover{border-color:#1B3A6B;box-shadow:0 10px 30px -14px rgba(27,58,107,.35);transform:translateY(-2px)}
+  .st-illu{display:block;width:100%;height:auto;max-width:300px;margin:0 auto}
+  .st-icon{display:block;margin-bottom:12px}
+  .story p{font-size:15px;line-height:2.1;color:#26262B;margin-bottom:20px}
+  @media(min-width:768px){.story p{font-size:16px}}
+  .story-quote{font-size:clamp(20px,2.6vw,28px);font-weight:700;line-height:1.6;color:#0E0E10;padding-left:20px;border-left:4px solid #F5DE00}
+  .target-card{background:#fff;border:1px solid #E1E5EB;border-radius:8px;padding:24px}
+  .target-card .tg{display:inline-block;font-size:12px;font-weight:700;color:#1B3A6B;background:#FFF4B0;border-radius:999px;padding:4px 12px;margin-bottom:12px}
+</style>
+<style>
+  .col-cats{display:flex;flex-wrap:wrap;gap:8px}
+  .col-cats a{font-size:13px;font-weight:700;padding:7px 14px;border-radius:999px;background:#fff;border:1px solid #E1E5EB;color:#1B3A6B}
+  .col-cats a:hover,.col-cats a.on{background:#1B3A6B;color:#fff;border-color:#1B3A6B}
+  .col-grid{display:grid;grid-template-columns:1fr;gap:18px}
+  @media(min-width:768px){.col-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1024px){.col-grid.three{grid-template-columns:repeat(3,1fr)}}
+  .col-card{display:flex;flex-direction:column;background:#fff;border:1px solid #E1E5EB;border-radius:10px;padding:22px 22px 18px;transition:border-color .2s,box-shadow .2s}
+  .col-card:hover{border-color:#1B3A6B;box-shadow:0 10px 30px -16px rgba(27,58,107,.35)}
+  .chip{display:inline-block;font-size:12px;font-weight:700;color:#1B3A6B;background:#FFF4B0;border-radius:999px;padding:3px 10px}
+  .col-card h3{font-size:17px;font-weight:700;line-height:1.6;margin:12px 0 8px;color:#0E0E10}
+  .col-card p{font-size:13px;line-height:1.8;color:#5E5E65;flex:1}
+  .col-card time{font-size:12px;color:#8a8a86;margin-top:12px;font-family:'JetBrains Mono',monospace}
+  .art{max-width:760px;margin:0 auto}
+  .art-body h2{font-size:22px;font-weight:700;line-height:1.5;margin:48px 0 16px;padding-left:14px;border-left:5px solid #F5DE00;scroll-margin-top:90px}
+  @media(min-width:768px){.art-body h2{font-size:25px}}
+  .art-body h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:#1B3A6B}
+  .art-body p{font-size:16px;line-height:2;color:#26262B;margin-bottom:18px}
+  .art-body ul,.art-body ol{margin:0 0 20px 1.4em;font-size:16px;line-height:1.9;color:#26262B}
+  .art-body li{margin-bottom:6px}
+  .art-body ul,.points ul{list-style:disc}
+  .art-body ol,.toc ol{list-style:decimal}
+  .art-body li::marker,.points li::marker{color:#1B3A6B}
+  .art-body a{color:#1B3A6B;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+  .art-body .st-illu{margin:26px auto}
+  .art-table{width:100%;border-collapse:collapse;margin:8px 0 24px;font-size:14px;background:#fff;border:1px solid #E1E5EB}
+  .art-table th,.art-table td{padding:12px 14px;border-bottom:1px solid #EEF1F5;text-align:left;vertical-align:top;line-height:1.7}
+  .art-table th{background:#F4F6F9;font-weight:700;color:#1B3A6B}
+  .art-body p.ask{font-size:14px;line-height:1.8;background:#F4F6F9;border-left:4px solid #1B3A6B;border-radius:0 8px 8px 0;padding:10px 14px;color:#26262B}
+  .points{background:#FFF9D6;border-radius:10px;padding:20px 24px;margin:26px 0}
+  .points b{display:block;font-size:14px;margin-bottom:8px;color:#1B3A6B}
+  .points li{font-size:15px;line-height:1.8;margin-left:1.2em}
+  .toc{background:#F4F6F9;border-radius:10px;padding:20px 24px;margin:0 0 30px}
+  .toc b{display:block;font-size:14px;margin-bottom:8px}
+  .toc ol{margin-left:1.3em;font-size:14px;line-height:2}
+  .toc a{color:#1B3A6B}
+  .author{display:grid;grid-template-columns:56px 1fr;gap:16px;background:#fff;border:1px solid #E1E5EB;border-radius:12px;padding:22px}
+  .author .av{width:56px;height:56px;border-radius:14px;background:#1B3A6B;color:#fff;display:grid;place-items:center;font-weight:700;font-size:24px;position:relative}
+  .author .av::after{content:'';position:absolute;right:-3px;top:-3px;width:14px;height:14px;border-radius:50%;background:#F5DE00;border:2px solid #fff}
+  .author b{font-size:15px}.author p{font-size:13px;line-height:1.9;color:#4A4A50;margin-top:6px}
+  .art-body .cta-mid a{text-decoration:none}
+  .art-body .cta-mid a.bg-cta-yellow{color:#0E0E10}
+  .art-body .cta-mid a[href*="line.me"]{color:#fff}
+  .cta-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;border:1px solid #E1E5EB;border-radius:12px;padding:14px 18px;margin:-8px 0 26px;background:#fff}
+  .cta-top p{font-size:14px;font-weight:700;color:#0E0E10}
+  .cta-top .bt{display:flex;gap:8px;flex-wrap:wrap}
+  .cta-top a.btn-s{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;border-radius:999px;padding:9px 16px}
+  .cta-mid{margin:36px 0;border-radius:14px;background:#FFF9D6;padding:24px 24px 22px;position:relative;overflow:hidden}
+  .cta-mid::after{content:'';position:absolute;right:-50px;top:-50px;width:160px;height:160px;border-radius:50%;background:repeating-radial-gradient(circle,rgba(27,58,107,.08) 0 1px,transparent 1px 10px)}
+  .cta-mid .lb{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:#1B3A6B;border-radius:999px;padding:3px 10px;margin-bottom:10px}
+  .cta-mid b{display:block;font-size:18px;line-height:1.6;margin-bottom:6px;color:#0E0E10}
+  .cta-mid p{font-size:14px;line-height:1.8;color:#3A3A40;margin-bottom:16px;position:relative;z-index:1}
+  .cta-mid .bt{display:flex;flex-direction:column;gap:10px;position:relative;z-index:1}
+  @media(min-width:640px){.cta-mid .bt{flex-direction:row}}
+  .cta-end{border-radius:16px;background:#1B3A6B;color:#fff;padding:28px 26px}
+  .cta-end b{display:block;font-size:20px;line-height:1.6;margin-bottom:8px}
+  .cta-end p{font-size:14px;line-height:1.9;color:rgba(255,255,255,.85);margin-bottom:18px}
+  .cta-end .bt{display:flex;flex-direction:column;gap:10px}
+  @media(min-width:640px){.cta-end .bt{flex-direction:row;align-items:center}}
+  .cta-end .lp{font-size:14px;font-weight:700;color:#F5DE00;text-decoration:underline;text-underline-offset:3px}
+  .col-stick{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid #E1E5EB;transform:translateY(110%);transition:transform .25s}
+  .col-stick.show{transform:none}
+  .col-stick a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:999px;padding:12px 8px;font-size:14px;font-weight:700}
+  @media(min-width:768px){.col-stick{display:none}}
+  .soft-cta{background:#fff;border:1px solid #E1E5EB;border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:14px}
+  @media(min-width:768px){.soft-cta{flex-direction:row;align-items:center;justify-content:space-between}}
+  .soft-cta p{font-size:14px;line-height:1.8;color:#26262B}
+</style>
+<script type="application/ld+json" data-sd="managed">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://matsumoto-kenma.co.jp/#organization",
+      "name": "株式会社松本研磨工業",
+      "alternateName": [
+        "松本研磨工業",
+        "松本研磨"
+      ],
+      "url": "https://matsumoto-kenma.co.jp/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://matsumoto-kenma.co.jp/images/logo.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://matsumoto-kenma.co.jp/images/ogp.jpg",
+      "description": "神奈川県川崎市川崎区の金属研磨工場。1967年創業。ステンレス・アルミ・真鍮・鉄などのバフ研磨（鏡面仕上げ）、ベルト研磨、ヘアライン仕上げ、フレキ研磨を、試作の1個から小量産まで手作業で請け負っています。図面がなくても、現物や写真からお見積りできます。",
+      "telephone": "+81-44-333-8412",
+      "faxNumber": "+81-44-333-3843",
+      "address": {
+        "@type": "PostalAddress",
+        "postalCode": "210-0851",
+        "addressRegion": "神奈川県",
+        "addressLocality": "川崎市川崎区",
+        "streetAddress": "浜町3-9-22",
+        "addressCountry": "JP"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 35.5257,
+        "longitude": 139.7194
+      },
+      "hasMap": "https://maps.google.com/?q=神奈川県川崎市川崎区浜町3-9-22",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:30",
+          "closes": "18:00"
+        }
+      ],
+      "foundingDate": "1967",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "日本"
+        },
+        {
+          "@type": "City",
+          "name": "川崎市"
+        },
+        {
+          "@type": "City",
+          "name": "横浜市"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "東京都"
+        }
+      ],
+      "knowsAbout": [
+        "金属研磨",
+        "バフ研磨",
+        "鏡面仕上げ",
+        "ベルト研磨",
+        "ヘアライン仕上げ",
+        "フレキ研磨",
+        "ステンレス研磨",
+        "アルミ研磨",
+        "真鍮研磨",
+        "曲面研磨"
+      ],
+      "sameAs": [
+        "https://www.instagram.com/matsu_polish/",
+        "https://www.youtube.com/channel/UCIGiSzo9TyINLuygAsuP5ew/"
+      ],
+      "department": {
+        "@id": "https://matsumoto-kenma.co.jp/web-ai/#studio"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://matsumoto-kenma.co.jp/#website",
+      "url": "https://matsumoto-kenma.co.jp/",
+      "name": "株式会社松本研磨工業",
+      "inLanguage": "ja",
+      "publisher": {
+        "@id": "https://matsumoto-kenma.co.jp/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://matsumoto-kenma.co.jp/web-ai/#studio",
+      "name": "マツケンスタジオ",
+      "alternateName": "マツケンスタジオ by 松本研磨工業",
+      "url": "https://matsumoto-kenma.co.jp/web-ai/",
+      "image": "https://matsumoto-kenma.co.jp/images/ogp-studio.jpg",
+      "description": "株式会社松本研磨工業が運営する、町工場発のWeb事業。製造業・建設業・工務店・運送業など、現場と技術のある中小企業のホームページ制作・リニューアル、検索対策、Web広告、AI活用をお手伝いします。",
+      "parentOrganization": {
+        "@id": "https://matsumoto-kenma.co.jp/#organization"
+      },
+      "sameAs": [
+        "https://www.instagram.com/matsuken_studio/",
+        "https://page.line.me/115rhdee"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "日本"
+      },
+      "knowsAbout": [
+        "ホームページ制作",
+        "ホームページリニューアル",
+        "Web集客",
+        "SEO",
+        "LLMO",
+        "サイト制作",
+        "LP制作",
+        "Web広告",
+        "CVR改善",
+        "BtoBマーケティング",
+        "AI活用"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://matsumoto-kenma.co.jp/web-ai/column/studio-unauthorized-access/#webpage",
+      "url": "https://matsumoto-kenma.co.jp/web-ai/column/studio-unauthorized-access/",
+      "name": "Studioの不正アクセス・個人情報流出｜利用企業が今すぐやること【10月18日時点】｜マツケンスタジオ",
+      "description": "ノーコードのWeb制作サービス「Studio」で起きた不正アクセスと情報流出の可能性について、2026年10月18日時点の公式発表をもとにまとめました。流出した可能性のある情報、自社が対象か確かめる方法、すべての利用者と機能ごとにやること、フォームで個人情報を集めていた会社の個人情報保護法上の対応を紹介します。",
+      "inLanguage": "ja",
+      "isPartOf": {
+        "@id": "https://matsumoto-kenma.co.jp/#website"
+      },
+      "about": {
+        "@id": "https://matsumoto-kenma.co.jp/web-ai/#studio"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://matsumoto-kenma.co.jp/images/ogp-studio.jpg"
+      },
+      "dateModified": "2026-09-27"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav class="fixed top-0 left-0 right-0 z-50 bg-paper/80 backdrop-blur-[14px] border-b border-ink/[0.08]">
+  <div class="wrap flex items-center justify-between h-[60px] md:h-[72px]">
+
+    <!-- Brand -->
+    <a href="../../../#home" class="flex items-center gap-3 md:gap-[14px]">
+      <span class="w-9 h-9 md:w-10 md:h-10 border-[1.5px] border-ink rounded-full grid place-items-center font-serif font-semibold text-lg md:text-xl bg-ink text-paper">松</span>
+      <span class="leading-[1.1]">
+        <div class="font-serif text-[13px] md:text-[15px] font-medium tracking-[.04em]">株式会社松本研磨工業</div>
+        <div class="hidden sm:block font-mono text-[10px] text-muted tracking-[.22em] mt-[2px]">創業58年・川崎</div>
+      </span>
+    </a>
+
+    <!-- Desktop menu — hidden below md -->
+    <div class="hidden md:flex gap-[2px] items-center">
+      <a href="../../../#home" class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">ホーム</a>
+
+      <!-- 金属研磨技術 メガメニュー -->
+      <div class="mega relative">
+        <button class="mega-btn flex items-center gap-1 px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors" aria-expanded="false">
+          金属研磨技術
+          <svg class="w-3 h-3 stroke-current fill-none stroke-[2] mega-caret transition-transform" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="mega-panel absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[320px] bg-navy text-paper rounded-sm shadow-[0_24px_48px_-12px_rgba(0,0,0,.35)] p-2 opacity-0 invisible translate-y-1 transition-all duration-150">
+          <div class="pb-2 mb-1 border-b border-paper/10">
+            <a href="../../../polishing/" class="block px-4 py-2.5 rounded-sm text-[13px] font-semibold hover:bg-paper/10 hover:text-paper hover:underline underline-offset-4 transition-colors">金属研磨技術 一覧 →</a>
+          </div>
+          <a href="../../../polishing/buff-polishing/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">バフ研磨</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">鏡面仕上げ</div>
+          </a>
+          <a href="../../../polishing/belt-polishing/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">ベルト研磨</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">バリ取り・形状補正</div>
+          </a>
+          <a href="../../../polishing/hairline-finish/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">ヘアライン加工</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">一方向のライン仕上げ</div>
+          </a>
+          <a href="../../../polishing/flexible-polishing/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">フレキ研磨／曲面研磨</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">複雑形状への手作業</div>
+          </a>
+        </div>
+      </div>
+
+      <a href="../../../#works" class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">加工実績</a>
+
+      <!-- Web集客・AI活用支援 メガメニュー -->
+      <div class="mega relative">
+        <button class="mega-btn flex items-center gap-1 px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors" aria-expanded="false">
+          Web集客・AI活用支援
+          <svg class="w-3 h-3 stroke-current fill-none stroke-[2] mega-caret transition-transform" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="mega-panel fixed left-1/2 -translate-x-1/2 top-[72px] mt-2 w-[860px] max-w-[92vw] bg-navy text-paper rounded-sm shadow-[0_24px_48px_-12px_rgba(0,0,0,.35)] p-7 opacity-0 invisible translate-y-1 transition-all duration-150">
+          <div class="mb-6 pb-5 border-b border-paper/10 flex items-center justify-between">
+            <a href="../../../web-ai/" class="font-serif text-[13px] font-semibold hover:text-paper hover:underline underline-offset-4 transition-colors">Web集客・AI活用支援 トップ →</a>
+            <a href="../../../web-ai/case/" class="font-serif text-[13px] font-semibold hover:text-paper hover:underline underline-offset-4 transition-colors">実績・事例 →</a>
+          </div>
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">戦略・コンサルティング</div>
+              <ul class="space-y-2">
+                <li><a href="../../../web-ai/consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">デジタルマーケティングコンサルティング</a></li>
+                <li><a href="../../../web-ai/btob-marketing/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">BtoBマーケティング支援</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">集客・改善</div>
+              <ul class="space-y-2">
+                <li><a href="../../../web-ai/seo-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">SEOコンサルティング</a></li>
+                <li><a href="../../../web-ai/ad-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">Web広告コンサルティング</a></li>
+                <li><a href="../../../web-ai/cro-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">CVR改善／CROコンサルティング</a></li>
+                <li><a href="../../../web-ai/llmo-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">LLMOコンサルティング</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">制作</div>
+              <ul class="space-y-2">
+                <li><a href="../../../web-ai/website/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">サイト制作</a></li>
+                <li><a href="../../../web-ai/lp/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">LP制作</a></li>
+                <li><a href="../../../web-ai/seo-writing/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">SEO/LLMO記事制作代行</a></li>
+                <li><a href="../../../web-ai/case-interview/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">事例インタビュー記事制作</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">AI活用支援</div>
+              <ul class="space-y-2">
+                <li><a href="../../../web-ai/ai-katsuyo/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">AI活用支援（業務効率化・自動化）</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- コラム メガメニュー -->
+      <div class="mega relative">
+        <button class="mega-btn flex items-center gap-1 px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors" aria-expanded="false">
+          コラム
+          <svg class="w-3 h-3 stroke-current fill-none stroke-[2] mega-caret transition-transform" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="mega-panel absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[320px] bg-navy text-paper rounded-sm shadow-[0_24px_48px_-12px_rgba(0,0,0,.35)] p-2 opacity-0 invisible translate-y-1 transition-all duration-150">
+          <a href="../../../column/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">研磨・金属加工コラム</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">工法・材料別の技術記事</div>
+          </a>
+          <a href="../../../web-ai/column/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">Web集客・AI活用支援コラム</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">製造業のためのWeb集客・AI活用</div>
+          </a>
+        </div>
+      </div>
+
+      <a href="../../../company/" class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">会社情報</a>
+    </div>
+
+    <!-- CTA -->
+    <div class="flex gap-2 md:gap-[10px] items-center">
+      <a href="../../../web-ai/contact/" class="inline-flex items-center gap-[10px] px-3 py-2 md:px-[18px] md:py-[11px] rounded-sm text-[11px] md:text-[13px] font-semibold tracking-[.06em] bg-ink text-paper hover:bg-accent transition-all">お問い合わせ →</a>
+      <!-- Burger — shown below md -->
+      <button class="flex md:hidden w-10 h-10 border border-ink rounded-sm items-center justify-center bg-paper" id="burgerBtn" aria-label="menu">
+        <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="fixed inset-0 z-[55] bg-navy text-paper pt-[80px] pb-8 px-6 flex flex-col gap-1 translate-x-full transition-transform duration-[350ms] ease-in-out" id="mobileMenu">
+  <button data-close class="absolute top-5 right-5 w-10 h-10 flex items-center justify-center text-paper/80 hover:text-paper" aria-label="close menu">
+    <svg class="w-6 h-6 stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+
+  <!-- LANY風：上部にCTAピル2つ -->
+  <div class="flex gap-2 mb-5">
+    <a href="../../../web-ai/contact/" data-close class="flex-1 flex items-center justify-center gap-2 py-3 rounded-full bg-accent text-paper text-[13px] font-semibold tracking-[.04em]">お問い合わせ →</a>
+  </div>
+
+  <div class="overflow-y-auto flex-1 -mr-6 pr-6">
+  <a href="../../../#home" data-close class="font-serif text-[17px] font-medium py-3 border-b border-paper/[.08] flex items-center justify-between">ホーム</a>
+
+  <details class="drawer-acc border-b border-paper/[.08]">
+    <summary class="font-serif text-[17px] font-medium py-3 flex items-center justify-between cursor-pointer list-none">
+      金属研磨技術
+      <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6] drawer-acc-icon transition-transform shrink-0" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="pb-4 flex flex-col gap-1">
+      <a href="../../../polishing/" data-close class="text-[13px] py-1.5 mb-1 pb-2.5 border-b border-paper/[.08] font-semibold text-paper">金属研磨技術 一覧 →</a>
+      <a href="../../../polishing/buff-polishing/" data-close class="text-[13px] py-1.5 opacity-85">バフ研磨</a>
+      <a href="../../../polishing/belt-polishing/" data-close class="text-[13px] py-1.5 opacity-85">ベルト研磨</a>
+      <a href="../../../polishing/hairline-finish/" data-close class="text-[13px] py-1.5 opacity-85">ヘアライン加工</a>
+      <a href="../../../polishing/flexible-polishing/" data-close class="text-[13px] py-1.5 opacity-85">フレキ研磨／曲面研磨</a>
+    </div>
+  </details>
+
+  <a href="../../../#works" data-close class="font-serif text-[17px] font-medium py-3 border-b border-paper/[.08] flex items-center justify-between">加工実績</a>
+
+  <details class="drawer-acc border-b border-paper/[.08]">
+    <summary class="font-serif text-[17px] font-medium py-3 flex items-center justify-between cursor-pointer list-none">
+      Web集客・AI活用支援
+      <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6] drawer-acc-icon transition-transform shrink-0" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="pb-4 flex flex-col gap-1">
+      <div class="flex items-center justify-between mb-1 pb-2.5 border-b border-paper/[.08]">
+        <a href="../../../web-ai/" data-close class="text-[13px] font-semibold text-paper">Web集客・AI活用支援 トップ →</a>
+        <a href="../../../web-ai/case/" data-close class="text-[13px] font-semibold text-paper">実績・事例 →</a>
+      </div>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-2 mb-1">戦略・コンサルティング</div>
+      <a href="../../../web-ai/consulting/" data-close class="text-[13px] py-1.5 opacity-85">デジタルマーケティングコンサルティング</a>
+      <a href="../../../web-ai/btob-marketing/" data-close class="text-[13px] py-1.5 opacity-85">BtoBマーケティング支援</a>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-3 mb-1">集客・改善</div>
+      <a href="../../../web-ai/seo-consulting/" data-close class="text-[13px] py-1.5 opacity-85">SEOコンサルティング</a>
+      <a href="../../../web-ai/ad-consulting/" data-close class="text-[13px] py-1.5 opacity-85">Web広告コンサルティング</a>
+      <a href="../../../web-ai/cro-consulting/" data-close class="text-[13px] py-1.5 opacity-85">CVR改善／CROコンサルティング</a>
+      <a href="../../../web-ai/llmo-consulting/" data-close class="text-[13px] py-1.5 opacity-85">LLMOコンサルティング</a>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-3 mb-1">制作</div>
+      <a href="../../../web-ai/website/" data-close class="text-[13px] py-1.5 opacity-85">サイト制作</a>
+      <a href="../../../web-ai/lp/" data-close class="text-[13px] py-1.5 opacity-85">LP制作</a>
+      <a href="../../../web-ai/seo-writing/" data-close class="text-[13px] py-1.5 opacity-85">SEO/LLMO記事制作代行</a>
+      <a href="../../../web-ai/case-interview/" data-close class="text-[13px] py-1.5 opacity-85">事例インタビュー記事制作</a>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-3 mb-1">AI活用支援</div>
+      <a href="../../../web-ai/ai-katsuyo/" data-close class="text-[13px] py-1.5 opacity-85">AI活用支援（業務効率化・自動化）</a>
+    </div>
+  </details>
+
+  <details class="drawer-acc border-b border-paper/[.08]">
+    <summary class="font-serif text-[17px] font-medium py-3 flex items-center justify-between cursor-pointer list-none">
+      コラム
+      <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6] drawer-acc-icon transition-transform shrink-0" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="pb-4 flex flex-col gap-1">
+      <a href="../../../column/" data-close class="text-[13px] py-2 opacity-85">研磨・金属加工コラム</a>
+      <a href="../../../web-ai/column/" data-close class="text-[13px] py-2 opacity-85">Web集客・AI活用支援コラム</a>
+    </div>
+  </details>
+
+  <a href="../../../company/" data-close class="font-serif text-[17px] font-medium py-3 border-b border-paper/[.08] flex items-center justify-between">会社情報</a>
+  </div>
+
+  <div class="pt-5 text-[11px] text-muted-ink/80 text-center">マツケンスタジオへのご相談は、お問い合わせフォームで受け付けています</div>
+</div>
+
+
+<main class="pt-[60px]">
+  <section class="pt-8 pb-10 md:pt-12 md:pb-14">
+    <div class="pwrap">
+      <article class="art">
+      <p class="font-mono text-[11px] tracking-[.2em] text-muted mb-5"><a href="../../../" class="hover:text-accent transition-colors">ホーム</a><span class="mx-2 opacity-40">/</span><a href="../../" class="hover:text-accent transition-colors">Web集客・AI活用支援</a><span class="mx-2 opacity-40">/</span><a href="../" class="hover:text-accent transition-colors">コラム</a><span class="mx-2 opacity-40">/</span><a href="../category/homepage/" class="hover:text-accent transition-colors">ホームページ制作</a></p>
+        <a href="../category/homepage/" class="chip">ホームページ制作</a>
+        <h1 class="font-bold leading-[1.45] mt-3 mb-4 text-ink" style="font-size:clamp(24px,3.6vw,34px)">Studioの不正アクセス・個人情報流出｜利用企業が今すぐやること【10月18日時点】</h1>
+        <p class="text-[13px] text-muted mb-6">公開日 <time datetime="2026-10-18">2026.10.18</time>　|　マツケンスタジオ 責任者</p>
+        <div class="points"><b>この記事で分かること</b><ul><li>何が起きたか、流出した可能性のある情報と、含まれないもの</li><li>すべての利用者と、機能ごとにやること</li><li>フォームで個人情報を集めていた会社が考える、報告と本人への通知</li></ul></div>
+        <div class="cta-top"><p>ホームページのご相談は無料です</p><div class="bt"><a href="../../contact/" class="btn-s bg-cta-yellow text-ink hover:bg-cta-yellow-h">1分で問い合わせ →</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="btn-s bg-[#06C755] text-white hover:bg-[#05B34C]">LINEで相談</a></div></div>
+        <nav class="toc" aria-label="目次"><b>目次</b><ol><li><a href="#what">何が起きたのか</a></li><li><a href="#data">流出した可能性のある情報</a></li><li><a href="#not-included">対象に含まれないもの</a></li><li><a href="#check">自社が対象かどうかを確かめる方法</a></li><li><a href="#all-users">すべての利用者が、今すぐやること</a></li><li><a href="#features">機能ごとに、やること</a></li><li><a href="#form">フォームで個人情報を集めていた会社へ</a></li><li><a href="#notice">本人への通知と、公表の進め方</a></li><li><a href="#contact-from-users">取引先や応募者から問い合わせが来たら</a></li><li><a href="#review">この機会に見直したいこと</a></li><li><a href="#next">今後の続報で確かめたいこと</a></li><li><a href="#summary">まとめ</a></li><li><a href="#faq">よくある質問</a></li></ol></nav>
+        <div class="art-body">
+<p>ノーコードでホームページを作れるサービス「Studio」で、第三者による不正アクセスがあり、利用者の情報が外部に流出した可能性があると、運営するStudio株式会社が2026年10月16日に発表しました。対象は、Studioに登録しているすべての利用者です。会社のホームページや採用サイトをStudioで作っている場合、自社の情報だけでなく、サイトのお問い合わせフォームに入力したお客様や応募者の情報も関わってきます。</p>
+<p>この記事では、Studioの公式発表をもとに、何が起きたのか、自社が対象かどうかの確かめ方、今すぐやること、フォームで個人情報を集めていた会社が考えておきたいことを、順番に整理します。</p>
+<p><b>この記事は、2026年10月18日20時30分の時点で公開されている公式発表をもとに書いています。</b>Studioは、件数や原因などを続報で知らせるとしています。実際に対応するときは、必ず公式のお知らせで最新の内容を確かめてください。出典は記事の最後にまとめています。</p>
+
+<h2 id="what">何が起きたのか</h2>
+<p>公式発表によると、第三者がStudioの一部の機能の弱いところ（脆弱性）を悪用して、Studioが使っているクラウド環境に不正にアクセスし、環境の中のデータを外部から取り出せる状態にしていました。この状態は、Studioが対処した2026年10月14日まで続いていました。</p>
+<table class="art-table">
+<tr><th>日付</th><th>できごと（公式発表より）</th></tr>
+<tr><td>2026年9月30日〜10月1日</td><td>第三者による不正アクセス（現時点で確認できている期間）</td></tr>
+<tr><td>2026年10月13日</td><td>社内の調査で不正アクセスを確認</td></tr>
+<tr><td>2026年10月13日〜14日</td><td>脆弱性を修正し、不正アクセスに使われた経路を塞ぐ。外部から取り出せる状態を解消</td></tr>
+<tr><td>2026年10月14日 午前2時30分ごろ</td><td>安全のため、ログインしていたすべての利用者を一度ログアウト</td></tr>
+<tr><td>2026年10月16日</td><td>第一報を公開。機能ごとに、対象の利用者へ個別のメールを送付</td></tr>
+<tr><td>2026年10月17日</td><td>フォーム機能の利用者に、個人情報保護委員会への報告の「保留」を案内</td></tr>
+<tr><td>2026年10月18日</td><td>よくある質問をまとめた案内ページを公開。第一報の内容を更新</td></tr>
+</table>
+<p>Studioは、実際に第三者にデータを取得された事実は確認できていないものの、<b>取得されたものとみなして対応を進めている</b>としています。また、現時点でデータの書きかえや削除は確認されていないとしています。</p>
+
+<h2 id="data">流出した可能性のある情報</h2>
+<p>公式発表では、Studioに登録しているすべての利用者について、次の情報が流出した可能性があるとしています。</p>
+<table class="art-table">
+<tr><th>種類</th><th>中身</th></tr>
+<tr><td>Studioアカウントの情報</td><td>ユーザー名、メールアドレス、ハッシュ化されたパスワードなど</td></tr>
+<tr><td>Studioで管理しているデータ</td><td>デザインエディタとCMSの内容、フォームに送信された内容、Google reCAPTCHA v3の設定情報、Webhook通知のURL</td></tr>
+<tr><td>ライブプレビューのURL</td><td>公開前のページを確認するためのURL</td></tr>
+<tr><td>設定に含まれる認証情報</td><td>API連携に登録した外部サービスのAPIキーやトークン、パスワード保護ページのパスワード、Googleスプレッドシート連携の認証情報、カスタムプロキシのプロキシキー</td></tr>
+</table>
+<p>注意したいのは、<b>暗号化して保存していた情報も、中身を知られた可能性がある</b>という点です。フォームの送信内容やAPIキーなどは暗号化されていましたが、暗号をとくための鍵も同じ不正アクセスで読み出されたためです。</p>
+<p>パスワードは、元に戻せない形（ハッシュ化）で保存されていました。元のパスワードを割り出すことは難しいものの、その可能性を完全には否定できないため、変更をお願いしているとしています。</p>
+<p>このほか、2022年12月から2023年8月にAIのサイト作成機能「Studio AI」（当初の名称は「Auto」）の先行利用に申し込んだ人について、メールアドレス、ユーザー名、住んでいる国（接続元から判定したもの）も対象です。Studioのアカウントを持っていない人も含まれ、個別に連絡するとしています。</p>
+
+<h2 id="not-included">対象に含まれないもの</h2>
+<p>反対に、次のものは対象に含まれないと説明されています。自社がどこまで影響を受けるかを考えるときに大切なところです。</p>
+<ul>
+<li><b>Googleフォームなど、外部サービスのフォームを埋め込んでいる場合の回答</b>：回答はStudioを通らずに外部サービスへ直接送られるため、含まれません。ただし、Studioに貼り付けた埋め込みのコードはデザインの内容として対象です。コードにAPIキーなど、外に知られてはいけない値を書いていた場合は、外部サービス側で切り替えます。</li>
+<li><b>「フォームの結果をStudioに保存」を無効にしていた間の回答</b>：Studioに保存されていないため、含まれません。途中で無効にした場合、それまでに届いていた回答は対象です。</li>
+<li><b>2026年9月30日より前に「完全に削除」した回答</b>：含まれません。ゴミ箱に移しただけの回答は対象です。</li>
+<li><b>フォームに添付されたファイルの中身</b>：対象はファイル名だけで、中身は含まれません。</li>
+<li><b>GoogleログインまたはFacebookログインだけを使っている場合のパスワード</b>：Studioのパスワードを設定していなければ、パスワードの変更はいりません。</li>
+</ul>
+<p>なお、ライブプレビューでテスト送信した回答や、プランの上限を超えてダッシュボードに表示されなかった回答も、Studioに保存されていたものは対象に含まれます。</p>
+
+<h2 id="check">自社が対象かどうかを確かめる方法</h2>
+<p>Studioに登録している会社は、すべて対象です。そのうえで、どの機能のどのプロジェクトが関わるかは、次の方法で確かめます。</p>
+<ul>
+<li><b>個別のメールを見る</b>：機能ごとに、対象プロジェクトのオーナー（いない場合はメンバー）へ、2026年10月16日にメールが送られています。件名は「【重要】不正アクセスに伴う、」で始まります。迷惑メールのフォルダも確かめましょう。</li>
+<li><b>Studioにログインする</b>：お知らせがある場合は、画面のバナーやポップアップで表示されます。</li>
+<li><b>専用の窓口に聞く</b>：メールが見当たらない場合や、契約の管理だけを担当している場合は、不正アクセスに関する専用のお問い合わせ窓口で、対象のプロジェクトを教えてもらえます。受付は24時間、回答は平日10時から18時です。</li>
+</ul>
+<p>制作会社にサイトを作ってもらい、Studioのアカウントも制作会社が持っている場合は、メールが自社に届いていないことがあります。制作会社に連絡して、対象のプロジェクトと、届いているメールの内容を共有してもらいましょう。誰がアカウントの持ち主かが分からない場合も、この機会に確かめておくと安心です。</p>
+
+<h2 id="all-users">すべての利用者が、今すぐやること</h2>
+<svg viewBox="0 0 560 174" role="img" aria-label="Studioの不正アクセスで、利用者がまず行う6つのことの図" class="st-illu" style="max-width:560px" fill="none" stroke="#1B3A6B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="18" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="32" y="28" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M36 38l4 4 8-9"/><text x="62" y="44" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">パスワードの変更</text><rect x="290" y="18" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="302" y="28" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M306 38l4 4 8-9"/><text x="332" y="44" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">同じパスワードの変更</text><rect x="20" y="70" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="32" y="80" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M36 90l4 4 8-9"/><text x="62" y="96" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">プレビューURLの削除</text><rect x="290" y="70" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="302" y="80" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M306 90l4 4 8-9"/><text x="332" y="96" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">APIキーの切り替え</text><rect x="20" y="122" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="32" y="132" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M36 142l4 4 8-9"/><text x="62" y="148" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">フォームの回答の確認</text><rect x="290" y="122" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="302" y="132" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M306 142l4 4 8-9"/><text x="332" y="148" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">不審なメールに注意</text></svg>
+<h3>1. Studioのパスワードを変える</h3>
+<p>メールアドレスとパスワードでログインしている場合は、パスワードを変えます。以前にメールアドレスとパスワードで登録したことがあり、今はGoogleなどでログインしている場合は、パスワードが残っていることがあります。ログイン画面の「パスワードをお忘れですか？」から再設定すると確実です。</p>
+<h3>2. 同じパスワードを使っているほかのサービスも変える</h3>
+<p>Studioと同じメールアドレスとパスワードの組み合わせを、ほかのサービスでも使っている場合は、そちらも変えることが強くすすめられています。割り出された場合に、ほかのサービスへ不正にログインされるおそれがあるためです。</p>
+<h3>3. ライブプレビューのURLを削除する</h3>
+<p>公開前のページを共有するライブプレビューのURLを発行している場合は、削除します。引き続き共有が必要なら、削除してから新しいURLを発行します。</p>
+<h3>4. Studioを名乗る不審な連絡に気をつける</h3>
+<p>今回のことに便乗した、Studioを名乗るメール（フィッシング）が届くおそれがあります。公式発表では、次のように案内されています。</p>
+<ul>
+<li>Studioからのメールは、@studio.design または @studio.site などのアドレスから送られる</li>
+<li>今回の件でStudioが送るメールに、パスワードや認証情報の入力を求めるリンクは含まれない</li>
+<li>Studioがパスワードや認証情報を、メールや電話で聞くことはない</li>
+<li>ログインするときは、ログイン画面のアドレスが app.studio.design であることを確かめる</li>
+</ul>
+<p>社内でStudioを使っている人が複数いる場合は、全員にこの内容を伝えておきましょう。</p>
+
+<h2 id="features">機能ごとに、やること</h2>
+<p>次の機能を使っている場合は、それぞれ対応が必要です。対象のプロジェクトには、個別のメールで案内が届いています。</p>
+<table class="art-table">
+<tr><th>使っている機能</th><th>やること（公式発表より）</th></tr>
+<tr><td>API連携（Data Connect API・API連携（Beta））</td><td>外部サービス（microCMS、Notionなど）で新しいキーを発行して差しかえ、古いキーを失効させる。2026年9月30日以降に心当たりのない利用がないかも確かめる</td></tr>
+<tr><td>パスワード保護ページ</td><td>保護ページのパスワードを変える</td></tr>
+<tr><td>フォーム</td><td>個別のメールで、対象の送信内容を確かめる（次の章でくわしく）</td></tr>
+<tr><td>Googleスプレッドシート連携</td><td>Studio側で鍵は更新済みで、連携はそのまま使える。そのうえで、①Studioで連携を解除、②Googleアカウントの「リンク済みアプリ」でStudioのアクセス権を削除、③改めて連携、の順にやり直すことがすすめられている</td></tr>
+<tr><td>カスタムプロキシ</td><td>Studioが発行した新しいプロキシキーに、自社のサーバーの設定を差しかえ、完了を窓口に知らせる。期日は10月16日のメールを受け取ってから30日以内</td></tr>
+<tr><td>Webhook通知</td><td>通知先のURLを切り替える</td></tr>
+<tr><td>Google reCAPTCHA v3</td><td>シークレットキーの一律の差しかえは求められていない（くわしくは公式のよくある質問）</td></tr>
+</table>
+<p>Googleスプレッドシート連携をやり直すと、解除してから改めて連携するまでの間、回答はスプレッドシートに追加されません。「フォームの結果をStudioに保存」が無効の場合は、通知先のメールアドレスにだけ届くので、解除する前に通知先が設定されているかを確かめておきましょう。また、Googleアカウントでアクセス権を削除すると、同じアカウントで連携しているほかのプロジェクトも止まります。</p>
+<p>外部サービスのAPIキーは、発行したサービスの側で管理されているため、Studioでは無効にできません。自社で切り替える必要があります。</p>
+
+<div class="cta-mid"><span class="lb">無料相談</span><b>何から始めればいいか分からない方へ</b><p>載せたい内容がまとまっていなくても大丈夫です。聞き取りをしながら、合うページ構成をご提案します。</p><div class="bt"><a href="../../contact/" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] shadow-[0_10px_24px_-10px_rgba(200,170,0,.7)] rounded-full font-bold tracking-[.04em] bg-cta-yellow text-ink hover:bg-cta-yellow-h hover:-translate-y-0.5 transition-all">1分で問い合わせ →</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] rounded-full font-bold tracking-[.04em] bg-[#06C755] text-white hover:bg-[#05B34C] hover:-translate-y-0.5 transition-all"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.4 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>LINEで相談する</a></div></div><h2 id="form">フォームで個人情報を集めていた会社へ</h2>
+<p>お問い合わせ、資料請求、見学の予約、採用の応募など、Studioのフォームでお客様や応募者の名前や連絡先を集めていた場合は、自社の情報だけの問題ではありません。<b>フォームに入力した人の情報が、流出した可能性がある</b>ためです。</p>
+<p>Studioは、フォームを通じて個人情報を集めている場合、サイトを運営する会社自身が「個人情報取扱事業者」として、個人情報保護委員会への報告や、入力した本人への通知が必要になる場合があると案内しています。</p>
+<h3>個人情報保護委員会への報告は「いったん保留」</h3>
+<p>2026年10月17日、Studioは、個人情報保護委員会からの要請を受けたとして、これから報告する予定の会社に、<b>個別の報告をいったん保留するよう</b>お願いしています。Studioがとりまとめて、利用者とStudioの連名で報告できるかを委員会と協議する予定で、進め方や、保留している間の期限の扱いは、委員会に確かめたうえで改めて案内するとしています。すでに報告した会社の今後の扱いも、あわせて案内するとしています。</p>
+<h3>本人への通知は、保留の対象ではない</h3>
+<p>保留をお願いしているのは、<b>個人情報保護委員会への報告だけ</b>です。フォームに入力した本人への通知は保留の対象に含まれず、必要になる場合があるので、引き続き対応を考えてほしいとしています。</p>
+<h3>通知が必要かを考える、3つの点</h3>
+<p>Studioのよくある質問では、通知が必要かを考えるために、次の3点を確かめるよう案内しています。</p>
+<ol>
+<li><b>事業や団体の活動のためにフォームを使っていたか</b>：お問い合わせ、予約、採用の応募などが当てはまります。個人事業主や非営利の団体も対象になり得ます。</li>
+<li><b>フォームの回答に「個人データ」が含まれていたか</b>：名前や連絡先など、個人を特定できる情報があるかを、自由に書く欄も含めて確かめます。こうした回答がStudioのダッシュボードに保存されていれば、自分で一覧を作っていなくても、通常は「個人データ」に当たると考えられるとしています。</li>
+<li><b>その情報が、今回の影響を受ける可能性があるか</b>：個別のメールに書かれた対象のプロジェクトと、フォームで集めていた情報を確かめます。</li>
+</ol>
+<p>大事なのは、<b>人数が少なくても関係がある</b>ことです。個人情報保護委員会のガイドラインでは、報告や通知が必要になる事態の一つに「不正の目的をもって行われたおそれがある行為による漏えい等」があり、不正アクセスはこれに当たります。この類型には、「本人の数が千人を超える」といった人数の条件がありません。Studioも、不正アクセスによる漏えいのおそれがある場合、対象者が1人でも通知が必要になる場合があると説明しています。</p>
+
+<h2 id="notice">本人への通知と、公表の進め方</h2>
+<p>通知が必要かどうか、どう伝えるかは、最終的には自社で判断することになります。Studioも、必要に応じて弁護士などの専門家に相談するよう案内しています。そのうえで、進めるときの流れを整理しておきます。</p>
+<h3>1. 対象の人と、集めていた項目を確かめる</h3>
+<p>個別のメールに書かれた対象のプロジェクトのフォームについて、いつから、何件の回答が、どんな項目（名前、会社名、電話番号、メールアドレス、自由記述など）で保存されていたかを確かめます。採用の応募のように、内容によってはとくに慎重に扱いたい情報が含まれていないかも見ておきます。</p>
+<h3>2. 伝える内容をまとめる</h3>
+<p>個人情報保護委員会のガイドラインでは、本人に通知する内容として、次のようなことが挙げられています。</p>
+<ul>
+<li>何が起きたかの概要</li>
+<li>漏えい、またはそのおそれがある個人データの項目</li>
+<li>原因</li>
+<li>二次的な被害、またはそのおそれの有無と、その内容</li>
+<li>そのほか参考になること（問い合わせ先など）</li>
+</ul>
+<p>Studioは、自社のホームページなどでのお知らせに使える、事業者向けのお知らせの文例（リリース用のひな形）を用意しています。対象の情報や自社の対応に合わせて直して使えます。</p>
+<h3>3. 伝え方を決める</h3>
+<p>本人への通知は、メールや郵送などで、本人に届く形で行うのが基本です。ガイドラインでは、連絡先が分からないなど本人への通知が難しい場合に、代わりの措置として、事案を公表することや、問い合わせの窓口を設けることなどが例として挙げられています。ホームページでのお知らせは、本人への通知とは別に考える必要があり、Studioもその点を案内しています。</p>
+<h3>4. 問い合わせに答えられるようにする</h3>
+<p>お知らせを出すと、入力した人から問い合わせが来ることがあります。誰が受けるのか、どこまで答えるのか、Studioの続報が出たらどう知らせるのかを、社内で決めておきましょう。答えに困ったときは、分かっていることと、まだ分からないことを分けて伝えるのが基本です。</p>
+<h3>報告の期限について</h3>
+<p>ガイドラインでは、報告は、事態を知ってから速やかに出す「速報」（目安はおおむね3〜5日以内）と、くわしい内容をまとめた「確報」に分かれ、不正の目的による漏えいの場合、確報は事態を知った日から60日以内とされています。ただ今回は、上で紹介したとおり、保留している間の期限の扱いを、Studioが委員会に確かめたうえで案内するとしています。自社だけで判断せず、Studioの続報と委員会の案内を確かめてから動きましょう。</p>
+
+<h2 id="contact-from-users">取引先や応募者から問い合わせが来たら</h2>
+<p>Studioは、Studioで作られたサイトのフォームから情報を送った人には、送り先のサイトの運営者から案内がある場合があるとしています。つまり、フォームに入力した人から見ると、まず問い合わせる先は、サイトを運営している自社です。</p>
+<p>問い合わせが来たときに、次のことを答えられるようにしておくと、相手の不安をやわらげられます。</p>
+<ul>
+<li>自社のサイトのフォームが、対象に含まれているかどうか</li>
+<li>その人の情報のうち、どの項目が関わる可能性があるか</li>
+<li>Studioが発表している内容と、まだ調べている内容</li>
+<li>自社としてとった対応と、続報が出たときの知らせ方</li>
+<li>不審なメールや電話に気をつけてほしいこと</li>
+</ul>
+
+<h2 id="review">この機会に見直したいこと</h2>
+<p>今回のことは、Studioに限らず、ホームページを外部のサービスで作っているすべての会社にとって、自社の備えを見直すきっかけになります。どのサービスを使っていても、次のことは確かめておきたいところです。</p>
+<h3>フォームの回答を、サービスにため続けない</h3>
+<p>今回、「フォームの結果をStudioに保存」を無効にしていた間の回答や、9月30日より前に完全に削除した回答は、対象に含まれませんでした。お問い合わせの回答を、必要な期間を過ぎてもサービスの中に残し続けていないかを確かめましょう。メールで受け取って社内で管理している場合は、サービス側に残す必要があるかを考え、不要なら定期的に完全に削除する運用にすると、万一のときの影響を小さくできます。</p>
+<h3>どの外部サービスに、何を預けているかを書き出す</h3>
+<p>ホームページの裏側では、フォーム、予約、CMS、表計算、地図など、いくつものサービスがつながっています。どのサービスに、どんな情報や鍵（APIキー）を預けているかを一覧にしておくと、今回のようなときに、何を切り替えればよいかがすぐに分かります。</p>
+<h3>パスワードを使い回さない、2段階の認証を使う</h3>
+<p>同じパスワードを複数のサービスで使っていると、一か所の流出がほかのサービスへの不正ログインにつながります。サービスごとに別のパスワードにし、2段階の認証が使えるサービスでは有効にしておきましょう。</p>
+<h3>アカウントの持ち主と、連絡先を決めておく</h3>
+<p>制作会社が作ったサイトでは、サービスのアカウントや連絡先のメールアドレスが制作会社のものになっていて、大事な知らせが自社に届かないことがあります。誰が持ち主で、知らせがどこに届くのかを確かめておきましょう。考え方は、<a href="../domain-server/">ドメインとサーバーとは？</a>や<a href="../change-web-company/">ホームページの制作会社を乗り換える手順</a>でも紹介しています。</p>
+<h3>サイトのアドレスと、お知らせの通信を守る</h3>
+<p>フォームのあるページが暗号化された通信（https）になっているかも、あらためて確かめておきましょう。くわしくは、<a href="../not-secure-ssl/">「保護されていない通信」と出るのはなぜ？</a>で紹介しています。</p>
+<p>サービスを乗り換えるかどうかは、今回の対応や続報の内容、自社の使い方を見て、落ち着いて判断すれば十分です。乗り換えを考える場合も、まずは今回の対応を済ませることが先です。</p>
+
+<h2 id="next">今後の続報で確かめたいこと</h2>
+<p>Studioは、次のことを確認でき次第、公式のお知らせで続報として知らせるとしています。</p>
+<ul>
+<li>対象になる利用者の範囲と件数</li>
+<li>二次的な被害（不正ログインや情報の悪用など）の有無についての調査結果</li>
+<li>原因の調査結果と、再発を防ぐための対策（外部の専門機関に依頼するよう調整中）</li>
+<li>個人情報保護委員会への報告の進め方と、保留している間の期限の扱い</li>
+</ul>
+<p>とくにフォームを使っていた会社は、報告の進め方についての案内を見落とさないようにしましょう。この記事も、続報が出たら内容を見直します。</p>
+
+<h2 id="summary">まとめ</h2>
+<p>Studioの不正アクセスでは、すべての利用者について、アカウントの情報、サイトの内容、フォームの送信内容、外部サービスの鍵などが流出した可能性があります。まずは、パスワードの変更、同じパスワードを使っているサービスの変更、ライブプレビューのURLの削除を済ませ、使っている機能ごとの対応を進めましょう。フォームで個人情報を集めていた会社は、個人情報保護委員会への報告はStudioの案内に沿っていったん保留しつつ、入力した本人への通知が必要かを、専門家にも相談しながら考えておくことが大切です。</p>
+<p>出典（いずれもStudio株式会社と個人情報保護委員会の公式ページ。2026年10月18日に確認）</p>
+<ul>
+<li><a href="https://studio.design/ja/whats-new/unauthorized-access-2026-10" target="_blank" rel="noopener">【重要】不正アクセスによる情報流出に関するお詫びとお願い（第一報）</a></li>
+<li><a href="https://studio.design/ja/whats-new/unauthorized-access-2026-10-form" target="_blank" rel="noopener">【重要】フォーム機能をご利用のお客様へ：個人情報保護委員会へのご報告についてのご案内（第一報）</a></li>
+<li><a href="https://studio.design/ja/security/notice/2026-10-incident" target="_blank" rel="noopener">Studioにおける不正アクセスに関するご案内（よくあるご質問）</a></li>
+<li><a href="https://www.ppc.go.jp/personalinfo/legal/guidelines_tsusoku/" target="_blank" rel="noopener">個人情報の保護に関する法律についてのガイドライン（通則編）</a></li>
+</ul>
+</div>
+        <h2 id="faq" class="font-bold text-[22px] mt-12 mb-4" style="scroll-margin-top:90px">よくある質問</h2>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">Studioの不正アクセスで、自社は対象ですか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">Studioに登録しているすべての利用者が対象とされています。どの機能のどのプロジェクトが関わるかは、2026年10月16日にプロジェクトのオーナーへ送られた個別のメールか、Studioにログインしたときのお知らせで確かめられます。見当たらない場合は、不正アクセスに関する専用のお問い合わせ窓口で教えてもらえます。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">GoogleログインでStudioを使っています。パスワードの変更は必要ですか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">GoogleログインまたはFacebookログインだけを使い、Studioのパスワードを設定していなければ不要とされています。ただし、以前にメールアドレスとパスワードで登録したことがある場合はパスワードが残っていることがあるため、ログイン画面の「パスワードをお忘れですか？」から再設定してください。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">Googleフォームを埋め込んでいる場合も、回答は流出しましたか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">外部サービスのフォームを埋め込んでいる場合、回答はStudioを通らずに外部サービスへ直接送られるため、対象には含まれないとされています。ただし、Studioに貼り付けた埋め込みのコードはデザインの内容として対象なので、コードにAPIキーなどを書いていた場合は外部サービス側で切り替えてください。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">個人情報保護委員会への報告は、今すぐ出すべきですか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">Studioは2026年10月17日、個人情報保護委員会からの要請を受けたとして、これから報告する予定の利用者に、個別の報告をいったん保留するようお願いしています。連名での報告や期限の扱いは、委員会に確かめたうえで改めて案内するとしているので、続報を確かめてください。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">フォームに入力した人への通知も、保留してよいですか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">保留をお願いされているのは、個人情報保護委員会への報告だけです。入力した本人への通知は保留の対象に含まれず、必要になる場合があるとされています。不正アクセスによる漏えいのおそれでは人数の条件がないため、対象が少なくても、専門家に相談しながら対応を考えておきましょう。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">制作会社にStudioでサイトを作ってもらいました。何をすればいいですか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">Studioのアカウントやメールが制作会社のものになっていると、案内が自社に届いていないことがあります。まず制作会社に連絡し、対象のプロジェクト、届いているメールの内容、すでにとった対応を共有してもらいましょう。フォームで個人情報を集めていた場合、本人への通知を考えるのはサイトを運営する自社です。</p>
+        </div>
+      </div>
+        <div class="mt-10"><div class="author"><div class="av">松</div><div><b>マツケンスタジオ 責任者</b><p>デジタルマーケティングの仕事を10年以上。上場企業での勤務や、1,000万人以上が使うサービスのマーケティングを経験し、マーケターとして企業のオウンドメディアを50万PVまで育て、数百社の集客を支援してきました。家業である松本研磨工業のホームページを作り直し、リニューアルから1か月で有効なお問い合わせを3倍にしています。</p><a href="../author/" class="text-[13px] font-bold text-accent-ink hover:underline">プロフィールを見る →</a></div></div></div>
+        <div class="mt-8"><div class="cta-end"><b>ホームページのこと、まずは気軽にご相談ください。</b><p>「何から始めればいいか分からない」という段階でも大丈夫です。町工場発のマツケンスタジオが、ドメインの取得から公開後の更新まで、まるごとお手伝いします。いまは毎月3社まで、特別な価格で制作する「事例づくりモニター」も受け付けています。</p><div class="bt"><a href="../../contact/" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] shadow-[0_10px_24px_-10px_rgba(200,170,0,.7)] rounded-full font-bold tracking-[.04em] bg-cta-yellow text-ink hover:bg-cta-yellow-h hover:-translate-y-0.5 transition-all">1分で問い合わせ →</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] rounded-full font-bold tracking-[.04em] bg-[#06C755] text-white hover:bg-[#05B34C] hover:-translate-y-0.5 transition-all"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.4 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>LINEで相談する</a><a href="../../monitor/" class="lp">事例づくりモニターを見る →</a></div></div></div>
+      </article>
+    </div>
+  </section>
+  <section class="py-14 md:py-20 st-alt">
+    <div class="pwrap">
+      <h2 class="sec-ttl">あわせて読みたい記事</h2>
+      <div class="col-grid three"><a href="../homepage-pages/" class="col-card"><span><span class="chip">ホームページ制作</span></span><h3>ホームページは何ページ必要？1ページ・5ページ・20ページの違いと選び方</h3><p>ホームページは何ページあればいいのか。1ページ（LP）、2〜5ページ（名刺代わり）、6〜20ページ（標準的な会社のサイト）、21ページ以上の…</p><time datetime="2026-09-27">2026.09.27</time></a><a href="../homepage-flow/" class="col-card"><span><span class="chip">ホームページ制作</span></span><h3>ホームページ制作の流れと期間｜依頼から公開まで、何をいつ決めるか</h3><p>ホームページ制作は、相談から公開まで何を、どんな順番で進めるのか。6つの段階ごとに決めること、期間の目安、公開が延びやすい理由、依頼する側が…</p><time datetime="2026-10-04">2026.10.04</time></a><a href="../homepage-photo-text/" class="col-card"><span><span class="chip">ホームページ制作</span></span><h3>ホームページに載せる写真と文章の用意のしかた｜自分たちで進めるときのコツ</h3><p>ホームページに載せる写真と文章を、どう用意すればいいのか。文章の3つの用意のしかた、書くときのコツ、撮っておきたい写真、スマホで撮るときのコ…</p><time datetime="2026-10-04">2026.10.04</time></a></div>
+    </div>
+  </section>
+
+  <section class="py-14 md:py-20">
+    <div class="pwrap">
+      <h2 class="sec-ttl">カテゴリから探す</h2>
+      <nav class="col-cats" aria-label="カテゴリ"><a href="../" class="on">すべて</a><a href="../category/homepage/" class="">ホームページ制作</a><a href="../category/renewal/" class="">リニューアル</a><a href="../category/cost/" class="">費用・発注</a><a href="../category/ai/" class="">AI検索対策</a><a href="../category/seo/" class="">SEO・集客</a><a href="../category/recruit/" class="">採用</a><a href="../category/industry/" class="">業種別</a><a href="../category/case/" class="">事例</a></nav>
+    </div>
+  </section>
+
+<div class="col-stick" id="colStick"><a href="../../contact/" class="bg-cta-yellow text-ink">1分で問い合わせ</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="bg-[#06C755] text-white">LINEで相談</a></div><script>(function(){var s=document.getElementById("colStick");if(!s)return;function u(){s.classList.toggle("show",window.scrollY>500&&(window.innerHeight+window.scrollY)<document.body.scrollHeight-700)}window.addEventListener("scroll",u,{passive:true});u()})();</script>
+</main>
+<footer class="site-footer bg-navy text-paper pt-14 md:pt-20 pb-8">
+  <div class="wrap">
+    <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-16 pb-10 md:pb-14 border-b border-paper/15">
+      <div>
+        <a href="../../../" class="inline-flex items-center gap-3">
+          <span class="w-11 h-11 rounded-full grid place-items-center font-semibold text-xl bg-paper text-ink">松</span>
+          <span class="text-[18px] md:text-[20px] font-bold tracking-[.04em] text-paper">株式会社松本研磨工業</span>
+        </a>
+        <p class="mt-5 text-[14px] leading-[1.9] text-paper/75">〒210-0851 神奈川県川崎市川崎区浜町3-9-22</p>
+        <div class="mt-6 flex flex-wrap gap-3"><a href="https://www.instagram.com/matsuken_studio/" target="_blank" rel="noopener" class="ft-sns"><svg class="w-5 h-5 stroke-current fill-none stroke-[1.5]" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>@matsuken_studio</span></a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="ft-sns"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.4 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg><span>LINEで相談</span></a></div>
+      </div>
+      <div class="lg:border-l lg:border-paper/15 lg:pl-16">
+        <h3 class="ft-head">お問い合わせ</h3>
+        <p class="text-[14px] leading-[1.9] text-paper/80 mb-5">マツケンスタジオへのご相談は、お問い合わせフォームかLINEで受け付けています。</p>
+        <a href="../../../web-ai/contact/" class="ft-btn">1分で問い合わせ</a>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-10 py-10 md:py-14 border-b border-paper/15">
+      <nav aria-label="金属研磨">
+        <h3 class="ft-head">金属研磨</h3>
+        <ul class="space-y-3">
+          <li><a href="../../../polishing/" class="ft-link">金属研磨技術の種類</a></li>
+          <li><a href="../../../polishing/buff-polishing/" class="ft-link">バフ研磨</a></li>
+          <li><a href="../../../polishing/belt-polishing/" class="ft-link">ベルト研磨</a></li>
+          <li><a href="../../../polishing/hairline-finish/" class="ft-link">ヘアライン仕上げ</a></li>
+          <li><a href="../../../polishing/flexible-polishing/" class="ft-link">フレキ研磨</a></li>
+          <li><a href="../../../#works" class="ft-link">加工実績</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="会社について">
+        <h3 class="ft-head">会社について</h3>
+        <ul class="space-y-3">
+          <li><a href="../../../company/" class="ft-link">会社情報</a></li>
+          <li><a href="../../../company/#access" class="ft-link">アクセス</a></li>
+          <li><a href="../../../#faq" class="ft-link">よくある質問</a></li>
+          <li><a href="../../../news/" class="ft-link">お知らせ</a></li>
+          <li><a href="../../../column/" class="ft-link">コラム</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Web集客・AI活用支援">
+        <h3 class="ft-head">Web集客・AI活用支援</h3>
+        <ul class="space-y-3">
+          <li><a href="../../../web-ai/" class="ft-link">サービス一覧</a></li>
+          <li><a href="../../../web-ai/seo-consulting/" class="ft-link">SEO・集客対策</a></li>
+          <li><a href="../../../web-ai/website/" class="ft-link">サイト制作・LP制作</a></li>
+          <li><a href="../../../web-ai/ai-katsuyo/" class="ft-link">AI活用支援</a></li>
+          <li><a href="../../../web-ai/case/" class="ft-link">実績・事例</a></li>
+          <li><a href="../../../web-ai/column/" class="ft-link">Web集客コラム</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-[13px] text-paper/60">
+      <a href="../../../privacy/" class="hover:text-paper hover:underline underline-offset-4">プライバシーポリシー</a>
+      <div>© 2026 株式会社松本研磨工業</div>
+    </div>
+  </div>
+</footer>
+<script>
+  const burger = document.getElementById('burgerBtn');
+  const mmenu  = document.getElementById('mobileMenu');
+  if (burger && mmenu) {
+    burger.addEventListener('click', () => mmenu.classList.toggle('translate-x-full'));
+    mmenu.querySelectorAll('[data-close]').forEach(a =>
+      a.addEventListener('click', () => mmenu.classList.add('translate-x-full'))
+    );
+  }
+  document.querySelectorAll('.mega-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const mega = btn.closest('.mega');
+      const isOpen = mega.classList.contains('open');
+      document.querySelectorAll('.mega.open').forEach(m => { m.classList.remove('open'); m.querySelector('.mega-btn').setAttribute('aria-expanded','false'); });
+      if (!isOpen) { mega.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+    });
+  });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.mega')) {
+      document.querySelectorAll('.mega.open').forEach(m => { m.classList.remove('open'); m.querySelector('.mega-btn').setAttribute('aria-expanded','false'); });
+    }
+  });
+</script>
+</body>
+</html>

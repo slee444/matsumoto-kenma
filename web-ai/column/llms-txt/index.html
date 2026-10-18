@@ -162,7 +162,7 @@ nav.fixed .font-serif.font-semibold,#mobileMenu .font-serif.font-semibold,footer
   "url": "https://matsumoto-kenma.co.jp/web-ai/column/llms-txt/",
   "image": "https://matsumoto-kenma.co.jp/images/ogp-studio.jpg",
   "datePublished": "2026-10-03",
-  "dateModified": "2026-10-03",
+  "dateModified": "2026-10-18",
   "articleSection": "AI検索対策",
   "inLanguage": "ja",
   "author": {
@@ -215,6 +215,22 @@ nav.fixed .font-serif.font-semibold,#mobileMenu .font-serif.font-semibold,footer
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "ホームページに書いていないことや、事実と違うことは書かないようにします。社外に出したくない情報も、当然ながら書きません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "llms.txtで、AIに読まれないようにすることはできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "できません。llms.txtは、AIに大切なページを案内するためのファイルで、読むのを止める働きはありません。AIの見回りを止めたい場合は、robots.txtで設定します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "llms.txtは英語で書かないといけませんか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "日本語で書いてかまいません。ホームページが日本語なら、同じ言葉で書いたほうが、画面の内容と合わせやすくなります。文字化けしないよう、文字コードはUTF-8で保存します。"
       }
     }
   ]
@@ -715,29 +731,48 @@ nav.fixed .font-serif.font-semibold,#mobileMenu .font-serif.font-semibold,footer
       <p class="font-mono text-[11px] tracking-[.2em] text-muted mb-5"><a href="../../../" class="hover:text-accent transition-colors">ホーム</a><span class="mx-2 opacity-40">/</span><a href="../../" class="hover:text-accent transition-colors">Web集客・AI活用支援</a><span class="mx-2 opacity-40">/</span><a href="../" class="hover:text-accent transition-colors">コラム</a><span class="mx-2 opacity-40">/</span><a href="../category/ai/" class="hover:text-accent transition-colors">AI検索対策</a></p>
         <a href="../category/ai/" class="chip">AI検索対策</a>
         <h1 class="font-bold leading-[1.45] mt-3 mb-4 text-ink" style="font-size:clamp(24px,3.6vw,34px)">llms.txtとは？書き方と「意味ない」と言われる理由</h1>
-        <p class="text-[13px] text-muted mb-6">公開日 <time datetime="2026-10-03">2026.10.03</time>　|　マツケンスタジオ 責任者</p>
-        <div class="points"><b>この記事で分かること</b><ul><li>llms.txtとは何か、何のためのファイルか</li><li>書き方と、実際の例</li><li>「意味ない」と言われる理由と、置くときの考え方</li></ul></div>
+        <p class="text-[13px] text-muted mb-6">公開日 <time datetime="2026-10-03">2026.10.03</time>　／　更新日 <time datetime="2026-10-18">2026.10.18</time>　|　マツケンスタジオ 責任者</p>
+        <div class="points"><b>この記事で分かること</b><ul><li>llms.txtとは何か、何のためのファイルか</li><li>決められた書き方と、会社サイトでの書き方の例</li><li>「意味ない」と言われる理由と、置くときの考え方</li></ul></div>
         <div class="cta-top"><p>ホームページのご相談は無料です</p><div class="bt"><a href="../../contact/" class="btn-s bg-cta-yellow text-ink hover:bg-cta-yellow-h">1分で問い合わせ →</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="btn-s bg-[#06C755] text-white hover:bg-[#05B34C]">LINEで相談</a></div></div>
-        <nav class="toc" aria-label="目次"><b>目次</b><ol><li><a href="#what">llms.txtとは</a></li><li><a href="#robots">robots.txtやサイトマップとの違い</a></li><li><a href="#howto">書き方</a></li><li><a href="#tips">書くときのポイント</a></li><li><a href="#place">置き方と確かめ方</a></li><li><a href="#useless">「意味ない」と言われる理由</a></li><li><a href="#stance">それでも置くかどうかの考え方</a></li><li><a href="#summary">まとめ</a></li><li><a href="#faq">よくある質問</a></li></ol></nav>
+        <nav class="toc" aria-label="目次"><b>目次</b><ol><li><a href="#what">llms.txtとは</a></li><li><a href="#robots">robots.txtやサイトマップとの違い</a></li><li><a href="#format">決められた書き方</a></li><li><a href="#howto">会社のサイトでの書き方</a></li><li><a href="#tips">書くときのポイント</a></li><li><a href="#full">llms-full.txtとは</a></li><li><a href="#place">置き方と確かめ方</a></li><li><a href="#useless">「意味ない」と言われる理由</a></li><li><a href="#stance">それでも置くかどうかの考え方</a></li><li><a href="#who">早めに置きたい会社、急がなくていい会社</a></li><li><a href="#summary">まとめ</a></li><li><a href="#faq">よくある質問</a></li></ol></nav>
         <div class="art-body">
 <p>AI検索対策について調べていると、「llms.txt（エルエルエムズ・テキスト）」という言葉を目にすることがあります。「置いたほうがいいの？」「意味ないって聞いたけど？」という声もよく聞きます。</p>
 <p>松本研磨工業のホームページでも、llms.txtを置いています。この記事では、llms.txtとは何か、どう書くのか、なぜ「意味ない」とも言われるのかを、実際に置いている立場からまとめます。</p>
 <svg viewBox="0 0 560 240" role="img" aria-label="サイトの中身をまとめたllms.txtを、AIが読むイメージの図" class="st-illu" style="max-width:560px" fill="none" stroke="#1B3A6B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="150" y="14" width="260" height="210" rx="10" fill="#fff"/><rect x="150" y="14" width="260" height="34" rx="10" fill="#1B3A6B" stroke="none"/><rect x="150" y="36" width="260" height="12" fill="#1B3A6B" stroke="none"/><text x="280" y="37" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" stroke="none">llms.txt</text><text x="170" y="74" text-anchor="start" font-size="13" font-weight="700" fill="#1B3A6B" stroke="none"># 会社名</text><text x="170" y="96" text-anchor="start" font-size="12" font-weight="500" fill="#1B3A6B" stroke="none">> 何をしている会社か（概要）</text><text x="170" y="124" text-anchor="start" font-size="13" font-weight="700" fill="#1B3A6B" stroke="none">## 基本情報</text><text x="170" y="146" text-anchor="start" font-size="12" font-weight="500" fill="#1B3A6B" stroke="none">- 所在地・連絡先・受付時間</text><text x="170" y="174" text-anchor="start" font-size="13" font-weight="700" fill="#1B3A6B" stroke="none">## 主なページ</text><text x="170" y="196" text-anchor="start" font-size="12" font-weight="500" fill="#1B3A6B" stroke="none">- [ページ名](URL): 何が分かるか</text><circle cx="470" cy="120" r="34" fill="#F5DE00" stroke="none"/><text x="470" y="126" text-anchor="middle" font-size="18" font-weight="700" fill="#1B3A6B" stroke="none">AI</text><path d="M416 120h18"/><path d="M428 114l6 6-6 6"/><circle cx="80" cy="120" r="34" fill="#EEF2F8" stroke="none"/><text x="80" y="116" text-anchor="middle" font-size="12" font-weight="700" fill="#1B3A6B" stroke="none">サイト</text><text x="80" y="132" text-anchor="middle" font-size="12" font-weight="700" fill="#1B3A6B" stroke="none">の中身</text><path d="M118 120h24"/><path d="M136 114l6 6-6 6"/></svg>
 
 <h2 id="what">llms.txtとは</h2>
-<p>llms.txtは、ChatGPTのような大規模言語モデル（LLM）に向けて、サイトの概要と主なページをまとめたテキストファイルです。2024年に提案された考え方で、サイトの一番上の階層に「llms.txt」という名前で置きます。</p>
+<p>llms.txtは、ChatGPTのような大規模言語モデル（LLM）に向けて、サイトの概要と主なページをまとめたテキストファイルです。サイトの一番上の階層に「llms.txt」という名前で置きます。</p>
 <p>人が読むホームページは、メニューや画像、装飾が多く、機械にとっては必要な情報がどこにあるのか分かりにくいことがあります。llms.txtは、「この会社は何をしていて、くわしい情報はどのページにあるか」を、短い文章で整理して渡すためのものです。</p>
 
-<h2 id="robots">robots.txtやサイトマップとの違い</h2>
-<ul>
-<li><b>robots.txt</b>：検索エンジンなどに「このページは見に来ないで」と伝えるファイルです。</li>
-<li><b>サイトマップ（sitemap.xml）</b>：サイトにあるページのアドレスを一覧にしたファイルです。</li>
-<li><b>llms.txt</b>：ページの一覧に加えて、会社の概要や各ページの内容の説明を、文章でまとめたファイルです。</li>
-</ul>
-<p>サイトマップが「住所録」だとすると、llms.txtは「案内文つきの目次」のようなものです。</p>
+<h3>誰が、何のために提案したのか</h3>
+<p>llms.txtは、2024年9月3日に、Jeremy Howard（ジェレミー・ハワード）氏が提案した考え方です。説明のページ（llmstxt.org）は、その後の使われ方をふまえて、2026年8月に第2版として書き直されています。</p>
+<p>提案のきっかけは、「AIがウェブサイトを読む機会が増えたのに、ウェブページは人が見るために作られている」という問題です。AIが一度に読める文章の量には限りがあるため、大切な情報を一か所に、短く、分かりやすくまとめておこう、というのがねらいです。</p>
+<p>説明のページでは、llms.txtは主に、AIの学習のためというより、利用者が質問したときにAIが情報を調べる場面で役立つものとして考えていた、と書かれています。</p>
 
-<h2 id="howto">書き方</h2>
-<p>llms.txtは、見出しや箇条書きを使った、シンプルなテキストで書きます。基本の形は次のとおりです。</p>
+<h2 id="robots">robots.txtやサイトマップとの違い</h2>
+<p>サイトには、機械に向けたファイルがいくつかあります。役割の違いを整理しておきましょう。</p>
+<table class="art-table">
+<tr><th>ファイル</th><th>役割</th><th>中身</th></tr>
+<tr><td>robots.txt</td><td>検索エンジンなどに「このページは見に来ないで」と伝える</td><td>見に来てよい場所、だめな場所の指定</td></tr>
+<tr><td>サイトマップ（sitemap.xml）</td><td>サイトにあるページを知らせる</td><td>ページのアドレスの一覧</td></tr>
+<tr><td>llms.txt</td><td>AIに、サイトの概要と大切なページを案内する</td><td>会社の概要と、主なページの説明つきの一覧</td></tr>
+</table>
+<p>サイトマップが「住所録」だとすると、llms.txtは「案内文つきの目次」のようなものです。robots.txtのように「見に来ないで」と止める働きはありません。また、サイトマップのようにすべてのページを並べるものではなく、大切なページを選んで並べるものです。どれか一つがあれば足りる、という関係ではありません。</p>
+
+<h2 id="format">決められた書き方</h2>
+<p>llms.txtは、「マークダウン」という、記号で見出しや箇条書きを表すシンプルな書き方で作ります。llmstxt.orgでは、次の順番で書くよう説明されています。</p>
+<table class="art-table">
+<tr><th>順番</th><th>書くもの</th><th>必須かどうか</th></tr>
+<tr><td>1</td><td>「#」で始まる見出しに、サイト名（会社名）</td><td>必須（唯一の必須項目）</td></tr>
+<tr><td>2</td><td>「&gt;」で始まる引用の形で、サイトの短い要約</td><td>任意</td></tr>
+<tr><td>3</td><td>くわしい説明（見出しを使わない文章や箇条書き）</td><td>任意</td></tr>
+<tr><td>4</td><td>「##」で始まる見出しごとに、ページの一覧</td><td>任意</td></tr>
+</table>
+<p>ページの一覧は、1行に1ページずつ、「[ページ名](アドレス)」の形でリンクを書き、そのあとに「:」を付けて、ページの説明を書きます。説明は任意ですが、あったほうが内容が伝わります。</p>
+<p>また、「Optional（オプショナル）」という見出しの一覧は、「読む量を減らしたいときは飛ばしてよい、補足のページ」という意味で使う決まりになっています。</p>
+
+<h2 id="howto">会社のサイトでの書き方</h2>
+<p>決まりをふまえると、会社のホームページなら、次のような形が書きやすいです。</p>
 <ol>
 <li><b>一番上に会社名（サイト名）</b></li>
 <li><b>会社の概要を数行で</b>：何をしている会社か、どこで、誰に向けてか。</li>
@@ -746,29 +781,54 @@ nav.fixed .font-serif.font-semibold,#mobileMenu .font-serif.font-semibold,footer
 </ol>
 <p>たとえば、松本研磨工業のllms.txtは、会社の概要、所在地や受付時間などの基本情報、そして研磨のサービス、会社情報、コラム、Web集客の事業ごとに、ページの名前と説明を並べています。</p>
 
+<h3>書き方の例</h3>
+<p>架空の会社「〇〇工業」で、1行ずつの書き方と意味を示します。</p>
+<table class="art-table">
+<tr><th>書く内容（例）</th><th>意味</th></tr>
+<tr><td># 株式会社〇〇工業</td><td>会社名（必須の見出し）</td></tr>
+<tr><td>&gt; 〇〇県〇〇市の金属加工工場。試作の1個から小量産まで対応しています。</td><td>会社の短い要約</td></tr>
+<tr><td>- 所在地: 〇〇県〇〇市〇〇1-2-3</td><td>基本情報</td></tr>
+<tr><td>- 受付時間: 平日 8:30〜17:30</td><td>基本情報</td></tr>
+<tr><td>## サービス</td><td>ページの一覧の見出し</td></tr>
+<tr><td>- [加工のご案内](https://〇〇.co.jp/service/): 対応できる材質、大きさ、数量の目安</td><td>ページへのリンクと説明</td></tr>
+<tr><td>- [お問い合わせ](https://〇〇.co.jp/contact/): 見積りの依頼方法と、必要なもの</td><td>ページへのリンクと説明</td></tr>
+<tr><td>## Optional</td><td>補足のページの見出し</td></tr>
+<tr><td>- [お知らせ](https://〇〇.co.jp/news/): 休業日や新しい設備のお知らせ</td><td>飛ばしてもよいページ</td></tr>
+</table>
+<p>実際のファイルでは、表ではなく、左の列の内容をそのまま上から順に並べて書きます。</p>
+
 <h2 id="tips">書くときのポイント</h2>
 <ul>
 <li><b>画面に書いてあることと合わせる</b>：llms.txtにだけ書かれた情報は、読む人には見えません。ホームページに書いてある事実をまとめるようにします。</li>
 <li><b>具体的に書く</b>：「高品質なサービス」ではなく、「何を、どこで、どのくらいの量から対応しているか」を書きます。</li>
 <li><b>ページの説明を添える</b>：アドレスだけでなく、「このページで何が分かるか」を一行で書くと、内容が伝わりやすくなります。</li>
+<li><b>大切なページにしぼる</b>：すべてのページを並べるより、サービス、会社概要、事例、問い合わせなど、知ってほしいページを選びます。</li>
 <li><b>情報を新しく保つ</b>：ページを増やしたり、内容が変わったりしたら、llms.txtも直します。松本研磨工業では、ページの情報から自動でllms.txtを作り直す仕組みにしています。</li>
 </ul>
 
-<div class="cta-mid"><span class="lb">無料相談</span><b>自社がAIにどう紹介されるか、気になったら</b><p>今のホームページが、AIや検索にどう伝わっているかを確かめて、直すところをお伝えします。</p><div class="bt"><a href="../../contact/" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] shadow-[0_10px_24px_-10px_rgba(200,170,0,.7)] rounded-full font-bold tracking-[.04em] bg-cta-yellow text-ink hover:bg-cta-yellow-h hover:-translate-y-0.5 transition-all">1分で問い合わせ →</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] rounded-full font-bold tracking-[.04em] bg-[#06C755] text-white hover:bg-[#05B34C] hover:-translate-y-0.5 transition-all"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.4 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>LINEで相談する</a></div></div><h2 id="place">置き方と確かめ方</h2>
+<div class="cta-mid"><span class="lb">無料相談</span><b>自社がAIにどう紹介されるか、気になったら</b><p>今のホームページが、AIや検索にどう伝わっているかを確かめて、直すところをお伝えします。</p><div class="bt"><a href="../../contact/" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] shadow-[0_10px_24px_-10px_rgba(200,170,0,.7)] rounded-full font-bold tracking-[.04em] bg-cta-yellow text-ink hover:bg-cta-yellow-h hover:-translate-y-0.5 transition-all">1分で問い合わせ →</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] rounded-full font-bold tracking-[.04em] bg-[#06C755] text-white hover:bg-[#05B34C] hover:-translate-y-0.5 transition-all"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.4 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>LINEで相談する</a></div></div><h2 id="full">llms-full.txtとは</h2>
+<p>llms.txtについて調べると、「llms-full.txt」というファイルも出てきます。これは、ページの一覧だけでなく、各ページの本文までを1つのファイルにまとめたものです。説明書や技術資料のページがたくさんあるサイトで、置かれている例が見られます。</p>
+<p>ただし、llmstxt.orgの説明の中心は、あくまでllms.txtです。中小企業の会社サイトのように、ページ数がそれほど多くない場合は、まずllms.txtを整えれば十分です。本文はホームページのページそのものに書いてあるので、無理にllms-full.txtまで作る必要はありません。</p>
+
+<h2 id="place">置き方と確かめ方</h2>
 <ol>
 <li><b>ファイル名は「llms.txt」</b>：すべて半角の小文字で付けます。</li>
 <li><b>サイトの一番上の階層に置く</b>：「https://会社のドメイン/llms.txt」で開ける場所に置きます。</li>
 <li><b>文字コードはUTF-8</b>：日本語が文字化けしないようにします。</li>
 <li><b>ブラウザで開いて確かめる</b>：アドレス欄に「/llms.txt」を付けて開き、内容がそのまま表示されれば完了です。</li>
 </ol>
+<h3>WordPressの場合</h3>
+<p>WordPressで作ったサイトでも置けます。llms.txtを作るプラグイン（追加の機能）を使う方法と、作ったファイルをサーバーの一番上の階層に直接置く方法があります。プラグインを使う場合は、ほかのプラグインとの相性や、更新が続いているかも確かめましょう。サーバーに直接置く場合は、サーバーの管理画面やファイルを送る道具を使います。分からなければ、ホームページを管理している会社に頼むのが確実です。</p>
+<h3>robots.txtも一緒に確かめる</h3>
+<p>llms.txtを置いても、robots.txtでAIの見回りの仕組み（クローラー）を止めていると、AIがサイトの中身を読みに来られないことがあります。たとえばOpenAIは、ChatGPTの検索の答えに表示するために「OAI-SearchBot」を使っていて、これを止めると検索の答えには表示されないと説明しています。どの見回りを許可しているか、一緒に確かめておきましょう。</p>
 <p>置いたあとも、ページを増やしたときや、会社の情報が変わったときに直すのを忘れないようにしましょう。古い情報のままのllms.txtは、置いていないよりも困ることがあります。</p>
 
 <h2 id="useless">「意味ない」と言われる理由</h2>
 <p>llms.txtには、「意味ない」という声もあります。主な理由は次の2つです。</p>
 <h3>1. 必ず読まれる決まりがない</h3>
-<p>llms.txtは提案された考え方の一つで、すべてのAIが必ず読むと決まっているわけではありません。どのAIが、どのように使っているかは、はっきりしない部分があります。</p>
-<h3>2. Google検索の順位には関係しない</h3>
-<p>Googleの担当者は、Google検索ではllms.txtを使っていないと説明しています。llms.txtを置いたからといって、検索の順位が上がるわけではありません。</p>
+<p>llms.txtは提案された考え方の一つで、国際的な決まり（標準）になったものではありません。すべてのAIが必ず読むと決まっているわけではなく、どのAIが、どのように使っているかは、はっきりしない部分があります。</p>
+<h3>2. Google検索のために置く必要はない</h3>
+<p>Googleは、検索に関する公式の案内で、AIによる概要やAIモードに表示されるために、新しく機械向けのファイルやAI向けのテキストファイルを作る必要はない、と説明しています。llms.txtを置いたからといって、Google検索の順位が上がったり、AIによる概要に出やすくなったりするわけではありません。</p>
 
 <h2 id="stance">それでも置くかどうかの考え方</h2>
 <p>では、置かなくていいのかというと、そうとも言い切れません。</p>
@@ -777,9 +837,28 @@ nav.fixed .font-serif.font-semibold,#mobileMenu .font-serif.font-semibold,footer
 <li><b>会社の情報を整理するきっかけになる</b>：llms.txtを書こうとすると、「うちは何の会社で、どのページに何があるか」を整理することになります。この整理は、ホームページ自体の改善にも役立ちます。</li>
 <li><b>ただし、優先順位は低め</b>：AIに会社を正しく伝えるうえで一番大切なのは、ホームページ本体に、何ができるかを具体的に書くことです。llms.txtは、その上に足す「おまけ」と考えるのがちょうどいいです。</li>
 </ul>
+<p>制作する側として、私たちは次の順番をおすすめしています。</p>
+<ol>
+<li>サービスのページに、できること・地域・数量などを文章で書く</li>
+<li>会社名や住所などの表記を、ホームページとGoogleマップでそろえる</li>
+<li>robots.txtで、必要な見回りを止めていないか確かめる</li>
+<li>そのうえで、llms.txtを置き、ページを増やすたびに直す</li>
+</ol>
+<p>「llms.txtを置くだけで、AIに紹介されます」という売り込みには注意しましょう。置くこと自体は簡単で、費用をかけて頼むほどの作業ではないことがほとんどです。</p>
+
+<h2 id="who">早めに置きたい会社、急がなくていい会社</h2>
+<p>同じllms.txtでも、会社の状況によって優先度は変わります。</p>
+<table class="art-table">
+<tr><th>状況</th><th>考え方</th></tr>
+<tr><td>サービスのページが整っていて、事例やよくある質問もある</td><td>仕上げとして置く価値があります。主なページを説明つきで並べるだけで作れます。</td></tr>
+<tr><td>事業がいくつもあり、ページ数が多い</td><td>どの事業のページがどこにあるかを整理して渡せるので、置いておくと役立ちます。</td></tr>
+<tr><td>ホームページが数ページだけで、内容も古い</td><td>急がなくて大丈夫です。先にホームページ本体の内容を新しくしましょう。</td></tr>
+<tr><td>更新する人がいない</td><td>置いたまま古くなるおそれがあります。直す担当を決めてから置きましょう。</td></tr>
+</table>
+<p>置いたあとは、ときどきブラウザで開いて、内容が今のホームページと合っているかを確かめます。サーバーのアクセスの記録（ログ）を見られる場合は、「/llms.txt」がどのくらい読まれているかを確かめることもできます。ただ、読まれた回数と、AIの答えで紹介されるかどうかは別の話なので、数字だけで良し悪しを決めないようにしましょう。</p>
 
 <h2 id="summary">まとめ</h2>
-<p>llms.txtは、AIに向けてサイトの概要と主なページをまとめたファイルです。必ず読まれる決まりはなく、検索の順位にも関係しません。それでも、置いて困ることはほとんどなく、会社の情報を整理するきっかけになります。まずはホームページ本体を整え、そのうえで置くのがおすすめです。AI検索対策の全体像は、<a href="../ai-search-basics/">ChatGPTに自社を紹介してもらうには？</a>でまとめています。</p>
+<p>llms.txtは、AIに向けてサイトの概要と主なページをまとめたファイルです。会社名の見出し、短い要約、説明つきのページ一覧という、決められた書き方があります。必ず読まれる決まりはなく、Googleも検索のために置く必要はないと説明しています。それでも、置いて困ることはほとんどなく、会社の情報を整理するきっかけになります。まずはホームページ本体を整え、そのうえで置くのがおすすめです。AI検索対策の全体像は、<a href="../ai-search-basics/">ChatGPTに自社を紹介してもらうには？</a>でまとめています。</p>
 </div>
         <h2 id="faq" class="font-bold text-[22px] mt-12 mb-4" style="scroll-margin-top:90px">よくある質問</h2>
       <div class="faq2">
@@ -808,6 +887,20 @@ nav.fixed .font-serif.font-semibold,#mobileMenu .font-serif.font-semibold,footer
         <div>
           <div class="font-bold text-[14px] mb-2">llms.txtに書いてはいけないことはありますか？</div>
           <p class="text-[13px] leading-[1.9] text-muted">ホームページに書いていないことや、事実と違うことは書かないようにします。社外に出したくない情報も、当然ながら書きません。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">llms.txtで、AIに読まれないようにすることはできますか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">できません。llms.txtは、AIに大切なページを案内するためのファイルで、読むのを止める働きはありません。AIの見回りを止めたい場合は、robots.txtで設定します。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">llms.txtは英語で書かないといけませんか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">日本語で書いてかまいません。ホームページが日本語なら、同じ言葉で書いたほうが、画面の内容と合わせやすくなります。文字化けしないよう、文字コードはUTF-8で保存します。</p>
         </div>
       </div>
         <div class="mt-10"><div class="author"><div class="av">松</div><div><b>マツケンスタジオ 責任者</b><p>デジタルマーケティングの仕事を10年以上。上場企業での勤務や、1,000万人以上が使うサービスのマーケティングを経験し、マーケターとして企業のオウンドメディアを50万PVまで育て、数百社の集客を支援してきました。家業である松本研磨工業のホームページを作り直し、リニューアルから1か月で有効なお問い合わせを3倍にしています。</p><a href="../author/" class="text-[13px] font-bold text-accent-ink hover:underline">プロフィールを見る →</a></div></div></div>
