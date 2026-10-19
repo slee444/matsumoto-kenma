@@ -1,0 +1,1052 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5F157JYQD2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-5F157JYQD2');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ホームページをノーコードから乗り換えるには？移行の手順と注意点｜マツケンスタジオ</title>
+<meta name="description" content="Studioなどのノーコードツールで作ったホームページの乗り換えを考えている会社へ。乗り換える前に確かめること、乗り換え先の選び方、移すものの一覧、301リダイレクトとドメインを止めずに切り替える順番、乗り換えずに守りを固める方法を、制作する側の目線でまとめました。">
+<link rel="canonical" href="https://matsumoto-kenma.co.jp/web-ai/column/nocode-migration/">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<meta property="og:title" content="ホームページをノーコードから乗り換えるには？移行の手順と注意点｜マツケンスタジオ">
+<meta property="og:description" content="Studioなどのノーコードツールで作ったホームページの乗り換えを考えている会社へ。乗り換える前に確かめること、乗り換え先の選び方、移すものの一覧、301リダイレクトとドメインを止めずに切り替える順番、乗り換えずに守りを固める方法を、制作する側の目線でまとめました。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://matsumoto-kenma.co.jp/web-ai/column/nocode-migration/">
+<meta property="og:site_name" content="マツケンスタジオ by 松本研磨工業">
+<meta property="og:image" content="https://matsumoto-kenma.co.jp/images/ogp-studio.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="マツケンスタジオ by 松本研磨工業｜Web集客・AI活用支援">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ホームページをノーコードから乗り換えるには？移行の手順と注意点｜マツケンスタジオ">
+<meta name="twitter:description" content="Studioなどのノーコードツールで作ったホームページの乗り換えを考えている会社へ。乗り換える前に確かめること、乗り換え先の選び方、移すものの一覧、301リダイレクトとドメインを止めずに切り替える順番、乗り換えずに守りを固める方法を、制作する側の目線でまとめました。">
+<meta name="twitter:image" content="https://matsumoto-kenma.co.jp/images/ogp-studio.jpg">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/noto-sans-jp-500.woff2" crossorigin>
+<style>
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/noto-sans-jp-400.woff2) format('woff2');}
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/noto-sans-jp-500.woff2) format('woff2');}
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/noto-sans-jp-600.woff2) format('woff2');}
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/noto-sans-jp-700.woff2) format('woff2');}
+@font-face {font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/jetbrains-mono-400.woff2) format('woff2');}
+@font-face {font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/jetbrains-mono-500.woff2) format('woff2');}
+</style>
+<link rel="stylesheet" href="/css/tailwind.css">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#F4F2ED;color:#0E0E10;font-family:'Noto Sans JP',sans-serif;font-size:15px;line-height:1.7}
+  a{color:inherit;text-decoration:none}
+  .pwrap{max-width:960px;margin:0 auto;padding:0 20px}
+  @media(min-width:768px){.pwrap{padding:0 40px}}
+  .sec-label{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.14em;color:#4A4A47;margin-bottom:16px}
+  .sec-ttl{font-size:24px;font-weight:600;line-height:1.4;margin-bottom:20px}
+  @media(min-width:768px){.sec-ttl{font-size:28px}}
+
+  /* Hero */
+  .hero-wrap{position:relative;overflow:hidden}
+  .wm{position:absolute;right:-.4em;top:-.12em;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:min(38vw,340px);line-height:1;color:rgba(244,242,237,.045);pointer-events:none;user-select:none;white-space:nowrap;z-index:0}
+  .icon-badge{width:64px;height:64px;border-radius:9999px;border:1.5px solid rgba(244,242,237,.35);display:grid;place-items:center;font-size:26px;color:#F4F2ED;flex-shrink:0}
+
+  /* Cards with accent bar */
+  .card2{position:relative;border:1px solid rgba(14,14,16,.1);background:#fff;padding:30px 24px 26px;border-top:3px solid #1B3A6B}
+  .card2.alt{border-top-color:#2E5BA6}
+  .card2 .idx{font-family:'JetBrains Mono',monospace;font-size:11px;color:#8a8a86;letter-spacing:.15em;margin-bottom:14px}
+
+  /* Spec box */
+  .spec-box{background:#E9E6DE;border-radius:4px;padding:4px 28px}
+  .spec-box div{display:grid;grid-template-columns:140px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid rgba(14,14,16,.08)}
+  .spec-box div:last-child{border-bottom:none}
+  .spec-box dt{font-size:13px;color:#4A4A47}
+  .spec-box dd{font-size:14px}
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+  .tag-pill{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;border:1px solid rgba(14,14,16,.15);padding:6px 12px;border-radius:2px;color:#4A4A47}
+
+  /* Process */
+  .step2{position:relative;padding:6px 0 30px 32px;border-left:2px solid #D9D4C8}
+  .step2:last-child{border-left:2px solid transparent;padding-bottom:2px}
+  .step2::before{content:'';position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:#1B3A6B}
+  .step2.alt::before{background:#2E5BA6}
+  .step2 .pnum{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:#8a8a86;margin-bottom:4px}
+
+  /* FAQ (matches homepage Q/A style) */
+  .faq2{display:grid;grid-template-columns:36px 1fr;gap:16px;padding:22px 0;border-top:1px solid #D9D4C8}
+  .faq2:last-child{border-bottom:1px solid #D9D4C8}
+  .faq2 .qa{font-family:'Noto Sans JP',sans-serif;font-size:22px;font-weight:600;line-height:1}
+  .faq2 .q{color:#1B3A6B}
+  .faq2 .a{color:#8a8a86}
+
+  /* Note / caution list */
+  .note-list{border-left:2px solid #0E0E10}
+  .note-list li{list-style:none;padding:18px 0 18px 22px;border-bottom:1px solid #D9D4C8}
+  .note-list li:last-child{border-bottom:none}
+  .note-list .note-ttl{font-weight:600;font-size:14px;margin-bottom:6px}
+
+  .wrap{max-width:1360px;margin:0 auto;padding:0 20px}
+  @media(min-width:768px){.wrap{padding:0 40px}}
+  .menu-link.active::after{content:"";position:absolute;left:16px;right:16px;bottom:4px;height:1px;background:#1B3A6B}
+  .mega.open .mega-panel, .mega:hover .mega-panel{opacity:1;visibility:visible;--tw-translate-y:0}
+  .mega.open .mega-caret{transform:rotate(180deg)}
+  .mega:hover .mega-caret{transform:rotate(180deg)}
+  .drawer-acc summary::-webkit-details-marker{display:none}
+  .drawer-acc[open] .drawer-acc-icon{transform:rotate(180deg)}
+  .mega-panel .grid>div{min-width:0}
+  .mega-panel li a{word-break:break-word}
+  .bg-navy .text-muted-ink,.bg-navy-2 .text-muted-ink{color:rgba(244,242,237,0.72)!important}
+</style>
+<style>
+/* site-chrome: match homepage header/footer */
+@font-face {font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/inter-400.woff2) format('woff2');}
+@font-face {font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/inter-500.woff2) format('woff2');}
+@font-face {font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/inter-600.woff2) format('woff2');}
+nav.fixed,#mobileMenu,footer{font-family:Inter,"Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Yu Gothic",sans-serif;font-size:15px;line-height:1.75;letter-spacing:.03em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+nav.fixed :is(p,li,dd,span),#mobileMenu :is(p,li,dd,span),footer :is(p,li,dd,span){letter-spacing:.035em}
+nav.fixed .font-serif,#mobileMenu .font-serif,footer .font-serif{font-weight:500}
+nav.fixed .font-serif.font-medium,#mobileMenu .font-serif.font-medium,footer .font-serif.font-medium{font-weight:600}
+nav.fixed .font-serif.font-semibold,#mobileMenu .font-serif.font-semibold,footer .font-serif.font-semibold{font-weight:700}
+</style>
+<style>/* site-footer */
+.site-footer .ft-head{font-size:15px;font-weight:700;color:#F4F2ED;letter-spacing:.04em;padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid rgba(244,242,237,.2)}
+.site-footer .ft-link{font-size:15px;color:rgba(244,242,237,.82);line-height:1.6}
+.site-footer .ft-link:hover{color:#F4F2ED;text-decoration:underline;text-underline-offset:4px}
+.site-footer .ft-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:240px;padding:15px 24px;border-radius:4px;background:#F4F2ED;color:#0E0E10;font-size:15px;font-weight:700;transition:background .2s}
+.site-footer .ft-btn::after{content:"→"}
+.site-footer .ft-btn:hover{background:#fff}
+.site-footer .ft-sns{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid rgba(244,242,237,.3);border-radius:4px;font-size:13px;color:#F4F2ED}
+.site-footer .ft-sns:hover{background:rgba(244,242,237,.1)}
+.site-footer a:focus-visible{outline:2px solid #F4F2ED;outline-offset:3px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://matsumoto-kenma.co.jp/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Web集客・AI活用支援",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Web集客コラム",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/column/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "リニューアル",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/column/category/renewal/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "ホームページをノーコードから乗り換えるには？移行の手順と注意点",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/column/nocode-migration/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ホームページをノーコードから乗り換えるには？移行の手順と注意点",
+  "description": "Studioなどのノーコードツールで作ったホームページの乗り換えを考えている会社へ。乗り換える前に確かめること、乗り換え先の選び方、移すものの一覧、301リダイレクトとドメインを止めずに切り替える順番、乗り換えずに守りを固める方法を、制作する側の目線でまとめました。",
+  "url": "https://matsumoto-kenma.co.jp/web-ai/column/nocode-migration/",
+  "image": "https://matsumoto-kenma.co.jp/images/ogp-studio.jpg",
+  "datePublished": "2026-10-19",
+  "dateModified": "2026-10-19",
+  "articleSection": "リニューアル",
+  "inLanguage": "ja",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://matsumoto-kenma.co.jp/web-ai/#studio",
+    "name": "マツケンスタジオ",
+    "url": "https://matsumoto-kenma.co.jp/web-ai/column/author/"
+  },
+  "publisher": {
+    "@id": "https://matsumoto-kenma.co.jp/#organization"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://matsumoto-kenma.co.jp/web-ai/column/nocode-migration/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Studioで作ったサイトを、そのまま別のサービスに移せますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Studioの公式ヘルプでは、サイトのデータをほかのサービスへ移すための書き出し機能は提供していないと説明されています。デザイン、ページの情報、ソースコード、Studio CMSのデータは書き出せないため、移行先で作り直すことになります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "過去のフォームの回答は、乗り換えたあとも残せますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Studioでは、フォームの回答をフォームのダッシュボードからCSVファイルとしてダウンロードできます。解約すると見られなくなるおそれがあるので、乗り換えの前に書き出し、社内の決まった場所で保管しておきましょう。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "乗り換えると、ホームページのアドレスは変わりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "独自ドメインを使っていれば、ドメインはそのまま使えます。ただし、ページごとのURLの付け方が変わることがあるので、古いURLと新しいURLの対応表を作り、変わるページには301リダイレクトを設定します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "乗り換えのとき、会社のメールは止まりませんか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ドメインの設定のうち、ホームページの行き先だけを書きかえ、メールに関わる設定に触れなければ、メールは止まりません。切り替えの前に今の設定を控えておくと安心です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "今回の不正アクセスを受けて、すぐに乗り換えたほうがいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "まずは、パスワードの変更やAPIキーの切り替えなど、今回の対応を済ませることが先です。乗り換えには時間も費用もかかるので、続報の内容や自社の使い方を見て、落ち着いて判断すれば十分です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "乗り換え先は、どう選べばいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "誰が、何を、どのくらい更新するかで選びます。自分たちで手軽に直したいなら別のノーコードツール、記事を多く書くならWordPress、更新や管理も任せたいなら制作会社への依頼が向いています。"
+      }
+    }
+  ]
+}
+</script>
+<style>
+  /* Matsuken Studio: light theme */
+  html,body{background:#FFFFFF}
+  .pwrap{max-width:960px;margin:0 auto;padding:0 20px}
+  @media(min-width:768px){.pwrap{padding:0 40px}}
+  .pwrap.max-w-\[800px\]{max-width:880px}
+  .st-alt{background:#F4F6F9}
+  .st-cta{background:#FFF9D6}
+  .sec-label{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.14em;color:#1B3A6B;margin-bottom:16px}
+  .sec-ttl{font-size:24px;font-weight:700;line-height:1.45;margin-bottom:20px;color:#0E0E10}
+  @media(min-width:768px){.sec-ttl{font-size:30px}}
+  .st-logo{display:inline-flex;align-items:center;gap:12px}
+  .st-mark{width:40px;height:40px;border-radius:10px;background:#1B3A6B;color:#fff;display:grid;place-items:center;font-weight:700;font-size:22px;position:relative;flex-shrink:0}
+  .st-mark::after{content:'';position:absolute;right:-3px;top:-3px;width:12px;height:12px;border-radius:50%;background:#F5DE00;border:2px solid #fff}
+  .st-name{display:block;font-weight:800;font-size:20px;letter-spacing:.04em;color:#0E0E10;line-height:1.2}
+  .st-by{display:block;font-size:11px;letter-spacing:.14em;color:#5E5E65;margin-top:3px}
+  .st-hero{position:relative;overflow:hidden;background:#fff;border-bottom:1px solid #E6E9EE}
+  .st-hero::before{content:'';position:absolute;right:-120px;top:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,#FFF4B0 0%,rgba(255,244,176,0) 70%);pointer-events:none}
+  .st-hero::after{content:'';position:absolute;right:40px;bottom:40px;width:260px;height:180px;background-image:radial-gradient(#C9D2DF 1.2px,transparent 1.2px);background-size:14px 14px;opacity:.7;pointer-events:none}
+  .trust{display:grid;grid-template-columns:1fr;border-top:1px solid #E6E9EE}
+  @media(min-width:768px){.trust{grid-template-columns:repeat(3,1fr)}}
+  .trust>div{padding:20px 0}
+  @media(min-width:768px){.trust>div{padding:24px 28px}.trust>div+div{border-left:1px solid #E6E9EE}.trust>div:first-child{padding-left:0}}
+  .trust .t-big{font-size:17px;font-weight:700;color:#0E0E10;margin-bottom:4px}
+  .trust .t-sub{font-size:13px;color:#5E5E65;line-height:1.8}
+  .card2{position:relative;border:1px solid #E1E5EB;background:#fff;padding:30px 24px 26px;border-top:3px solid #1B3A6B;border-radius:6px}
+  .card2.alt{border-top-color:#2E5BA6}
+  .card2 .idx{font-family:'JetBrains Mono',monospace;font-size:11px;color:#8a8a86;letter-spacing:.15em;margin-bottom:14px}
+  .svc-list{background:#fff;border:1px solid #E1E5EB;border-radius:8px;padding:10px 28px}
+  .svc-list li{list-style:none;display:grid;grid-template-columns:22px 1fr;gap:10px;padding:14px 0;border-bottom:1px solid #EEF1F5;font-size:14px;line-height:1.8}
+  .svc-list li:last-child{border-bottom:none}
+  .svc-list li::before{content:'';width:10px;height:10px;margin-top:8px;border-radius:3px;background:#F5DE00;box-shadow:0 0 0 2px #1B3A6B inset}
+  .step2{position:relative;padding:6px 0 30px 32px;border-left:2px solid #DDE3EB}
+  .step2:last-child{border-left:2px solid transparent;padding-bottom:2px}
+  .step2::before{content:'';position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:#1B3A6B}
+  .step2.alt::before{background:#2E5BA6}
+  .step2 .pnum{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:#8a8a86;margin-bottom:4px}
+  .faq2{display:grid;grid-template-columns:36px 1fr;gap:16px;padding:22px 0;border-top:1px solid #E1E5EB}
+  .faq2:last-child{border-bottom:1px solid #E1E5EB}
+  .faq2 .qa{font-size:22px;font-weight:700;line-height:1;color:#1B3A6B}
+  .price-box{border:1px solid #E1E5EB;border-radius:8px;background:#fff;padding:32px 28px;display:grid;grid-template-columns:1fr;gap:18px}
+  @media(min-width:768px){.price-box{grid-template-columns:1fr auto;align-items:center;padding:36px 40px}}
+  .case-card{display:grid;grid-template-columns:1fr;border:1px solid #E1E5EB;border-radius:8px;overflow:hidden;background:#fff;transition:border-color .2s,box-shadow .2s}
+  .case-card:hover{border-color:#1B3A6B;box-shadow:0 10px 30px -14px rgba(27,58,107,.35)}
+  .case-card .c-img{background:linear-gradient(135deg,#EAF0F8,#FFF6C4);min-height:160px;display:grid;place-items:center;color:#1B3A6B;font-size:13px;font-weight:600;letter-spacing:.14em}
+  @media(min-width:768px){.case-card{grid-template-columns:280px 1fr}}
+  .rel-grid{display:grid;grid-template-columns:1fr;gap:28px}
+  @media(min-width:768px){.rel-grid{grid-template-columns:repeat(4,1fr)}}
+  .rel-grid a{display:block;padding:9px 0;border-bottom:1px solid #E1E5EB;font-size:14px;transition:color .15s}
+  .rel-grid a:hover{color:#2E5BA6}
+  .rel-grid a.current{color:#8a8a86;pointer-events:none}
+  .svc-card{display:block;background:#fff;border:1px solid #E1E5EB;border-radius:8px;padding:26px 24px;transition:border-color .2s,box-shadow .2s,transform .2s}
+  a.svc-card:hover{border-color:#1B3A6B;box-shadow:0 10px 30px -14px rgba(27,58,107,.35);transform:translateY(-2px)}
+  .st-illu{display:block;width:100%;height:auto;max-width:300px;margin:0 auto}
+  .st-icon{display:block;margin-bottom:12px}
+  .story p{font-size:15px;line-height:2.1;color:#26262B;margin-bottom:20px}
+  @media(min-width:768px){.story p{font-size:16px}}
+  .story-quote{font-size:clamp(20px,2.6vw,28px);font-weight:700;line-height:1.6;color:#0E0E10;padding-left:20px;border-left:4px solid #F5DE00}
+  .target-card{background:#fff;border:1px solid #E1E5EB;border-radius:8px;padding:24px}
+  .target-card .tg{display:inline-block;font-size:12px;font-weight:700;color:#1B3A6B;background:#FFF4B0;border-radius:999px;padding:4px 12px;margin-bottom:12px}
+</style>
+<style>
+  .col-cats{display:flex;flex-wrap:wrap;gap:8px}
+  .col-cats a{font-size:13px;font-weight:700;padding:7px 14px;border-radius:999px;background:#fff;border:1px solid #E1E5EB;color:#1B3A6B}
+  .col-cats a:hover,.col-cats a.on{background:#1B3A6B;color:#fff;border-color:#1B3A6B}
+  .col-grid{display:grid;grid-template-columns:1fr;gap:18px}
+  @media(min-width:768px){.col-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1024px){.col-grid.three{grid-template-columns:repeat(3,1fr)}}
+  .col-card{display:flex;flex-direction:column;background:#fff;border:1px solid #E1E5EB;border-radius:10px;padding:22px 22px 18px;transition:border-color .2s,box-shadow .2s}
+  .col-card:hover{border-color:#1B3A6B;box-shadow:0 10px 30px -16px rgba(27,58,107,.35)}
+  .chip{display:inline-block;font-size:12px;font-weight:700;color:#1B3A6B;background:#FFF4B0;border-radius:999px;padding:3px 10px}
+  .col-card h3{font-size:17px;font-weight:700;line-height:1.6;margin:12px 0 8px;color:#0E0E10}
+  .col-card p{font-size:13px;line-height:1.8;color:#5E5E65;flex:1}
+  .col-card time{font-size:12px;color:#8a8a86;margin-top:12px;font-family:'JetBrains Mono',monospace}
+  .art{max-width:760px;margin:0 auto}
+  .art-body h2{font-size:22px;font-weight:700;line-height:1.5;margin:48px 0 16px;padding-left:14px;border-left:5px solid #F5DE00;scroll-margin-top:90px}
+  @media(min-width:768px){.art-body h2{font-size:25px}}
+  .art-body h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:#1B3A6B}
+  .art-body p{font-size:16px;line-height:2;color:#26262B;margin-bottom:18px}
+  .art-body ul,.art-body ol{margin:0 0 20px 1.4em;font-size:16px;line-height:1.9;color:#26262B}
+  .art-body li{margin-bottom:6px}
+  .art-body ul,.points ul{list-style:disc}
+  .art-body ol,.toc ol{list-style:decimal}
+  .art-body li::marker,.points li::marker{color:#1B3A6B}
+  .art-body a{color:#1B3A6B;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+  .art-body .st-illu{margin:26px auto}
+  .art-table{width:100%;border-collapse:collapse;margin:8px 0 24px;font-size:14px;background:#fff;border:1px solid #E1E5EB}
+  .art-table th,.art-table td{padding:12px 14px;border-bottom:1px solid #EEF1F5;text-align:left;vertical-align:top;line-height:1.7}
+  .art-table th{background:#F4F6F9;font-weight:700;color:#1B3A6B}
+  .art-body p.ask{font-size:14px;line-height:1.8;background:#F4F6F9;border-left:4px solid #1B3A6B;border-radius:0 8px 8px 0;padding:10px 14px;color:#26262B}
+  .points{background:#FFF9D6;border-radius:10px;padding:20px 24px;margin:26px 0}
+  .points b{display:block;font-size:14px;margin-bottom:8px;color:#1B3A6B}
+  .points li{font-size:15px;line-height:1.8;margin-left:1.2em}
+  .toc{background:#F4F6F9;border-radius:10px;padding:20px 24px;margin:0 0 30px}
+  .toc b{display:block;font-size:14px;margin-bottom:8px}
+  .toc ol{margin-left:1.3em;font-size:14px;line-height:2}
+  .toc a{color:#1B3A6B}
+  .author{display:grid;grid-template-columns:56px 1fr;gap:16px;background:#fff;border:1px solid #E1E5EB;border-radius:12px;padding:22px}
+  .author .av{width:56px;height:56px;border-radius:14px;background:#1B3A6B;color:#fff;display:grid;place-items:center;font-weight:700;font-size:24px;position:relative}
+  .author .av::after{content:'';position:absolute;right:-3px;top:-3px;width:14px;height:14px;border-radius:50%;background:#F5DE00;border:2px solid #fff}
+  .author b{font-size:15px}.author p{font-size:13px;line-height:1.9;color:#4A4A50;margin-top:6px}
+  .art-body .cta-mid a{text-decoration:none}
+  .art-body .cta-mid a.bg-cta-yellow{color:#0E0E10}
+  .art-body .cta-mid a[href*="line.me"]{color:#fff}
+  .cta-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;border:1px solid #E1E5EB;border-radius:12px;padding:14px 18px;margin:-8px 0 26px;background:#fff}
+  .cta-top p{font-size:14px;font-weight:700;color:#0E0E10}
+  .cta-top .bt{display:flex;gap:8px;flex-wrap:wrap}
+  .cta-top a.btn-s{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;border-radius:999px;padding:9px 16px}
+  .cta-mid{margin:36px 0;border-radius:14px;background:#FFF9D6;padding:24px 24px 22px;position:relative;overflow:hidden}
+  .cta-mid::after{content:'';position:absolute;right:-50px;top:-50px;width:160px;height:160px;border-radius:50%;background:repeating-radial-gradient(circle,rgba(27,58,107,.08) 0 1px,transparent 1px 10px)}
+  .cta-mid .lb{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:#1B3A6B;border-radius:999px;padding:3px 10px;margin-bottom:10px}
+  .cta-mid b{display:block;font-size:18px;line-height:1.6;margin-bottom:6px;color:#0E0E10}
+  .cta-mid p{font-size:14px;line-height:1.8;color:#3A3A40;margin-bottom:16px;position:relative;z-index:1}
+  .cta-mid .bt{display:flex;flex-direction:column;gap:10px;position:relative;z-index:1}
+  @media(min-width:640px){.cta-mid .bt{flex-direction:row}}
+  .cta-end{border-radius:16px;background:#1B3A6B;color:#fff;padding:28px 26px}
+  .cta-end b{display:block;font-size:20px;line-height:1.6;margin-bottom:8px}
+  .cta-end p{font-size:14px;line-height:1.9;color:rgba(255,255,255,.85);margin-bottom:18px}
+  .cta-end .bt{display:flex;flex-direction:column;gap:10px}
+  @media(min-width:640px){.cta-end .bt{flex-direction:row;align-items:center}}
+  .cta-end .lp{font-size:14px;font-weight:700;color:#F5DE00;text-decoration:underline;text-underline-offset:3px}
+  .col-stick{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid #E1E5EB;transform:translateY(110%);transition:transform .25s}
+  .col-stick.show{transform:none}
+  .col-stick a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:999px;padding:12px 8px;font-size:14px;font-weight:700}
+  @media(min-width:768px){.col-stick{display:none}}
+  .soft-cta{background:#fff;border:1px solid #E1E5EB;border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:14px}
+  @media(min-width:768px){.soft-cta{flex-direction:row;align-items:center;justify-content:space-between}}
+  .soft-cta p{font-size:14px;line-height:1.8;color:#26262B}
+</style>
+<script type="application/ld+json" data-sd="managed">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://matsumoto-kenma.co.jp/#organization",
+      "name": "株式会社松本研磨工業",
+      "alternateName": [
+        "松本研磨工業",
+        "松本研磨"
+      ],
+      "url": "https://matsumoto-kenma.co.jp/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://matsumoto-kenma.co.jp/images/logo.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://matsumoto-kenma.co.jp/images/ogp.jpg",
+      "description": "神奈川県川崎市川崎区の金属研磨工場。1967年創業。ステンレス・アルミ・真鍮・鉄などのバフ研磨（鏡面仕上げ）、ベルト研磨、ヘアライン仕上げ、フレキ研磨を、試作の1個から小量産まで手作業で請け負っています。図面がなくても、現物や写真からお見積りできます。",
+      "telephone": "+81-44-333-8412",
+      "faxNumber": "+81-44-333-3843",
+      "address": {
+        "@type": "PostalAddress",
+        "postalCode": "210-0851",
+        "addressRegion": "神奈川県",
+        "addressLocality": "川崎市川崎区",
+        "streetAddress": "浜町3-9-22",
+        "addressCountry": "JP"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 35.5257,
+        "longitude": 139.7194
+      },
+      "hasMap": "https://maps.google.com/?q=神奈川県川崎市川崎区浜町3-9-22",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:30",
+          "closes": "18:00"
+        }
+      ],
+      "foundingDate": "1967",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "日本"
+        },
+        {
+          "@type": "City",
+          "name": "川崎市"
+        },
+        {
+          "@type": "City",
+          "name": "横浜市"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "東京都"
+        }
+      ],
+      "knowsAbout": [
+        "金属研磨",
+        "バフ研磨",
+        "鏡面仕上げ",
+        "ベルト研磨",
+        "ヘアライン仕上げ",
+        "フレキ研磨",
+        "ステンレス研磨",
+        "アルミ研磨",
+        "真鍮研磨",
+        "曲面研磨"
+      ],
+      "sameAs": [
+        "https://www.instagram.com/matsu_polish/",
+        "https://www.youtube.com/channel/UCIGiSzo9TyINLuygAsuP5ew/"
+      ],
+      "department": {
+        "@id": "https://matsumoto-kenma.co.jp/web-ai/#studio"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://matsumoto-kenma.co.jp/#website",
+      "url": "https://matsumoto-kenma.co.jp/",
+      "name": "株式会社松本研磨工業",
+      "inLanguage": "ja",
+      "publisher": {
+        "@id": "https://matsumoto-kenma.co.jp/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://matsumoto-kenma.co.jp/web-ai/#studio",
+      "name": "マツケンスタジオ",
+      "alternateName": "マツケンスタジオ by 松本研磨工業",
+      "url": "https://matsumoto-kenma.co.jp/web-ai/",
+      "image": "https://matsumoto-kenma.co.jp/images/ogp-studio.jpg",
+      "description": "株式会社松本研磨工業が運営する、町工場発のWeb事業。製造業・建設業・工務店・運送業など、現場と技術のある中小企業のホームページ制作・リニューアル、検索対策、Web広告、AI活用をお手伝いします。",
+      "parentOrganization": {
+        "@id": "https://matsumoto-kenma.co.jp/#organization"
+      },
+      "sameAs": [
+        "https://www.instagram.com/matsuken_studio/",
+        "https://page.line.me/115rhdee"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "日本"
+      },
+      "knowsAbout": [
+        "ホームページ制作",
+        "ホームページリニューアル",
+        "Web集客",
+        "SEO",
+        "LLMO",
+        "サイト制作",
+        "LP制作",
+        "Web広告",
+        "CVR改善",
+        "BtoBマーケティング",
+        "AI活用"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://matsumoto-kenma.co.jp/web-ai/column/nocode-migration/#webpage",
+      "url": "https://matsumoto-kenma.co.jp/web-ai/column/nocode-migration/",
+      "name": "ホームページをノーコードから乗り換えるには？移行の手順と注意点｜マツケンスタジオ",
+      "description": "Studioなどのノーコードツールで作ったホームページの乗り換えを考えている会社へ。乗り換える前に確かめること、乗り換え先の選び方、移すものの一覧、301リダイレクトとドメインを止めずに切り替える順番、乗り換えずに守りを固める方法を、制作する側の目線でまとめました。",
+      "inLanguage": "ja",
+      "isPartOf": {
+        "@id": "https://matsumoto-kenma.co.jp/#website"
+      },
+      "about": {
+        "@id": "https://matsumoto-kenma.co.jp/web-ai/#studio"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://matsumoto-kenma.co.jp/images/ogp-studio.jpg"
+      },
+      "dateModified": "2026-09-27"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav class="fixed top-0 left-0 right-0 z-50 bg-paper/80 backdrop-blur-[14px] border-b border-ink/[0.08]">
+  <div class="wrap flex items-center justify-between h-[60px] md:h-[72px]">
+
+    <!-- Brand -->
+    <a href="../../../#home" class="flex items-center gap-3 md:gap-[14px]">
+      <span class="w-9 h-9 md:w-10 md:h-10 border-[1.5px] border-ink rounded-full grid place-items-center font-serif font-semibold text-lg md:text-xl bg-ink text-paper">松</span>
+      <span class="leading-[1.1]">
+        <div class="font-serif text-[13px] md:text-[15px] font-medium tracking-[.04em]">株式会社松本研磨工業</div>
+        <div class="hidden sm:block font-mono text-[10px] text-muted tracking-[.22em] mt-[2px]">創業58年・川崎</div>
+      </span>
+    </a>
+
+    <!-- Desktop menu — hidden below md -->
+    <div class="hidden md:flex gap-[2px] items-center">
+      <a href="../../../#home" class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">ホーム</a>
+
+      <!-- 金属研磨技術 メガメニュー -->
+      <div class="mega relative">
+        <button class="mega-btn flex items-center gap-1 px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors" aria-expanded="false">
+          金属研磨技術
+          <svg class="w-3 h-3 stroke-current fill-none stroke-[2] mega-caret transition-transform" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="mega-panel absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[320px] bg-navy text-paper rounded-sm shadow-[0_24px_48px_-12px_rgba(0,0,0,.35)] p-2 opacity-0 invisible translate-y-1 transition-all duration-150">
+          <div class="pb-2 mb-1 border-b border-paper/10">
+            <a href="../../../polishing/" class="block px-4 py-2.5 rounded-sm text-[13px] font-semibold hover:bg-paper/10 hover:text-paper hover:underline underline-offset-4 transition-colors">金属研磨技術 一覧 →</a>
+          </div>
+          <a href="../../../polishing/buff-polishing/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">バフ研磨</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">鏡面仕上げ</div>
+          </a>
+          <a href="../../../polishing/belt-polishing/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">ベルト研磨</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">バリ取り・形状補正</div>
+          </a>
+          <a href="../../../polishing/hairline-finish/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">ヘアライン加工</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">一方向のライン仕上げ</div>
+          </a>
+          <a href="../../../polishing/flexible-polishing/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">フレキ研磨／曲面研磨</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">複雑形状への手作業</div>
+          </a>
+        </div>
+      </div>
+
+      <a href="../../../#works" class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">加工実績</a>
+
+      <!-- Web集客・AI活用支援 メガメニュー -->
+      <div class="mega relative">
+        <button class="mega-btn flex items-center gap-1 px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors" aria-expanded="false">
+          Web集客・AI活用支援
+          <svg class="w-3 h-3 stroke-current fill-none stroke-[2] mega-caret transition-transform" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="mega-panel fixed left-1/2 -translate-x-1/2 top-[72px] mt-2 w-[860px] max-w-[92vw] bg-navy text-paper rounded-sm shadow-[0_24px_48px_-12px_rgba(0,0,0,.35)] p-7 opacity-0 invisible translate-y-1 transition-all duration-150">
+          <div class="mb-6 pb-5 border-b border-paper/10 flex items-center justify-between">
+            <a href="../../../web-ai/" class="font-serif text-[13px] font-semibold hover:text-paper hover:underline underline-offset-4 transition-colors">Web集客・AI活用支援 トップ →</a>
+            <a href="../../../web-ai/case/" class="font-serif text-[13px] font-semibold hover:text-paper hover:underline underline-offset-4 transition-colors">実績・事例 →</a>
+          </div>
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">戦略・コンサルティング</div>
+              <ul class="space-y-2">
+                <li><a href="../../../web-ai/consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">デジタルマーケティングコンサルティング</a></li>
+                <li><a href="../../../web-ai/btob-marketing/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">BtoBマーケティング支援</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">集客・改善</div>
+              <ul class="space-y-2">
+                <li><a href="../../../web-ai/seo-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">SEOコンサルティング</a></li>
+                <li><a href="../../../web-ai/ad-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">Web広告コンサルティング</a></li>
+                <li><a href="../../../web-ai/cro-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">CVR改善／CROコンサルティング</a></li>
+                <li><a href="../../../web-ai/llmo-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">LLMOコンサルティング</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">制作</div>
+              <ul class="space-y-2">
+                <li><a href="../../../web-ai/website/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">サイト制作</a></li>
+                <li><a href="../../../web-ai/lp/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">LP制作</a></li>
+                <li><a href="../../../web-ai/seo-writing/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">SEO/LLMO記事制作代行</a></li>
+                <li><a href="../../../web-ai/case-interview/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">事例インタビュー記事制作</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">AI活用支援</div>
+              <ul class="space-y-2">
+                <li><a href="../../../web-ai/ai-katsuyo/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">AI活用支援（業務効率化・自動化）</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- コラム メガメニュー -->
+      <div class="mega relative">
+        <button class="mega-btn flex items-center gap-1 px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors" aria-expanded="false">
+          コラム
+          <svg class="w-3 h-3 stroke-current fill-none stroke-[2] mega-caret transition-transform" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="mega-panel absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[320px] bg-navy text-paper rounded-sm shadow-[0_24px_48px_-12px_rgba(0,0,0,.35)] p-2 opacity-0 invisible translate-y-1 transition-all duration-150">
+          <a href="../../../column/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">研磨・金属加工コラム</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">工法・材料別の技術記事</div>
+          </a>
+          <a href="../../../web-ai/column/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">Web集客・AI活用支援コラム</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">製造業のためのWeb集客・AI活用</div>
+          </a>
+        </div>
+      </div>
+
+      <a href="../../../company/" class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">会社情報</a>
+    </div>
+
+    <!-- CTA -->
+    <div class="flex gap-2 md:gap-[10px] items-center">
+      <a href="../../../web-ai/contact/" class="inline-flex items-center gap-[10px] px-3 py-2 md:px-[18px] md:py-[11px] rounded-sm text-[11px] md:text-[13px] font-semibold tracking-[.06em] bg-ink text-paper hover:bg-accent transition-all">お問い合わせ →</a>
+      <!-- Burger — shown below md -->
+      <button class="flex md:hidden w-10 h-10 border border-ink rounded-sm items-center justify-center bg-paper" id="burgerBtn" aria-label="menu">
+        <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="fixed inset-0 z-[55] bg-navy text-paper pt-[80px] pb-8 px-6 flex flex-col gap-1 translate-x-full transition-transform duration-[350ms] ease-in-out" id="mobileMenu">
+  <button data-close class="absolute top-5 right-5 w-10 h-10 flex items-center justify-center text-paper/80 hover:text-paper" aria-label="close menu">
+    <svg class="w-6 h-6 stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+
+  <!-- LANY風：上部にCTAピル2つ -->
+  <div class="flex gap-2 mb-5">
+    <a href="../../../web-ai/contact/" data-close class="flex-1 flex items-center justify-center gap-2 py-3 rounded-full bg-accent text-paper text-[13px] font-semibold tracking-[.04em]">お問い合わせ →</a>
+  </div>
+
+  <div class="overflow-y-auto flex-1 -mr-6 pr-6">
+  <a href="../../../#home" data-close class="font-serif text-[17px] font-medium py-3 border-b border-paper/[.08] flex items-center justify-between">ホーム</a>
+
+  <details class="drawer-acc border-b border-paper/[.08]">
+    <summary class="font-serif text-[17px] font-medium py-3 flex items-center justify-between cursor-pointer list-none">
+      金属研磨技術
+      <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6] drawer-acc-icon transition-transform shrink-0" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="pb-4 flex flex-col gap-1">
+      <a href="../../../polishing/" data-close class="text-[13px] py-1.5 mb-1 pb-2.5 border-b border-paper/[.08] font-semibold text-paper">金属研磨技術 一覧 →</a>
+      <a href="../../../polishing/buff-polishing/" data-close class="text-[13px] py-1.5 opacity-85">バフ研磨</a>
+      <a href="../../../polishing/belt-polishing/" data-close class="text-[13px] py-1.5 opacity-85">ベルト研磨</a>
+      <a href="../../../polishing/hairline-finish/" data-close class="text-[13px] py-1.5 opacity-85">ヘアライン加工</a>
+      <a href="../../../polishing/flexible-polishing/" data-close class="text-[13px] py-1.5 opacity-85">フレキ研磨／曲面研磨</a>
+    </div>
+  </details>
+
+  <a href="../../../#works" data-close class="font-serif text-[17px] font-medium py-3 border-b border-paper/[.08] flex items-center justify-between">加工実績</a>
+
+  <details class="drawer-acc border-b border-paper/[.08]">
+    <summary class="font-serif text-[17px] font-medium py-3 flex items-center justify-between cursor-pointer list-none">
+      Web集客・AI活用支援
+      <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6] drawer-acc-icon transition-transform shrink-0" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="pb-4 flex flex-col gap-1">
+      <div class="flex items-center justify-between mb-1 pb-2.5 border-b border-paper/[.08]">
+        <a href="../../../web-ai/" data-close class="text-[13px] font-semibold text-paper">Web集客・AI活用支援 トップ →</a>
+        <a href="../../../web-ai/case/" data-close class="text-[13px] font-semibold text-paper">実績・事例 →</a>
+      </div>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-2 mb-1">戦略・コンサルティング</div>
+      <a href="../../../web-ai/consulting/" data-close class="text-[13px] py-1.5 opacity-85">デジタルマーケティングコンサルティング</a>
+      <a href="../../../web-ai/btob-marketing/" data-close class="text-[13px] py-1.5 opacity-85">BtoBマーケティング支援</a>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-3 mb-1">集客・改善</div>
+      <a href="../../../web-ai/seo-consulting/" data-close class="text-[13px] py-1.5 opacity-85">SEOコンサルティング</a>
+      <a href="../../../web-ai/ad-consulting/" data-close class="text-[13px] py-1.5 opacity-85">Web広告コンサルティング</a>
+      <a href="../../../web-ai/cro-consulting/" data-close class="text-[13px] py-1.5 opacity-85">CVR改善／CROコンサルティング</a>
+      <a href="../../../web-ai/llmo-consulting/" data-close class="text-[13px] py-1.5 opacity-85">LLMOコンサルティング</a>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-3 mb-1">制作</div>
+      <a href="../../../web-ai/website/" data-close class="text-[13px] py-1.5 opacity-85">サイト制作</a>
+      <a href="../../../web-ai/lp/" data-close class="text-[13px] py-1.5 opacity-85">LP制作</a>
+      <a href="../../../web-ai/seo-writing/" data-close class="text-[13px] py-1.5 opacity-85">SEO/LLMO記事制作代行</a>
+      <a href="../../../web-ai/case-interview/" data-close class="text-[13px] py-1.5 opacity-85">事例インタビュー記事制作</a>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-3 mb-1">AI活用支援</div>
+      <a href="../../../web-ai/ai-katsuyo/" data-close class="text-[13px] py-1.5 opacity-85">AI活用支援（業務効率化・自動化）</a>
+    </div>
+  </details>
+
+  <details class="drawer-acc border-b border-paper/[.08]">
+    <summary class="font-serif text-[17px] font-medium py-3 flex items-center justify-between cursor-pointer list-none">
+      コラム
+      <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6] drawer-acc-icon transition-transform shrink-0" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="pb-4 flex flex-col gap-1">
+      <a href="../../../column/" data-close class="text-[13px] py-2 opacity-85">研磨・金属加工コラム</a>
+      <a href="../../../web-ai/column/" data-close class="text-[13px] py-2 opacity-85">Web集客・AI活用支援コラム</a>
+    </div>
+  </details>
+
+  <a href="../../../company/" data-close class="font-serif text-[17px] font-medium py-3 border-b border-paper/[.08] flex items-center justify-between">会社情報</a>
+  </div>
+
+  <div class="pt-5 text-[11px] text-muted-ink/80 text-center">マツケンスタジオへのご相談は、お問い合わせフォームで受け付けています</div>
+</div>
+
+
+<main class="pt-[60px]">
+  <section class="pt-8 pb-10 md:pt-12 md:pb-14">
+    <div class="pwrap">
+      <article class="art">
+      <p class="font-mono text-[11px] tracking-[.2em] text-muted mb-5"><a href="../../../" class="hover:text-accent transition-colors">ホーム</a><span class="mx-2 opacity-40">/</span><a href="../../" class="hover:text-accent transition-colors">Web集客・AI活用支援</a><span class="mx-2 opacity-40">/</span><a href="../" class="hover:text-accent transition-colors">コラム</a><span class="mx-2 opacity-40">/</span><a href="../category/renewal/" class="hover:text-accent transition-colors">リニューアル</a></p>
+        <a href="../category/renewal/" class="chip">リニューアル</a>
+        <h1 class="font-bold leading-[1.45] mt-3 mb-4 text-ink" style="font-size:clamp(24px,3.6vw,34px)">ホームページをノーコードから乗り換えるには？移行の手順と注意点</h1>
+        <p class="text-[13px] text-muted mb-6">公開日 <time datetime="2026-10-19">2026.10.19</time>　|　マツケンスタジオ 責任者</p>
+        <div class="points"><b>この記事で分かること</b><ul><li>乗り換えを考える前に確かめることと、乗り換え先3つの比べ方</li><li>移すもの（文章・画像・CMS・フォーム・ドメイン・メールなど）と手順</li><li>URLが変わるときの301リダイレクトと、ドメインを止めずに切り替える順番</li></ul></div>
+        <div class="cta-top"><p>ホームページのご相談は無料です</p><div class="bt"><a href="../../contact/" class="btn-s bg-cta-yellow text-ink hover:bg-cta-yellow-h">1分で問い合わせ →</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="btn-s bg-[#06C755] text-white hover:bg-[#05B34C]">LINEで相談</a></div></div>
+        <nav class="toc" aria-label="目次"><b>目次</b><ol><li><a href="#first">乗り換えを考える前に、まず今回の対応を済ませる</a></li><li><a href="#reason">乗り換える理由を、言葉にしておく</a></li><li><a href="#contract">契約・プラン・更新日を確かめる</a></li><li><a href="#choose">乗り換え先の選び方｜3つの方法を比べる</a></li><li><a href="#items">移すものの一覧</a></li><li><a href="#steps">乗り換えの手順</a></li><li><a href="#redirect">URLが変わるときは、301リダイレクトを設定する</a></li><li><a href="#domain-order">ドメインを止めずに切り替える順番</a></li><li><a href="#troubles">乗り換えで、よくある困りごと</a></li><li><a href="#stay">乗り換えずに、今のツールで守りを固める方法もある</a></li><li><a href="#cost">乗り換えの費用と期間の考え方</a></li><li><a href="#consult">乗り換えを相談するときに伝えること</a></li><li><a href="#summary">まとめ</a></li><li><a href="#faq">よくある質問</a></li></ol></nav>
+        <div class="art-body">
+<p>2026年10月16日、ノーコードでホームページを作れるサービス「Studio」を運営するStudio株式会社が、不正アクセスによって利用者の情報が流出した可能性があると発表しました。これをきっかけに、「ほかのサービスやWordPressに乗り換えたほうがいいのだろうか」と考え始めた社長や担当者の方もいると思います。</p>
+<p>結論から言うと、乗り換えるかどうかは、落ち着いて判断すれば大丈夫です。まずは今回の件で求められている対応を済ませることが先です。そのうえで、乗り換える理由がはっきりしているなら、この記事の順番で準備を進めてください。乗り換えは、移すものや手順を知らずに進めると、問い合わせフォームが止まったり、検索からの訪問が減ったりすることがあります。この記事では、ノーコードツールからの乗り換えを考えるときに確かめること、乗り換え先の選び方、移すもの、手順、注意点を、制作する側の目線でまとめます。</p>
+<svg viewBox="0 0 560 174" role="img" aria-label="ホームページをノーコードから乗り換えるには？移行の手順と注意点の要点の図" class="st-illu" style="max-width:560px" fill="none" stroke="#1B3A6B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="18" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="32" y="28" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M36 38l4 4 8-9"/><text x="62" y="44" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">今回の対応を済ませる</text><rect x="290" y="18" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="302" y="28" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M306 38l4 4 8-9"/><text x="332" y="44" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">乗り換える理由を書く</text><rect x="20" y="70" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="32" y="80" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M36 90l4 4 8-9"/><text x="62" y="96" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">契約と更新日を確認</text><rect x="290" y="70" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="302" y="80" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M306 90l4 4 8-9"/><text x="332" y="96" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">移すものを洗い出す</text><rect x="20" y="122" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="32" y="132" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M36 142l4 4 8-9"/><text x="62" y="148" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">URLの対応表を作る</text><rect x="290" y="122" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="302" y="132" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M306 142l4 4 8-9"/><text x="332" y="148" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">切り替えは最後に</text></svg>
+
+<h2 id="first">乗り換えを考える前に、まず今回の対応を済ませる</h2>
+<p>乗り換えを考えるのは、今回の対応が終わってからにしましょう。理由はかんたんで、<b>サイトを別のサービスに移しても、すでに流出した可能性のある情報は戻らない</b>からです。パスワードの変更、外部サービスのAPIキーの差しかえ、フォームで個人情報を集めていた場合の本人への通知の検討などは、乗り換えるかどうかに関係なく、今のアカウントで進める必要があります。</p>
+<p>また、乗り換えの準備を始めてから旧サイトを止めるまでには、少なくとも数週間はかかります。その間も今のサイトは動き続けるので、守りを固めておくことには意味があります。何をすればよいかは、<a href="../studio-unauthorized-access/">Studioの不正アクセス・個人情報流出｜利用企業が今すぐやること</a>にまとめています。対応はStudioの公式のお知らせで、最新の内容を確かめながら進めてください。</p>
+<h3>どのサービスでも、事故は起こりうる</h3>
+<p>知っておきたいのは、不正アクセスや情報の流出は、特定のサービスだけで起きることではないという点です。ほかのノーコードツールでも、WordPressでも、レンタルサーバーでも、制作会社が自前で作ったシステムでも、起こる可能性はあります。WordPressは自由度が高い分、本体やプラグイン（あとから足す機能）の更新を自社や制作会社が続けないと、弱いところを突かれやすくなります。</p>
+<p>大切なのは、「どのサービスなら絶対に安全か」を探すことではなく、何かあったときに早く気づけて、すぐに対応できる体制を作っておくことです。乗り換え先を選ぶときも、この目線を持っておくと判断しやすくなります。</p>
+
+<h2 id="reason">乗り換える理由を、言葉にしておく</h2>
+<p>次に、なぜ乗り換えたいのかを紙に書き出してみましょう。理由がはっきりしないまま乗り換えると、移ったあとで「前のほうがよかった」となりがちです。よくある理由は次のようなものです。</p>
+<ul>
+<li><b>安心して使い続けられるか不安になった</b>：今回のような出来事をきっかけに、会社としての方針を見直したい</li>
+<li><b>社内で更新できない</b>：作った人が辞めた、操作が難しくて誰も触れない</li>
+<li><b>やりたいことができない</b>：記事の数が増えて管理しにくい、採用ページや多言語を足したい、外部のシステムとつなぎたい</li>
+<li><b>費用が合わない</b>：プランの改定で毎月の費用が上がった、使っていない機能に払っている</li>
+<li><b>制作会社との関係を見直したい</b>：アカウントを制作会社が持っていて、自社で中身を確かめられない</li>
+</ul>
+<p>「不安になった」だけが理由なら、乗り換えずに今のツールで守りを固めるほうが、手間も費用も少なくて済むことがあります。この選び方は、記事の後半でくわしく書きます。一方、「更新できない」「やりたいことができない」が理由なら、乗り換えやリニューアルを考えるよい機会です。ほかの見直しのきっかけは、<a href="../renewal-signs/">ホームページのリニューアルを考えたい6つのサイン</a>も参考にしてください。</p>
+
+<h2 id="contract">契約・プラン・更新日を確かめる</h2>
+<p>乗り換えを決める前に、今の契約を確かめておきます。ここを見落とすと、旧サイトが思ったより早く止まったり、反対に使わない期間の費用を払い続けたりします。</p>
+<table class="art-table">
+<tr><th>確かめること</th><th>なぜ必要か</th></tr>
+<tr><td>アカウントの持ち主</td><td>自社か制作会社か。解約やデータの書き出しは、持ち主でないとできないことが多い</td></tr>
+<tr><td>今のプランと支払い方法</td><td>月払いか年払いか。プランによって使える機能（リダイレクトなど）が違う</td></tr>
+<tr><td>次の更新日</td><td>解約やプラン変更がいつ反映されるかが決まる</td></tr>
+<tr><td>解約したときのサイトの扱い</td><td>すぐ非公開になるのか、更新日まで表示されるのか</td></tr>
+<tr><td>ドメインの契約先と名義</td><td>ドメインを持ったまま移れるか。ツールで取ったドメインかどうか</td></tr>
+</table>
+<p>Studioの場合、公式ヘルプでは次のように説明されています。</p>
+<ul>
+<li>プランのダウングレード（下のプランへの変更や、Freeプランへの切り替え）は、申し込んですぐではなく、<b>次回の契約更新日に切り替わる</b>。それまでは今のプランの機能を使える</li>
+<li>更新日は［プラン＆お支払い］ダッシュボードで確かめられる</li>
+<li>切り替わる時点で、変更先のプランで使えない機能を使っていると、サイトが自動で非公開になることがある</li>
+<li>課金だけを止めたい場合は、退会ではなくダウングレードで対応することがすすめられている。退会したアカウントは元に戻せず、原則として同じメールアドレスで登録し直せない</li>
+<li>支払いをしているオーナーがほかのオーナーのいない状態で退会すると、その時点で公開サイトとプレビューが非公開になる</li>
+</ul>
+<p>つまり、<b>新しいサイトの公開より先に退会や解約をしてしまうと、サイトが表示されない期間ができてしまう</b>おそれがあります。解約の手続きは、新しいサイトの公開と確認が終わってから、更新日に合わせて行うのが安全です。Wix、ペライチなどほかのツールでも、解約後の扱いはサービスごとに違うので、それぞれの公式ヘルプで確かめてください。</p>
+<p>アカウントを制作会社が持っている場合は、まず持ち主を自社に移してもらえるか相談します。乗り換え全体の進め方は、<a href="../change-web-company/">ホームページの制作会社を乗り換える手順</a>でも紹介しています。</p>
+
+<h2 id="choose">乗り換え先の選び方｜3つの方法を比べる</h2>
+<p>乗り換え先は、大きく分けて3つあります。別のノーコードツールに移す、WordPressで作る、制作会社に作り直しを頼む、の3つです。どれがよいかは、社内で誰が更新するか、どこまで自由に作りたいか、管理にどれだけ手をかけられるかで変わります。</p>
+<table class="art-table">
+<tr><th></th><th>別のノーコードツール</th><th>WordPress</th><th>制作会社に作り直しを頼む</th></tr>
+<tr><td>向いている会社</td><td>ページ数が少なく、社内で文章や写真を差しかえたい</td><td>記事やお知らせを多く載せたい、機能を足していきたい</td><td>社内に作る人がいない、この機会に中身から見直したい</td></tr>
+<tr><td>サーバーや更新の管理</td><td>サービス側が行う</td><td>自社か制作会社で、本体・プラグインの更新を続ける必要がある</td><td>作り方による。誰が管理するかを契約で決める</td></tr>
+<tr><td>自由度</td><td>ツールでできる範囲まで</td><td>高い</td><td>作り方による</td></tr>
+<tr><td>手間</td><td>作り直しは自分たちで行う</td><td>設定や作り直しに手間がかかる</td><td>原稿や写真の用意、確認が中心</td></tr>
+<tr><td>気をつけたいこと</td><td>また乗り換えるときに、データを書き出せないことがある</td><td>更新を止めると、弱いところを突かれやすい</td><td>アカウントやドメインの名義を自社にしておく</td></tr>
+</table>
+<p>どの方法でも、<b>デザインや中身を今のツールからそのまま持っていけるとは限らない</b>と考えておきましょう。後で説明するとおり、ノーコードツールの多くは、サイトをまるごと書き出してほかの場所で動かすことができません。乗り換えは「引っ越し」というより、「同じ内容で建て直す」作業に近いです。</p>
+<p>WordPressが自社に合うかどうかは、<a href="../wordpress-necessary/">ホームページにWordPressは必要か</a>で整理しています。社内で作り直す場合の進め方は、<a href="../homepage-diy/">ホームページを自分で作るには？</a>も参考にしてください。制作会社に頼む場合の費用の考え方は、<a href="../renewal-cost/">ホームページのリニューアル費用の相場と内訳</a>にまとめています。</p>
+<h2 id="items">移すものの一覧</h2>
+<p>乗り換えでは、ページの見た目より先に、「何を移さなければいけないか」を洗い出すことが大切です。見落としやすいのは、ページの外にあるもの（ドメイン、メール、アクセス解析、外部サービスのリンク）です。</p>
+<table class="art-table">
+<tr><th>移すもの</th><th>やること</th></tr>
+<tr><td>ページの文章</td><td>全ページの文章をコピーして、ページごとにまとめておく</td></tr>
+<tr><td>画像</td><td>元のデータ（撮影した写真、ロゴのデータ）を探す。なければ公開中のページから保存する</td></tr>
+<tr><td>CMSの記事（お知らせ・実績・ブログなど）</td><td>書き出せるか確かめる。できなければ1件ずつ移す</td></tr>
+<tr><td>フォームの回答データ</td><td>過去の問い合わせを書き出して、社内で保管する</td></tr>
+<tr><td>フォームの設定</td><td>入力項目、通知先のメールアドレス、自動返信の文面を控える</td></tr>
+<tr><td>ドメイン</td><td>契約先、名義、更新日、DNSの設定を確かめる</td></tr>
+<tr><td>メール</td><td>会社のメールアドレスが、どのサービスで動いているか確かめる</td></tr>
+<tr><td>アクセス解析</td><td>Googleアナリティクスや Search Console の設定を新しいサイトに入れ直す</td></tr>
+<tr><td>Googleビジネスプロフィールなど外部のリンク</td><td>ホームページのURLが変わる場合は、登録しているURLを書きかえる</td></tr>
+</table>
+<h3>ページの文章と画像</h3>
+<p>Studioの公式ヘルプでは、<b>サイトのデータをほかのサービスへ移すための書き出し機能はない</b>と説明されています。デザイン、ページの構成や設定、公開サイトのHTMLなどのソースコード、Studio CMSのデータは、いずれも書き出せません。移行先で作り直すことになります。</p>
+<p>Wixも、公式ヘルプで、Wixのサイトを外部のサーバーに書き出すことはできないと説明しています。ほかのツールを使っている場合も、まず公式ヘルプで「書き出し」「エクスポート」について確かめてください。</p>
+<p>そのため、文章はページごとにコピーして、表計算ソフトや文書ファイルにまとめておきます。画像は、できれば撮影したときの元のデータを使います。公開中のページから保存した画像は、小さく圧縮されていることがあるためです。乗り換えのついでに、古くなった文章や写真を見直すのもおすすめです。用意のしかたは、<a href="../homepage-photo-text/">ホームページに載せる写真と文章の用意のしかた</a>でまとめています。</p>
+<h3>CMSの記事</h3>
+<p>お知らせや施工事例、ブログなどの記事を、ツールのCMS（記事を管理する機能）で作っている場合は、件数を数えておきます。Studio CMSのデータは書き出せないので、移行先で1件ずつ登録し直します。件数が多い場合は、それだけで大きな作業になるので、見積りや日程に入れておきましょう。古い記事を移さずに整理するのも、ひとつの方法です。ただし、検索から訪問が多い記事は残して、URLの対応（後で説明します）もしておきます。</p>
+<h3>フォームの回答データ</h3>
+<p>Studioでは、フォームの回答は、フォームのダッシュボードからCSVファイルとして書き出せると公式ヘルプで説明されています。解約すると見られなくなるおそれがあるので、乗り換えの前に書き出して、社内の決まった場所で保管しておきましょう。お客様や応募者の個人情報が含まれるので、保管する場所と、見られる人を決めておくことが大切です。</p>
+<h3>フォームの設定</h3>
+<p>入力する項目、必須かどうか、通知先のメールアドレス、自動返信のメールの文面は、新しいサイトで作り直します。画面を写しておくか、項目を書き出しておくと、作り直すときに迷いません。乗り換えの機会に、本当に必要な項目だけにしぼるのもおすすめです。</p>
+<h3>ドメインとメール</h3>
+<p>独自ドメインを使っている場合、ドメインそのものは、ドメインを取った会社（登録事業者）で契約していることがほとんどです。ツールは、そのドメインで表示されるように設定を向けているだけ、という形が一般的です。まず、ドメインの契約先と名義、更新日、DNS（ドメインの行き先を決める設定）をどこで管理しているかを確かめます。仕組みは、<a href="../domain-server/">ドメインとサーバーとは？</a>で紹介しています。</p>
+<p>会社のメールアドレスが同じドメインで動いている場合は、メールの設定には触れずに、ホームページの行き先だけを切り替えるのが基本です。ここを間違えると、メールが届かなくなります。</p>
+<h3>アクセス解析と外部のリンク</h3>
+<p>GoogleアナリティクスやSearch Consoleの設定は、新しいサイトに入れ直します。Googleビジネスプロフィール、SNSのプロフィール、求人サイトなどに載せているURLも、変わる場合は書きかえます。</p>
+
+<h2 id="steps">乗り換えの手順</h2>
+<p>乗り換えは、次の順番で進めると、ホームページが止まる時間をなくせます。</p>
+<ol>
+<li><b>今のサイトの全ページを一覧にする</b>：ページの名前とURLを表にまとめます。よく見られているページには印をつけておきます。</li>
+<li><b>移すものを集める</b>：文章、画像、CMSの記事、フォームの回答（CSV）を、社内の決まった場所に保存します。</li>
+<li><b>新しいサイトの構成を決める</b>：残すページ、まとめるページ、新しく作るページを決めます。ページ数の考え方は、<a href="../homepage-pages/">ホームページは何ページ必要？</a>を参考にしてください。</li>
+<li><b>URLの対応表を作る</b>：古いURLと新しいURLを1対1で並べます。次の章で説明する転送の設定に使います。</li>
+<li><b>新しいサイトを作り、仮のURLで確かめる</b>：公開する前に、スマホとパソコンの両方で表示とフォームの送信を確かめます。</li>
+<li><b>切り替える</b>：ドメインの行き先を新しいサイトに向けます。</li>
+<li><b>公開後に確かめる</b>：古いURLで開いて、新しいページに移るか、フォームが届くかを確かめます。</li>
+<li><b>今のツールの契約を整理する</b>：新しいサイトが問題なく動いていることを確かめてから、プランの変更や解約をします。</li>
+</ol>
+<p>大事なのは、<b>今のツールの解約を一番最後にする</b>ことです。先に解約すると、新しいサイトが公開できるまでの間、ホームページが見られなくなります。</p>
+
+<div class="cta-mid"><span class="lb">無料相談</span><b>今のサイト、作り直したほうがいい？</b><p>今のホームページを見て、直したほうがいいところを無料でお伝えします。ドメインもメールもそのままで作り直せます。</p><div class="bt"><a href="../../contact/" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] shadow-[0_10px_24px_-10px_rgba(200,170,0,.7)] rounded-full font-bold tracking-[.04em] bg-cta-yellow text-ink hover:bg-cta-yellow-h hover:-translate-y-0.5 transition-all">1分で問い合わせ →</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] rounded-full font-bold tracking-[.04em] bg-[#06C755] text-white hover:bg-[#05B34C] hover:-translate-y-0.5 transition-all"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.4 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>LINEで相談する</a></div></div><h2 id="redirect">URLが変わるときは、301リダイレクトを設定する</h2>
+<p>新しいサイトでページのURLが変わる場合は、古いURLを開いた人を新しいURLへ自動で移す設定（リダイレクト）をします。これをしないと、検索結果やブックマーク、名刺のQRコードから来た人が「ページが見つかりません」という画面にたどり着いてしまいます。</p>
+<p>Googleは、URLが変わるサイトの移転について、次のようなことをすすめています。</p>
+<ul>
+<li>古いURLから新しいURLへ、サーバー側で恒久的なリダイレクト（301など）を設定する</li>
+<li>リダイレクトは、できるだけ長く、一般的には1年以上残しておく</li>
+<li>サイトの中のリンクを、新しいURLに書きかえる</li>
+<li>新しいURLのサイトマップを作り、Search Consoleで送る</li>
+</ul>
+<p>リダイレクトは、移った先のサイト（新しいサーバーやツール）で設定します。乗り換え先がリダイレクトの設定に対応しているかは、選ぶ段階で確かめておきましょう。ドメインごと変わる場合は、Search Consoleの「アドレス変更ツール」も使います。</p>
+<p>ドメインもページのURLも変わらない場合は、リダイレクトはいりません。ただ、ノーコードツールと乗り換え先とでは、URLの付け方が違うことがよくあります。対応表を作って、1ページずつ確かめるのが確実です。</p>
+
+<h2 id="domain-order">ドメインを止めずに切り替える順番</h2>
+<p>ドメインの切り替えは、乗り換えでいちばん気をつけたい作業です。次の順番を守ると、ホームページもメールも止めずに進められます。</p>
+<table class="art-table">
+<tr><th>順番</th><th>やること</th><th>気をつけること</th></tr>
+<tr><td>1</td><td>DNSを管理している場所と、今の設定を控える</td><td>メールの設定（MXレコードなど）も含めて、画面を写しておく</td></tr>
+<tr><td>2</td><td>新しいサイトを、仮のURLで完成させる</td><td>フォームの送信、表示、リンクを確かめておく</td></tr>
+<tr><td>3</td><td>ホームページの行き先の設定だけを、新しいサイトに書きかえる</td><td>メールの設定には触れない</td></tr>
+<tr><td>4</td><td>新しいサイトが表示されるかを確かめる</td><td>切り替わるまでに時間がかかることがある</td></tr>
+<tr><td>5</td><td>httpsで表示されるかを確かめる</td><td>証明書の設定が済んでいるか（<a href="../not-secure-ssl/">「保護されていない通信」と出るのはなぜ？</a>）</td></tr>
+<tr><td>6</td><td>しばらく様子を見てから、今のツールの契約を整理する</td><td>独自ドメインの設定を外す手順は、ツールの公式ヘルプで確かめる</td></tr>
+</table>
+<p>切り替えは、問い合わせの少ない日や時間を選び、作業する人と、確かめる人を決めておくと安心です。制作会社に頼む場合も、ドメインの管理画面に入れる情報が社内にあるかを先に確かめておきましょう。</p>
+
+<h2 id="troubles">乗り換えで、よくある困りごと</h2>
+<h3>解約したら、過去の問い合わせが見られなくなった</h3>
+<p>フォームの回答を書き出す前に解約してしまうと、過去の問い合わせを確かめられなくなることがあります。解約の前に、回答のCSVを必ずダウンロードしておきましょう。</p>
+<h3>メールが届かなくなった</h3>
+<p>ドメインの設定を書きかえるときに、メールの設定まで変えてしまうと起こります。切り替えの前に今の設定を控え、メールに関わる設定には触れないようにします。</p>
+<h3>検索からの訪問が減った</h3>
+<p>URLが変わったのにリダイレクトをしていない、よく見られていたページを消してしまった、といったときに起こりやすくなります。対応表を作り、残すページを先に決めておくことで防げます。</p>
+<h3>思ったより時間がかかった</h3>
+<p>書き出せないデータは、新しいサイトで作り直すことになります。とくにCMSの記事が多いと、登録し直すだけで時間がかかります。件数を数えてから日程を決めましょう。</p>
+<h3>見た目は同じなのに、更新しにくくなった</h3>
+<p>乗り換え先によって、更新のしかたは大きく変わります。誰が、何を、どのくらい更新するかを先に決め、それに合う乗り換え先を選ぶことが大切です。</p>
+
+<h2 id="stay">乗り換えずに、今のツールで守りを固める方法もある</h2>
+<p>乗り換えには、時間も費用もかかります。今のツールの使い勝手に満足しているなら、乗り換えずに、使い方を見直すのも十分な選択です。どのサービスを使っていても、事故は起こりえます。大切なのは、万一のときの影響を小さくしておくことです。</p>
+<ul>
+<li><b>パスワードを使い回さない</b>：ツールごとに別のパスワードにします。</li>
+<li><b>フォームの回答を、ツールにため続けない</b>：必要な回答はCSVで書き出して社内で保管し、ツールの中の古い回答は定期的に完全に削除します。Studioでは、ゴミ箱に移しただけでは削除されないので、「完全に削除」まで行います。</li>
+<li><b>外部のサービスの鍵を整理する</b>：使っていないAPIキーや連携は外し、使っているものは定期的に切り替えます。</li>
+<li><b>編集できる人を最小限にする</b>：退職した人や、もう関わっていない制作会社のアカウントが残っていないか確かめます。</li>
+<li><b>お知らせを見落とさない</b>：ツールからの大事な知らせが届くメールアドレスを、社内の誰かが必ず見られるものにしておきます。</li>
+</ul>
+<p>こうした見直しは、乗り換える場合も、乗り換えない場合も、やっておいて損はありません。</p>
+
+<h2 id="cost">乗り換えの費用と期間の考え方</h2>
+<p>乗り換えの費用と期間は、ページ数、CMSの記事の数、デザインを作り直すかどうかで変わります。新しく作るときとの違いは、今のサイトの確認、内容の移しかえ、URLの引き継ぎといった作業が加わることです。くわしくは、<a href="../renewal-cost/">ホームページのリニューアル費用の相場と内訳</a>で紹介しています。</p>
+<p>マツケンスタジオでは、1ページ（LP）は15万円から、2〜5ページは30万円から、6〜20ページは60万円からが目安で、会社のホームページの期間は1〜3か月ほどです。作り直す場合も、ドメインとサーバーはお客様の名義のままで進め、最初の相談から公開後まで同じ担当が見ます。制作会社を変えるときの手順は、<a href="../change-web-company/">ホームページの制作会社を乗り換える手順</a>もあわせてご覧ください。</p>
+<p>自分たちで乗り換え先のツールを使って作り直す場合の考え方は、<a href="../homepage-diy/">ホームページを自分で作るには？</a>で紹介しています。</p>
+
+<h2 id="consult">乗り換えを相談するときに伝えること</h2>
+<p>制作会社に乗り換えを相談するときは、次のことが分かると、見積りと日程が具体的になります。すべてそろっていなくても大丈夫です。</p>
+<ul>
+<li>今使っているツールの名前と、契約しているプラン、更新日</li>
+<li>今のサイトのURLと、おおよそのページ数</li>
+<li>CMSで管理している記事の種類と件数</li>
+<li>フォームの数と、集めている項目</li>
+<li>ドメインの契約先と、管理画面に入れる人がいるか</li>
+<li>会社のメールが、どのサービスで動いているか</li>
+<li>乗り換えたい理由と、公開したい時期</li>
+</ul>
+<p>とくに、乗り換えたい理由がはっきりしていると、作り直すべきところと、そのままでよいところを分けて考えられます。理由が「今回の事故が不安だから」だけの場合は、乗り換えずに守りを固める方法と、費用や手間を比べてから決めましょう。</p>
+
+<h2 id="summary">まとめ</h2>
+<p>ノーコードツールからの乗り換えは、まず今回のような事故への対応を済ませ、乗り換える理由をはっきりさせるところから始めます。Studioのように、サイトのデータを書き出せないツールもあるため、文章や画像、CMSの記事は移行先で作り直す前提で計画し、フォームの回答だけは解約の前に必ず書き出しておきましょう。URLが変わるなら301リダイレクトを設定し、ドメインはメールの設定に触れずに、ホームページの行き先だけを切り替えます。今のツールの解約は最後に。乗り換えるかどうかは、落ち着いて判断すれば十分です。</p>
+</div>
+        <h2 id="faq" class="font-bold text-[22px] mt-12 mb-4" style="scroll-margin-top:90px">よくある質問</h2>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">Studioで作ったサイトを、そのまま別のサービスに移せますか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">Studioの公式ヘルプでは、サイトのデータをほかのサービスへ移すための書き出し機能は提供していないと説明されています。デザイン、ページの情報、ソースコード、Studio CMSのデータは書き出せないため、移行先で作り直すことになります。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">過去のフォームの回答は、乗り換えたあとも残せますか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">Studioでは、フォームの回答をフォームのダッシュボードからCSVファイルとしてダウンロードできます。解約すると見られなくなるおそれがあるので、乗り換えの前に書き出し、社内の決まった場所で保管しておきましょう。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">乗り換えると、ホームページのアドレスは変わりますか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">独自ドメインを使っていれば、ドメインはそのまま使えます。ただし、ページごとのURLの付け方が変わることがあるので、古いURLと新しいURLの対応表を作り、変わるページには301リダイレクトを設定します。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">乗り換えのとき、会社のメールは止まりませんか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">ドメインの設定のうち、ホームページの行き先だけを書きかえ、メールに関わる設定に触れなければ、メールは止まりません。切り替えの前に今の設定を控えておくと安心です。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">今回の不正アクセスを受けて、すぐに乗り換えたほうがいいですか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">まずは、パスワードの変更やAPIキーの切り替えなど、今回の対応を済ませることが先です。乗り換えには時間も費用もかかるので、続報の内容や自社の使い方を見て、落ち着いて判断すれば十分です。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">乗り換え先は、どう選べばいいですか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">誰が、何を、どのくらい更新するかで選びます。自分たちで手軽に直したいなら別のノーコードツール、記事を多く書くならWordPress、更新や管理も任せたいなら制作会社への依頼が向いています。</p>
+        </div>
+      </div>
+        <div class="mt-10"><div class="author"><div class="av">松</div><div><b>マツケンスタジオ 責任者</b><p>デジタルマーケティングの仕事を10年以上。上場企業での勤務や、1,000万人以上が使うサービスのマーケティングを経験し、マーケターとして企業のオウンドメディアを50万PVまで育て、数百社の集客を支援してきました。家業である松本研磨工業のホームページを作り直し、リニューアルから1か月で有効なお問い合わせを3倍にしています。</p><a href="../author/" class="text-[13px] font-bold text-accent-ink hover:underline">プロフィールを見る →</a></div></div></div>
+        <div class="mt-8"><div class="cta-end"><b>ホームページのこと、まずは気軽にご相談ください。</b><p>「何から始めればいいか分からない」という段階でも大丈夫です。町工場発のマツケンスタジオが、ドメインの取得から公開後の更新まで、まるごとお手伝いします。いまは毎月3社まで、特別な価格で制作する「事例づくりモニター」も受け付けています。</p><div class="bt"><a href="../../contact/" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] shadow-[0_10px_24px_-10px_rgba(200,170,0,.7)] rounded-full font-bold tracking-[.04em] bg-cta-yellow text-ink hover:bg-cta-yellow-h hover:-translate-y-0.5 transition-all">1分で問い合わせ →</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] rounded-full font-bold tracking-[.04em] bg-[#06C755] text-white hover:bg-[#05B34C] hover:-translate-y-0.5 transition-all"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.4 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>LINEで相談する</a><a href="../../monitor/" class="lp">事例づくりモニターを見る →</a></div></div></div>
+      </article>
+    </div>
+  </section>
+  <section class="py-14 md:py-20 st-alt">
+    <div class="pwrap">
+      <h2 class="sec-ttl">あわせて読みたい記事</h2>
+      <div class="col-grid three"><a href="../renewal-signs/" class="col-card"><span><span class="chip">リニューアル</span></span><h3>ホームページのリニューアルを考えたい6つのサイン</h3><p>スマホで見づらい、「保護されていない通信」と出る、お知らせが何年も前のまま——。ホームページのリニューアルを考えたい6つのサインと、自分で確…</p><time datetime="2026-09-27">2026.09.27</time></a><a href="../renewal-cost/" class="col-card"><span><span class="chip">リニューアル</span></span><h3>ホームページのリニューアル費用の相場と内訳｜新しく作るときとの違い</h3><p>ホームページのリニューアル費用は、何で決まり、どのくらいかかるのか。新しく作るときとの違い、リニューアルならではの作業と費用、費用を抑えるコ…</p><time datetime="2026-10-03">2026.10.03</time></a><a href="../change-web-company/" class="col-card"><span><span class="chip">リニューアル</span></span><h3>ホームページの制作会社を乗り換える手順｜管理会社を変更するときの注意点</h3><p>ホームページの制作会社・管理会社を変えたいとき、何から始めればいいのか。乗り換えを考えるきっかけ、先に確かめる3つのこと、6つの手順、引き継…</p><time datetime="2026-10-10">2026.10.10</time></a></div>
+    </div>
+  </section>
+
+  <section class="py-14 md:py-20">
+    <div class="pwrap">
+      <h2 class="sec-ttl">カテゴリから探す</h2>
+      <nav class="col-cats" aria-label="カテゴリ"><a href="../" class="on">すべて</a><a href="../category/homepage/" class="">ホームページ制作</a><a href="../category/renewal/" class="">リニューアル</a><a href="../category/cost/" class="">費用・発注</a><a href="../category/ai/" class="">AI検索対策</a><a href="../category/seo/" class="">SEO・集客</a><a href="../category/recruit/" class="">採用</a><a href="../category/industry/" class="">業種別</a><a href="../category/case/" class="">事例</a></nav>
+    </div>
+  </section>
+
+<div class="col-stick" id="colStick"><a href="../../contact/" class="bg-cta-yellow text-ink">1分で問い合わせ</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="bg-[#06C755] text-white">LINEで相談</a></div><script>(function(){var s=document.getElementById("colStick");if(!s)return;function u(){s.classList.toggle("show",window.scrollY>500&&(window.innerHeight+window.scrollY)<document.body.scrollHeight-700)}window.addEventListener("scroll",u,{passive:true});u()})();</script>
+</main>
+<footer class="site-footer bg-navy text-paper pt-14 md:pt-20 pb-8">
+  <div class="wrap">
+    <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-16 pb-10 md:pb-14 border-b border-paper/15">
+      <div>
+        <a href="../../../" class="inline-flex items-center gap-3">
+          <span class="w-11 h-11 rounded-full grid place-items-center font-semibold text-xl bg-paper text-ink">松</span>
+          <span class="text-[18px] md:text-[20px] font-bold tracking-[.04em] text-paper">株式会社松本研磨工業</span>
+        </a>
+        <p class="mt-5 text-[14px] leading-[1.9] text-paper/75">〒210-0851 神奈川県川崎市川崎区浜町3-9-22</p>
+        <div class="mt-6 flex flex-wrap gap-3"><a href="https://www.instagram.com/matsuken_studio/" target="_blank" rel="noopener" class="ft-sns"><svg class="w-5 h-5 stroke-current fill-none stroke-[1.5]" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>@matsuken_studio</span></a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="ft-sns"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.4 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg><span>LINEで相談</span></a></div>
+      </div>
+      <div class="lg:border-l lg:border-paper/15 lg:pl-16">
+        <h3 class="ft-head">お問い合わせ</h3>
+        <p class="text-[14px] leading-[1.9] text-paper/80 mb-5">マツケンスタジオへのご相談は、お問い合わせフォームかLINEで受け付けています。</p>
+        <a href="../../../web-ai/contact/" class="ft-btn">1分で問い合わせ</a>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-10 py-10 md:py-14 border-b border-paper/15">
+      <nav aria-label="金属研磨">
+        <h3 class="ft-head">金属研磨</h3>
+        <ul class="space-y-3">
+          <li><a href="../../../polishing/" class="ft-link">金属研磨技術の種類</a></li>
+          <li><a href="../../../polishing/buff-polishing/" class="ft-link">バフ研磨</a></li>
+          <li><a href="../../../polishing/belt-polishing/" class="ft-link">ベルト研磨</a></li>
+          <li><a href="../../../polishing/hairline-finish/" class="ft-link">ヘアライン仕上げ</a></li>
+          <li><a href="../../../polishing/flexible-polishing/" class="ft-link">フレキ研磨</a></li>
+          <li><a href="../../../#works" class="ft-link">加工実績</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="会社について">
+        <h3 class="ft-head">会社について</h3>
+        <ul class="space-y-3">
+          <li><a href="../../../company/" class="ft-link">会社情報</a></li>
+          <li><a href="../../../company/#access" class="ft-link">アクセス</a></li>
+          <li><a href="../../../#faq" class="ft-link">よくある質問</a></li>
+          <li><a href="../../../news/" class="ft-link">お知らせ</a></li>
+          <li><a href="../../../column/" class="ft-link">コラム</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Web集客・AI活用支援">
+        <h3 class="ft-head">Web集客・AI活用支援</h3>
+        <ul class="space-y-3">
+          <li><a href="../../../web-ai/" class="ft-link">サービス一覧</a></li>
+          <li><a href="../../../web-ai/seo-consulting/" class="ft-link">SEO・集客対策</a></li>
+          <li><a href="../../../web-ai/website/" class="ft-link">サイト制作・LP制作</a></li>
+          <li><a href="../../../web-ai/ai-katsuyo/" class="ft-link">AI活用支援</a></li>
+          <li><a href="../../../web-ai/case/" class="ft-link">実績・事例</a></li>
+          <li><a href="../../../web-ai/column/" class="ft-link">Web集客コラム</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-[13px] text-paper/60">
+      <a href="../../../privacy/" class="hover:text-paper hover:underline underline-offset-4">プライバシーポリシー</a>
+      <div>© 2026 株式会社松本研磨工業</div>
+    </div>
+  </div>
+</footer>
+<script>
+  const burger = document.getElementById('burgerBtn');
+  const mmenu  = document.getElementById('mobileMenu');
+  if (burger && mmenu) {
+    burger.addEventListener('click', () => mmenu.classList.toggle('translate-x-full'));
+    mmenu.querySelectorAll('[data-close]').forEach(a =>
+      a.addEventListener('click', () => mmenu.classList.add('translate-x-full'))
+    );
+  }
+  document.querySelectorAll('.mega-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const mega = btn.closest('.mega');
+      const isOpen = mega.classList.contains('open');
+      document.querySelectorAll('.mega.open').forEach(m => { m.classList.remove('open'); m.querySelector('.mega-btn').setAttribute('aria-expanded','false'); });
+      if (!isOpen) { mega.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+    });
+  });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.mega')) {
+      document.querySelectorAll('.mega.open').forEach(m => { m.classList.remove('open'); m.querySelector('.mega-btn').setAttribute('aria-expanded','false'); });
+    }
+  });
+</script>
+</body>
+</html>
