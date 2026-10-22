@@ -123,5 +123,10 @@
 - [ホームページのリニューアル費用の相場と内訳](https://matsumoto-kenma.co.jp/web-ai/column/renewal-cost/): ホームページのリニューアル費用は、何で決まり、どのくらいかかるのか。新しく作るときとの違い、リニューアルならではの作業と費用、費用を抑えるコツ、見積りで確かめたいことを、中小企業向けにまとめました。
 - [ホームページのリニューアルを考えたい6つのサイン](https://matsumoto-kenma.co.jp/web-ai/column/renewal-signs/): スマホで見づらい、「保護されていない通信」と出る、お知らせが何年も前のまま——。ホームページのリニューアルを考えたい6つのサインと、自分で確かめる方法、作り直すか一部を直すかの決め方を、制作する側の目線でまとめました。
 - [SEO対策は自分でできる？中小企業が今日から始めるやり方と注意点](https://matsumoto-kenma.co.jp/web-ai/column/seo-self/): SEO対策は、中小企業でも自分でできることがたくさんあります。SEOの基本、狙う言葉の決め方、ページとタイトルの整え方、Search Consoleの使い方、やってはいけないこと、効果の確かめ方、業者に頼む範囲を、Googleの公式の説明をもとにまとめました。
+- [静的サイトとは？動的サイトとの違い、メリット・デメリットと向いている会社](https://matsumoto-kenma.co.jp/web-ai/column/static-site/): 静的サイトとは何か、動的サイトやWordPressとの違いを表で整理。表示の速さや攻撃される入口の少なさ、更新のしにくさなどのメリット・デメリット、フォームや更新の方法、2026年10月のPHPの脆弱性との関係まで中小企業向けに解説します。
 - [Studioの不正アクセス・個人情報流出](https://matsumoto-kenma.co.jp/web-ai/column/studio-unauthorized-access/): ノーコードのWeb制作サービス「Studio」で起きた不正アクセスと情報流出の可能性について、2026年10月19日時点の公式発表をもとにまとめました。流出した可能性のある情報、自社が対象か確かめる方法、すべての利用者と機能ごとにやること、フォームで個人情報を集めていた会社の個人情報保護法上の対応を紹介します。
+- [WordPressの改ざんの対処法](https://matsumoto-kenma.co.jp/web-ai/column/wordpress-hacked/): 会社のWordPressサイトが改ざん・乗っ取りされたかもしれないときに、まずやること、改ざんのサイン、気づいてから再公開までの順番、主な原因、お問い合わせフォームの個人情報の考え方、取引先への伝え方、相談窓口を中小企業向けにまとめました。
+- [WordPressから乗り換えるには？乗り換え先の比べ方と移行の手順](https://matsumoto-kenma.co.jp/web-ai/column/wordpress-migration/): WordPressで作った会社のホームページの乗り換えを考えている方へ。不安の正体、乗り換える前の確認、静的サイト・ノーコード・ヘッドレスCMS・保守の強化の比べ方、移すもの、手順、301リダイレクト、費用と期間の考え方をまとめました。
 - [ホームページにWordPressは必要か](https://matsumoto-kenma.co.jp/web-ai/column/wordpress-necessary/): 会社のホームページに、WordPressは必要なのか。WordPressとは何か、使う良さと気をつけたいこと、向いている会社といらない会社の見分け方、WordPress以外の作り方を、制作する側の目線で中小企業向けにまとめました。
+- [WordPressのPHPバージョンとは？確認方法と安全な更新の手順・注意点](https://matsumoto-kenma.co.jp/web-ai/column/wordpress-php-version/): WordPressで会社のホームページを運営している方向けに、PHPのバージョンとは何か、新しく保つ理由とサポート期間、推奨バージョン、管理画面での確認方法、安全な更新の手順、表示が崩れたときの戻し方をまとめました。
+- [WordPressのセキュリティ対策](https://matsumoto-kenma.co.jp/web-ai/column/wordpress-security/): 会社のホームページをWordPressで運営している中小企業の担当者向けに、狙われやすい理由とよくある被害、自分でできる対策、サーバー側の対策、社内の決めごと、点検表、保守を頼むときに確かめることを、公式の情報をもとにまとめました。

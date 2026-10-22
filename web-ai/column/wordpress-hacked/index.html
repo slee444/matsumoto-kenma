@@ -1,0 +1,1050 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5F157JYQD2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-5F157JYQD2');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WordPressの改ざんの対処法｜ホームページが改ざんされたらやる順番｜マツケンスタジオ</title>
+<meta name="description" content="会社のWordPressサイトが改ざん・乗っ取りされたかもしれないときに、まずやること、改ざんのサイン、気づいてから再公開までの順番、主な原因、お問い合わせフォームの個人情報の考え方、取引先への伝え方、相談窓口を中小企業向けにまとめました。">
+<link rel="canonical" href="https://matsumoto-kenma.co.jp/web-ai/column/wordpress-hacked/">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<meta property="og:title" content="WordPressの改ざんの対処法｜ホームページが改ざんされたらやる順番｜マツケンスタジオ">
+<meta property="og:description" content="会社のWordPressサイトが改ざん・乗っ取りされたかもしれないときに、まずやること、改ざんのサイン、気づいてから再公開までの順番、主な原因、お問い合わせフォームの個人情報の考え方、取引先への伝え方、相談窓口を中小企業向けにまとめました。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://matsumoto-kenma.co.jp/web-ai/column/wordpress-hacked/">
+<meta property="og:site_name" content="マツケンスタジオ by 松本研磨工業">
+<meta property="og:image" content="https://matsumoto-kenma.co.jp/images/ogp-studio.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="マツケンスタジオ by 松本研磨工業｜Web集客・AI活用支援">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WordPressの改ざんの対処法｜ホームページが改ざんされたらやる順番｜マツケンスタジオ">
+<meta name="twitter:description" content="会社のWordPressサイトが改ざん・乗っ取りされたかもしれないときに、まずやること、改ざんのサイン、気づいてから再公開までの順番、主な原因、お問い合わせフォームの個人情報の考え方、取引先への伝え方、相談窓口を中小企業向けにまとめました。">
+<meta name="twitter:image" content="https://matsumoto-kenma.co.jp/images/ogp-studio.jpg">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/noto-sans-jp-500.woff2" crossorigin>
+<style>
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/noto-sans-jp-400.woff2) format('woff2');}
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/noto-sans-jp-500.woff2) format('woff2');}
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/noto-sans-jp-600.woff2) format('woff2');}
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/noto-sans-jp-700.woff2) format('woff2');}
+@font-face {font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/jetbrains-mono-400.woff2) format('woff2');}
+@font-face {font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/jetbrains-mono-500.woff2) format('woff2');}
+</style>
+<link rel="stylesheet" href="/css/tailwind.css">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#F4F2ED;color:#0E0E10;font-family:'Noto Sans JP',sans-serif;font-size:15px;line-height:1.7}
+  a{color:inherit;text-decoration:none}
+  .pwrap{max-width:960px;margin:0 auto;padding:0 20px}
+  @media(min-width:768px){.pwrap{padding:0 40px}}
+  .sec-label{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.14em;color:#4A4A47;margin-bottom:16px}
+  .sec-ttl{font-size:24px;font-weight:600;line-height:1.4;margin-bottom:20px}
+  @media(min-width:768px){.sec-ttl{font-size:28px}}
+
+  /* Hero */
+  .hero-wrap{position:relative;overflow:hidden}
+  .wm{position:absolute;right:-.4em;top:-.12em;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:min(38vw,340px);line-height:1;color:rgba(244,242,237,.045);pointer-events:none;user-select:none;white-space:nowrap;z-index:0}
+  .icon-badge{width:64px;height:64px;border-radius:9999px;border:1.5px solid rgba(244,242,237,.35);display:grid;place-items:center;font-size:26px;color:#F4F2ED;flex-shrink:0}
+
+  /* Cards with accent bar */
+  .card2{position:relative;border:1px solid rgba(14,14,16,.1);background:#fff;padding:30px 24px 26px;border-top:3px solid #1B3A6B}
+  .card2.alt{border-top-color:#2E5BA6}
+  .card2 .idx{font-family:'JetBrains Mono',monospace;font-size:11px;color:#8a8a86;letter-spacing:.15em;margin-bottom:14px}
+
+  /* Spec box */
+  .spec-box{background:#E9E6DE;border-radius:4px;padding:4px 28px}
+  .spec-box div{display:grid;grid-template-columns:140px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid rgba(14,14,16,.08)}
+  .spec-box div:last-child{border-bottom:none}
+  .spec-box dt{font-size:13px;color:#4A4A47}
+  .spec-box dd{font-size:14px}
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+  .tag-pill{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;border:1px solid rgba(14,14,16,.15);padding:6px 12px;border-radius:2px;color:#4A4A47}
+
+  /* Process */
+  .step2{position:relative;padding:6px 0 30px 32px;border-left:2px solid #D9D4C8}
+  .step2:last-child{border-left:2px solid transparent;padding-bottom:2px}
+  .step2::before{content:'';position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:#1B3A6B}
+  .step2.alt::before{background:#2E5BA6}
+  .step2 .pnum{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:#8a8a86;margin-bottom:4px}
+
+  /* FAQ (matches homepage Q/A style) */
+  .faq2{display:grid;grid-template-columns:36px 1fr;gap:16px;padding:22px 0;border-top:1px solid #D9D4C8}
+  .faq2:last-child{border-bottom:1px solid #D9D4C8}
+  .faq2 .qa{font-family:'Noto Sans JP',sans-serif;font-size:22px;font-weight:600;line-height:1}
+  .faq2 .q{color:#1B3A6B}
+  .faq2 .a{color:#8a8a86}
+
+  /* Note / caution list */
+  .note-list{border-left:2px solid #0E0E10}
+  .note-list li{list-style:none;padding:18px 0 18px 22px;border-bottom:1px solid #D9D4C8}
+  .note-list li:last-child{border-bottom:none}
+  .note-list .note-ttl{font-weight:600;font-size:14px;margin-bottom:6px}
+
+  .wrap{max-width:1360px;margin:0 auto;padding:0 20px}
+  @media(min-width:768px){.wrap{padding:0 40px}}
+  .menu-link.active::after{content:"";position:absolute;left:16px;right:16px;bottom:4px;height:1px;background:#1B3A6B}
+  .mega.open .mega-panel, .mega:hover .mega-panel{opacity:1;visibility:visible;--tw-translate-y:0}
+  .mega.open .mega-caret{transform:rotate(180deg)}
+  .mega:hover .mega-caret{transform:rotate(180deg)}
+  .drawer-acc summary::-webkit-details-marker{display:none}
+  .drawer-acc[open] .drawer-acc-icon{transform:rotate(180deg)}
+  .mega-panel .grid>div{min-width:0}
+  .mega-panel li a{word-break:break-word}
+  .bg-navy .text-muted-ink,.bg-navy-2 .text-muted-ink{color:rgba(244,242,237,0.72)!important}
+</style>
+<style>
+/* site-chrome: match homepage header/footer */
+@font-face {font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/inter-400.woff2) format('woff2');}
+@font-face {font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/inter-500.woff2) format('woff2');}
+@font-face {font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/inter-600.woff2) format('woff2');}
+nav.fixed,#mobileMenu,footer{font-family:Inter,"Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Yu Gothic",sans-serif;font-size:15px;line-height:1.75;letter-spacing:.03em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+nav.fixed :is(p,li,dd,span),#mobileMenu :is(p,li,dd,span),footer :is(p,li,dd,span){letter-spacing:.035em}
+nav.fixed .font-serif,#mobileMenu .font-serif,footer .font-serif{font-weight:500}
+nav.fixed .font-serif.font-medium,#mobileMenu .font-serif.font-medium,footer .font-serif.font-medium{font-weight:600}
+nav.fixed .font-serif.font-semibold,#mobileMenu .font-serif.font-semibold,footer .font-serif.font-semibold{font-weight:700}
+</style>
+<style>/* site-footer */
+.site-footer .ft-head{font-size:15px;font-weight:700;color:#F4F2ED;letter-spacing:.04em;padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid rgba(244,242,237,.2)}
+.site-footer .ft-link{font-size:15px;color:rgba(244,242,237,.82);line-height:1.6}
+.site-footer .ft-link:hover{color:#F4F2ED;text-decoration:underline;text-underline-offset:4px}
+.site-footer .ft-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:240px;padding:15px 24px;border-radius:4px;background:#F4F2ED;color:#0E0E10;font-size:15px;font-weight:700;transition:background .2s}
+.site-footer .ft-btn::after{content:"→"}
+.site-footer .ft-btn:hover{background:#fff}
+.site-footer .ft-sns{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid rgba(244,242,237,.3);border-radius:4px;font-size:13px;color:#F4F2ED}
+.site-footer .ft-sns:hover{background:rgba(244,242,237,.1)}
+.site-footer a:focus-visible{outline:2px solid #F4F2ED;outline-offset:3px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://matsumoto-kenma.co.jp/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Web集客・AI活用支援",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Web集客コラム",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/column/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "リニューアル",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/column/category/renewal/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "WordPressの改ざんの対処法｜ホームページが改ざんされたらやる順番",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/column/wordpress-hacked/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "WordPressの改ざんの対処法｜ホームページが改ざんされたらやる順番",
+  "description": "会社のWordPressサイトが改ざん・乗っ取りされたかもしれないときに、まずやること、改ざんのサイン、気づいてから再公開までの順番、主な原因、お問い合わせフォームの個人情報の考え方、取引先への伝え方、相談窓口を中小企業向けにまとめました。",
+  "url": "https://matsumoto-kenma.co.jp/web-ai/column/wordpress-hacked/",
+  "image": "https://matsumoto-kenma.co.jp/images/ogp-studio.jpg",
+  "datePublished": "2026-10-22",
+  "dateModified": "2026-10-22",
+  "articleSection": "リニューアル",
+  "inLanguage": "ja",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://matsumoto-kenma.co.jp/web-ai/#studio",
+    "name": "マツケンスタジオ",
+    "url": "https://matsumoto-kenma.co.jp/web-ai/column/author/"
+  },
+  "publisher": {
+    "@id": "https://matsumoto-kenma.co.jp/#organization"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://matsumoto-kenma.co.jp/web-ai/column/wordpress-hacked/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ホームページが改ざんされたかどうかは、どう確かめればいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "見覚えのない文章やリンクがある、別のサイトへ移される、検索結果に身に覚えのない言葉が並ぶ、ブラウザに危険なサイトの警告が出る、などがサインです。Search Consoleに登録していれば、「セキュリティの問題」レポートにGoogleが見つけた問題が表示されます。サーバー会社から連絡が来ることもあります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "改ざんされた部分を消せば、それで終わりですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "見えている部分を消しても、入口になった弱いところや、裏に仕込まれたファイルが残っていれば、また書きかえられます。記録を残したうえで、原因を調べ、きれいな状態に戻し、本体やプラグインを新しくしてから再公開する、という順番で進めましょう。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "サイトは止めたほうがいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "訪れた人が偽のサイトへ移されたり、悪いプログラムを受け取ったりするおそれがあるため、一時的に止めることをおすすめします。総務省の案内でも、復旧に時間がかかる場合は一時的に非公開にすることを検討するよう書かれています。メンテナンスの表示に、電話などの連絡先を書いておくと親切です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Search Consoleの再審査は、どのくらいで終わりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Googleのヘルプでは、ほとんどの再審査は数日から数週間かかるとされています。目安として、マルウェアは数日、スパムを含むハッキングは最長で数週間かかることがあると案内されています。申し込む前に、被害を取り除き、弱いところを直して、きれいなサイトを公開に戻しておく必要があります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "お問い合わせフォームの情報が少しだけでも、報告は必要ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "個人情報保護委員会が示す類型のうち、不正アクセスなど不正の目的によるおそれがある漏えい等には、人数の条件がありません。対象が少なくても、委員会への報告や本人への通知が必要になる場合があります。調査の結果によって判断が変わるので、弁護士などの専門家に早めに相談してください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "どこに相談すればいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "まずはサイトを作った制作会社と、サーバー会社に連絡します。公的な窓口としては、警察のサイバー犯罪相談窓口や、IPAの不正アクセスに関する届出の制度があります。個人情報が関わる場合は、個人情報保護委員会の案内を確かめ、専門家にも相談しましょう。"
+      }
+    }
+  ]
+}
+</script>
+<style>
+  /* Matsuken Studio: light theme */
+  html,body{background:#FFFFFF}
+  .pwrap{max-width:960px;margin:0 auto;padding:0 20px}
+  @media(min-width:768px){.pwrap{padding:0 40px}}
+  .pwrap.max-w-\[800px\]{max-width:880px}
+  .st-alt{background:#F4F6F9}
+  .st-cta{background:#FFF9D6}
+  .sec-label{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.14em;color:#1B3A6B;margin-bottom:16px}
+  .sec-ttl{font-size:24px;font-weight:700;line-height:1.45;margin-bottom:20px;color:#0E0E10}
+  @media(min-width:768px){.sec-ttl{font-size:30px}}
+  .st-logo{display:inline-flex;align-items:center;gap:12px}
+  .st-mark{width:40px;height:40px;border-radius:10px;background:#1B3A6B;color:#fff;display:grid;place-items:center;font-weight:700;font-size:22px;position:relative;flex-shrink:0}
+  .st-mark::after{content:'';position:absolute;right:-3px;top:-3px;width:12px;height:12px;border-radius:50%;background:#F5DE00;border:2px solid #fff}
+  .st-name{display:block;font-weight:800;font-size:20px;letter-spacing:.04em;color:#0E0E10;line-height:1.2}
+  .st-by{display:block;font-size:11px;letter-spacing:.14em;color:#5E5E65;margin-top:3px}
+  .st-hero{position:relative;overflow:hidden;background:#fff;border-bottom:1px solid #E6E9EE}
+  .st-hero::before{content:'';position:absolute;right:-120px;top:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,#FFF4B0 0%,rgba(255,244,176,0) 70%);pointer-events:none}
+  .st-hero::after{content:'';position:absolute;right:40px;bottom:40px;width:260px;height:180px;background-image:radial-gradient(#C9D2DF 1.2px,transparent 1.2px);background-size:14px 14px;opacity:.7;pointer-events:none}
+  .trust{display:grid;grid-template-columns:1fr;border-top:1px solid #E6E9EE}
+  @media(min-width:768px){.trust{grid-template-columns:repeat(3,1fr)}}
+  .trust>div{padding:20px 0}
+  @media(min-width:768px){.trust>div{padding:24px 28px}.trust>div+div{border-left:1px solid #E6E9EE}.trust>div:first-child{padding-left:0}}
+  .trust .t-big{font-size:17px;font-weight:700;color:#0E0E10;margin-bottom:4px}
+  .trust .t-sub{font-size:13px;color:#5E5E65;line-height:1.8}
+  .card2{position:relative;border:1px solid #E1E5EB;background:#fff;padding:30px 24px 26px;border-top:3px solid #1B3A6B;border-radius:6px}
+  .card2.alt{border-top-color:#2E5BA6}
+  .card2 .idx{font-family:'JetBrains Mono',monospace;font-size:11px;color:#8a8a86;letter-spacing:.15em;margin-bottom:14px}
+  .svc-list{background:#fff;border:1px solid #E1E5EB;border-radius:8px;padding:10px 28px}
+  .svc-list li{list-style:none;display:grid;grid-template-columns:22px 1fr;gap:10px;padding:14px 0;border-bottom:1px solid #EEF1F5;font-size:14px;line-height:1.8}
+  .svc-list li:last-child{border-bottom:none}
+  .svc-list li::before{content:'';width:10px;height:10px;margin-top:8px;border-radius:3px;background:#F5DE00;box-shadow:0 0 0 2px #1B3A6B inset}
+  .step2{position:relative;padding:6px 0 30px 32px;border-left:2px solid #DDE3EB}
+  .step2:last-child{border-left:2px solid transparent;padding-bottom:2px}
+  .step2::before{content:'';position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:#1B3A6B}
+  .step2.alt::before{background:#2E5BA6}
+  .step2 .pnum{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:#8a8a86;margin-bottom:4px}
+  .faq2{display:grid;grid-template-columns:36px 1fr;gap:16px;padding:22px 0;border-top:1px solid #E1E5EB}
+  .faq2:last-child{border-bottom:1px solid #E1E5EB}
+  .faq2 .qa{font-size:22px;font-weight:700;line-height:1;color:#1B3A6B}
+  .price-box{border:1px solid #E1E5EB;border-radius:8px;background:#fff;padding:32px 28px;display:grid;grid-template-columns:1fr;gap:18px}
+  @media(min-width:768px){.price-box{grid-template-columns:1fr auto;align-items:center;padding:36px 40px}}
+  .case-card{display:grid;grid-template-columns:1fr;border:1px solid #E1E5EB;border-radius:8px;overflow:hidden;background:#fff;transition:border-color .2s,box-shadow .2s}
+  .case-card:hover{border-color:#1B3A6B;box-shadow:0 10px 30px -14px rgba(27,58,107,.35)}
+  .case-card .c-img{background:linear-gradient(135deg,#EAF0F8,#FFF6C4);min-height:160px;display:grid;place-items:center;color:#1B3A6B;font-size:13px;font-weight:600;letter-spacing:.14em}
+  @media(min-width:768px){.case-card{grid-template-columns:280px 1fr}}
+  .rel-grid{display:grid;grid-template-columns:1fr;gap:28px}
+  @media(min-width:768px){.rel-grid{grid-template-columns:repeat(4,1fr)}}
+  .rel-grid a{display:block;padding:9px 0;border-bottom:1px solid #E1E5EB;font-size:14px;transition:color .15s}
+  .rel-grid a:hover{color:#2E5BA6}
+  .rel-grid a.current{color:#8a8a86;pointer-events:none}
+  .svc-card{display:block;background:#fff;border:1px solid #E1E5EB;border-radius:8px;padding:26px 24px;transition:border-color .2s,box-shadow .2s,transform .2s}
+  a.svc-card:hover{border-color:#1B3A6B;box-shadow:0 10px 30px -14px rgba(27,58,107,.35);transform:translateY(-2px)}
+  .st-illu{display:block;width:100%;height:auto;max-width:300px;margin:0 auto}
+  .st-icon{display:block;margin-bottom:12px}
+  .story p{font-size:15px;line-height:2.1;color:#26262B;margin-bottom:20px}
+  @media(min-width:768px){.story p{font-size:16px}}
+  .story-quote{font-size:clamp(20px,2.6vw,28px);font-weight:700;line-height:1.6;color:#0E0E10;padding-left:20px;border-left:4px solid #F5DE00}
+  .target-card{background:#fff;border:1px solid #E1E5EB;border-radius:8px;padding:24px}
+  .target-card .tg{display:inline-block;font-size:12px;font-weight:700;color:#1B3A6B;background:#FFF4B0;border-radius:999px;padding:4px 12px;margin-bottom:12px}
+</style>
+<style>
+  .col-cats{display:flex;flex-wrap:wrap;gap:8px}
+  .col-cats a{font-size:13px;font-weight:700;padding:7px 14px;border-radius:999px;background:#fff;border:1px solid #E1E5EB;color:#1B3A6B}
+  .col-cats a:hover,.col-cats a.on{background:#1B3A6B;color:#fff;border-color:#1B3A6B}
+  .col-grid{display:grid;grid-template-columns:1fr;gap:18px}
+  @media(min-width:768px){.col-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1024px){.col-grid.three{grid-template-columns:repeat(3,1fr)}}
+  .col-card{display:flex;flex-direction:column;background:#fff;border:1px solid #E1E5EB;border-radius:10px;padding:22px 22px 18px;transition:border-color .2s,box-shadow .2s}
+  .col-card:hover{border-color:#1B3A6B;box-shadow:0 10px 30px -16px rgba(27,58,107,.35)}
+  .chip{display:inline-block;font-size:12px;font-weight:700;color:#1B3A6B;background:#FFF4B0;border-radius:999px;padding:3px 10px}
+  .col-card h3{font-size:17px;font-weight:700;line-height:1.6;margin:12px 0 8px;color:#0E0E10}
+  .col-card p{font-size:13px;line-height:1.8;color:#5E5E65;flex:1}
+  .col-card time{font-size:12px;color:#8a8a86;margin-top:12px;font-family:'JetBrains Mono',monospace}
+  .art{max-width:760px;margin:0 auto}
+  .art-body h2{font-size:22px;font-weight:700;line-height:1.5;margin:48px 0 16px;padding-left:14px;border-left:5px solid #F5DE00;scroll-margin-top:90px}
+  @media(min-width:768px){.art-body h2{font-size:25px}}
+  .art-body h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:#1B3A6B}
+  .art-body p{font-size:16px;line-height:2;color:#26262B;margin-bottom:18px}
+  .art-body ul,.art-body ol{margin:0 0 20px 1.4em;font-size:16px;line-height:1.9;color:#26262B}
+  .art-body li{margin-bottom:6px}
+  .art-body ul,.points ul{list-style:disc}
+  .art-body ol,.toc ol{list-style:decimal}
+  .art-body li::marker,.points li::marker{color:#1B3A6B}
+  .art-body a{color:#1B3A6B;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+  .art-body .st-illu{margin:26px auto}
+  .art-table{width:100%;border-collapse:collapse;margin:8px 0 24px;font-size:14px;background:#fff;border:1px solid #E1E5EB}
+  .art-table th,.art-table td{padding:12px 14px;border-bottom:1px solid #EEF1F5;text-align:left;vertical-align:top;line-height:1.7}
+  .art-table th{background:#F4F6F9;font-weight:700;color:#1B3A6B}
+  .art-body p.ask{font-size:14px;line-height:1.8;background:#F4F6F9;border-left:4px solid #1B3A6B;border-radius:0 8px 8px 0;padding:10px 14px;color:#26262B}
+  .points{background:#FFF9D6;border-radius:10px;padding:20px 24px;margin:26px 0}
+  .points b{display:block;font-size:14px;margin-bottom:8px;color:#1B3A6B}
+  .points li{font-size:15px;line-height:1.8;margin-left:1.2em}
+  .toc{background:#F4F6F9;border-radius:10px;padding:20px 24px;margin:0 0 30px}
+  .toc b{display:block;font-size:14px;margin-bottom:8px}
+  .toc ol{margin-left:1.3em;font-size:14px;line-height:2}
+  .toc a{color:#1B3A6B}
+  .author{display:grid;grid-template-columns:56px 1fr;gap:16px;background:#fff;border:1px solid #E1E5EB;border-radius:12px;padding:22px}
+  .author .av{width:56px;height:56px;border-radius:14px;background:#1B3A6B;color:#fff;display:grid;place-items:center;font-weight:700;font-size:24px;position:relative}
+  .author .av::after{content:'';position:absolute;right:-3px;top:-3px;width:14px;height:14px;border-radius:50%;background:#F5DE00;border:2px solid #fff}
+  .author b{font-size:15px}.author p{font-size:13px;line-height:1.9;color:#4A4A50;margin-top:6px}
+  .art-body .cta-mid a{text-decoration:none}
+  .art-body .cta-mid a.bg-cta-yellow{color:#0E0E10}
+  .art-body .cta-mid a[href*="line.me"]{color:#fff}
+  .cta-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;border:1px solid #E1E5EB;border-radius:12px;padding:14px 18px;margin:-8px 0 26px;background:#fff}
+  .cta-top p{font-size:14px;font-weight:700;color:#0E0E10}
+  .cta-top .bt{display:flex;gap:8px;flex-wrap:wrap}
+  .cta-top a.btn-s{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;border-radius:999px;padding:9px 16px}
+  .cta-mid{margin:36px 0;border-radius:14px;background:#FFF9D6;padding:24px 24px 22px;position:relative;overflow:hidden}
+  .cta-mid::after{content:'';position:absolute;right:-50px;top:-50px;width:160px;height:160px;border-radius:50%;background:repeating-radial-gradient(circle,rgba(27,58,107,.08) 0 1px,transparent 1px 10px)}
+  .cta-mid .lb{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:#1B3A6B;border-radius:999px;padding:3px 10px;margin-bottom:10px}
+  .cta-mid b{display:block;font-size:18px;line-height:1.6;margin-bottom:6px;color:#0E0E10}
+  .cta-mid p{font-size:14px;line-height:1.8;color:#3A3A40;margin-bottom:16px;position:relative;z-index:1}
+  .cta-mid .bt{display:flex;flex-direction:column;gap:10px;position:relative;z-index:1}
+  @media(min-width:640px){.cta-mid .bt{flex-direction:row}}
+  .cta-end{border-radius:16px;background:#1B3A6B;color:#fff;padding:28px 26px}
+  .cta-end b{display:block;font-size:20px;line-height:1.6;margin-bottom:8px}
+  .cta-end p{font-size:14px;line-height:1.9;color:rgba(255,255,255,.85);margin-bottom:18px}
+  .cta-end .bt{display:flex;flex-direction:column;gap:10px}
+  @media(min-width:640px){.cta-end .bt{flex-direction:row;align-items:center}}
+  .cta-end .lp{font-size:14px;font-weight:700;color:#F5DE00;text-decoration:underline;text-underline-offset:3px}
+  .col-stick{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid #E1E5EB;transform:translateY(110%);transition:transform .25s}
+  .col-stick.show{transform:none}
+  .col-stick a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:999px;padding:12px 8px;font-size:14px;font-weight:700}
+  @media(min-width:768px){.col-stick{display:none}}
+  .soft-cta{background:#fff;border:1px solid #E1E5EB;border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:14px}
+  @media(min-width:768px){.soft-cta{flex-direction:row;align-items:center;justify-content:space-between}}
+  .soft-cta p{font-size:14px;line-height:1.8;color:#26262B}
+</style>
+<script type="application/ld+json" data-sd="managed">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://matsumoto-kenma.co.jp/#organization",
+      "name": "株式会社松本研磨工業",
+      "alternateName": [
+        "松本研磨工業",
+        "松本研磨"
+      ],
+      "url": "https://matsumoto-kenma.co.jp/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://matsumoto-kenma.co.jp/images/logo.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://matsumoto-kenma.co.jp/images/ogp.jpg",
+      "description": "神奈川県川崎市川崎区の金属研磨工場。1967年創業。ステンレス・アルミ・真鍮・鉄などのバフ研磨（鏡面仕上げ）、ベルト研磨、ヘアライン仕上げ、フレキ研磨を、試作の1個から小量産まで手作業で請け負っています。図面がなくても、現物や写真からお見積りできます。",
+      "telephone": "+81-44-333-8412",
+      "faxNumber": "+81-44-333-3843",
+      "address": {
+        "@type": "PostalAddress",
+        "postalCode": "210-0851",
+        "addressRegion": "神奈川県",
+        "addressLocality": "川崎市川崎区",
+        "streetAddress": "浜町3-9-22",
+        "addressCountry": "JP"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 35.5257,
+        "longitude": 139.7194
+      },
+      "hasMap": "https://maps.google.com/?q=神奈川県川崎市川崎区浜町3-9-22",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:30",
+          "closes": "18:00"
+        }
+      ],
+      "foundingDate": "1967",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "日本"
+        },
+        {
+          "@type": "City",
+          "name": "川崎市"
+        },
+        {
+          "@type": "City",
+          "name": "横浜市"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "東京都"
+        }
+      ],
+      "knowsAbout": [
+        "金属研磨",
+        "バフ研磨",
+        "鏡面仕上げ",
+        "ベルト研磨",
+        "ヘアライン仕上げ",
+        "フレキ研磨",
+        "ステンレス研磨",
+        "アルミ研磨",
+        "真鍮研磨",
+        "曲面研磨"
+      ],
+      "sameAs": [
+        "https://www.instagram.com/matsu_polish/",
+        "https://www.youtube.com/channel/UCIGiSzo9TyINLuygAsuP5ew/"
+      ],
+      "department": {
+        "@id": "https://matsumoto-kenma.co.jp/web-ai/#studio"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://matsumoto-kenma.co.jp/#website",
+      "url": "https://matsumoto-kenma.co.jp/",
+      "name": "株式会社松本研磨工業",
+      "inLanguage": "ja",
+      "publisher": {
+        "@id": "https://matsumoto-kenma.co.jp/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://matsumoto-kenma.co.jp/web-ai/#studio",
+      "name": "マツケンスタジオ",
+      "alternateName": "マツケンスタジオ by 松本研磨工業",
+      "url": "https://matsumoto-kenma.co.jp/web-ai/",
+      "image": "https://matsumoto-kenma.co.jp/images/ogp-studio.jpg",
+      "description": "株式会社松本研磨工業が運営する、町工場発のWeb事業。製造業・建設業・工務店・運送業など、現場と技術のある中小企業のホームページ制作・リニューアル、検索対策、Web広告、AI活用をお手伝いします。",
+      "parentOrganization": {
+        "@id": "https://matsumoto-kenma.co.jp/#organization"
+      },
+      "sameAs": [
+        "https://www.instagram.com/matsuken_studio/",
+        "https://page.line.me/115rhdee"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "日本"
+      },
+      "knowsAbout": [
+        "ホームページ制作",
+        "ホームページリニューアル",
+        "Web集客",
+        "SEO",
+        "LLMO",
+        "サイト制作",
+        "LP制作",
+        "Web広告",
+        "CVR改善",
+        "BtoBマーケティング",
+        "AI活用"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://matsumoto-kenma.co.jp/web-ai/column/wordpress-hacked/#webpage",
+      "url": "https://matsumoto-kenma.co.jp/web-ai/column/wordpress-hacked/",
+      "name": "WordPressの改ざんの対処法｜ホームページが改ざんされたらやる順番｜マツケンスタジオ",
+      "description": "会社のWordPressサイトが改ざん・乗っ取りされたかもしれないときに、まずやること、改ざんのサイン、気づいてから再公開までの順番、主な原因、お問い合わせフォームの個人情報の考え方、取引先への伝え方、相談窓口を中小企業向けにまとめました。",
+      "inLanguage": "ja",
+      "isPartOf": {
+        "@id": "https://matsumoto-kenma.co.jp/#website"
+      },
+      "about": {
+        "@id": "https://matsumoto-kenma.co.jp/web-ai/#studio"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://matsumoto-kenma.co.jp/images/ogp-studio.jpg"
+      },
+      "dateModified": "2026-09-27"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav class="fixed top-0 left-0 right-0 z-50 bg-paper/80 backdrop-blur-[14px] border-b border-ink/[0.08]">
+  <div class="wrap flex items-center justify-between h-[60px] md:h-[72px]">
+
+    <!-- Brand -->
+    <a href="../../../#home" class="flex items-center gap-3 md:gap-[14px]">
+      <span class="w-9 h-9 md:w-10 md:h-10 border-[1.5px] border-ink rounded-full grid place-items-center font-serif font-semibold text-lg md:text-xl bg-ink text-paper">松</span>
+      <span class="leading-[1.1]">
+        <div class="font-serif text-[13px] md:text-[15px] font-medium tracking-[.04em]">株式会社松本研磨工業</div>
+        <div class="hidden sm:block font-mono text-[10px] text-muted tracking-[.22em] mt-[2px]">創業58年・川崎</div>
+      </span>
+    </a>
+
+    <!-- Desktop menu — hidden below md -->
+    <div class="hidden md:flex gap-[2px] items-center">
+      <a href="../../../#home" class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">ホーム</a>
+
+      <!-- 金属研磨技術 メガメニュー -->
+      <div class="mega relative">
+        <button class="mega-btn flex items-center gap-1 px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors" aria-expanded="false">
+          金属研磨技術
+          <svg class="w-3 h-3 stroke-current fill-none stroke-[2] mega-caret transition-transform" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="mega-panel absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[320px] bg-navy text-paper rounded-sm shadow-[0_24px_48px_-12px_rgba(0,0,0,.35)] p-2 opacity-0 invisible translate-y-1 transition-all duration-150">
+          <div class="pb-2 mb-1 border-b border-paper/10">
+            <a href="../../../polishing/" class="block px-4 py-2.5 rounded-sm text-[13px] font-semibold hover:bg-paper/10 hover:text-paper hover:underline underline-offset-4 transition-colors">金属研磨技術 一覧 →</a>
+          </div>
+          <a href="../../../polishing/buff-polishing/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">バフ研磨</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">鏡面仕上げ</div>
+          </a>
+          <a href="../../../polishing/belt-polishing/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">ベルト研磨</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">バリ取り・形状補正</div>
+          </a>
+          <a href="../../../polishing/hairline-finish/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">ヘアライン加工</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">一方向のライン仕上げ</div>
+          </a>
+          <a href="../../../polishing/flexible-polishing/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">フレキ研磨／曲面研磨</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">複雑形状への手作業</div>
+          </a>
+        </div>
+      </div>
+
+      <a href="../../../#works" class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">加工実績</a>
+
+      <!-- Web集客・AI活用支援 メガメニュー -->
+      <div class="mega relative">
+        <button class="mega-btn flex items-center gap-1 px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors" aria-expanded="false">
+          Web集客・AI活用支援
+          <svg class="w-3 h-3 stroke-current fill-none stroke-[2] mega-caret transition-transform" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="mega-panel fixed left-1/2 -translate-x-1/2 top-[72px] mt-2 w-[860px] max-w-[92vw] bg-navy text-paper rounded-sm shadow-[0_24px_48px_-12px_rgba(0,0,0,.35)] p-7 opacity-0 invisible translate-y-1 transition-all duration-150">
+          <div class="mb-6 pb-5 border-b border-paper/10 flex items-center justify-between">
+            <a href="../../../web-ai/" class="font-serif text-[13px] font-semibold hover:text-paper hover:underline underline-offset-4 transition-colors">Web集客・AI活用支援 トップ →</a>
+            <a href="../../../web-ai/case/" class="font-serif text-[13px] font-semibold hover:text-paper hover:underline underline-offset-4 transition-colors">実績・事例 →</a>
+          </div>
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">戦略・コンサルティング</div>
+              <ul class="space-y-2">
+                <li><a href="../../../web-ai/consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">デジタルマーケティングコンサルティング</a></li>
+                <li><a href="../../../web-ai/btob-marketing/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">BtoBマーケティング支援</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">集客・改善</div>
+              <ul class="space-y-2">
+                <li><a href="../../../web-ai/seo-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">SEOコンサルティング</a></li>
+                <li><a href="../../../web-ai/ad-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">Web広告コンサルティング</a></li>
+                <li><a href="../../../web-ai/cro-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">CVR改善／CROコンサルティング</a></li>
+                <li><a href="../../../web-ai/llmo-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">LLMOコンサルティング</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">制作</div>
+              <ul class="space-y-2">
+                <li><a href="../../../web-ai/website/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">サイト制作</a></li>
+                <li><a href="../../../web-ai/lp/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">LP制作</a></li>
+                <li><a href="../../../web-ai/seo-writing/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">SEO/LLMO記事制作代行</a></li>
+                <li><a href="../../../web-ai/case-interview/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">事例インタビュー記事制作</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">AI活用支援</div>
+              <ul class="space-y-2">
+                <li><a href="../../../web-ai/ai-katsuyo/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">AI活用支援（業務効率化・自動化）</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- コラム メガメニュー -->
+      <div class="mega relative">
+        <button class="mega-btn flex items-center gap-1 px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors" aria-expanded="false">
+          コラム
+          <svg class="w-3 h-3 stroke-current fill-none stroke-[2] mega-caret transition-transform" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="mega-panel absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[320px] bg-navy text-paper rounded-sm shadow-[0_24px_48px_-12px_rgba(0,0,0,.35)] p-2 opacity-0 invisible translate-y-1 transition-all duration-150">
+          <a href="../../../column/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">研磨・金属加工コラム</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">工法・材料別の技術記事</div>
+          </a>
+          <a href="../../../web-ai/column/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">Web集客・AI活用支援コラム</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">製造業のためのWeb集客・AI活用</div>
+          </a>
+        </div>
+      </div>
+
+      <a href="../../../company/" class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">会社情報</a>
+    </div>
+
+    <!-- CTA -->
+    <div class="flex gap-2 md:gap-[10px] items-center">
+      <a href="../../../web-ai/contact/" class="inline-flex items-center gap-[10px] px-3 py-2 md:px-[18px] md:py-[11px] rounded-sm text-[11px] md:text-[13px] font-semibold tracking-[.06em] bg-ink text-paper hover:bg-accent transition-all">お問い合わせ →</a>
+      <!-- Burger — shown below md -->
+      <button class="flex md:hidden w-10 h-10 border border-ink rounded-sm items-center justify-center bg-paper" id="burgerBtn" aria-label="menu">
+        <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="fixed inset-0 z-[55] bg-navy text-paper pt-[80px] pb-8 px-6 flex flex-col gap-1 translate-x-full transition-transform duration-[350ms] ease-in-out" id="mobileMenu">
+  <button data-close class="absolute top-5 right-5 w-10 h-10 flex items-center justify-center text-paper/80 hover:text-paper" aria-label="close menu">
+    <svg class="w-6 h-6 stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+
+  <!-- LANY風：上部にCTAピル2つ -->
+  <div class="flex gap-2 mb-5">
+    <a href="../../../web-ai/contact/" data-close class="flex-1 flex items-center justify-center gap-2 py-3 rounded-full bg-accent text-paper text-[13px] font-semibold tracking-[.04em]">お問い合わせ →</a>
+  </div>
+
+  <div class="overflow-y-auto flex-1 -mr-6 pr-6">
+  <a href="../../../#home" data-close class="font-serif text-[17px] font-medium py-3 border-b border-paper/[.08] flex items-center justify-between">ホーム</a>
+
+  <details class="drawer-acc border-b border-paper/[.08]">
+    <summary class="font-serif text-[17px] font-medium py-3 flex items-center justify-between cursor-pointer list-none">
+      金属研磨技術
+      <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6] drawer-acc-icon transition-transform shrink-0" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="pb-4 flex flex-col gap-1">
+      <a href="../../../polishing/" data-close class="text-[13px] py-1.5 mb-1 pb-2.5 border-b border-paper/[.08] font-semibold text-paper">金属研磨技術 一覧 →</a>
+      <a href="../../../polishing/buff-polishing/" data-close class="text-[13px] py-1.5 opacity-85">バフ研磨</a>
+      <a href="../../../polishing/belt-polishing/" data-close class="text-[13px] py-1.5 opacity-85">ベルト研磨</a>
+      <a href="../../../polishing/hairline-finish/" data-close class="text-[13px] py-1.5 opacity-85">ヘアライン加工</a>
+      <a href="../../../polishing/flexible-polishing/" data-close class="text-[13px] py-1.5 opacity-85">フレキ研磨／曲面研磨</a>
+    </div>
+  </details>
+
+  <a href="../../../#works" data-close class="font-serif text-[17px] font-medium py-3 border-b border-paper/[.08] flex items-center justify-between">加工実績</a>
+
+  <details class="drawer-acc border-b border-paper/[.08]">
+    <summary class="font-serif text-[17px] font-medium py-3 flex items-center justify-between cursor-pointer list-none">
+      Web集客・AI活用支援
+      <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6] drawer-acc-icon transition-transform shrink-0" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="pb-4 flex flex-col gap-1">
+      <div class="flex items-center justify-between mb-1 pb-2.5 border-b border-paper/[.08]">
+        <a href="../../../web-ai/" data-close class="text-[13px] font-semibold text-paper">Web集客・AI活用支援 トップ →</a>
+        <a href="../../../web-ai/case/" data-close class="text-[13px] font-semibold text-paper">実績・事例 →</a>
+      </div>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-2 mb-1">戦略・コンサルティング</div>
+      <a href="../../../web-ai/consulting/" data-close class="text-[13px] py-1.5 opacity-85">デジタルマーケティングコンサルティング</a>
+      <a href="../../../web-ai/btob-marketing/" data-close class="text-[13px] py-1.5 opacity-85">BtoBマーケティング支援</a>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-3 mb-1">集客・改善</div>
+      <a href="../../../web-ai/seo-consulting/" data-close class="text-[13px] py-1.5 opacity-85">SEOコンサルティング</a>
+      <a href="../../../web-ai/ad-consulting/" data-close class="text-[13px] py-1.5 opacity-85">Web広告コンサルティング</a>
+      <a href="../../../web-ai/cro-consulting/" data-close class="text-[13px] py-1.5 opacity-85">CVR改善／CROコンサルティング</a>
+      <a href="../../../web-ai/llmo-consulting/" data-close class="text-[13px] py-1.5 opacity-85">LLMOコンサルティング</a>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-3 mb-1">制作</div>
+      <a href="../../../web-ai/website/" data-close class="text-[13px] py-1.5 opacity-85">サイト制作</a>
+      <a href="../../../web-ai/lp/" data-close class="text-[13px] py-1.5 opacity-85">LP制作</a>
+      <a href="../../../web-ai/seo-writing/" data-close class="text-[13px] py-1.5 opacity-85">SEO/LLMO記事制作代行</a>
+      <a href="../../../web-ai/case-interview/" data-close class="text-[13px] py-1.5 opacity-85">事例インタビュー記事制作</a>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-3 mb-1">AI活用支援</div>
+      <a href="../../../web-ai/ai-katsuyo/" data-close class="text-[13px] py-1.5 opacity-85">AI活用支援（業務効率化・自動化）</a>
+    </div>
+  </details>
+
+  <details class="drawer-acc border-b border-paper/[.08]">
+    <summary class="font-serif text-[17px] font-medium py-3 flex items-center justify-between cursor-pointer list-none">
+      コラム
+      <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6] drawer-acc-icon transition-transform shrink-0" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="pb-4 flex flex-col gap-1">
+      <a href="../../../column/" data-close class="text-[13px] py-2 opacity-85">研磨・金属加工コラム</a>
+      <a href="../../../web-ai/column/" data-close class="text-[13px] py-2 opacity-85">Web集客・AI活用支援コラム</a>
+    </div>
+  </details>
+
+  <a href="../../../company/" data-close class="font-serif text-[17px] font-medium py-3 border-b border-paper/[.08] flex items-center justify-between">会社情報</a>
+  </div>
+
+  <div class="pt-5 text-[11px] text-muted-ink/80 text-center">マツケンスタジオへのご相談は、お問い合わせフォームで受け付けています</div>
+</div>
+
+
+<main class="pt-[60px]">
+  <section class="pt-8 pb-10 md:pt-12 md:pb-14">
+    <div class="pwrap">
+      <article class="art">
+      <p class="font-mono text-[11px] tracking-[.2em] text-muted mb-5"><a href="../../../" class="hover:text-accent transition-colors">ホーム</a><span class="mx-2 opacity-40">/</span><a href="../../" class="hover:text-accent transition-colors">Web集客・AI活用支援</a><span class="mx-2 opacity-40">/</span><a href="../" class="hover:text-accent transition-colors">コラム</a><span class="mx-2 opacity-40">/</span><a href="../category/renewal/" class="hover:text-accent transition-colors">リニューアル</a></p>
+        <a href="../category/renewal/" class="chip">リニューアル</a>
+        <h1 class="font-bold leading-[1.45] mt-3 mb-4 text-ink" style="font-size:clamp(24px,3.6vw,34px)">WordPressの改ざんの対処法｜ホームページが改ざんされたらやる順番</h1>
+        <p class="text-[13px] text-muted mb-6">公開日 <time datetime="2026-10-22">2026.10.22</time>　|　マツケンスタジオ 責任者</p>
+        <div class="points"><b>この記事で分かること</b><ul><li>改ざんに気づいたら、まずやることと、やってはいけないこと</li><li>気づいてから復旧、Search Consoleの再審査までの順番</li><li>フォームで個人情報を扱っていた場合の考え方と、相談窓口</li></ul></div>
+        <div class="cta-top"><p>ホームページのご相談は無料です</p><div class="bt"><a href="../../contact/" class="btn-s bg-cta-yellow text-ink hover:bg-cta-yellow-h">1分で問い合わせ →</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="btn-s bg-[#06C755] text-white hover:bg-[#05B34C]">LINEで相談</a></div></div>
+        <nav class="toc" aria-label="目次"><b>目次</b><ol><li><a href="#first">まずやること（慌てているときは、ここだけ読んでください）</a></li><li><a href="#signs">改ざんのサイン</a></li><li><a href="#dont">やってはいけないこと</a></li><li><a href="#steps">気づいてから再公開までの順番</a></li><li><a href="#causes">主な原因</a></li><li><a href="#personal-info">フォームで個人情報を扱っていた場合</a></li><li><a href="#tell">取引先やお客様への伝え方</a></li><li><a href="#consult">相談できる公的な窓口</a></li><li><a href="#prevent">再発を防ぐには</a></li><li><a href="#summary">まとめ</a></li><li><a href="#faq">よくある質問</a></li></ol></nav>
+        <div class="art-body">
+<p>「会社のホームページに、見覚えのない文章が出ている」「検索結果に、うちと関係のない言葉が並んでいる」「サーバー会社から、不正なファイルが見つかったと連絡が来た」。こうしたときは、ホームページが第三者に書きかえられている（改ざんされている）おそれがあります。WordPressで作られたサイトは数が多いぶん狙われやすく、中小企業のサイトも例外ではありません。</p>
+<p>この記事では、ホームページを作り、管理する側の目線で、改ざんに気づいたときにやることを順番に整理します。慌てている方が上から読んで動けるように、最初に「まずやること」をまとめました。内容は、Googleの公式ヘルプ、WordPressの公式ドキュメント、総務省、IPA（情報処理推進機構）、警察庁、個人情報保護委員会の公式ページをもとにしています。出典は記事の最後にまとめています。</p>
+<svg viewBox="0 0 560 174" role="img" aria-label="WordPressの改ざんの対処法の要点の図" class="st-illu" style="max-width:560px" fill="none" stroke="#1B3A6B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="18" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="32" y="28" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M36 38l4 4 8-9"/><text x="62" y="44" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">慌てて消さない</text><rect x="290" y="18" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="302" y="28" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M306 38l4 4 8-9"/><text x="332" y="44" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">画面と時刻を記録</text><rect x="20" y="70" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="32" y="80" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M36 90l4 4 8-9"/><text x="62" y="96" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">サイトを一時停止</text><rect x="290" y="70" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="302" y="80" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M306 90l4 4 8-9"/><text x="332" y="96" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">制作・サーバー会社へ</text><rect x="20" y="122" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="32" y="132" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M36 142l4 4 8-9"/><text x="62" y="148" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">パスワードを変更</text><rect x="290" y="122" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="302" y="132" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M306 142l4 4 8-9"/><text x="332" y="148" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">復旧して再審査</text></svg>
+
+<h2 id="first">まずやること（慌てているときは、ここだけ読んでください）</h2>
+<ol>
+<li><b>慌てて消さない</b>：おかしなページやファイルを、その場で消したり、作り直したりしない。原因を調べる手がかりが消えてしまいます。</li>
+<li><b>記録を残す</b>：おかしな画面のスクリーンショット、アドレス、気づいた日時、最近やった作業をメモする。</li>
+<li><b>サイトを一時的に止める</b>：訪れた人に被害が広がらないよう、メンテナンス表示にするか、非公開にする（自分でできなければ、次の連絡先に頼む）。</li>
+<li><b>制作会社・サーバー会社に連絡する</b>：見たことと記録を伝え、調査と復旧の相談をする。</li>
+<li><b>パスワードを変える</b>：WordPressの管理画面、サーバーの管理画面、FTP（ファイルを送る仕組み）、データベースのパスワードを、使い回していない新しいものにする。</li>
+<li><b>フォームで個人情報を集めていたか確かめる</b>：お問い合わせや採用の応募の情報が関わる場合は、個人情報保護委員会への報告や本人への通知が必要になることがあるので、早めに専門家に相談する。</li>
+</ol>
+<p>ここから先は、それぞれの理由と、くわしいやり方です。</p>
+
+<h2 id="signs">改ざんのサイン</h2>
+<p>改ざんは、見た目ですぐ分かるものばかりではありません。むしろ、会社の人が気づかないように、ひっそりと仕込まれることが多くあります。次のようなことがあれば、改ざんを疑ってください。</p>
+<table class="art-table">
+<tr><th>サイン</th><th>どんな状態か</th></tr>
+<tr><td>見覚えのない文章やリンク</td><td>ページの中や一番下に、自社と関係のない商品や外国語の文章、リンクが増えている</td></tr>
+<tr><td>別のサイトへ移ってしまう</td><td>自社のサイトを開くと、勝手に別のサイト（通販、懸賞、偽の警告画面など）へ飛ばされる。スマートフォンだけ、検索から来たときだけ起きることもある</td></tr>
+<tr><td>検索結果に見慣れない言葉</td><td>Googleで自社のサイトを検索すると、身に覚えのないページの題名や、ブランド品・薬などの言葉が並ぶ</td></tr>
+<tr><td>Search Consoleの警告</td><td>Googleの無料ツール「Search Console」の「セキュリティの問題」に、ハッキングやマルウェア（悪いプログラム）の知らせが出ている</td></tr>
+<tr><td>ブラウザの警告</td><td>サイトを開くと、「危険なサイト」といった赤い警告画面が表示される</td></tr>
+<tr><td>サーバー会社からの連絡</td><td>不正なファイルが見つかった、迷惑メールの送信に使われている、サイトを止めた、といった連絡が来る</td></tr>
+<tr><td>管理画面の異変</td><td>知らない管理者のアカウントが増えている、ログインできなくなった、入れたおぼえのないプラグイン（追加機能）がある</td></tr>
+</table>
+<p>WordPressの公式ドキュメントでも、改ざんのはっきりしたサインとして、Googleなどに危険なサイトとして登録される、サーバー会社にサイトを止められる、閲覧した人のウイルス対策ソフトが警告を出す、新しいユーザーが勝手に作られる、などが挙げられています。</p>
+<h3>Search Consoleで分かること</h3>
+<p>Search Consoleの「セキュリティの問題」レポートは、Googleがサイトのハッキングや、訪れた人に害を与えるおそれのあるふるまいを見つけたときに、その内容を知らせるものです。表示される問題には、「ハッキング：コンテンツ インジェクション」（ページに勝手な文章やリンクが入れられた）、「ハッキング：URL インジェクション」（勝手なページが作られた）、「ハッキング：マルウェア」などがあります。問題があると、検索結果に警告が付いたり、ブラウザで警告の画面が表示されたりすることがあると、Googleのヘルプで説明されています。</p>
+<p>Search Consoleにサイトを登録していない場合は、改ざんが落ち着いてからでもかまわないので、登録しておきましょう。後で紹介する「再審査」も、Search Consoleから申し込みます。</p>
+<h3>知らせを受けやすいように</h3>
+<p>制作会社にサイトを作ってもらった場合、Search Consoleやサーバー会社の連絡先が、制作会社のメールアドレスになっていることがあります。すると、警告が自社に届かず、気づくのが遅れます。誰のメールアドレスに知らせが届くのかは、ふだんから確かめておきたいところです。考え方は<a href="../domain-server/">ドメインとサーバーとは？ホームページを持つ前に知っておきたい基本</a>でも紹介しています。</p>
+
+<h2 id="dont">やってはいけないこと</h2>
+<p>改ざんに気づくと、一刻も早く元に戻したくなります。その気持ちは当然ですが、次のことは避けてください。</p>
+<ul>
+<li><b>おかしな部分だけを消して、終わりにする</b>：見えている文章を消しても、入口になった弱いところや、裏に仕込まれたファイルが残っていれば、また書きかえられます。</li>
+<li><b>記録を取らずに、すべてを作り直す</b>：何が起きたかが分からなくなり、原因の調査や、取引先への説明、個人情報の判断ができなくなります。</li>
+<li><b>「様子を見る」と放っておく</b>：その間も、訪れたお客様が偽のサイトへ移されたり、悪いプログラムを受け取ったりするおそれがあります。</li>
+<li><b>社内だけで抱えこむ</b>：制作会社やサーバー会社のほうが、記録や調べる手段を持っています。早めに知らせましょう。</li>
+</ul>
+
+<h2 id="steps">気づいてから再公開までの順番</h2>
+<p>ここからは、改ざんに気づいてから、元どおりに公開するまでの流れです。WordPressの公式ドキュメント「My site was hacked」や、Googleの案内に沿って、会社として進める順番に並べました。実際の作業の多くは制作会社やサーバー会社に頼むことになりますが、流れを知っておくと、話が早く進みます。</p>
+<h3>1. 落ち着いて、記録を残す</h3>
+<p>WordPressの公式ドキュメントは、まず落ち着くこと、そして最初にやるべきこととして「記録」を挙げています。次のことをメモしておきましょう。</p>
+<ul>
+<li>何を見て、改ざんだと思ったのか（画面のスクリーンショットとアドレス）</li>
+<li>いつ気づいたのか（日付と時刻）</li>
+<li>最近、サイトに何をしたか（プラグインを入れた、デザインを変えた、担当者が変わった、など）</li>
+<li>どのサーバー会社を使い、どのプランか、誰が管理画面に入れるのか</li>
+</ul>
+<p>このメモは、制作会社やサーバー会社に相談するときにも、取引先に説明するときにも、個人情報の判断をするときにも使います。</p>
+<h3>2. サイトを一時的に止める</h3>
+<p>訪れた人に被害が広がらないよう、サイトを一時的に止めます。総務省の「国民のためのサイバーセキュリティサイト」でも、復旧に時間がかかる場合は、一時的にホームページを非公開にすることを検討するよう案内されています。</p>
+<p>止め方は、「ただいまメンテナンス中です」と表示する、サーバーの設定で公開を止める、などがあります。お客様や取引先が電話やメールで連絡できるよう、メンテナンスの表示に連絡先を書いておくと親切です。自分で止め方が分からない場合は、無理をせず、次の連絡先に頼みましょう。</p>
+<h3>3. 制作会社・サーバー会社に連絡する</h3>
+<p>WordPressの公式ドキュメントでは、サーバー会社に確かめることもすすめられています。同じサーバーを何社かで分けて使う「共用サーバー」の場合、被害が自社のサイトだけでないこともあり、サーバー会社が対応を進めていることもあるためです。また、本当に改ざんなのか、サーバーの不具合なのかを見分けてもらえることもあります。</p>
+<p>制作会社に保守を頼んでいる場合は、まず制作会社に連絡します。保守の契約がない場合や、制作会社と連絡がつかない場合は、サーバー会社に連絡し、別の会社に調査と復旧を頼むことも考えます。乗り換えの進め方は<a href="../change-web-company/">ホームページの制作会社を乗り換える手順</a>で紹介しています。</p>
+<h3>4. パスワードを変える</h3>
+<p>入口をふさぐため、関係するパスワードをすべて変えます。WordPressの公式ドキュメントでは、WordPressの管理画面だけでなく、FTP・SFTP、サーバーの管理画面、データベース（MySQL）など、すべての入口を変えるよう案内されています。自分のアカウントだけでなく、管理画面に入れるすべての人が対象です。</p>
+<ul>
+<li>長く、複雑で、ほかで使っていないパスワードにする</li>
+<li>知らない管理者のアカウントがあれば、記録したうえで制作会社と相談して削除する</li>
+<li>2段階の認証（パスワードに加えて、スマートフォンなどでもう一度確かめる仕組み）が使えるなら、有効にする</li>
+</ul>
+<p>あわせて、管理画面に使っている社内のパソコンも、ウイルス対策ソフトで調べておきます。WordPressの公式ドキュメントでも、パソコンに入りこんだ悪いプログラムでパスワードを盗まれ、それが改ざんの入口になることがあると説明されています。</p>
+<h3>5. 原因を調べる</h3>
+<p>どこから入られたのかを調べます。原因が分からないまま元に戻すと、同じ入口からまた改ざんされます。サーバーに残っている記録（アクセスの記録）、更新されたファイルの日時、古いまま残っている本体やプラグインなどを手がかりにします。専門の知識がいる作業なので、制作会社やサーバー会社、セキュリティの専門会社に任せる部分です。主な原因は、次の章で紹介します。</p>
+<h3>6. きれいな状態に戻す</h3>
+<p>改ざんされる前の、きれいな状態に戻します。改ざんされる前に取った「バックアップ（控え）」があれば、それを使うのが近道です。ただし、バックアップの時点で、すでに悪いファイルが仕込まれていた、ということもあります。いつ改ざんされたのかを調べたうえで、どの時点の控えを使うかを決めます。</p>
+<p>WordPressの公式ドキュメントでは、元に戻す作業に入る前に、改ざんされた状態のままでも、もう一度サイトの控えを取っておくことがすすめられています。後で調べ直すときの手がかりになるからです。</p>
+<h3>7. 本体・プラグイン・テーマを新しくする</h3>
+<p>きれいになったら、WordPressの本体、プラグイン、テーマ（デザインの部品）を新しい版にします。WordPressの公式ドキュメントでも、古い版ほど狙われやすいと説明されています。使っていないプラグインやテーマは、入口になるだけなので消します。サーバーで使っている「PHP」というプログラムの版が古い場合は、それも新しくします。進め方は<a href="../wordpress-php-version/">WordPressのPHPバージョンとは？確認方法と安全な更新の手順・注意点</a>で紹介しています。</p>
+<h3>8. もう一度パスワードを変えて、再公開する</h3>
+<p>WordPressの公式ドキュメントは、<b>サイトがきれいになったことを確かめた後に、もう一度パスワードを変える</b>よう案内しています。改ざんに気づいたときに変えたパスワードが、まだ残っていた悪いプログラムに盗まれているかもしれないためです。そのうえで、メンテナンスの表示を外して、サイトを元どおりに公開します。</p>
+<h3>9. Search Consoleで再審査を申し込む</h3>
+<p>Search Consoleの「セキュリティの問題」に知らせが出ていた場合は、修正が終わったら「審査をリクエスト」から、Googleに見直しを申し込みます（再審査リクエスト）。Googleの案内では、申し込む前に、次のことを済ませておくよう説明されています。</p>
+<ul>
+<li>Search Consoleで、サイトの持ち主であることを確かめている</li>
+<li>ハッキングによる被害を取り除いた</li>
+<li>入口になった弱いところ（脆弱性）を直した</li>
+<li>きれいになったサイトを、公開に戻した</li>
+</ul>
+<p>申し込むときは、何をしたのかを具体的に書きます。Googleのヘルプでは、ほとんどの再審査は数日から数週間かかり、進み具合はメールで知らされるとしています。種類ごとの目安として、マルウェアは数日、スパム（勝手な文章やページ）を含むハッキングは最長で数週間かかることがある、と案内されています。結果が出るまでの間も、サイトに問題が残っていないかを見守りましょう。</p>
+<p>勝手に作られたページが検索結果に残っている場合は、そのページを消したうえで、時間をかけて検索結果から外れていくのを待ちます。</p>
+
+<h2 id="causes">主な原因</h2>
+<p>総務省の「国民のためのサイバーセキュリティサイト」は、ホームページの改ざんというと、高度な知識や技術を持った攻撃者によるものと思うかもしれないが、実際は、簡単な管理者のパスワードや、知られている脆弱性が残っていたなど、<b>基本的な対策を怠ったことが原因であることがほとんど</b>だと説明しています。WordPressのサイトで多いのは、次のような原因です。</p>
+<table class="art-table">
+<tr><th>原因</th><th>どういうことか</th></tr>
+<tr><td>古いWordPress本体・プラグイン・テーマ</td><td>弱いところが見つかって修正版が出ているのに、更新していない。弱いところは公開されるため、古いままのサイトが狙われる</td></tr>
+<tr><td>弱いパスワード</td><td>短い、推測しやすい、ほかのサービスと同じパスワードを使っている。何度もログインを試されて破られる</td></tr>
+<tr><td>古いPHP</td><td>サーバーで使っているPHPの版が古く、安全のための修正が受けられない状態になっている</td></tr>
+<tr><td>使っていないプラグインやテーマ</td><td>止めたつもりで残っているものが、入口になる</td></tr>
+<tr><td>管理するパソコンの感染</td><td>社内のパソコンからパスワードを盗まれる</td></tr>
+</table>
+<p>PHPに重大な弱いところが見つかった例は、<a href="../php-vulnerability/">PHPの脆弱性（PHP2Shell）とは？自社サイトの確かめ方と対応</a>で紹介しています。作ったまま何年も更新していないサイトは、改ざんに気づいていなくても、一度点検しておくと安心です。</p>
+
+<div class="cta-mid"><span class="lb">無料相談</span><b>今のサイト、作り直したほうがいい？</b><p>今のホームページを見て、直したほうがいいところを無料でお伝えします。ドメインもメールもそのままで作り直せます。</p><div class="bt"><a href="../../contact/" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] shadow-[0_10px_24px_-10px_rgba(200,170,0,.7)] rounded-full font-bold tracking-[.04em] bg-cta-yellow text-ink hover:bg-cta-yellow-h hover:-translate-y-0.5 transition-all">1分で問い合わせ →</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] rounded-full font-bold tracking-[.04em] bg-[#06C755] text-white hover:bg-[#05B34C] hover:-translate-y-0.5 transition-all"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.4 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>LINEで相談する</a></div></div><h2 id="personal-info">フォームで個人情報を扱っていた場合</h2>
+<p>お問い合わせ、資料請求、見学の予約、採用の応募などのフォームで、お客様や応募者の名前や連絡先を集めていた場合は、自社の情報だけの問題ではなくなります。改ざんで入られたときに、フォームの送信内容や、サーバーに保存していた情報を見られたおそれがあるためです。</p>
+<h3>報告と本人への通知が必要になることがある</h3>
+<p>個人情報保護委員会は、個人データの漏えいなどが起きた、または起きたおそれがある場合に、委員会への報告と本人への通知が必要になる事態として、4つの類型を示しています。その一つが、不正アクセスなど<b>「不正の目的をもって行われたおそれ」がある行為による漏えい等</b>です。</p>
+<p>大切なのは、この類型には、「本人の数が千人を超える」といった<b>人数の条件がない</b>ことです。対象が数人でも、不正アクセスによる漏えいのおそれがあれば、報告や通知が必要になる場合があります。</p>
+<p>報告は、知ってから速やかに出す「速報」（目安は3〜5日以内）と、くわしい内容をまとめた「確報」に分かれ、不正の目的による漏えい等の場合、確報は知った日から60日以内とされています。</p>
+<h3>まず確かめること</h3>
+<ul>
+<li>フォームの送信内容が、サーバーやWordPressの中に保存されていたか（メールで受け取るだけか、データベースにもためていたか）</li>
+<li>いつから、何件、どんな項目（名前、会社名、電話番号、メールアドレス、自由記述など）を集めていたか</li>
+<li>調査で、情報を見られた形跡やおそれがあると分かったか</li>
+</ul>
+<p>報告や通知が必要かどうかは、調査の結果や集めていた情報によって変わり、最終的には自社で判断することになります。迷う場合は、弁護士などの専門家に早めに相談し、個人情報保護委員会の公式の案内も確かめてください。考え方は、ホームページ作成サービスで起きた不正アクセスを例にした<a href="../studio-unauthorized-access/">Studioの不正アクセス・個人情報流出｜利用企業が今すぐやること</a>でもくわしく紹介しています。</p>
+
+<h2 id="tell">取引先やお客様への伝え方</h2>
+<p>サイトを止めたり、偽のサイトへ移される被害が出ていたりすると、取引先やお客様から問い合わせが来ることがあります。また、改ざんされたサイトから、自社を名乗る不審なメールや偽の画面が出ていた場合は、こちらから知らせたほうが被害を防げます。</p>
+<h3>伝える内容</h3>
+<ul>
+<li>何が起きたのか（いつ、どのページで、どんなことが起きたか）</li>
+<li>訪れた人に、どんな影響のおそれがあるか（偽のサイトへ移された、悪いプログラムを受け取ったおそれがある、など）</li>
+<li>自社としてとった対応（サイトを止めた、調査を頼んだ、パスワードを変えた、など）</li>
+<li>まだ分かっていないことと、分かったら知らせること</li>
+<li>問い合わせの窓口</li>
+</ul>
+<h3>伝え方のコツ</h3>
+<p>分かっていることと、まだ調べていることを分けて伝えるのが基本です。分からないことを推測で「大丈夫です」と言ってしまうと、後で説明が変わったときに信用を失います。また、問い合わせを受ける人を決め、答える内容を社内でそろえておきましょう。</p>
+<p>個人情報が関わる場合の本人への通知は、上の章で紹介したとおり、専門家に相談しながら進めます。ホームページでお知らせを出すことと、本人に通知することは別のものとして考えます。</p>
+
+<h2 id="consult">相談できる公的な窓口</h2>
+<p>制作会社やサーバー会社のほかに、公的な相談先もあります。</p>
+<table class="art-table">
+<tr><th>窓口</th><th>どんなところか</th></tr>
+<tr><td>警察（都道府県警察のサイバー犯罪相談窓口）</td><td>警察庁は、サイバー事案の通報や相談を受け付ける全国共通のオンライン窓口を設けている。被害届を出す場合は、最寄りの警察署などに連絡する。急ぎでない相談は警察相談専用電話「#9110」も使える</td></tr>
+<tr><td>IPA「コンピュータウイルス・不正アクセスに関する届出」</td><td>不正アクセスの被害を、企業や組織も届け出られる。被害の広がりや再発を防ぐために使われる</td></tr>
+<tr><td>IPA「情報セキュリティ安心相談窓口」</td><td>ウイルスや不正アクセスなど、一般的な情報セキュリティの技術的な相談に応じる。主に一般の個人向けで、企業・組織向けには別の案内がある</td></tr>
+<tr><td>個人情報保護委員会</td><td>個人データの漏えい等の報告を受け付ける。報告の方法や様式は公式ページで案内されている</td></tr>
+</table>
+<p>窓口の電話番号や受付時間は変わることがあるので、相談するときは、記事の最後の公式ページで確かめてください。</p>
+
+<h2 id="prevent">再発を防ぐには</h2>
+<p>復旧できたら、同じことを繰り返さないための備えをします。総務省の案内でも、改ざんされた原因を調べ、再発防止の策を考えて実施することが求められています。中小企業でも続けやすいのは、次のようなことです。</p>
+<ul>
+<li>WordPressの本体、プラグイン、テーマを、こまめに更新する</li>
+<li>使っていないプラグインやテーマ、昔のアカウントを消す</li>
+<li>パスワードを長く、使い回さないものにし、2段階の認証を使う</li>
+<li>改ざんされる前の状態に戻せるよう、定期的にバックアップを取る</li>
+<li>Search Consoleに登録し、知らせが自社に届くようにしておく</li>
+<li>誰が更新・管理を担当するのかを決めておく</li>
+</ul>
+<p>くわしいやり方は<a href="../wordpress-security/">WordPressのセキュリティ対策</a>で紹介しています。社内で更新を続けるのが難しい場合は、保守を外に頼むか、更新の手間が少ない作り方に移ることも選べます。WordPressからほかの作り方に移る場合の進め方は、<a href="../wordpress-migration/">WordPressから乗り換えるには？乗り換え先の比べ方と移行の手順</a>で紹介しています。</p>
+<p>マツケンスタジオでは、最初の相談から公開後まで同じ担当が受け持ち、公開後の更新や改善も続けられます。社内で更新するのが難しい場合は、月額のサポートで代わりに更新することもできます。ドメインとサーバーは、お客様の名義のままで進めます。</p>
+
+<h2 id="summary">まとめ</h2>
+<p>WordPressのサイトが改ざんされたかもしれないときは、慌てて消さずに記録を残し、サイトを一時的に止めて、制作会社やサーバー会社に連絡します。パスワードをすべて変え、原因を調べ、きれいな状態に戻して本体・プラグイン・テーマを新しくし、もう一度パスワードを変えてから再公開します。Search Consoleに警告が出ていた場合は、最後に再審査を申し込みます。お問い合わせフォームなどで個人情報を扱っていた場合は、不正アクセスでは人数の条件がないことを踏まえ、早めに専門家に相談してください。</p>
+<p>出典（いずれも公式ページ。2026年10月22日に確認）</p>
+<ul>
+<li><a href="https://support.google.com/webmasters/answer/9044101?hl=ja" target="_blank" rel="noopener">セキュリティの問題レポート（Search Console ヘルプ）</a></li>
+<li><a href="https://web.dev/articles/request-a-review?hl=ja" target="_blank" rel="noopener">再審査をリクエストする（web.dev）</a></li>
+<li><a href="https://wordpress.org/documentation/article/faq-my-site-was-hacked/" target="_blank" rel="noopener">FAQ My site was hacked（WordPress.org）</a></li>
+<li><a href="https://www.soumu.go.jp/main_sosiki/cybersecurity/kokumin/case/business/02/" target="_blank" rel="noopener">ホームページが書き換えられた（総務省 国民のためのサイバーセキュリティサイト）</a></li>
+<li><a href="https://www.npa.go.jp/bureau/cyber/soudan.html" target="_blank" rel="noopener">サイバー事案に関する相談窓口（警察庁）</a></li>
+<li><a href="https://www.ipa.go.jp/security/todokede/crack-virus/about.html" target="_blank" rel="noopener">コンピュータウイルス・不正アクセスに関する届出について（IPA）</a></li>
+<li><a href="https://www.ipa.go.jp/security/anshin/" target="_blank" rel="noopener">情報セキュリティ安心相談窓口（IPA）</a></li>
+<li><a href="https://www.ppc.go.jp/personalinfo/legal/leakAction/" target="_blank" rel="noopener">漏えい等の対応とお役立ち資料（個人情報保護委員会）</a></li>
+</ul>
+</div>
+        <h2 id="faq" class="font-bold text-[22px] mt-12 mb-4" style="scroll-margin-top:90px">よくある質問</h2>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">ホームページが改ざんされたかどうかは、どう確かめればいいですか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">見覚えのない文章やリンクがある、別のサイトへ移される、検索結果に身に覚えのない言葉が並ぶ、ブラウザに危険なサイトの警告が出る、などがサインです。Search Consoleに登録していれば、「セキュリティの問題」レポートにGoogleが見つけた問題が表示されます。サーバー会社から連絡が来ることもあります。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">改ざんされた部分を消せば、それで終わりですか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">見えている部分を消しても、入口になった弱いところや、裏に仕込まれたファイルが残っていれば、また書きかえられます。記録を残したうえで、原因を調べ、きれいな状態に戻し、本体やプラグインを新しくしてから再公開する、という順番で進めましょう。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">サイトは止めたほうがいいですか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">訪れた人が偽のサイトへ移されたり、悪いプログラムを受け取ったりするおそれがあるため、一時的に止めることをおすすめします。総務省の案内でも、復旧に時間がかかる場合は一時的に非公開にすることを検討するよう書かれています。メンテナンスの表示に、電話などの連絡先を書いておくと親切です。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">Search Consoleの再審査は、どのくらいで終わりますか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">Googleのヘルプでは、ほとんどの再審査は数日から数週間かかるとされています。目安として、マルウェアは数日、スパムを含むハッキングは最長で数週間かかることがあると案内されています。申し込む前に、被害を取り除き、弱いところを直して、きれいなサイトを公開に戻しておく必要があります。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">お問い合わせフォームの情報が少しだけでも、報告は必要ですか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">個人情報保護委員会が示す類型のうち、不正アクセスなど不正の目的によるおそれがある漏えい等には、人数の条件がありません。対象が少なくても、委員会への報告や本人への通知が必要になる場合があります。調査の結果によって判断が変わるので、弁護士などの専門家に早めに相談してください。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">どこに相談すればいいですか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">まずはサイトを作った制作会社と、サーバー会社に連絡します。公的な窓口としては、警察のサイバー犯罪相談窓口や、IPAの不正アクセスに関する届出の制度があります。個人情報が関わる場合は、個人情報保護委員会の案内を確かめ、専門家にも相談しましょう。</p>
+        </div>
+      </div>
+        <div class="mt-10"><div class="author"><div class="av">松</div><div><b>マツケンスタジオ 責任者</b><p>デジタルマーケティングの仕事を10年以上。上場企業での勤務や、1,000万人以上が使うサービスのマーケティングを経験し、マーケターとして企業のオウンドメディアを50万PVまで育て、数百社の集客を支援してきました。家業である松本研磨工業のホームページを作り直し、リニューアルから1か月で有効なお問い合わせを3倍にしています。</p><a href="../author/" class="text-[13px] font-bold text-accent-ink hover:underline">プロフィールを見る →</a></div></div></div>
+        <div class="mt-8"><div class="cta-end"><b>ホームページのこと、まずは気軽にご相談ください。</b><p>「何から始めればいいか分からない」という段階でも大丈夫です。町工場発のマツケンスタジオが、ドメインの取得から公開後の更新まで、まるごとお手伝いします。いまは毎月3社まで、特別な価格で制作する「事例づくりモニター」も受け付けています。</p><div class="bt"><a href="../../contact/" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] shadow-[0_10px_24px_-10px_rgba(200,170,0,.7)] rounded-full font-bold tracking-[.04em] bg-cta-yellow text-ink hover:bg-cta-yellow-h hover:-translate-y-0.5 transition-all">1分で問い合わせ →</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] rounded-full font-bold tracking-[.04em] bg-[#06C755] text-white hover:bg-[#05B34C] hover:-translate-y-0.5 transition-all"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.4 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>LINEで相談する</a><a href="../../monitor/" class="lp">事例づくりモニターを見る →</a></div></div></div>
+      </article>
+    </div>
+  </section>
+  <section class="py-14 md:py-20 st-alt">
+    <div class="pwrap">
+      <h2 class="sec-ttl">あわせて読みたい記事</h2>
+      <div class="col-grid three"><a href="../renewal-signs/" class="col-card"><span><span class="chip">リニューアル</span></span><h3>ホームページのリニューアルを考えたい6つのサイン</h3><p>スマホで見づらい、「保護されていない通信」と出る、お知らせが何年も前のまま——。ホームページのリニューアルを考えたい6つのサインと、自分で確…</p><time datetime="2026-09-27">2026.09.27</time></a><a href="../renewal-cost/" class="col-card"><span><span class="chip">リニューアル</span></span><h3>ホームページのリニューアル費用の相場と内訳｜新しく作るときとの違い</h3><p>ホームページのリニューアル費用は、何で決まり、どのくらいかかるのか。新しく作るときとの違い、リニューアルならではの作業と費用、費用を抑えるコ…</p><time datetime="2026-10-03">2026.10.03</time></a><a href="../change-web-company/" class="col-card"><span><span class="chip">リニューアル</span></span><h3>ホームページの制作会社を乗り換える手順｜管理会社を変更するときの注意点</h3><p>ホームページの制作会社・管理会社を変えたいとき、何から始めればいいのか。乗り換えを考えるきっかけ、先に確かめる3つのこと、6つの手順、引き継…</p><time datetime="2026-10-10">2026.10.10</time></a></div>
+    </div>
+  </section>
+
+  <section class="py-14 md:py-20">
+    <div class="pwrap">
+      <h2 class="sec-ttl">カテゴリから探す</h2>
+      <nav class="col-cats" aria-label="カテゴリ"><a href="../" class="on">すべて</a><a href="../category/homepage/" class="">ホームページ制作</a><a href="../category/renewal/" class="">リニューアル</a><a href="../category/cost/" class="">費用・発注</a><a href="../category/ai/" class="">AI検索対策</a><a href="../category/seo/" class="">SEO・集客</a><a href="../category/recruit/" class="">採用</a><a href="../category/industry/" class="">業種別</a><a href="../category/case/" class="">事例</a></nav>
+    </div>
+  </section>
+
+<div class="col-stick" id="colStick"><a href="../../contact/" class="bg-cta-yellow text-ink">1分で問い合わせ</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="bg-[#06C755] text-white">LINEで相談</a></div><script>(function(){var s=document.getElementById("colStick");if(!s)return;function u(){s.classList.toggle("show",window.scrollY>500&&(window.innerHeight+window.scrollY)<document.body.scrollHeight-700)}window.addEventListener("scroll",u,{passive:true});u()})();</script>
+</main>
+<footer class="site-footer bg-navy text-paper pt-14 md:pt-20 pb-8">
+  <div class="wrap">
+    <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-16 pb-10 md:pb-14 border-b border-paper/15">
+      <div>
+        <a href="../../../" class="inline-flex items-center gap-3">
+          <span class="w-11 h-11 rounded-full grid place-items-center font-semibold text-xl bg-paper text-ink">松</span>
+          <span class="text-[18px] md:text-[20px] font-bold tracking-[.04em] text-paper">株式会社松本研磨工業</span>
+        </a>
+        <p class="mt-5 text-[14px] leading-[1.9] text-paper/75">〒210-0851 神奈川県川崎市川崎区浜町3-9-22</p>
+        <div class="mt-6 flex flex-wrap gap-3"><a href="https://www.instagram.com/matsuken_studio/" target="_blank" rel="noopener" class="ft-sns"><svg class="w-5 h-5 stroke-current fill-none stroke-[1.5]" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>@matsuken_studio</span></a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="ft-sns"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.4 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg><span>LINEで相談</span></a></div>
+      </div>
+      <div class="lg:border-l lg:border-paper/15 lg:pl-16">
+        <h3 class="ft-head">お問い合わせ</h3>
+        <p class="text-[14px] leading-[1.9] text-paper/80 mb-5">マツケンスタジオへのご相談は、お問い合わせフォームかLINEで受け付けています。</p>
+        <a href="../../../web-ai/contact/" class="ft-btn">1分で問い合わせ</a>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-10 py-10 md:py-14 border-b border-paper/15">
+      <nav aria-label="金属研磨">
+        <h3 class="ft-head">金属研磨</h3>
+        <ul class="space-y-3">
+          <li><a href="../../../polishing/" class="ft-link">金属研磨技術の種類</a></li>
+          <li><a href="../../../polishing/buff-polishing/" class="ft-link">バフ研磨</a></li>
+          <li><a href="../../../polishing/belt-polishing/" class="ft-link">ベルト研磨</a></li>
+          <li><a href="../../../polishing/hairline-finish/" class="ft-link">ヘアライン仕上げ</a></li>
+          <li><a href="../../../polishing/flexible-polishing/" class="ft-link">フレキ研磨</a></li>
+          <li><a href="../../../#works" class="ft-link">加工実績</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="会社について">
+        <h3 class="ft-head">会社について</h3>
+        <ul class="space-y-3">
+          <li><a href="../../../company/" class="ft-link">会社情報</a></li>
+          <li><a href="../../../company/#access" class="ft-link">アクセス</a></li>
+          <li><a href="../../../#faq" class="ft-link">よくある質問</a></li>
+          <li><a href="../../../news/" class="ft-link">お知らせ</a></li>
+          <li><a href="../../../column/" class="ft-link">コラム</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Web集客・AI活用支援">
+        <h3 class="ft-head">Web集客・AI活用支援</h3>
+        <ul class="space-y-3">
+          <li><a href="../../../web-ai/" class="ft-link">サービス一覧</a></li>
+          <li><a href="../../../web-ai/seo-consulting/" class="ft-link">SEO・集客対策</a></li>
+          <li><a href="../../../web-ai/website/" class="ft-link">サイト制作・LP制作</a></li>
+          <li><a href="../../../web-ai/ai-katsuyo/" class="ft-link">AI活用支援</a></li>
+          <li><a href="../../../web-ai/case/" class="ft-link">実績・事例</a></li>
+          <li><a href="../../../web-ai/column/" class="ft-link">Web集客コラム</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-[13px] text-paper/60">
+      <a href="../../../privacy/" class="hover:text-paper hover:underline underline-offset-4">プライバシーポリシー</a>
+      <div>© 2026 株式会社松本研磨工業</div>
+    </div>
+  </div>
+</footer>
+<script>
+  const burger = document.getElementById('burgerBtn');
+  const mmenu  = document.getElementById('mobileMenu');
+  if (burger && mmenu) {
+    burger.addEventListener('click', () => mmenu.classList.toggle('translate-x-full'));
+    mmenu.querySelectorAll('[data-close]').forEach(a =>
+      a.addEventListener('click', () => mmenu.classList.add('translate-x-full'))
+    );
+  }
+  document.querySelectorAll('.mega-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const mega = btn.closest('.mega');
+      const isOpen = mega.classList.contains('open');
+      document.querySelectorAll('.mega.open').forEach(m => { m.classList.remove('open'); m.querySelector('.mega-btn').setAttribute('aria-expanded','false'); });
+      if (!isOpen) { mega.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+    });
+  });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.mega')) {
+      document.querySelectorAll('.mega.open').forEach(m => { m.classList.remove('open'); m.querySelector('.mega-btn').setAttribute('aria-expanded','false'); });
+    }
+  });
+</script>
+</body>
+</html>
