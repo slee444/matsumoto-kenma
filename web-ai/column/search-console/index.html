@@ -1,0 +1,1171 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5F157JYQD2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-5F157JYQD2');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>サーチコンソールの使い方｜登録から月1回の点検まで、会社サイト担当者向けに解説｜マツケンスタジオ</title>
+<meta name="description" content="サーチコンソールの使い方を、会社サイトの担当者向けにまとめました。登録と所有権の確認、サイトマップの送信、検索パフォーマンスの見方、インデックス登録、権限の付け方、月に一度の点検表まで、Googleの公式ヘルプをもとに解説します。">
+<link rel="canonical" href="https://matsumoto-kenma.co.jp/web-ai/column/search-console/">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<meta property="og:title" content="サーチコンソールの使い方｜登録から月1回の点検まで、会社サイト担当者向けに解説｜マツケンスタジオ">
+<meta property="og:description" content="サーチコンソールの使い方を、会社サイトの担当者向けにまとめました。登録と所有権の確認、サイトマップの送信、検索パフォーマンスの見方、インデックス登録、権限の付け方、月に一度の点検表まで、Googleの公式ヘルプをもとに解説します。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://matsumoto-kenma.co.jp/web-ai/column/search-console/">
+<meta property="og:site_name" content="マツケンスタジオ by 松本研磨工業">
+<meta property="og:image" content="https://matsumoto-kenma.co.jp/images/ogp-studio.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="マツケンスタジオ by 松本研磨工業｜Web集客・AI活用支援">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="サーチコンソールの使い方｜登録から月1回の点検まで、会社サイト担当者向けに解説｜マツケンスタジオ">
+<meta name="twitter:description" content="サーチコンソールの使い方を、会社サイトの担当者向けにまとめました。登録と所有権の確認、サイトマップの送信、検索パフォーマンスの見方、インデックス登録、権限の付け方、月に一度の点検表まで、Googleの公式ヘルプをもとに解説します。">
+<meta name="twitter:image" content="https://matsumoto-kenma.co.jp/images/ogp-studio.jpg">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/noto-sans-jp-500.woff2" crossorigin>
+<style>
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/noto-sans-jp-400.woff2) format('woff2');}
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/noto-sans-jp-500.woff2) format('woff2');}
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/noto-sans-jp-600.woff2) format('woff2');}
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/noto-sans-jp-700.woff2) format('woff2');}
+@font-face {font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/jetbrains-mono-400.woff2) format('woff2');}
+@font-face {font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/jetbrains-mono-500.woff2) format('woff2');}
+</style>
+<link rel="stylesheet" href="/css/tailwind.css">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#F4F2ED;color:#0E0E10;font-family:'Noto Sans JP',sans-serif;font-size:15px;line-height:1.7}
+  a{color:inherit;text-decoration:none}
+  .pwrap{max-width:960px;margin:0 auto;padding:0 20px}
+  @media(min-width:768px){.pwrap{padding:0 40px}}
+  .sec-label{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.14em;color:#4A4A47;margin-bottom:16px}
+  .sec-ttl{font-size:24px;font-weight:600;line-height:1.4;margin-bottom:20px}
+  @media(min-width:768px){.sec-ttl{font-size:28px}}
+
+  /* Hero */
+  .hero-wrap{position:relative;overflow:hidden}
+  .wm{position:absolute;right:-.4em;top:-.12em;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:min(38vw,340px);line-height:1;color:rgba(244,242,237,.045);pointer-events:none;user-select:none;white-space:nowrap;z-index:0}
+  .icon-badge{width:64px;height:64px;border-radius:9999px;border:1.5px solid rgba(244,242,237,.35);display:grid;place-items:center;font-size:26px;color:#F4F2ED;flex-shrink:0}
+
+  /* Cards with accent bar */
+  .card2{position:relative;border:1px solid rgba(14,14,16,.1);background:#fff;padding:30px 24px 26px;border-top:3px solid #1B3A6B}
+  .card2.alt{border-top-color:#2E5BA6}
+  .card2 .idx{font-family:'JetBrains Mono',monospace;font-size:11px;color:#8a8a86;letter-spacing:.15em;margin-bottom:14px}
+
+  /* Spec box */
+  .spec-box{background:#E9E6DE;border-radius:4px;padding:4px 28px}
+  .spec-box div{display:grid;grid-template-columns:140px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid rgba(14,14,16,.08)}
+  .spec-box div:last-child{border-bottom:none}
+  .spec-box dt{font-size:13px;color:#4A4A47}
+  .spec-box dd{font-size:14px}
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+  .tag-pill{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;border:1px solid rgba(14,14,16,.15);padding:6px 12px;border-radius:2px;color:#4A4A47}
+
+  /* Process */
+  .step2{position:relative;padding:6px 0 30px 32px;border-left:2px solid #D9D4C8}
+  .step2:last-child{border-left:2px solid transparent;padding-bottom:2px}
+  .step2::before{content:'';position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:#1B3A6B}
+  .step2.alt::before{background:#2E5BA6}
+  .step2 .pnum{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:#8a8a86;margin-bottom:4px}
+
+  /* FAQ (matches homepage Q/A style) */
+  .faq2{display:grid;grid-template-columns:36px 1fr;gap:16px;padding:22px 0;border-top:1px solid #D9D4C8}
+  .faq2:last-child{border-bottom:1px solid #D9D4C8}
+  .faq2 .qa{font-family:'Noto Sans JP',sans-serif;font-size:22px;font-weight:600;line-height:1}
+  .faq2 .q{color:#1B3A6B}
+  .faq2 .a{color:#8a8a86}
+
+  /* Note / caution list */
+  .note-list{border-left:2px solid #0E0E10}
+  .note-list li{list-style:none;padding:18px 0 18px 22px;border-bottom:1px solid #D9D4C8}
+  .note-list li:last-child{border-bottom:none}
+  .note-list .note-ttl{font-weight:600;font-size:14px;margin-bottom:6px}
+
+  .wrap{max-width:1360px;margin:0 auto;padding:0 20px}
+  @media(min-width:768px){.wrap{padding:0 40px}}
+  .menu-link.active::after{content:"";position:absolute;left:16px;right:16px;bottom:4px;height:1px;background:#1B3A6B}
+  .mega.open .mega-panel, .mega:hover .mega-panel{opacity:1;visibility:visible;--tw-translate-y:0}
+  .mega.open .mega-caret{transform:rotate(180deg)}
+  .mega:hover .mega-caret{transform:rotate(180deg)}
+  .drawer-acc summary::-webkit-details-marker{display:none}
+  .drawer-acc[open] .drawer-acc-icon{transform:rotate(180deg)}
+  .mega-panel .grid>div{min-width:0}
+  .mega-panel li a{word-break:break-word}
+  .bg-navy .text-muted-ink,.bg-navy-2 .text-muted-ink{color:rgba(244,242,237,0.72)!important}
+</style>
+<style>
+/* site-chrome: match homepage header/footer */
+@font-face {font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/inter-400.woff2) format('woff2');}
+@font-face {font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/inter-500.woff2) format('woff2');}
+@font-face {font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/inter-600.woff2) format('woff2');}
+nav.fixed,#mobileMenu,footer{font-family:Inter,"Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Yu Gothic",sans-serif;font-size:15px;line-height:1.75;letter-spacing:.03em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+nav.fixed :is(p,li,dd,span),#mobileMenu :is(p,li,dd,span),footer :is(p,li,dd,span){letter-spacing:.035em}
+nav.fixed .font-serif,#mobileMenu .font-serif,footer .font-serif{font-weight:500}
+nav.fixed .font-serif.font-medium,#mobileMenu .font-serif.font-medium,footer .font-serif.font-medium{font-weight:600}
+nav.fixed .font-serif.font-semibold,#mobileMenu .font-serif.font-semibold,footer .font-serif.font-semibold{font-weight:700}
+</style>
+<style>/* site-footer */
+.site-footer .ft-head{font-size:15px;font-weight:700;color:#F4F2ED;letter-spacing:.04em;padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid rgba(244,242,237,.2)}
+.site-footer .ft-link{font-size:15px;color:rgba(244,242,237,.82);line-height:1.6}
+.site-footer .ft-link:hover{color:#F4F2ED;text-decoration:underline;text-underline-offset:4px}
+.site-footer .ft-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:240px;padding:15px 24px;border-radius:4px;background:#F4F2ED;color:#0E0E10;font-size:15px;font-weight:700;transition:background .2s}
+.site-footer .ft-btn::after{content:"→"}
+.site-footer .ft-btn:hover{background:#fff}
+.site-footer .ft-sns{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid rgba(244,242,237,.3);border-radius:4px;font-size:13px;color:#F4F2ED}
+.site-footer .ft-sns:hover{background:rgba(244,242,237,.1)}
+.site-footer a:focus-visible{outline:2px solid #F4F2ED;outline-offset:3px}
+</style>
+<script type="application/ld+json" data-sd="managed">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://matsumoto-kenma.co.jp/#organization",
+      "name": "株式会社松本研磨工業",
+      "alternateName": [
+        "松本研磨工業",
+        "松本研磨"
+      ],
+      "url": "https://matsumoto-kenma.co.jp/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://matsumoto-kenma.co.jp/images/logo.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://matsumoto-kenma.co.jp/images/ogp.jpg",
+      "description": "神奈川県川崎市川崎区の金属研磨工場。1967年創業。ステンレス・アルミ・真鍮・鉄などのバフ研磨（鏡面仕上げ）、ベルト研磨、ヘアライン仕上げ、フレキ研磨を、試作の1個から小量産まで手作業で請け負っています。図面がなくても、現物や写真からお見積りできます。",
+      "telephone": "+81-44-333-8412",
+      "faxNumber": "+81-44-333-3843",
+      "address": {
+        "@type": "PostalAddress",
+        "postalCode": "210-0851",
+        "addressRegion": "神奈川県",
+        "addressLocality": "川崎市川崎区",
+        "streetAddress": "浜町3-9-22",
+        "addressCountry": "JP"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 35.5257,
+        "longitude": 139.7194
+      },
+      "hasMap": "https://maps.google.com/?q=神奈川県川崎市川崎区浜町3-9-22",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:30",
+          "closes": "18:00"
+        }
+      ],
+      "foundingDate": "1967",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "日本"
+        },
+        {
+          "@type": "City",
+          "name": "川崎市"
+        },
+        {
+          "@type": "City",
+          "name": "横浜市"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "東京都"
+        }
+      ],
+      "knowsAbout": [
+        "金属研磨",
+        "バフ研磨",
+        "鏡面仕上げ",
+        "ベルト研磨",
+        "ヘアライン仕上げ",
+        "フレキ研磨",
+        "ステンレス研磨",
+        "アルミ研磨",
+        "真鍮研磨",
+        "曲面研磨"
+      ],
+      "sameAs": [
+        "https://www.instagram.com/matsu_polish/",
+        "https://www.youtube.com/channel/UCIGiSzo9TyINLuygAsuP5ew/"
+      ],
+      "department": {
+        "@id": "https://matsumoto-kenma.co.jp/web-ai/#studio"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://matsumoto-kenma.co.jp/#website",
+      "url": "https://matsumoto-kenma.co.jp/",
+      "name": "株式会社松本研磨工業",
+      "inLanguage": "ja",
+      "publisher": {
+        "@id": "https://matsumoto-kenma.co.jp/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://matsumoto-kenma.co.jp/polishing/buff-polishing/#webpage",
+      "url": "https://matsumoto-kenma.co.jp/polishing/buff-polishing/",
+      "name": "バフ研磨（鏡面仕上げ）｜神奈川県川崎市｜株式会社松本研磨工業",
+      "description": "バフ研磨による鏡面仕上げ（Ra0.2〜Ra0.4相当）。ステンレス・アルミ・真鍮など幅広い金属に対応。装飾・産業・精密機器まで、川崎の職人が手作業で仕上げます。",
+      "inLanguage": "ja",
+      "isPartOf": {
+        "@id": "https://matsumoto-kenma.co.jp/#website"
+      },
+      "about": {
+        "@id": "https://matsumoto-kenma.co.jp/#organization"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://matsumoto-kenma.co.jp/images/ogp.jpg"
+      },
+      "dateModified": "2026-09-23",
+      "mainEntity": {
+        "@id": "https://matsumoto-kenma.co.jp/polishing/buff-polishing/#service"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://matsumoto-kenma.co.jp/polishing/buff-polishing/#service",
+      "name": "バフ研磨",
+      "serviceType": "バフ研磨",
+      "category": "金属研磨",
+      "description": "バフ研磨による鏡面仕上げ（Ra0.2〜Ra0.4相当）。ステンレス・アルミ・真鍮など幅広い金属に対応。装飾・産業・精密機器まで、川崎の職人が手作業で仕上げます。",
+      "url": "https://matsumoto-kenma.co.jp/polishing/buff-polishing/",
+      "provider": {
+        "@id": "https://matsumoto-kenma.co.jp/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "日本"
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json" data-sd="managed">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "めっきや塗装の前の下地として依頼できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "できます。バフ研磨のあとに残る研磨剤の油分は、しっかり洗浄してからお渡しします。次の工程（めっき・塗装など）をお知らせいただければ、それに合わせた仕上がりをご提案します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "すでに傷がついた製品の再仕上げもお願いできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "できます。傷の深さによって工程を調整しますので、現物または写真をお送りください。松本研磨工業では新品だけでなく、使用中に傷がついた製品の磨き直しもよくご相談いただいています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "神奈川県外からでも依頼できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、全国から承っています。川崎・横浜・東京エリアは自社便でお伺いできますが、それ以外の地域は宅配便で現物をお送りいただければ問題ありません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "見積りだけでもお願いできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "もちろんです。見積りは無料です。当社は職人2名の小さな工場ですが、だからこそ一つ一つの相談を丁寧にお聞きしています。お気軽にお問い合わせください。"
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://matsumoto-kenma.co.jp/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Web集客・AI活用支援",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Web集客コラム",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/column/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "SEO・集客",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/column/category/seo/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "サーチコンソールの使い方｜登録から月1回の点検まで、会社サイト担当者向けに解説",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/column/search-console/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "サーチコンソールの使い方｜登録から月1回の点検まで、会社サイト担当者向けに解説",
+  "description": "サーチコンソールの使い方を、会社サイトの担当者向けにまとめました。登録と所有権の確認、サイトマップの送信、検索パフォーマンスの見方、インデックス登録、権限の付け方、月に一度の点検表まで、Googleの公式ヘルプをもとに解説します。",
+  "url": "https://matsumoto-kenma.co.jp/web-ai/column/search-console/",
+  "image": "https://matsumoto-kenma.co.jp/images/ogp-studio.jpg",
+  "datePublished": "2026-10-24",
+  "dateModified": "2026-10-24",
+  "articleSection": "SEO・集客",
+  "inLanguage": "ja",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://matsumoto-kenma.co.jp/web-ai/#studio",
+    "name": "マツケンスタジオ",
+    "url": "https://matsumoto-kenma.co.jp/web-ai/column/author/"
+  },
+  "publisher": {
+    "@id": "https://matsumoto-kenma.co.jp/#organization"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://matsumoto-kenma.co.jp/web-ai/column/search-console/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "サーチコンソールは無料ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、無料です。Googleのアカウントがあれば、どなたでも使えます。登録したからといって、費用がかかることはありません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "サーチコンソールに登録すると、検索の順位は上がりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "登録しただけで順位が上がるわけではありません。サーチコンソールは、Googleが自社のサイトをどう見ているかを知り、直すところを見つけるための道具です。数字を見て、ページを直していくことが大切です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ドメインとURLプレフィックスは、どちらで登録すればよいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "サイト全体をまとめて見たいならドメインが便利です。ただし、確認にはドメインの設定（DNS）を変える必要があります。DNSを触れない場合は、URLプレフィックスでHTMLファイルやHTMLタグを使って確認する方法もあります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "制作会社がサーチコンソールを登録してくれています。このままでよいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "自社のアカウントがオーナーとして入っているかを確かめましょう。制作会社だけがオーナーだと、契約が終わったときに見られなくなるおそれがあります。オーナーは自社が持ち、制作会社にはフルユーザーなどの権限を渡す形が安心です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "未登録のページがたくさんあります。問題ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "未登録のページがあること自体は、問題とは限りません。重複したページや、別のページへ飛ぶページなどは、もともと登録されません。事業紹介や事例など、見つけてほしい大事なページが登録済みになっているかを確かめましょう。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "インデックス登録をリクエストすれば、すぐ検索に出ますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "すぐには出ません。Googleの公式ヘルプでは、1〜2週間ほどかかることがあり、お願いしても登録されるとは限らないと説明されています。1日にお願いできる回数にも上限があるので、1回押したら待ちましょう。"
+      }
+    }
+  ]
+}
+</script>
+<style>
+  /* Matsuken Studio: light theme */
+  html,body{background:#FFFFFF}
+  .pwrap{max-width:960px;margin:0 auto;padding:0 20px}
+  @media(min-width:768px){.pwrap{padding:0 40px}}
+  .pwrap.max-w-\[800px\]{max-width:880px}
+  .st-alt{background:#F4F6F9}
+  .st-cta{background:#FFF9D6}
+  .sec-label{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.14em;color:#1B3A6B;margin-bottom:16px}
+  .sec-ttl{font-size:24px;font-weight:700;line-height:1.45;margin-bottom:20px;color:#0E0E10}
+  @media(min-width:768px){.sec-ttl{font-size:30px}}
+  .st-logo{display:inline-flex;align-items:center;gap:12px}
+  .st-mark{width:40px;height:40px;border-radius:10px;background:#1B3A6B;color:#fff;display:grid;place-items:center;font-weight:700;font-size:22px;position:relative;flex-shrink:0}
+  .st-mark::after{content:'';position:absolute;right:-3px;top:-3px;width:12px;height:12px;border-radius:50%;background:#F5DE00;border:2px solid #fff}
+  .st-name{display:block;font-weight:800;font-size:20px;letter-spacing:.04em;color:#0E0E10;line-height:1.2}
+  .st-by{display:block;font-size:11px;letter-spacing:.14em;color:#5E5E65;margin-top:3px}
+  .st-hero{position:relative;overflow:hidden;background:#fff;border-bottom:1px solid #E6E9EE}
+  .st-hero::before{content:'';position:absolute;right:-120px;top:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,#FFF4B0 0%,rgba(255,244,176,0) 70%);pointer-events:none}
+  .st-hero::after{content:'';position:absolute;right:40px;bottom:40px;width:260px;height:180px;background-image:radial-gradient(#C9D2DF 1.2px,transparent 1.2px);background-size:14px 14px;opacity:.7;pointer-events:none}
+  .trust{display:grid;grid-template-columns:1fr;border-top:1px solid #E6E9EE}
+  @media(min-width:768px){.trust{grid-template-columns:repeat(3,1fr)}}
+  .trust>div{padding:20px 0}
+  @media(min-width:768px){.trust>div{padding:24px 28px}.trust>div+div{border-left:1px solid #E6E9EE}.trust>div:first-child{padding-left:0}}
+  .trust .t-big{font-size:17px;font-weight:700;color:#0E0E10;margin-bottom:4px}
+  .trust .t-sub{font-size:13px;color:#5E5E65;line-height:1.8}
+  .card2{position:relative;border:1px solid #E1E5EB;background:#fff;padding:30px 24px 26px;border-top:3px solid #1B3A6B;border-radius:6px}
+  .card2.alt{border-top-color:#2E5BA6}
+  .card2 .idx{font-family:'JetBrains Mono',monospace;font-size:11px;color:#8a8a86;letter-spacing:.15em;margin-bottom:14px}
+  .svc-list{background:#fff;border:1px solid #E1E5EB;border-radius:8px;padding:10px 28px}
+  .svc-list li{list-style:none;display:grid;grid-template-columns:22px 1fr;gap:10px;padding:14px 0;border-bottom:1px solid #EEF1F5;font-size:14px;line-height:1.8}
+  .svc-list li:last-child{border-bottom:none}
+  .svc-list li::before{content:'';width:10px;height:10px;margin-top:8px;border-radius:3px;background:#F5DE00;box-shadow:0 0 0 2px #1B3A6B inset}
+  .step2{position:relative;padding:6px 0 30px 32px;border-left:2px solid #DDE3EB}
+  .step2:last-child{border-left:2px solid transparent;padding-bottom:2px}
+  .step2::before{content:'';position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:#1B3A6B}
+  .step2.alt::before{background:#2E5BA6}
+  .step2 .pnum{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:#8a8a86;margin-bottom:4px}
+  .faq2{display:grid;grid-template-columns:36px 1fr;gap:16px;padding:22px 0;border-top:1px solid #E1E5EB}
+  .faq2:last-child{border-bottom:1px solid #E1E5EB}
+  .faq2 .qa{font-size:22px;font-weight:700;line-height:1;color:#1B3A6B}
+  .price-box{border:1px solid #E1E5EB;border-radius:8px;background:#fff;padding:32px 28px;display:grid;grid-template-columns:1fr;gap:18px}
+  @media(min-width:768px){.price-box{grid-template-columns:1fr auto;align-items:center;padding:36px 40px}}
+  .case-card{display:grid;grid-template-columns:1fr;border:1px solid #E1E5EB;border-radius:8px;overflow:hidden;background:#fff;transition:border-color .2s,box-shadow .2s}
+  .case-card:hover{border-color:#1B3A6B;box-shadow:0 10px 30px -14px rgba(27,58,107,.35)}
+  .case-card .c-img{background:linear-gradient(135deg,#EAF0F8,#FFF6C4);min-height:160px;display:grid;place-items:center;color:#1B3A6B;font-size:13px;font-weight:600;letter-spacing:.14em}
+  @media(min-width:768px){.case-card{grid-template-columns:280px 1fr}}
+  .rel-grid{display:grid;grid-template-columns:1fr;gap:28px}
+  @media(min-width:768px){.rel-grid{grid-template-columns:repeat(4,1fr)}}
+  .rel-grid a{display:block;padding:9px 0;border-bottom:1px solid #E1E5EB;font-size:14px;transition:color .15s}
+  .rel-grid a:hover{color:#2E5BA6}
+  .rel-grid a.current{color:#8a8a86;pointer-events:none}
+  .svc-card{display:block;background:#fff;border:1px solid #E1E5EB;border-radius:8px;padding:26px 24px;transition:border-color .2s,box-shadow .2s,transform .2s}
+  a.svc-card:hover{border-color:#1B3A6B;box-shadow:0 10px 30px -14px rgba(27,58,107,.35);transform:translateY(-2px)}
+  .st-illu{display:block;width:100%;height:auto;max-width:300px;margin:0 auto}
+  .st-icon{display:block;margin-bottom:12px}
+  .story p{font-size:15px;line-height:2.1;color:#26262B;margin-bottom:20px}
+  @media(min-width:768px){.story p{font-size:16px}}
+  .story-quote{font-size:clamp(20px,2.6vw,28px);font-weight:700;line-height:1.6;color:#0E0E10;padding-left:20px;border-left:4px solid #F5DE00}
+  .target-card{background:#fff;border:1px solid #E1E5EB;border-radius:8px;padding:24px}
+  .target-card .tg{display:inline-block;font-size:12px;font-weight:700;color:#1B3A6B;background:#FFF4B0;border-radius:999px;padding:4px 12px;margin-bottom:12px}
+</style>
+<style>
+  .col-cats{display:flex;flex-wrap:wrap;gap:8px}
+  .col-cats a{font-size:13px;font-weight:700;padding:7px 14px;border-radius:999px;background:#fff;border:1px solid #E1E5EB;color:#1B3A6B}
+  .col-cats a:hover,.col-cats a.on{background:#1B3A6B;color:#fff;border-color:#1B3A6B}
+  .col-grid{display:grid;grid-template-columns:1fr;gap:18px}
+  @media(min-width:768px){.col-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1024px){.col-grid.three{grid-template-columns:repeat(3,1fr)}}
+  .col-card{display:flex;flex-direction:column;background:#fff;border:1px solid #E1E5EB;border-radius:10px;padding:22px 22px 18px;transition:border-color .2s,box-shadow .2s}
+  .col-card:hover{border-color:#1B3A6B;box-shadow:0 10px 30px -16px rgba(27,58,107,.35)}
+  .chip{display:inline-block;font-size:12px;font-weight:700;color:#1B3A6B;background:#FFF4B0;border-radius:999px;padding:3px 10px}
+  .col-card h3{font-size:17px;font-weight:700;line-height:1.6;margin:12px 0 8px;color:#0E0E10}
+  .col-card p{font-size:13px;line-height:1.8;color:#5E5E65;flex:1}
+  .col-card time{font-size:12px;color:#8a8a86;margin-top:12px;font-family:'JetBrains Mono',monospace}
+  .art{max-width:760px;margin:0 auto}
+  .art-body h2{font-size:22px;font-weight:700;line-height:1.5;margin:48px 0 16px;padding-left:14px;border-left:5px solid #F5DE00;scroll-margin-top:90px}
+  @media(min-width:768px){.art-body h2{font-size:25px}}
+  .art-body h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:#1B3A6B}
+  .art-body p{font-size:16px;line-height:2;color:#26262B;margin-bottom:18px}
+  .art-body ul,.art-body ol{margin:0 0 20px 1.4em;font-size:16px;line-height:1.9;color:#26262B}
+  .art-body li{margin-bottom:6px}
+  .art-body ul,.points ul{list-style:disc}
+  .art-body ol,.toc ol{list-style:decimal}
+  .art-body li::marker,.points li::marker{color:#1B3A6B}
+  .art-body a{color:#1B3A6B;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+  .art-body .st-illu{margin:26px auto}
+  .art-table{width:100%;border-collapse:collapse;margin:8px 0 24px;font-size:14px;background:#fff;border:1px solid #E1E5EB}
+  .art-table th,.art-table td{padding:12px 14px;border-bottom:1px solid #EEF1F5;text-align:left;vertical-align:top;line-height:1.7}
+  .art-table th{background:#F4F6F9;font-weight:700;color:#1B3A6B}
+  .art-body p.ask{font-size:14px;line-height:1.8;background:#F4F6F9;border-left:4px solid #1B3A6B;border-radius:0 8px 8px 0;padding:10px 14px;color:#26262B}
+  .points{background:#FFF9D6;border-radius:10px;padding:20px 24px;margin:26px 0}
+  .points b{display:block;font-size:14px;margin-bottom:8px;color:#1B3A6B}
+  .points li{font-size:15px;line-height:1.8;margin-left:1.2em}
+  .toc{background:#F4F6F9;border-radius:10px;padding:20px 24px;margin:0 0 30px}
+  .toc b{display:block;font-size:14px;margin-bottom:8px}
+  .toc ol{margin-left:1.3em;font-size:14px;line-height:2}
+  .toc a{color:#1B3A6B}
+  .author{display:grid;grid-template-columns:56px 1fr;gap:16px;background:#fff;border:1px solid #E1E5EB;border-radius:12px;padding:22px}
+  .author .av{width:56px;height:56px;border-radius:14px;background:#1B3A6B;color:#fff;display:grid;place-items:center;font-weight:700;font-size:24px;position:relative}
+  .author .av::after{content:'';position:absolute;right:-3px;top:-3px;width:14px;height:14px;border-radius:50%;background:#F5DE00;border:2px solid #fff}
+  .author b{font-size:15px}.author p{font-size:13px;line-height:1.9;color:#4A4A50;margin-top:6px}
+  .art-body .cta-mid a{text-decoration:none}
+  .art-body .cta-mid a.bg-cta-yellow{color:#0E0E10}
+  .art-body .cta-mid a[href*="line.me"]{color:#fff}
+  .cta-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;border:1px solid #E1E5EB;border-radius:12px;padding:14px 18px;margin:-8px 0 26px;background:#fff}
+  .cta-top p{font-size:14px;font-weight:700;color:#0E0E10}
+  .cta-top .bt{display:flex;gap:8px;flex-wrap:wrap}
+  .cta-top a.btn-s{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;border-radius:999px;padding:9px 16px}
+  .cta-mid{margin:36px 0;border-radius:14px;background:#FFF9D6;padding:24px 24px 22px;position:relative;overflow:hidden}
+  .cta-mid::after{content:'';position:absolute;right:-50px;top:-50px;width:160px;height:160px;border-radius:50%;background:repeating-radial-gradient(circle,rgba(27,58,107,.08) 0 1px,transparent 1px 10px)}
+  .cta-mid .lb{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:#1B3A6B;border-radius:999px;padding:3px 10px;margin-bottom:10px}
+  .cta-mid b{display:block;font-size:18px;line-height:1.6;margin-bottom:6px;color:#0E0E10}
+  .cta-mid p{font-size:14px;line-height:1.8;color:#3A3A40;margin-bottom:16px;position:relative;z-index:1}
+  .cta-mid .bt{display:flex;flex-direction:column;gap:10px;position:relative;z-index:1}
+  @media(min-width:640px){.cta-mid .bt{flex-direction:row}}
+  .cta-end{border-radius:16px;background:#1B3A6B;color:#fff;padding:28px 26px}
+  .cta-end b{display:block;font-size:20px;line-height:1.6;margin-bottom:8px}
+  .cta-end p{font-size:14px;line-height:1.9;color:rgba(255,255,255,.85);margin-bottom:18px}
+  .cta-end .bt{display:flex;flex-direction:column;gap:10px}
+  @media(min-width:640px){.cta-end .bt{flex-direction:row;align-items:center}}
+  .cta-end .lp{font-size:14px;font-weight:700;color:#F5DE00;text-decoration:underline;text-underline-offset:3px}
+  .col-stick{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid #E1E5EB;transform:translateY(110%);transition:transform .25s}
+  .col-stick.show{transform:none}
+  .col-stick a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:999px;padding:12px 8px;font-size:14px;font-weight:700}
+  @media(min-width:768px){.col-stick{display:none}}
+  .soft-cta{background:#fff;border:1px solid #E1E5EB;border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:14px}
+  @media(min-width:768px){.soft-cta{flex-direction:row;align-items:center;justify-content:space-between}}
+  .soft-cta p{font-size:14px;line-height:1.8;color:#26262B}
+</style>
+</head>
+<body>
+<nav class="fixed top-0 left-0 right-0 z-50 bg-paper/80 backdrop-blur-[14px] border-b border-ink/[0.08]">
+  <div class="wrap flex items-center justify-between h-[60px] md:h-[72px]">
+
+    <!-- Brand -->
+    <a href="../../../#home" class="flex items-center gap-3 md:gap-[14px]">
+      <span class="w-9 h-9 md:w-10 md:h-10 border-[1.5px] border-ink rounded-full grid place-items-center font-serif font-semibold text-lg md:text-xl bg-ink text-paper">松</span>
+      <span class="leading-[1.1]">
+        <div class="font-serif text-[13px] md:text-[15px] font-medium tracking-[.04em]">株式会社松本研磨工業</div>
+        <div class="hidden sm:block font-mono text-[10px] text-muted tracking-[.22em] mt-[2px]">創業58年・川崎</div>
+      </span>
+    </a>
+
+    <!-- Desktop menu — hidden below md -->
+    <div class="hidden md:flex gap-[2px] items-center">
+      <a href="../../../#home" class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">ホーム</a>
+
+      <!-- 金属研磨技術 メガメニュー -->
+      <div class="mega relative">
+        <button class="mega-btn flex items-center gap-1 px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors" aria-expanded="false">
+          金属研磨技術
+          <svg class="w-3 h-3 stroke-current fill-none stroke-[2] mega-caret transition-transform" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="mega-panel absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[320px] bg-navy text-paper rounded-sm shadow-[0_24px_48px_-12px_rgba(0,0,0,.35)] p-2 opacity-0 invisible translate-y-1 transition-all duration-150">
+          <div class="pb-2 mb-1 border-b border-paper/10">
+            <a href="../../../polishing/" class="block px-4 py-2.5 rounded-sm text-[13px] font-semibold hover:bg-paper/10 hover:text-paper hover:underline underline-offset-4 transition-colors">金属研磨技術 一覧 →</a>
+          </div>
+          <a href="../../../polishing/buff-polishing/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">バフ研磨</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">鏡面仕上げ</div>
+          </a>
+          <a href="../../../polishing/belt-polishing/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">ベルト研磨</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">バリ取り・形状補正</div>
+          </a>
+          <a href="../../../polishing/hairline-finish/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">ヘアライン加工</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">一方向のライン仕上げ</div>
+          </a>
+          <a href="../../../polishing/flexible-polishing/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">フレキ研磨／曲面研磨</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">複雑形状への手作業</div>
+          </a>
+        </div>
+      </div>
+
+      <a href="../../../#works" class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">加工実績</a>
+
+      <!-- Web集客・AI活用支援 メガメニュー -->
+      <div class="mega relative">
+        <button class="mega-btn flex items-center gap-1 px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors" aria-expanded="false">
+          Web集客・AI活用支援
+          <svg class="w-3 h-3 stroke-current fill-none stroke-[2] mega-caret transition-transform" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="mega-panel fixed left-1/2 -translate-x-1/2 top-[72px] mt-2 w-[860px] max-w-[92vw] bg-navy text-paper rounded-sm shadow-[0_24px_48px_-12px_rgba(0,0,0,.35)] p-7 opacity-0 invisible translate-y-1 transition-all duration-150">
+          <div class="mb-6 pb-5 border-b border-paper/10 flex items-center justify-between">
+            <a href="../../../web-ai/" class="font-serif text-[13px] font-semibold hover:text-paper hover:underline underline-offset-4 transition-colors">Web集客・AI活用支援 トップ →</a>
+            <a href="../../../web-ai/case/" class="font-serif text-[13px] font-semibold hover:text-paper hover:underline underline-offset-4 transition-colors">実績・事例 →</a>
+          </div>
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">戦略・コンサルティング</div>
+              <ul class="space-y-2">
+                <li><a href="../../../web-ai/consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">デジタルマーケティングコンサルティング</a></li>
+                <li><a href="../../../web-ai/btob-marketing/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">BtoBマーケティング支援</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">集客・改善</div>
+              <ul class="space-y-2">
+                <li><a href="../../../web-ai/seo-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">SEOコンサルティング</a></li>
+                <li><a href="../../../web-ai/ad-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">Web広告コンサルティング</a></li>
+                <li><a href="../../../web-ai/cro-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">CVR改善／CROコンサルティング</a></li>
+                <li><a href="../../../web-ai/llmo-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">LLMOコンサルティング</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">制作</div>
+              <ul class="space-y-2">
+                <li><a href="../../../web-ai/website/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">サイト制作</a></li>
+                <li><a href="../../../web-ai/lp/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">LP制作</a></li>
+                <li><a href="../../../web-ai/seo-writing/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">SEO/LLMO記事制作代行</a></li>
+                <li><a href="../../../web-ai/case-interview/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">事例インタビュー記事制作</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">AI活用支援</div>
+              <ul class="space-y-2">
+                <li><a href="../../../web-ai/ai-katsuyo/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">AI活用支援（業務効率化・自動化）</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- コラム メガメニュー -->
+      <div class="mega relative">
+        <button class="mega-btn flex items-center gap-1 px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors" aria-expanded="false">
+          コラム
+          <svg class="w-3 h-3 stroke-current fill-none stroke-[2] mega-caret transition-transform" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="mega-panel absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[320px] bg-navy text-paper rounded-sm shadow-[0_24px_48px_-12px_rgba(0,0,0,.35)] p-2 opacity-0 invisible translate-y-1 transition-all duration-150">
+          <a href="../../../column/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">研磨・金属加工コラム</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">工法・材料別の技術記事</div>
+          </a>
+          <a href="../../../web-ai/column/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">Web集客・AI活用支援コラム</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">製造業のためのWeb集客・AI活用</div>
+          </a>
+        </div>
+      </div>
+
+      <a href="../../../company/" class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">会社情報</a>
+    </div>
+
+    <!-- CTA -->
+    <div class="flex gap-2 md:gap-[10px] items-center">
+      <a href="../../../web-ai/contact/" class="inline-flex items-center gap-[10px] px-3 py-2 md:px-[18px] md:py-[11px] rounded-sm text-[11px] md:text-[13px] font-semibold tracking-[.06em] bg-ink text-paper hover:bg-accent transition-all">お問い合わせ →</a>
+      <!-- Burger — shown below md -->
+      <button class="flex md:hidden w-10 h-10 border border-ink rounded-sm items-center justify-center bg-paper" id="burgerBtn" aria-label="menu">
+        <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="fixed inset-0 z-[55] bg-navy text-paper pt-[80px] pb-8 px-6 flex flex-col gap-1 translate-x-full transition-transform duration-[350ms] ease-in-out" id="mobileMenu">
+  <button data-close class="absolute top-5 right-5 w-10 h-10 flex items-center justify-center text-paper/80 hover:text-paper" aria-label="close menu">
+    <svg class="w-6 h-6 stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+
+  <!-- LANY風：上部にCTAピル2つ -->
+  <div class="flex gap-2 mb-5">
+    <a href="../../../web-ai/contact/" data-close class="flex-1 flex items-center justify-center gap-2 py-3 rounded-full bg-accent text-paper text-[13px] font-semibold tracking-[.04em]">お問い合わせ →</a>
+  </div>
+
+  <div class="overflow-y-auto flex-1 -mr-6 pr-6">
+  <a href="../../../#home" data-close class="font-serif text-[17px] font-medium py-3 border-b border-paper/[.08] flex items-center justify-between">ホーム</a>
+
+  <details class="drawer-acc border-b border-paper/[.08]">
+    <summary class="font-serif text-[17px] font-medium py-3 flex items-center justify-between cursor-pointer list-none">
+      金属研磨技術
+      <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6] drawer-acc-icon transition-transform shrink-0" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="pb-4 flex flex-col gap-1">
+      <a href="../../../polishing/" data-close class="text-[13px] py-1.5 mb-1 pb-2.5 border-b border-paper/[.08] font-semibold text-paper">金属研磨技術 一覧 →</a>
+      <a href="../../../polishing/buff-polishing/" data-close class="text-[13px] py-1.5 opacity-85">バフ研磨</a>
+      <a href="../../../polishing/belt-polishing/" data-close class="text-[13px] py-1.5 opacity-85">ベルト研磨</a>
+      <a href="../../../polishing/hairline-finish/" data-close class="text-[13px] py-1.5 opacity-85">ヘアライン加工</a>
+      <a href="../../../polishing/flexible-polishing/" data-close class="text-[13px] py-1.5 opacity-85">フレキ研磨／曲面研磨</a>
+    </div>
+  </details>
+
+  <a href="../../../#works" data-close class="font-serif text-[17px] font-medium py-3 border-b border-paper/[.08] flex items-center justify-between">加工実績</a>
+
+  <details class="drawer-acc border-b border-paper/[.08]">
+    <summary class="font-serif text-[17px] font-medium py-3 flex items-center justify-between cursor-pointer list-none">
+      Web集客・AI活用支援
+      <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6] drawer-acc-icon transition-transform shrink-0" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="pb-4 flex flex-col gap-1">
+      <div class="flex items-center justify-between mb-1 pb-2.5 border-b border-paper/[.08]">
+        <a href="../../../web-ai/" data-close class="text-[13px] font-semibold text-paper">Web集客・AI活用支援 トップ →</a>
+        <a href="../../../web-ai/case/" data-close class="text-[13px] font-semibold text-paper">実績・事例 →</a>
+      </div>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-2 mb-1">戦略・コンサルティング</div>
+      <a href="../../../web-ai/consulting/" data-close class="text-[13px] py-1.5 opacity-85">デジタルマーケティングコンサルティング</a>
+      <a href="../../../web-ai/btob-marketing/" data-close class="text-[13px] py-1.5 opacity-85">BtoBマーケティング支援</a>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-3 mb-1">集客・改善</div>
+      <a href="../../../web-ai/seo-consulting/" data-close class="text-[13px] py-1.5 opacity-85">SEOコンサルティング</a>
+      <a href="../../../web-ai/ad-consulting/" data-close class="text-[13px] py-1.5 opacity-85">Web広告コンサルティング</a>
+      <a href="../../../web-ai/cro-consulting/" data-close class="text-[13px] py-1.5 opacity-85">CVR改善／CROコンサルティング</a>
+      <a href="../../../web-ai/llmo-consulting/" data-close class="text-[13px] py-1.5 opacity-85">LLMOコンサルティング</a>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-3 mb-1">制作</div>
+      <a href="../../../web-ai/website/" data-close class="text-[13px] py-1.5 opacity-85">サイト制作</a>
+      <a href="../../../web-ai/lp/" data-close class="text-[13px] py-1.5 opacity-85">LP制作</a>
+      <a href="../../../web-ai/seo-writing/" data-close class="text-[13px] py-1.5 opacity-85">SEO/LLMO記事制作代行</a>
+      <a href="../../../web-ai/case-interview/" data-close class="text-[13px] py-1.5 opacity-85">事例インタビュー記事制作</a>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-3 mb-1">AI活用支援</div>
+      <a href="../../../web-ai/ai-katsuyo/" data-close class="text-[13px] py-1.5 opacity-85">AI活用支援（業務効率化・自動化）</a>
+    </div>
+  </details>
+
+  <details class="drawer-acc border-b border-paper/[.08]">
+    <summary class="font-serif text-[17px] font-medium py-3 flex items-center justify-between cursor-pointer list-none">
+      コラム
+      <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6] drawer-acc-icon transition-transform shrink-0" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="pb-4 flex flex-col gap-1">
+      <a href="../../../column/" data-close class="text-[13px] py-2 opacity-85">研磨・金属加工コラム</a>
+      <a href="../../../web-ai/column/" data-close class="text-[13px] py-2 opacity-85">Web集客・AI活用支援コラム</a>
+    </div>
+  </details>
+
+  <a href="../../../company/" data-close class="font-serif text-[17px] font-medium py-3 border-b border-paper/[.08] flex items-center justify-between">会社情報</a>
+  </div>
+
+  <div class="pt-5 text-[11px] text-muted-ink/80 text-center">マツケンスタジオへのご相談は、お問い合わせフォームで受け付けています</div>
+</div>
+
+
+<main class="pt-[60px]">
+  <section class="pt-8 pb-10 md:pt-12 md:pb-14">
+    <div class="pwrap">
+      <article class="art">
+      <p class="font-mono text-[11px] tracking-[.2em] text-muted mb-5"><a href="../../../" class="hover:text-accent transition-colors">ホーム</a><span class="mx-2 opacity-40">/</span><a href="../../" class="hover:text-accent transition-colors">Web集客・AI活用支援</a><span class="mx-2 opacity-40">/</span><a href="../" class="hover:text-accent transition-colors">コラム</a><span class="mx-2 opacity-40">/</span><a href="../category/seo/" class="hover:text-accent transition-colors">SEO・集客</a></p>
+        <a href="../category/seo/" class="chip">SEO・集客</a>
+        <h1 class="font-bold leading-[1.45] mt-3 mb-4 text-ink" style="font-size:clamp(24px,3.6vw,34px)">サーチコンソールの使い方｜登録から月1回の点検まで、会社サイト担当者向けに解説</h1>
+        <p class="text-[13px] text-muted mb-6">公開日 <time datetime="2026-10-24">2026.10.24</time>　|　マツケンスタジオ 責任者</p>
+        <div class="points"><b>この記事で分かること</b><ul><li>サーチコンソールとは何か、登録と最初にやること</li><li>検索パフォーマンスやインデックス登録の見方</li><li>権限の付け方と、月に一度の点検で直すところ</li></ul></div>
+        <div class="cta-top"><p>ホームページのご相談は無料です</p><div class="bt"><a href="../../contact/" class="btn-s bg-cta-yellow text-ink hover:bg-cta-yellow-h">1分で問い合わせ →</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="btn-s bg-[#06C755] text-white hover:bg-[#05B34C]">LINEで相談</a></div></div>
+        <nav class="toc" aria-label="目次"><b>目次</b><ol><li><a href="#what">サーチコンソール（Google Search Console）とは</a></li><li><a href="#register">サーチコンソールの登録のしかた</a></li><li><a href="#sitemap">登録したら最初にやること：サイトマップの送信</a></li><li><a href="#performance">検索パフォーマンスの見方</a></li><li><a href="#indexing">ページのインデックス登録：検索に載っているかを確かめる</a></li><li><a href="#url-inspection">URL検査：1ページずつ状態を確かめる</a></li><li><a href="#security">セキュリティの問題と手動による対策</a></li><li><a href="#experience">ウェブに関する主な指標：表示の速さと見やすさ</a></li><li><a href="#mail">メールの通知を受け取れるようにする</a></li><li><a href="#users">権限の付け方：持ち主は自社、制作会社には権限だけ</a></li><li><a href="#checklist">月に一度見ることの点検表</a></li><li><a href="#improve">数字を見て直す例</a></li><li><a href="#summary">まとめ</a></li><li><a href="#faq">よくある質問</a></li></ol></nav>
+        <div class="art-body">
+<p>「サーチコンソールは入れておいたほうがいい」と聞いたものの、登録のしかたが分からない。制作会社が登録してくれたらしいけれど、画面を開いても、どこを見ればよいのか分からない。会社のホームページを任された担当者から、よく聞く悩みです。</p>
+<p>サーチコンソールは、Googleの検索で自社のサイトがどう見えているかを教えてくれる無料の道具です。全部の機能を使いこなす必要はありません。見る場所を決めて、月に一度ながめるだけでも、直すべきところが見えてきます。この記事では、Googleの公式ヘルプで確かめた内容をもとに、登録のしかたから、数字の見方、月に一度の点検のしかたまでを、制作する側の目線で紹介します。</p>
+<svg viewBox="0 0 560 174" role="img" aria-label="サーチコンソールの使い方の要点の図" class="st-illu" style="max-width:560px" fill="none" stroke="#1B3A6B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="18" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="32" y="28" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M36 38l4 4 8-9"/><text x="62" y="44" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">プロパティを登録</text><rect x="290" y="18" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="302" y="28" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M306 38l4 4 8-9"/><text x="332" y="44" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">サイトマップを送信</text><rect x="20" y="70" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="32" y="80" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M36 90l4 4 8-9"/><text x="62" y="96" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">検索パフォーマンス</text><rect x="290" y="70" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="302" y="80" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M306 90l4 4 8-9"/><text x="332" y="96" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">インデックス登録</text><rect x="20" y="122" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="32" y="132" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M36 142l4 4 8-9"/><text x="62" y="148" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">メール通知を受け取る</text><rect x="290" y="122" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="302" y="132" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M306 142l4 4 8-9"/><text x="332" y="148" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">権限は自社が持つ</text></svg>
+
+<h2 id="what">サーチコンソール（Google Search Console）とは</h2>
+<p>サーチコンソールは、Googleが提供している無料のサービスです。Googleの公式ヘルプでは、「Google検索結果でのサイトの掲載順位を監視、管理、改善するのに役立つ」サービスと説明されています。お金はかかりません。Googleのアカウントがあれば使えます。</p>
+<p>サーチコンソールでできることは、大きく分けると次の4つです。</p>
+<ul>
+<li><b>検索での成績を見る</b>：どんな言葉で検索されて、何回表示され、何回押されたかが分かります。</li>
+<li><b>ページが検索に載っているかを確かめる</b>：Googleに登録されているページと、登録されていないページ、その理由が分かります。</li>
+<li><b>問題を知らせてもらう</b>：Googleがサイトに新しい問題を見つけると、メールで知らせてくれます。</li>
+<li><b>Googleにページの場所を伝える</b>：サイトマップを送ったり、ページの登録をお願いしたりできます。</li>
+</ul>
+<p>なお、サーチコンソールに登録しなくても、サイトがGoogleの検索結果に出ることはあります。公式ヘルプにもそう書かれています。登録すると何が変わるかというと、<b>Googleが自社のサイトをどう見ているかが分かり、直すための手がかりが手に入る</b>ということです。</p>
+
+<h3>Googleアナリティクスとの違い</h3>
+<p>よく似た名前の道具に、Googleアナリティクスがあります。どちらも無料ですが、見ている場面が違います。</p>
+<table class="art-table">
+<tr><th></th><th>サーチコンソール</th><th>Googleアナリティクス</th></tr>
+<tr><td>見ている場面</td><td>サイトに来る前（Googleの検索結果の中）</td><td>サイトに来た後（どのページを見て、どう動いたか）</td></tr>
+<tr><td>分かること</td><td>検索された言葉、表示された回数、押された回数、検索での順位</td><td>訪れた人の数、見られたページ、問い合わせまでの流れ</td></tr>
+<tr><td>対象</td><td>Googleの検索から来る人</td><td>検索、広告、SNS、メールなど、すべての入り口から来る人</td></tr>
+</table>
+<p>たとえば「問い合わせが少ない」というとき、そもそも検索で見つけてもらえていないのか、サイトには来ているのに問い合わせまで進んでいないのかで、直す場所が変わります。前者を調べるのがサーチコンソール、後者を調べるのがアナリティクスです。2つはつなげて使うこともできます。つなげるには、アナリティクス側で編集者の役割を持ち、サーチコンソール側で「確認済みオーナー」になっている必要があります。つなげると、アナリティクスの画面でも、検索の数字を過去16か月分まで見られるようになります。問い合わせが来ないときの確かめ方は、<a href="../no-inquiry/">ホームページから問い合わせが来ない理由</a>でまとめています。</p>
+
+<h2 id="register">サーチコンソールの登録のしかた</h2>
+<p>サーチコンソールでは、登録するサイトのことを「プロパティ」と呼びます。登録は、次の3つの手順で進みます。</p>
+<ol>
+<li>Googleアカウントでサーチコンソールを開き、「プロパティを追加」を選ぶ</li>
+<li>プロパティの種類（ドメインかURLプレフィックスか）を選び、サイトのアドレスを入れる</li>
+<li>そのサイトの持ち主であることを確かめる（所有権の確認）</li>
+</ol>
+<p>登録に使うGoogleアカウントは、担当者個人のものではなく、<b>会社として管理しているアカウント</b>にしておくと安心です。担当者が変わったときに、だれも開けなくなるのを防げます。</p>
+
+<p>Googleの公式の始め方の案内でも、まずサイトの持ち主であることを確かめ、Googleがページを見つけて読めるようにし、必要ならサイトマップを送り、そのあと成績を見ていく、という順番が紹介されています。この記事も、その順番に沿って進めます。</p>
+<h3>「ドメイン」と「URLプレフィックス」の違い</h3>
+<p>プロパティの種類は2つあります。最初に迷いやすいところなので、違いを表にまとめます。</p>
+<table class="art-table">
+<tr><th></th><th>ドメイン</th><th>URLプレフィックス</th></tr>
+<tr><td>入れるもの</td><td>example.co.jp のようなドメイン名だけ</td><td>https://www.example.co.jp/ のような、httpsから始まるアドレス</td></tr>
+<tr><td>集計される範囲</td><td>http と https、www のありなし、サブドメインまで、まとめて集計</td><td>入れたアドレスで始まるページだけ</td></tr>
+<tr><td>所有権の確認方法</td><td>DNSレコードの確認だけ</td><td>HTMLファイル、HTMLタグなど、いくつかの方法から選べる</td></tr>
+</table>
+<p>サイト全体の様子をまとめて見たいなら「ドメイン」が便利です。ただし、確認にはDNS（ドメインの設定）を変える必要があります。ドメインの設定画面を自社で開けない場合は、ドメインを管理している会社や、制作会社に手伝ってもらいましょう。ドメインの設定を自分で開けない状態は、それ自体が困りごとのもとになります。ドメインの設定を開くためのログイン情報が、自社の手元にあるかも、この機会に確かめておきましょう。</p>
+
+<h3>所有権の確認方法</h3>
+<p>所有権の確認とは、「このサイトを管理しているのは自分です」とGoogleに示す手続きです。公式ヘルプでは、主に次の方法が紹介されています。</p>
+<table class="art-table">
+<tr><th>方法</th><th>やること</th></tr>
+<tr><td>HTMLファイルのアップロード</td><td>Googleが用意したファイルを、サイトのいちばん上の階層に置く</td></tr>
+<tr><td>HTMLタグ</td><td>トップページの見えない部分（headの中）に、決められたタグを1行足す</td></tr>
+<tr><td>Googleアナリティクス</td><td>サイトに入っているアナリティクスの設定を使う</td></tr>
+<tr><td>Googleタグマネージャー</td><td>サイトに入っているタグマネージャーの設定を使う</td></tr>
+<tr><td>ドメイン名プロバイダ</td><td>ドメインの設定（DNS）に、決められたレコードを足す</td></tr>
+</table>
+<p>注意したいのは、<b>確認のために置いたファイルやタグを消すと、所有権が失われる</b>ことです。サイトのリニューアルで作り直したときに、確認用のタグが消えてしまうことがあります。公式ヘルプでも、ひとつの方法が使えなくなったときに備えて、確認方法を2つ以上設定しておくことがすすめられています。リニューアルのときは、制作会社に「サーチコンソールの確認用のファイルやタグを残してほしい」と伝えておきましょう。</p>
+
+<h2 id="sitemap">登録したら最初にやること：サイトマップの送信</h2>
+<p>サイトマップとは、サイトにあるページの一覧を、Googleが読める形にしたファイルです。WordPressなど多くの仕組みでは、自動で作られています。アドレスは「/sitemap.xml」で終わることが多いですが、仕組みによって違うので、制作会社に確かめると確実です。</p>
+<p>送り方は次のとおりです。</p>
+<ol>
+<li>左のメニューから「サイトマップ」を開く</li>
+<li>「新しいサイトマップの追加」の欄に、サイトマップのアドレスを入れて送信する</li>
+<li>しばらくして、ステータスが「成功」になっているかを確かめる</li>
+</ol>
+<p>サイトマップのレポートには、「検出されたページ数」という数字も出ます。これはサイトマップの中に書かれていたページの数で、検索に登録されたページの数ではありません。登録されたかどうかは、あとで紹介するページ インデックス登録レポートで確かめます。</p>
+<p>ステータスが「取得できませんでした」なら、Googleがファイルを読めていません。アドレスの打ち間違いか、ファイルが置かれていないことが考えられます。</p>
+<p>知っておきたいのは、<b>サイトマップを送っても、すべてのページが検索に載るとは限らない</b>ということです。公式ヘルプにもそう書かれています。また、ページ数がおよそ500ページ以下で、トップページから全ページにたどり着けるサイトなら、サイトマップはおそらく必要ないとも説明されています。中小企業の会社サイトなら、送っておいて損はないけれど、送っただけで安心しない、くらいの受け止め方でよいでしょう。</p>
+
+<h2 id="performance">検索パフォーマンスの見方</h2>
+<p>サーチコンソールでいちばんよく見るのが、「検索パフォーマンス」の中の「検索結果」というレポートです。ここで、Googleの検索で自社のサイトがどれだけ見られ、押されたかが分かります。</p>
+
+<h3>4つの数字の意味</h3>
+<p>画面の上には、4つの数字が並びます。それぞれの意味は次のとおりです。</p>
+<table class="art-table">
+<tr><th>画面の名前</th><th>意味</th></tr>
+<tr><td>合計クリック数</td><td>検索結果から、自社のサイトが押された回数</td></tr>
+<tr><td>合計表示回数</td><td>検索結果に、自社のサイトが表示された回数</td></tr>
+<tr><td>平均CTR</td><td>クリック数を表示回数で割った割合。表示されたうち、どのくらい押されたか</td></tr>
+<tr><td>平均掲載順位</td><td>検索結果の中で、自社のサイトが出た位置の平均</td></tr>
+</table>
+<p>少し補足します。表示回数は、検索結果のページに自社のサイトが載っていれば、見た人がそこまで画面を動かしたかどうかに関係なく、ふつうは数えられます。つまり「表示された＝読まれた」ではありません。</p>
+<p>平均掲載順位は、1回の検索で自社のページが複数出た場合、いちばん上の位置を使います。公式ヘルプの例では、ある検索で2位、4位、6位に出て、別の検索で3位に出た場合、それぞれ2位と3位を使い、平均は2.5位になります。いろいろな言葉の順位をまとめた平均なので、<b>1つの数字だけを見て一喜一憂しない</b>ことが大切です。</p>
+<p>数字は、四角い枠を押すとグラフに出したり消したりできます。まずは4つ全部を表示して、ながめてみましょう。</p>
+
+<h3>検索語句・ページ・期間で比べる</h3>
+<p>グラフの下の表では、「クエリ」「ページ」「国」「デバイス」「検索での見え方」「日付」ごとに、数字を分けて見られます。会社サイトの担当者がまず見たいのは、次の3つです。</p>
+<ul>
+<li><b>クエリ</b>：どんな言葉で検索されて表示されたか。お客様が使っている言葉が分かります。思っていた言葉と違うことも多く、ページの文章を見直すヒントになります。</li>
+<li><b>ページ</b>：どのページが表示され、押されているか。よく見られているページと、ほとんど見られていないページが分かります。</li>
+<li><b>デバイス</b>：パソコンとスマートフォンのどちらから来ているか。スマートフォンが多いなら、スマートフォンでの見やすさを優先して直します。</li>
+</ul>
+<p>期間は、画面上の「日付」から変えられます。おすすめは、<b>直近3か月と、その前の3か月を比べる</b>ことです。「比較」のタブで2つの期間を選ぶと、数字が並んで出ます。季節で忙しさが変わる業種なら、前の年の同じ時期と比べると分かりやすくなります。検索パフォーマンスのデータは、過去16か月分まで見られます。それより前の数字は消えてしまうので、残しておきたい数字は、表の右上の「エクスポート」で書き出しておきましょう。</p>
+<p>また、表の上の「フィルタを追加」で、特定の言葉やページにしぼることもできます。たとえば会社名を含むクエリを外すと、会社名を知らない人に、どんな言葉で見つけてもらえているかが分かります。</p>
+
+<h3>数字を見るときの注意</h3>
+<p>検索パフォーマンスの数字を見るときは、次のことを知っておくと、読み違えが減ります。</p>
+<ul>
+<li><b>クリック数は、同じリンクを何度押しても1回</b>：1回の検索で同じ結果を何度押しても、クリック数は1回と数えられます。</li>
+<li><b>直近の数字は、あとから変わることがある</b>：いちばん新しい日の数字は暫定のもので、その後数時間で変わることがあります。月の点検では、少し前までの期間で比べると落ち着いた数字で比べられます。</li>
+<li><b>平均掲載順位は、いろいろな言葉の平均</b>：新しい言葉で表示され始めると、全体の平均順位が下がって見えることがあります。気になるときは、クエリごとに見ます。</li>
+<li><b>表示回数が増えてCTRが下がるのは、悪いこととは限らない</b>：今まで出ていなかった言葉で表示され始めると、表示回数が増えて、割合としてのCTRが下がることがあります。クリック数そのものが減っていないかもあわせて見ます。</li>
+</ul>
+
+<h3>生成AIでの表示を見るレポート</h3>
+<p>2026年8月31日に、「生成 AI パフォーマンス レポート（検索）」が、すべてのサイト向けに公開されました。Googleの検索の生成AIの機能の中で、自社のサイトがどれくらい表示されたかの移り変わりを見られます。表示の数が少ないサイトでは、レポートが出ないこともあります。まずは、検索結果のレポートを見慣れてから、あわせてながめてみるとよいでしょう。</p>
+
+<h2 id="indexing">ページのインデックス登録：検索に載っているかを確かめる</h2>
+<p>インデックス登録とは、Googleがページを読み取って、検索結果に出せる状態にしておくことです。インデックスに登録されていないページは、どれだけよい内容でも検索結果には出ません。</p>
+<p>左のメニューの「インデックス作成」の中にある「ページ」を開くと、「ページ インデックス登録レポート」が見られます。ページは「登録済み」と「未登録」に分かれ、未登録のページには理由が表示されます。</p>
+
+<h3>登録されない主な理由</h3>
+<table class="art-table">
+<tr><th>画面の表示</th><th>意味と、確かめること</th></tr>
+<tr><td>URL に noindex が指定されています</td><td>「検索に載せないで」という指示がページに入っています。載せたいページなら、指示を外す必要があります。WordPressでは、設定ひとつでサイト全体に入ってしまうこともあります。</td></tr>
+<tr><td>URL が robots.txt によってブロックされています</td><td>Googleに読ませない設定になっています。載せたいページなら設定を見直します。</td></tr>
+<tr><td>ページにリダイレクトがあります</td><td>別のページへ自動で飛ぶ設定です。古いアドレスから新しいアドレスへ移したときなどに出るもので、多くは問題ありません。</td></tr>
+<tr><td>見つかりませんでした（404）</td><td>ページがありません。消したページなら問題ありませんが、あるはずのページなら、リンクやアドレスを確かめます。</td></tr>
+<tr><td>代替ページ（適切な canonical タグあり）</td><td>同じ内容の別のページが、正式なページとして指定されています。多くは問題ありません。</td></tr>
+<tr><td>クロール済み - インデックス未登録</td><td>Googleは読んだものの、登録しませんでした。内容が薄い、ほかのページと似ている、などが考えられます。</td></tr>
+<tr><td>検出 - インデックス未登録</td><td>ページがあることは分かっているものの、まだ読みに来ていない状態です。</td></tr>
+</table>
+<p>ここで大事なのは、<b>未登録のページがあっても、それだけで問題とは限らない</b>ことです。公式ヘルプにも、サイトのすべてのページが登録されるわけではなく、重複したページや代替のページは登録されないと書かれています。見るべきなのは、<b>事業の紹介、事例、会社案内、採用など、見つけてほしい大事なページが「登録済み」になっているか</b>です。</p>
+<p>原因を直したら、その理由の画面で「修正を検証」を押すと、Googleに直したことを伝えられます。確かめ終わるまでには、ふつう2週間ほどかかります。</p>
+
+<h3>サイトを作り直したときに見ること</h3>
+<p>ページ インデックス登録レポートが特に役に立つのは、サイトをリニューアルしたあとです。作り直すと、ページのアドレスが変わったり、古いページがなくなったりします。公開してから数週間は、次のことを確かめましょう。</p>
+<ul>
+<li><b>「見つかりませんでした（404）」が急に増えていないか</b>：古いアドレスから新しいアドレスへ飛ぶ設定（リダイレクト）が抜けている可能性があります。名刺やパンフレットに載せたアドレスが、つながらなくなっていないかも確かめます。</li>
+<li><b>「URL に noindex が指定されています」が増えていないか</b>：作っている途中の「検索に載せない」設定が、公開後も残っていることがあります。</li>
+<li><b>サイトマップが「成功」になっているか</b>：仕組みが変わるとサイトマップのアドレスも変わることがあるので、新しいアドレスで送り直します。</li>
+<li><b>所有権が外れていないか</b>：確認用のファイルやタグが消えると、サーチコンソールに入れなくなります。</li>
+</ul>
+<p>あわせて、検索パフォーマンスで、作り直す前と後の数字を比べておくと、作り直しで検索からの訪問が減っていないかが分かります。</p>
+
+<h3>リンクのレポート</h3>
+<p>左のメニューの「リンク」では、自社のサイトにリンクを張っているほかのサイトや、サイトの中でよくリンクされているページが分かります。取引先や業界団体のサイトから、きちんとリンクされているかを確かめるのに使えます。リンクの数を増やすこと自体を目的にする必要はありません。お金を払ってリンクを買うような方法は、あとで紹介する手動による対策の対象になることがあるので、やめましょう。</p>
+
+<h2 id="url-inspection">URL検査：1ページずつ状態を確かめる</h2>
+<p>画面のいちばん上の検索欄に、自社のページのアドレスを入れると、「URL検査」ができます。そのページがGoogleに登録されているかどうかが、1ページずつ分かります。</p>
+<ul>
+<li><b>「URL は Google に登録されています」</b>：検索結果に出せる状態です。</li>
+<li><b>「URL は Google に登録されていません」</b>：検索結果に出ない状態です。理由を確かめます。</li>
+</ul>
+<p>URL検査は、次のような場面で使います。</p>
+<ul>
+<li>新しく公開した事業紹介や事例のページが、検索に載ったかを確かめたいとき</li>
+<li>ページ インデックス登録レポートで「未登録」になっていたページの理由を、くわしく見たいとき</li>
+<li>お客様から「検索しても出てこない」と言われたページを確かめたいとき</li>
+</ul>
+<p>「公開 URL をテスト」を押すと、今のページの状態をその場で調べられます。直したあとに、問題がなくなったかを確かめるときに使います。</p>
+<p>新しいページを公開したときや、大きく書き直したときは、「インデックス登録をリクエスト」を押すと、Googleに読みに来てもらうようお願いできます。ただし、公式ヘルプでは、登録までに1〜2週間ほどかかることがあり、お願いしても検索に載るとは限らないと説明されています。お願いできる回数には1日あたりの上限もあります。何度も押しても早くはならないので、1回押したら待ちましょう。ページがたくさんあるときは、1つずつお願いするより、サイトマップを送るほうが向いています。</p>
+
+<div class="cta-mid"><span class="lb">無料相談</span><b>Googleマップや検索で見つけてもらいたい方へ</b><p>Googleマップの登録・整備から、検索で見つけてもらうためのホームページづくりまでお手伝いします。</p><div class="bt"><a href="../../contact/" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] shadow-[0_10px_24px_-10px_rgba(200,170,0,.7)] rounded-full font-bold tracking-[.04em] bg-cta-yellow text-ink hover:bg-cta-yellow-h hover:-translate-y-0.5 transition-all">1分で問い合わせ →</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] rounded-full font-bold tracking-[.04em] bg-[#06C755] text-white hover:bg-[#05B34C] hover:-translate-y-0.5 transition-all"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.4 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>LINEで相談する</a></div></div><h2 id="security">セキュリティの問題と手動による対策</h2>
+<p>左のメニューの「セキュリティと手動による対策」の中には、ふだんは何も出ていないのがよい状態のレポートが2つあります。何か出ていたら、すぐに対応が必要です。</p>
+<h3>セキュリティの問題</h3>
+<p>サイトが乗っ取られて勝手にページを足された（ハッキングされたコンテンツ）、見た人の機器に害を与えるソフトが仕込まれた（マルウェア）、見た人をだまして情報を入力させようとしている（ソーシャル エンジニアリング）、といった問題が見つかると、ここに表示されます。問題があると、検索結果に警告が付いたり、ページを開こうとした人のブラウザに警告の画面が出たりすることがあります。会社の信用に直結するので、表示されたらすぐに制作会社や管理している会社に連絡しましょう。改ざんされたときの動き方は、<a href="../wordpress-hacked/">WordPressの改ざんの対処法</a>で順番にまとめています。</p>
+<h3>手動による対策</h3>
+<p>手動による対策とは、Googleの担当者がサイトを見て、Googleのスパムに関する決まりに反していると判断したときに取られる措置です。対策を受けると、サイトの一部または全部が、検索結果に出なくなります。不自然なリンク、質の低い内容、隠した文字などが対象です。ふつうに会社のサイトを運営していれば、まず出ることはありません。ただ、過去に業者に頼んだ「リンクを増やすSEO」が原因になることもあるので、覚えておくとよいでしょう。</p>
+<p>どちらの場合も、問題を直したあと、レポートの画面から「審査をリクエスト」を送ります。審査には、数日から数週間かかります。</p>
+
+<h2 id="experience">ウェブに関する主な指標：表示の速さと見やすさ</h2>
+<p>左のメニューの「エクスペリエンス」の中には、「ウェブに関する主な指標」というレポートがあります。実際にサイトを訪れた人のデータをもとに、ページの表示の速さや、操作したときの反応のよさを、「良好」「改善が必要」「低速」の3段階で示してくれます。</p>
+<table class="art-table">
+<tr><th>指標</th><th>見ていること</th><th>良好の目安</th></tr>
+<tr><td>LCP</td><td>ページのいちばん大きな部分が表示されるまでの時間</td><td>2.5秒以下</td></tr>
+<tr><td>INP</td><td>押したり入力したりしてから、画面が反応するまでの時間</td><td>200ミリ秒以下</td></tr>
+<tr><td>CLS</td><td>読み込み中に、文字やボタンの位置がずれる度合い</td><td>0.1以下</td></tr>
+</table>
+<p>評価は、スマートフォンとパソコンで別々に出ます。また、似たページをまとめた「URLグループ」ごとに出ます。訪れる人が少ないサイトでは、データが足りず「データがありません」と表示されることもあります。その場合は気にしなくて大丈夫です。</p>
+<p>「低速」や「改善が必要」が多いときは、写真が重すぎる、余計な仕組みがたくさん入っている、などが考えられます。ここは専門的な作業になることが多いので、レポートの画面を制作会社に見せて相談するのが早道です。同じ「エクスペリエンス」の中にある「HTTPS」も、あわせて確かめておくと安心です。サイトが暗号化された通信（https）で表示されているかが分かります。httpsにしていないとどうなるかは、<a href="../not-secure-ssl/">「保護されていない通信」と出るのはなぜ？</a>で紹介しています。</p>
+
+<h2 id="mail">メールの通知を受け取れるようにする</h2>
+<p>サーチコンソールは、Googleが新しい問題を見つけると、メールで知らせてくれます。セキュリティの問題や手動による対策の知らせも、サーチコンソールの中のメッセージとメールで届きます。</p>
+<p>ここで気をつけたいのが、<b>そのメールが会社のだれに届いているか</b>です。登録したのが辞めた担当者や、昔の制作会社のアカウントだと、大事な知らせに気づけません。まずは「自社の、いまサイトを見ている人のアカウントが、プロパティのユーザーになっているか」を確かめましょう。迷惑メールのフォルダに入っていないかも、一度見ておくと安心です。ユーザーの足し方は、次の節で紹介します。</p>
+<p>メールが届いたときは、あわてずに次の順で動きます。</p>
+<ol>
+<li>メールに書かれているレポートの名前（ページ インデックス登録、セキュリティの問題など）を確かめる</li>
+<li>サーチコンソールを開き、そのレポートで、どのページに何が起きているかを見る</li>
+<li>大事なページに関わるものや、セキュリティの問題、手動による対策なら、すぐに制作会社や管理している会社に連絡する</li>
+<li>直したら、レポートの画面から「修正を検証」や「審査をリクエスト」を送る</li>
+</ol>
+<p>メールの中には、すぐに対応しなくてよい知らせもあります。だれがメールを受け取り、だれに相談するかを、社内で決めておくと安心です。</p>
+
+<h2 id="users">権限の付け方：持ち主は自社、制作会社には権限だけ</h2>
+<p>サーチコンソールは、ひとつのプロパティを複数の人で見られます。人を足すときは、「設定」から「ユーザーと権限」を開き、「ユーザーを追加」を押して、相手のメールアドレスと権限を選びます。</p>
+<table class="art-table">
+<tr><th>権限</th><th>できること</th></tr>
+<tr><td>オーナー</td><td>すべての操作ができます。ほかの人を足したり外したりもできます。所有権を確認した「確認済みオーナー」と、確認済みオーナーから任された「委任オーナー」があります。</td></tr>
+<tr><td>フルユーザー</td><td>すべてのデータを見られ、一部の操作もできます。</td></tr>
+<tr><td>制限付きユーザー</td><td>ほとんどのデータを見ることだけができます。</td></tr>
+</table>
+<p>制作する側からおすすめしたいのは、<b>オーナーは自社のアカウントが持ち、制作会社にはフルユーザーなどの権限だけを渡す</b>形です。制作会社がオーナーとして登録し、自社はだれも入れない、という状態はよく見かけます。その形だと、制作会社との契約が終わったときや、連絡が取れなくなったときに、自社のサイトの数字が見られなくなります。</p>
+<p>すでに制作会社がオーナーになっている場合は、自社のアカウントをオーナーとして足してもらうか、自社で所有権の確認をし直せば、自社もオーナーになれます。反対に、辞めた担当者や、取引が終わった会社をオーナーから外すときは注意が必要です。公式ヘルプによると、外されたオーナーでも、確認用のファイルやタグがサイトに残っていれば、もう一度オーナーに戻れてしまいます。外すときは、その人が置いた確認用のファイルやタグも消しましょう。</p>
+<p>ホームページの持ち物を自社で持っておく考え方は、ドメインやサーバーと同じです。マツケンスタジオでは、ドメインとサーバーはお客様の名義のままで作っています。サーチコンソールも同じように、自社が持ち主になっておくのが安心です。</p>
+
+<h3>自社でやること、制作会社に頼むこと</h3>
+<p>サーチコンソールで見つけたことを、だれが直すのかも決めておくと、点検が続けやすくなります。目安は次のとおりです。</p>
+<table class="art-table">
+<tr><th>自社でできること</th><th>制作会社に頼んだほうが早いこと</th></tr>
+<tr><td>月に一度、数字を見て書き残す</td><td>noindexやrobots.txtなど、設定の見直し</td></tr>
+<tr><td>検索語句から、お客様が使う言葉を拾う</td><td>リダイレクトの設定や、サイトマップの作り直し</td></tr>
+<tr><td>タイトルや説明文、本文の言葉を直す（更新できる仕組みなら）</td><td>表示の速さの改善</td></tr>
+<tr><td>事例やよくある質問のページを足す</td><td>セキュリティの問題が出たときの調査と復旧</td></tr>
+<tr><td>ユーザーと権限の見直し</td><td>確認用のファイルやタグの設置</td></tr>
+</table>
+<p>制作会社に頼むときは、サーチコンソールの画面を見せながら、「このページが未登録になっている」「このページのCTRが低い」と具体的に伝えると、話が早く進みます。そのためにも、制作会社にはフルユーザーなどの権限を渡しておくと便利です。</p>
+
+<h2 id="checklist">月に一度見ることの点検表</h2>
+<p>サーチコンソールは、毎日見る必要はありません。月に一度、決まった日に、次の点検表に沿って見るだけで十分です。1回あたり15分ほどを目安にしてみてください。</p>
+<table class="art-table">
+<tr><th>見る場所</th><th>確かめること</th></tr>
+<tr><td>検索パフォーマンス</td><td>合計クリック数と合計表示回数が、前の期間と比べて大きく減っていないか</td></tr>
+<tr><td>検索パフォーマンス（クエリ）</td><td>新しく出てきた検索語句はないか。狙っている言葉で表示されているか</td></tr>
+<tr><td>検索パフォーマンス（ページ）</td><td>表示回数は多いのに、クリック数が少ないページはないか</td></tr>
+<tr><td>ページ インデックス登録</td><td>大事なページが「登録済み」になっているか。未登録の数が急に増えていないか</td></tr>
+<tr><td>サイトマップ</td><td>ステータスが「成功」のままか</td></tr>
+<tr><td>セキュリティと手動による対策</td><td>何も表示されていないか</td></tr>
+<tr><td>ウェブに関する主な指標</td><td>「低速」のURLが増えていないか</td></tr>
+<tr><td>メッセージ</td><td>Googleからの知らせが届いていないか</td></tr>
+<tr><td>ユーザーと権限</td><td>辞めた人や、取引の終わった会社が残っていないか（半年に一度で十分）</td></tr>
+</table>
+<p>見た数字は、簡単な表に書き残しておくと、あとで比べやすくなります。数字が大きく減ったときに、その少し前にサイトを作り直した、ページを消した、といった出来事が分かると、原因を探しやすくなります。</p>
+
+<h2 id="improve">数字を見て直す例</h2>
+<p>サーチコンソールは、見るだけでは意味がありません。数字から直すところを見つけて、手を入れてこそ役に立ちます。会社サイトでよくある例を紹介します。</p>
+
+<h3>表示は多いのに、押されないページ</h3>
+<p>検索パフォーマンスの「ページ」で、表示回数は多いのに、CTRが低いページがあったとします。検索結果には出ているのに、選ばれていない状態です。この場合は、<b>検索結果に出るタイトルと説明文</b>を見直します。</p>
+<ul>
+<li>そのページが表示されているクエリを見て、検索した人が知りたいことを確かめる</li>
+<li>タイトルの前のほうに、その言葉と、何が分かるページかを入れる</li>
+<li>説明文に、対応できる内容や地域、相談のしかたなど、選ぶ理由を具体的に書く</li>
+</ul>
+<p>直したら、1〜2か月ほどたってから、同じページのCTRを、直す前の同じ長さの期間と比べます。</p>
+
+<h3>思っていない言葉で表示されている</h3>
+<p>クエリを見ると、自社が狙っていた言葉ではなく、別の言葉で表示されていることがあります。お客様が実際に使っている言葉が分かったら、その言葉をページの見出しや本文に入れたり、その言葉に答えるページを新しく作ったりします。どんなページを足すとよいかは、<a href="../seo-self/">SEO対策は自分でできる？</a>で紹介しています。</p>
+
+<h3>順位が11位〜20位あたりの言葉がある</h3>
+<p>平均掲載順位が11位から20位あたりの言葉は、検索結果の2ページ目あたりに出ている言葉です。もう少しでよく見られる位置に届くかもしれません。そのページに、よく聞かれる質問への答えや、事例、写真の説明を足して、内容を厚くしてみましょう。ただし、順位は検索する人や場所によっても変わり、必ず上がるものではありません。</p>
+
+<h3>大事なページが登録されていない</h3>
+<p>事業紹介のページがインデックスに登録されていなかったら、まず理由を確かめます。noindexの指示が入っていたなら外し、内容がほかのページとほとんど同じなら、そのページならではの説明を足します。直したら、URL検査で「公開 URL をテスト」をして問題がないことを確かめ、「インデックス登録をリクエスト」を押します。</p>
+
+<h3>会社名で検索されているのに、押されていない</h3>
+<p>会社名のクエリで表示は多いのに、クリックが少ないときは、検索結果の右側や地図に出るGoogleのビジネスプロフィールから、電話や道順を見て済ませている人が多いのかもしれません。それ自体は悪いことではありませんが、ビジネスプロフィールの情報が古いと、機会を逃してしまいます。整え方は、<a href="../google-business-profile/">Googleマップで選ばれる会社の共通点</a>をご覧ください。</p>
+
+<h2 id="summary">まとめ</h2>
+<p>サーチコンソールは、Googleの検索で自社のサイトがどう見えているかを教えてくれる、無料の道具です。最後に、この記事の要点をまとめます。</p>
+<ul>
+<li>登録は「プロパティを追加」から。ドメインはサイト全体をまとめて見られ、確認はDNSだけ。URLプレフィックスは確認の方法を選べる</li>
+<li>確認用のファイルやタグを消すと所有権が失われる。リニューアルのときは残してもらう</li>
+<li>登録したら、サイトマップを送る。ただし送っても、すべてが検索に載るとは限らない</li>
+<li>検索パフォーマンスでは、クリック数・表示回数・CTR・平均掲載順位を、クエリやページ、期間で比べる</li>
+<li>ページ インデックス登録では、大事なページが「登録済み」かを見る。未登録のすべてが問題ではない</li>
+<li>オーナーは自社が持ち、制作会社には権限だけを渡す。メールの知らせが自社に届くようにする</li>
+<li>月に一度、点検表に沿って見て、数字から直すところを見つける</li>
+</ul>
+<p>マツケンスタジオでは、最初のご相談から公開後まで同じ担当がつき、公開後の更新や改善も続けてお手伝いできます。サーチコンソールの数字を見ても、どこを直せばよいか分からないときや、更新の手が回らないときは、月額サポートで代わりに更新することもできます。お気軽にご相談ください。</p>
+</div>
+        <h2 id="faq" class="font-bold text-[22px] mt-12 mb-4" style="scroll-margin-top:90px">よくある質問</h2>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">サーチコンソールは無料ですか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">はい、無料です。Googleのアカウントがあれば、どなたでも使えます。登録したからといって、費用がかかることはありません。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">サーチコンソールに登録すると、検索の順位は上がりますか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">登録しただけで順位が上がるわけではありません。サーチコンソールは、Googleが自社のサイトをどう見ているかを知り、直すところを見つけるための道具です。数字を見て、ページを直していくことが大切です。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">ドメインとURLプレフィックスは、どちらで登録すればよいですか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">サイト全体をまとめて見たいならドメインが便利です。ただし、確認にはドメインの設定（DNS）を変える必要があります。DNSを触れない場合は、URLプレフィックスでHTMLファイルやHTMLタグを使って確認する方法もあります。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">制作会社がサーチコンソールを登録してくれています。このままでよいですか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">自社のアカウントがオーナーとして入っているかを確かめましょう。制作会社だけがオーナーだと、契約が終わったときに見られなくなるおそれがあります。オーナーは自社が持ち、制作会社にはフルユーザーなどの権限を渡す形が安心です。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">未登録のページがたくさんあります。問題ですか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">未登録のページがあること自体は、問題とは限りません。重複したページや、別のページへ飛ぶページなどは、もともと登録されません。事業紹介や事例など、見つけてほしい大事なページが登録済みになっているかを確かめましょう。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">インデックス登録をリクエストすれば、すぐ検索に出ますか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">すぐには出ません。Googleの公式ヘルプでは、1〜2週間ほどかかることがあり、お願いしても登録されるとは限らないと説明されています。1日にお願いできる回数にも上限があるので、1回押したら待ちましょう。</p>
+        </div>
+      </div>
+        <div class="mt-10"><div class="author"><div class="av">松</div><div><b>マツケンスタジオ 責任者</b><p>デジタルマーケティングの仕事を10年以上。上場企業での勤務や、1,000万人以上が使うサービスのマーケティングを経験し、マーケターとして企業のオウンドメディアを50万PVまで育て、数百社の集客を支援してきました。家業である松本研磨工業のホームページを作り直し、リニューアルから1か月で有効なお問い合わせを3倍にしています。</p><a href="../author/" class="text-[13px] font-bold text-accent-ink hover:underline">プロフィールを見る →</a></div></div></div>
+        <div class="mt-8"><div class="cta-end"><b>ホームページのこと、まずは気軽にご相談ください。</b><p>「何から始めればいいか分からない」という段階でも大丈夫です。町工場発のマツケンスタジオが、ドメインの取得から公開後の更新まで、まるごとお手伝いします。いまは毎月3社まで、特別な価格で制作する「事例づくりモニター」も受け付けています。</p><div class="bt"><a href="../../contact/" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] shadow-[0_10px_24px_-10px_rgba(200,170,0,.7)] rounded-full font-bold tracking-[.04em] bg-cta-yellow text-ink hover:bg-cta-yellow-h hover:-translate-y-0.5 transition-all">1分で問い合わせ →</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] rounded-full font-bold tracking-[.04em] bg-[#06C755] text-white hover:bg-[#05B34C] hover:-translate-y-0.5 transition-all"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.4 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>LINEで相談する</a><a href="../../monitor/" class="lp">事例づくりモニターを見る →</a></div></div></div>
+      </article>
+    </div>
+  </section>
+  <section class="py-14 md:py-20 st-alt">
+    <div class="pwrap">
+      <h2 class="sec-ttl">あわせて読みたい記事</h2>
+      <div class="col-grid three"><a href="../google-business-profile/" class="col-card"><span><span class="chip">SEO・集客</span></span><h3>Googleマップで選ばれる会社の共通点｜ビジネスプロフィールの整え方</h3><p>Googleマップで見つけてもらい、選ばれる会社になるために、Googleビジネスプロフィールで整えたいことをまとめました。Googleが示…</p><time datetime="2026-09-27">2026.09.27</time></a><a href="../meo/" class="col-card"><span><span class="chip">SEO・集客</span></span><h3>MEO対策とは？自分でできることと、頼むときの相場</h3><p>MEO対策とは、Googleマップで自社を見つけてもらいやすくするための取り組みです。自分でできること、業者に頼む場合の費用の考え方、気をつ…</p><time datetime="2026-10-03">2026.10.03</time></a><a href="../no-inquiry/" class="col-card"><span><span class="chip">SEO・集客</span></span><h3>ホームページから問い合わせが来ない理由｜確かめる順番と、直し方</h3><p>ホームページを作ったのに、問い合わせが来ない。その原因は「見られていない」か「見られているのに問い合わせにつながらない」のどちらかです。自分…</p><time datetime="2026-10-17">2026.10.17</time></a></div>
+    </div>
+  </section>
+
+  <section class="py-14 md:py-20">
+    <div class="pwrap">
+      <h2 class="sec-ttl">カテゴリから探す</h2>
+      <nav class="col-cats" aria-label="カテゴリ"><a href="../" class="on">すべて</a><a href="../category/homepage/" class="">ホームページ制作</a><a href="../category/renewal/" class="">リニューアル</a><a href="../category/cost/" class="">費用・発注</a><a href="../category/ai/" class="">AI検索対策</a><a href="../category/seo/" class="">SEO・集客</a><a href="../category/recruit/" class="">採用</a><a href="../category/industry/" class="">業種別</a><a href="../category/case/" class="">事例</a></nav>
+    </div>
+  </section>
+
+<div class="col-stick" id="colStick"><a href="../../contact/" class="bg-cta-yellow text-ink">1分で問い合わせ</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="bg-[#06C755] text-white">LINEで相談</a></div><script>(function(){var s=document.getElementById("colStick");if(!s)return;function u(){s.classList.toggle("show",window.scrollY>500&&(window.innerHeight+window.scrollY)<document.body.scrollHeight-700)}window.addEventListener("scroll",u,{passive:true});u()})();</script>
+</main>
+<footer class="site-footer bg-navy text-paper pt-14 md:pt-20 pb-8">
+  <div class="wrap">
+    <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-16 pb-10 md:pb-14 border-b border-paper/15">
+      <div>
+        <a href="../../../" class="inline-flex items-center gap-3">
+          <span class="w-11 h-11 rounded-full grid place-items-center font-semibold text-xl bg-paper text-ink">松</span>
+          <span class="text-[18px] md:text-[20px] font-bold tracking-[.04em] text-paper">株式会社松本研磨工業</span>
+        </a>
+        <p class="mt-5 text-[14px] leading-[1.9] text-paper/75">〒210-0851 神奈川県川崎市川崎区浜町3-9-22</p>
+        <div class="mt-6 flex flex-wrap gap-3"><a href="https://www.instagram.com/matsuken_studio/" target="_blank" rel="noopener" class="ft-sns"><svg class="w-5 h-5 stroke-current fill-none stroke-[1.5]" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>@matsuken_studio</span></a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="ft-sns"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.4 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg><span>LINEで相談</span></a></div>
+      </div>
+      <div class="lg:border-l lg:border-paper/15 lg:pl-16">
+        <h3 class="ft-head">お問い合わせ</h3>
+        <p class="text-[14px] leading-[1.9] text-paper/80 mb-5">マツケンスタジオへのご相談は、お問い合わせフォームかLINEで受け付けています。</p>
+        <a href="../../../web-ai/contact/" class="ft-btn">1分で問い合わせ</a>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-10 py-10 md:py-14 border-b border-paper/15">
+      <nav aria-label="金属研磨">
+        <h3 class="ft-head">金属研磨</h3>
+        <ul class="space-y-3">
+          <li><a href="../../../polishing/" class="ft-link">金属研磨技術の種類</a></li>
+          <li><a href="../../../polishing/buff-polishing/" class="ft-link">バフ研磨</a></li>
+          <li><a href="../../../polishing/belt-polishing/" class="ft-link">ベルト研磨</a></li>
+          <li><a href="../../../polishing/hairline-finish/" class="ft-link">ヘアライン仕上げ</a></li>
+          <li><a href="../../../polishing/flexible-polishing/" class="ft-link">フレキ研磨</a></li>
+          <li><a href="../../../#works" class="ft-link">加工実績</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="会社について">
+        <h3 class="ft-head">会社について</h3>
+        <ul class="space-y-3">
+          <li><a href="../../../company/" class="ft-link">会社情報</a></li>
+          <li><a href="../../../company/#access" class="ft-link">アクセス</a></li>
+          <li><a href="../../../#faq" class="ft-link">よくある質問</a></li>
+          <li><a href="../../../news/" class="ft-link">お知らせ</a></li>
+          <li><a href="../../../column/" class="ft-link">コラム</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Web集客・AI活用支援">
+        <h3 class="ft-head">Web集客・AI活用支援</h3>
+        <ul class="space-y-3">
+          <li><a href="../../../web-ai/" class="ft-link">サービス一覧</a></li>
+          <li><a href="../../../web-ai/seo-consulting/" class="ft-link">SEO・集客対策</a></li>
+          <li><a href="../../../web-ai/website/" class="ft-link">サイト制作・LP制作</a></li>
+          <li><a href="../../../web-ai/ai-katsuyo/" class="ft-link">AI活用支援</a></li>
+          <li><a href="../../../web-ai/case/" class="ft-link">実績・事例</a></li>
+          <li><a href="../../../web-ai/column/" class="ft-link">Web集客コラム</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-[13px] text-paper/60">
+      <a href="../../../privacy/" class="hover:text-paper hover:underline underline-offset-4">プライバシーポリシー</a>
+      <div>© 2026 株式会社松本研磨工業</div>
+    </div>
+  </div>
+</footer>
+<script>
+  const burger = document.getElementById('burgerBtn');
+  const mmenu  = document.getElementById('mobileMenu');
+  if (burger && mmenu) {
+    burger.addEventListener('click', () => mmenu.classList.toggle('translate-x-full'));
+    mmenu.querySelectorAll('[data-close]').forEach(a =>
+      a.addEventListener('click', () => mmenu.classList.add('translate-x-full'))
+    );
+  }
+  document.querySelectorAll('.mega-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const mega = btn.closest('.mega');
+      const isOpen = mega.classList.contains('open');
+      document.querySelectorAll('.mega.open').forEach(m => { m.classList.remove('open'); m.querySelector('.mega-btn').setAttribute('aria-expanded','false'); });
+      if (!isOpen) { mega.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+    });
+  });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.mega')) {
+      document.querySelectorAll('.mega.open').forEach(m => { m.classList.remove('open'); m.querySelector('.mega-btn').setAttribute('aria-expanded','false'); });
+    }
+  });
+</script>
+</body>
+</html>
