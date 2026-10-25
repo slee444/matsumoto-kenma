@@ -1,0 +1,1123 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5F157JYQD2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-5F157JYQD2');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Googleアナリティクスの使い方｜GA4の導入と見方、問い合わせ数の計り方｜マツケンスタジオ</title>
+<meta name="description" content="Googleアナリティクス（GA4）の使い方を会社サイトの担当者向けに解説。導入、最初に見るレポートと指標の意味、問い合わせ数を計るキーイベント、Search Consoleとのつなぎ方、月1回の点検表まで公式ヘルプをもとにまとめました。">
+<link rel="canonical" href="https://matsumoto-kenma.co.jp/web-ai/column/ga4/">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<meta property="og:title" content="Googleアナリティクスの使い方｜GA4の導入と見方、問い合わせ数の計り方｜マツケンスタジオ">
+<meta property="og:description" content="Googleアナリティクス（GA4）の使い方を会社サイトの担当者向けに解説。導入、最初に見るレポートと指標の意味、問い合わせ数を計るキーイベント、Search Consoleとのつなぎ方、月1回の点検表まで公式ヘルプをもとにまとめました。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://matsumoto-kenma.co.jp/web-ai/column/ga4/">
+<meta property="og:site_name" content="マツケンスタジオ by 松本研磨工業">
+<meta property="og:image" content="https://matsumoto-kenma.co.jp/images/ogp-studio.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="マツケンスタジオ by 松本研磨工業｜Web集客・AI活用支援">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Googleアナリティクスの使い方｜GA4の導入と見方、問い合わせ数の計り方｜マツケンスタジオ">
+<meta name="twitter:description" content="Googleアナリティクス（GA4）の使い方を会社サイトの担当者向けに解説。導入、最初に見るレポートと指標の意味、問い合わせ数を計るキーイベント、Search Consoleとのつなぎ方、月1回の点検表まで公式ヘルプをもとにまとめました。">
+<meta name="twitter:image" content="https://matsumoto-kenma.co.jp/images/ogp-studio.jpg">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/noto-sans-jp-500.woff2" crossorigin>
+<style>
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/noto-sans-jp-400.woff2) format('woff2');}
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/noto-sans-jp-500.woff2) format('woff2');}
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/noto-sans-jp-600.woff2) format('woff2');}
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/noto-sans-jp-700.woff2) format('woff2');}
+@font-face {font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/jetbrains-mono-400.woff2) format('woff2');}
+@font-face {font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/jetbrains-mono-500.woff2) format('woff2');}
+</style>
+<link rel="stylesheet" href="/css/tailwind.css">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#F4F2ED;color:#0E0E10;font-family:'Noto Sans JP',sans-serif;font-size:15px;line-height:1.7}
+  a{color:inherit;text-decoration:none}
+  .pwrap{max-width:960px;margin:0 auto;padding:0 20px}
+  @media(min-width:768px){.pwrap{padding:0 40px}}
+  .sec-label{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.14em;color:#4A4A47;margin-bottom:16px}
+  .sec-ttl{font-size:24px;font-weight:600;line-height:1.4;margin-bottom:20px}
+  @media(min-width:768px){.sec-ttl{font-size:28px}}
+
+  /* Hero */
+  .hero-wrap{position:relative;overflow:hidden}
+  .wm{position:absolute;right:-.4em;top:-.12em;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:min(38vw,340px);line-height:1;color:rgba(244,242,237,.045);pointer-events:none;user-select:none;white-space:nowrap;z-index:0}
+  .icon-badge{width:64px;height:64px;border-radius:9999px;border:1.5px solid rgba(244,242,237,.35);display:grid;place-items:center;font-size:26px;color:#F4F2ED;flex-shrink:0}
+
+  /* Cards with accent bar */
+  .card2{position:relative;border:1px solid rgba(14,14,16,.1);background:#fff;padding:30px 24px 26px;border-top:3px solid #1B3A6B}
+  .card2.alt{border-top-color:#2E5BA6}
+  .card2 .idx{font-family:'JetBrains Mono',monospace;font-size:11px;color:#8a8a86;letter-spacing:.15em;margin-bottom:14px}
+
+  /* Spec box */
+  .spec-box{background:#E9E6DE;border-radius:4px;padding:4px 28px}
+  .spec-box div{display:grid;grid-template-columns:140px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid rgba(14,14,16,.08)}
+  .spec-box div:last-child{border-bottom:none}
+  .spec-box dt{font-size:13px;color:#4A4A47}
+  .spec-box dd{font-size:14px}
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+  .tag-pill{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;border:1px solid rgba(14,14,16,.15);padding:6px 12px;border-radius:2px;color:#4A4A47}
+
+  /* Process */
+  .step2{position:relative;padding:6px 0 30px 32px;border-left:2px solid #D9D4C8}
+  .step2:last-child{border-left:2px solid transparent;padding-bottom:2px}
+  .step2::before{content:'';position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:#1B3A6B}
+  .step2.alt::before{background:#2E5BA6}
+  .step2 .pnum{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:#8a8a86;margin-bottom:4px}
+
+  /* FAQ (matches homepage Q/A style) */
+  .faq2{display:grid;grid-template-columns:36px 1fr;gap:16px;padding:22px 0;border-top:1px solid #D9D4C8}
+  .faq2:last-child{border-bottom:1px solid #D9D4C8}
+  .faq2 .qa{font-family:'Noto Sans JP',sans-serif;font-size:22px;font-weight:600;line-height:1}
+  .faq2 .q{color:#1B3A6B}
+  .faq2 .a{color:#8a8a86}
+
+  /* Note / caution list */
+  .note-list{border-left:2px solid #0E0E10}
+  .note-list li{list-style:none;padding:18px 0 18px 22px;border-bottom:1px solid #D9D4C8}
+  .note-list li:last-child{border-bottom:none}
+  .note-list .note-ttl{font-weight:600;font-size:14px;margin-bottom:6px}
+
+  .wrap{max-width:1360px;margin:0 auto;padding:0 20px}
+  @media(min-width:768px){.wrap{padding:0 40px}}
+  .menu-link.active::after{content:"";position:absolute;left:16px;right:16px;bottom:4px;height:1px;background:#1B3A6B}
+  .mega.open .mega-panel, .mega:hover .mega-panel{opacity:1;visibility:visible;--tw-translate-y:0}
+  .mega.open .mega-caret{transform:rotate(180deg)}
+  .mega:hover .mega-caret{transform:rotate(180deg)}
+  .drawer-acc summary::-webkit-details-marker{display:none}
+  .drawer-acc[open] .drawer-acc-icon{transform:rotate(180deg)}
+  .mega-panel .grid>div{min-width:0}
+  .mega-panel li a{word-break:break-word}
+  .bg-navy .text-muted-ink,.bg-navy-2 .text-muted-ink{color:rgba(244,242,237,0.72)!important}
+</style>
+<style>
+/* site-chrome: match homepage header/footer */
+@font-face {font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/inter-400.woff2) format('woff2');}
+@font-face {font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/inter-500.woff2) format('woff2');}
+@font-face {font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/inter-600.woff2) format('woff2');}
+nav.fixed,#mobileMenu,footer{font-family:Inter,"Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Yu Gothic",sans-serif;font-size:15px;line-height:1.75;letter-spacing:.03em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+nav.fixed :is(p,li,dd,span),#mobileMenu :is(p,li,dd,span),footer :is(p,li,dd,span){letter-spacing:.035em}
+nav.fixed .font-serif,#mobileMenu .font-serif,footer .font-serif{font-weight:500}
+nav.fixed .font-serif.font-medium,#mobileMenu .font-serif.font-medium,footer .font-serif.font-medium{font-weight:600}
+nav.fixed .font-serif.font-semibold,#mobileMenu .font-serif.font-semibold,footer .font-serif.font-semibold{font-weight:700}
+</style>
+<style>/* site-footer */
+.site-footer .ft-head{font-size:15px;font-weight:700;color:#F4F2ED;letter-spacing:.04em;padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid rgba(244,242,237,.2)}
+.site-footer .ft-link{font-size:15px;color:rgba(244,242,237,.82);line-height:1.6}
+.site-footer .ft-link:hover{color:#F4F2ED;text-decoration:underline;text-underline-offset:4px}
+.site-footer .ft-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:240px;padding:15px 24px;border-radius:4px;background:#F4F2ED;color:#0E0E10;font-size:15px;font-weight:700;transition:background .2s}
+.site-footer .ft-btn::after{content:"→"}
+.site-footer .ft-btn:hover{background:#fff}
+.site-footer .ft-sns{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid rgba(244,242,237,.3);border-radius:4px;font-size:13px;color:#F4F2ED}
+.site-footer .ft-sns:hover{background:rgba(244,242,237,.1)}
+.site-footer a:focus-visible{outline:2px solid #F4F2ED;outline-offset:3px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://matsumoto-kenma.co.jp/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Web集客・AI活用支援",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Web集客コラム",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/column/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "SEO・集客",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/column/category/seo/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Googleアナリティクスの使い方｜GA4の導入と見方、問い合わせ数の計り方",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/column/ga4/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Googleアナリティクスの使い方｜GA4の導入と見方、問い合わせ数の計り方",
+  "description": "Googleアナリティクス（GA4）の使い方を会社サイトの担当者向けに解説。導入、最初に見るレポートと指標の意味、問い合わせ数を計るキーイベント、Search Consoleとのつなぎ方、月1回の点検表まで公式ヘルプをもとにまとめました。",
+  "url": "https://matsumoto-kenma.co.jp/web-ai/column/ga4/",
+  "image": "https://matsumoto-kenma.co.jp/images/ogp-studio.jpg",
+  "datePublished": "2026-10-25",
+  "dateModified": "2026-10-25",
+  "articleSection": "SEO・集客",
+  "inLanguage": "ja",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://matsumoto-kenma.co.jp/web-ai/#studio",
+    "name": "マツケンスタジオ",
+    "url": "https://matsumoto-kenma.co.jp/web-ai/column/author/"
+  },
+  "publisher": {
+    "@id": "https://matsumoto-kenma.co.jp/#organization"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://matsumoto-kenma.co.jp/web-ai/column/ga4/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Googleアナリティクスは無料で使えますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、無料で使えます。Googleのアカウントがあれば始められます。大企業向けの有料版もありますが、中小企業の会社サイトなら、無料版で足りることがほとんどです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "GA4とGoogleアナリティクスは別のものですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "同じものです。GA4は、今使われているGoogleアナリティクスの版の呼び名です。古い記事で見かけるユニバーサル アナリティクスは以前の版で、画面や数字の名前が違うので、調べるときはGA4について書かれたものを選びましょう。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "タグを入れたのに数字が出ません。",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Googleの公式ヘルプによると、データが集まり始めるまで最長で30分ほどかかることがあります。少し待ってから、リアルタイムのレポートを開き、自分でサイトを見て人数が増えるかを確かめてください。増えない場合は、測定IDの入れ間違いや、タグが一部のページにしか入っていないことが考えられます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ユーザーとセッションは何が違いますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ユーザーはサイトを訪れた人の数、セッションは訪れた回数です。同じ人が午前と午後に1回ずつ来た場合、ユーザーは1、セッションは2と数えます。初期設定では、30分なにも操作がないと1回の訪問が終わったとみなされます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "問い合わせの数とGoogleアナリティクスの数字が合いません。",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "フォームの作り方によっては送信がうまく記録されなかったり、ほかのフォームの送信も一緒に数えたりすることがあります。また、Cookieの同意バナーで同意しなかった人の分は、数字が少なく出ることもあります。送信完了ページの表示回数とあわせて見て、大きくずれていないかを確かめましょう。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "制作会社がGoogleアナリティクスを設定してくれています。このままでよいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "自社のGoogleアカウントが管理者として入っているかを確かめましょう。制作会社のアカウントだけで作られていると、契約が終わったときに数字を見られなくなるおそれがあります。管理者は自社が持ち、制作会社には編集者など、仕事に合った役割を渡す形が安心です。"
+      }
+    }
+  ]
+}
+</script>
+<style>
+  /* Matsuken Studio: light theme */
+  html,body{background:#FFFFFF}
+  .pwrap{max-width:960px;margin:0 auto;padding:0 20px}
+  @media(min-width:768px){.pwrap{padding:0 40px}}
+  .pwrap.max-w-\[800px\]{max-width:880px}
+  .st-alt{background:#F4F6F9}
+  .st-cta{background:#FFF9D6}
+  .sec-label{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.14em;color:#1B3A6B;margin-bottom:16px}
+  .sec-ttl{font-size:24px;font-weight:700;line-height:1.45;margin-bottom:20px;color:#0E0E10}
+  @media(min-width:768px){.sec-ttl{font-size:30px}}
+  .st-logo{display:inline-flex;align-items:center;gap:12px}
+  .st-mark{width:40px;height:40px;border-radius:10px;background:#1B3A6B;color:#fff;display:grid;place-items:center;font-weight:700;font-size:22px;position:relative;flex-shrink:0}
+  .st-mark::after{content:'';position:absolute;right:-3px;top:-3px;width:12px;height:12px;border-radius:50%;background:#F5DE00;border:2px solid #fff}
+  .st-name{display:block;font-weight:800;font-size:20px;letter-spacing:.04em;color:#0E0E10;line-height:1.2}
+  .st-by{display:block;font-size:11px;letter-spacing:.14em;color:#5E5E65;margin-top:3px}
+  .st-hero{position:relative;overflow:hidden;background:#fff;border-bottom:1px solid #E6E9EE}
+  .st-hero::before{content:'';position:absolute;right:-120px;top:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,#FFF4B0 0%,rgba(255,244,176,0) 70%);pointer-events:none}
+  .st-hero::after{content:'';position:absolute;right:40px;bottom:40px;width:260px;height:180px;background-image:radial-gradient(#C9D2DF 1.2px,transparent 1.2px);background-size:14px 14px;opacity:.7;pointer-events:none}
+  .trust{display:grid;grid-template-columns:1fr;border-top:1px solid #E6E9EE}
+  @media(min-width:768px){.trust{grid-template-columns:repeat(3,1fr)}}
+  .trust>div{padding:20px 0}
+  @media(min-width:768px){.trust>div{padding:24px 28px}.trust>div+div{border-left:1px solid #E6E9EE}.trust>div:first-child{padding-left:0}}
+  .trust .t-big{font-size:17px;font-weight:700;color:#0E0E10;margin-bottom:4px}
+  .trust .t-sub{font-size:13px;color:#5E5E65;line-height:1.8}
+  .card2{position:relative;border:1px solid #E1E5EB;background:#fff;padding:30px 24px 26px;border-top:3px solid #1B3A6B;border-radius:6px}
+  .card2.alt{border-top-color:#2E5BA6}
+  .card2 .idx{font-family:'JetBrains Mono',monospace;font-size:11px;color:#8a8a86;letter-spacing:.15em;margin-bottom:14px}
+  .svc-list{background:#fff;border:1px solid #E1E5EB;border-radius:8px;padding:10px 28px}
+  .svc-list li{list-style:none;display:grid;grid-template-columns:22px 1fr;gap:10px;padding:14px 0;border-bottom:1px solid #EEF1F5;font-size:14px;line-height:1.8}
+  .svc-list li:last-child{border-bottom:none}
+  .svc-list li::before{content:'';width:10px;height:10px;margin-top:8px;border-radius:3px;background:#F5DE00;box-shadow:0 0 0 2px #1B3A6B inset}
+  .step2{position:relative;padding:6px 0 30px 32px;border-left:2px solid #DDE3EB}
+  .step2:last-child{border-left:2px solid transparent;padding-bottom:2px}
+  .step2::before{content:'';position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:#1B3A6B}
+  .step2.alt::before{background:#2E5BA6}
+  .step2 .pnum{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:#8a8a86;margin-bottom:4px}
+  .faq2{display:grid;grid-template-columns:36px 1fr;gap:16px;padding:22px 0;border-top:1px solid #E1E5EB}
+  .faq2:last-child{border-bottom:1px solid #E1E5EB}
+  .faq2 .qa{font-size:22px;font-weight:700;line-height:1;color:#1B3A6B}
+  .price-box{border:1px solid #E1E5EB;border-radius:8px;background:#fff;padding:32px 28px;display:grid;grid-template-columns:1fr;gap:18px}
+  @media(min-width:768px){.price-box{grid-template-columns:1fr auto;align-items:center;padding:36px 40px}}
+  .case-card{display:grid;grid-template-columns:1fr;border:1px solid #E1E5EB;border-radius:8px;overflow:hidden;background:#fff;transition:border-color .2s,box-shadow .2s}
+  .case-card:hover{border-color:#1B3A6B;box-shadow:0 10px 30px -14px rgba(27,58,107,.35)}
+  .case-card .c-img{background:linear-gradient(135deg,#EAF0F8,#FFF6C4);min-height:160px;display:grid;place-items:center;color:#1B3A6B;font-size:13px;font-weight:600;letter-spacing:.14em}
+  @media(min-width:768px){.case-card{grid-template-columns:280px 1fr}}
+  .rel-grid{display:grid;grid-template-columns:1fr;gap:28px}
+  @media(min-width:768px){.rel-grid{grid-template-columns:repeat(4,1fr)}}
+  .rel-grid a{display:block;padding:9px 0;border-bottom:1px solid #E1E5EB;font-size:14px;transition:color .15s}
+  .rel-grid a:hover{color:#2E5BA6}
+  .rel-grid a.current{color:#8a8a86;pointer-events:none}
+  .svc-card{display:block;background:#fff;border:1px solid #E1E5EB;border-radius:8px;padding:26px 24px;transition:border-color .2s,box-shadow .2s,transform .2s}
+  a.svc-card:hover{border-color:#1B3A6B;box-shadow:0 10px 30px -14px rgba(27,58,107,.35);transform:translateY(-2px)}
+  .st-illu{display:block;width:100%;height:auto;max-width:300px;margin:0 auto}
+  .st-icon{display:block;margin-bottom:12px}
+  .story p{font-size:15px;line-height:2.1;color:#26262B;margin-bottom:20px}
+  @media(min-width:768px){.story p{font-size:16px}}
+  .story-quote{font-size:clamp(20px,2.6vw,28px);font-weight:700;line-height:1.6;color:#0E0E10;padding-left:20px;border-left:4px solid #F5DE00}
+  .target-card{background:#fff;border:1px solid #E1E5EB;border-radius:8px;padding:24px}
+  .target-card .tg{display:inline-block;font-size:12px;font-weight:700;color:#1B3A6B;background:#FFF4B0;border-radius:999px;padding:4px 12px;margin-bottom:12px}
+</style>
+<style>
+  .col-cats{display:flex;flex-wrap:wrap;gap:8px}
+  .col-cats a{font-size:13px;font-weight:700;padding:7px 14px;border-radius:999px;background:#fff;border:1px solid #E1E5EB;color:#1B3A6B}
+  .col-cats a:hover,.col-cats a.on{background:#1B3A6B;color:#fff;border-color:#1B3A6B}
+  .col-grid{display:grid;grid-template-columns:1fr;gap:18px}
+  @media(min-width:768px){.col-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1024px){.col-grid.three{grid-template-columns:repeat(3,1fr)}}
+  .col-card{display:flex;flex-direction:column;background:#fff;border:1px solid #E1E5EB;border-radius:10px;padding:22px 22px 18px;transition:border-color .2s,box-shadow .2s}
+  .col-card:hover{border-color:#1B3A6B;box-shadow:0 10px 30px -16px rgba(27,58,107,.35)}
+  .chip{display:inline-block;font-size:12px;font-weight:700;color:#1B3A6B;background:#FFF4B0;border-radius:999px;padding:3px 10px}
+  .col-card h3{font-size:17px;font-weight:700;line-height:1.6;margin:12px 0 8px;color:#0E0E10}
+  .col-card p{font-size:13px;line-height:1.8;color:#5E5E65;flex:1}
+  .col-card time{font-size:12px;color:#8a8a86;margin-top:12px;font-family:'JetBrains Mono',monospace}
+  .art{max-width:760px;margin:0 auto}
+  .art-body h2{font-size:22px;font-weight:700;line-height:1.5;margin:48px 0 16px;padding-left:14px;border-left:5px solid #F5DE00;scroll-margin-top:90px}
+  @media(min-width:768px){.art-body h2{font-size:25px}}
+  .art-body h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:#1B3A6B}
+  .art-body p{font-size:16px;line-height:2;color:#26262B;margin-bottom:18px}
+  .art-body ul,.art-body ol{margin:0 0 20px 1.4em;font-size:16px;line-height:1.9;color:#26262B}
+  .art-body li{margin-bottom:6px}
+  .art-body ul,.points ul{list-style:disc}
+  .art-body ol,.toc ol{list-style:decimal}
+  .art-body li::marker,.points li::marker{color:#1B3A6B}
+  .art-body a{color:#1B3A6B;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+  .art-body .st-illu{margin:26px auto}
+  .art-table{width:100%;border-collapse:collapse;margin:8px 0 24px;font-size:14px;background:#fff;border:1px solid #E1E5EB}
+  .art-table th,.art-table td{padding:12px 14px;border-bottom:1px solid #EEF1F5;text-align:left;vertical-align:top;line-height:1.7}
+  .art-table th{background:#F4F6F9;font-weight:700;color:#1B3A6B}
+  .art-body p.ask{font-size:14px;line-height:1.8;background:#F4F6F9;border-left:4px solid #1B3A6B;border-radius:0 8px 8px 0;padding:10px 14px;color:#26262B}
+  .points{background:#FFF9D6;border-radius:10px;padding:20px 24px;margin:26px 0}
+  .points b{display:block;font-size:14px;margin-bottom:8px;color:#1B3A6B}
+  .points li{font-size:15px;line-height:1.8;margin-left:1.2em}
+  .toc{background:#F4F6F9;border-radius:10px;padding:20px 24px;margin:0 0 30px}
+  .toc b{display:block;font-size:14px;margin-bottom:8px}
+  .toc ol{margin-left:1.3em;font-size:14px;line-height:2}
+  .toc a{color:#1B3A6B}
+  .author{display:grid;grid-template-columns:56px 1fr;gap:16px;background:#fff;border:1px solid #E1E5EB;border-radius:12px;padding:22px}
+  .author .av{width:56px;height:56px;border-radius:14px;background:#1B3A6B;color:#fff;display:grid;place-items:center;font-weight:700;font-size:24px;position:relative}
+  .author .av::after{content:'';position:absolute;right:-3px;top:-3px;width:14px;height:14px;border-radius:50%;background:#F5DE00;border:2px solid #fff}
+  .author b{font-size:15px}.author p{font-size:13px;line-height:1.9;color:#4A4A50;margin-top:6px}
+  .art-body .cta-mid a{text-decoration:none}
+  .art-body .cta-mid a.bg-cta-yellow{color:#0E0E10}
+  .art-body .cta-mid a[href*="line.me"]{color:#fff}
+  .cta-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;border:1px solid #E1E5EB;border-radius:12px;padding:14px 18px;margin:-8px 0 26px;background:#fff}
+  .cta-top p{font-size:14px;font-weight:700;color:#0E0E10}
+  .cta-top .bt{display:flex;gap:8px;flex-wrap:wrap}
+  .cta-top a.btn-s{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;border-radius:999px;padding:9px 16px}
+  .cta-mid{margin:36px 0;border-radius:14px;background:#FFF9D6;padding:24px 24px 22px;position:relative;overflow:hidden}
+  .cta-mid::after{content:'';position:absolute;right:-50px;top:-50px;width:160px;height:160px;border-radius:50%;background:repeating-radial-gradient(circle,rgba(27,58,107,.08) 0 1px,transparent 1px 10px)}
+  .cta-mid .lb{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:#1B3A6B;border-radius:999px;padding:3px 10px;margin-bottom:10px}
+  .cta-mid b{display:block;font-size:18px;line-height:1.6;margin-bottom:6px;color:#0E0E10}
+  .cta-mid p{font-size:14px;line-height:1.8;color:#3A3A40;margin-bottom:16px;position:relative;z-index:1}
+  .cta-mid .bt{display:flex;flex-direction:column;gap:10px;position:relative;z-index:1}
+  @media(min-width:640px){.cta-mid .bt{flex-direction:row}}
+  .cta-end{border-radius:16px;background:#1B3A6B;color:#fff;padding:28px 26px}
+  .cta-end b{display:block;font-size:20px;line-height:1.6;margin-bottom:8px}
+  .cta-end p{font-size:14px;line-height:1.9;color:rgba(255,255,255,.85);margin-bottom:18px}
+  .cta-end .bt{display:flex;flex-direction:column;gap:10px}
+  @media(min-width:640px){.cta-end .bt{flex-direction:row;align-items:center}}
+  .cta-end .lp{font-size:14px;font-weight:700;color:#F5DE00;text-decoration:underline;text-underline-offset:3px}
+  .col-stick{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid #E1E5EB;transform:translateY(110%);transition:transform .25s}
+  .col-stick.show{transform:none}
+  .col-stick a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:999px;padding:12px 8px;font-size:14px;font-weight:700}
+  @media(min-width:768px){.col-stick{display:none}}
+  .soft-cta{background:#fff;border:1px solid #E1E5EB;border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:14px}
+  @media(min-width:768px){.soft-cta{flex-direction:row;align-items:center;justify-content:space-between}}
+  .soft-cta p{font-size:14px;line-height:1.8;color:#26262B}
+</style>
+<script type="application/ld+json" data-sd="managed">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://matsumoto-kenma.co.jp/#organization",
+      "name": "株式会社松本研磨工業",
+      "alternateName": [
+        "松本研磨工業",
+        "松本研磨"
+      ],
+      "url": "https://matsumoto-kenma.co.jp/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://matsumoto-kenma.co.jp/images/logo.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://matsumoto-kenma.co.jp/images/ogp.jpg",
+      "description": "神奈川県川崎市川崎区の金属研磨工場。1967年創業。ステンレス・アルミ・真鍮・鉄などのバフ研磨（鏡面仕上げ）、ベルト研磨、ヘアライン仕上げ、フレキ研磨を、試作の1個から小量産まで手作業で請け負っています。図面がなくても、現物や写真からお見積りできます。",
+      "telephone": "+81-44-333-8412",
+      "faxNumber": "+81-44-333-3843",
+      "address": {
+        "@type": "PostalAddress",
+        "postalCode": "210-0851",
+        "addressRegion": "神奈川県",
+        "addressLocality": "川崎市川崎区",
+        "streetAddress": "浜町3-9-22",
+        "addressCountry": "JP"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 35.5257,
+        "longitude": 139.7194
+      },
+      "hasMap": "https://maps.google.com/?q=神奈川県川崎市川崎区浜町3-9-22",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:30",
+          "closes": "18:00"
+        }
+      ],
+      "foundingDate": "1967",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "日本"
+        },
+        {
+          "@type": "City",
+          "name": "川崎市"
+        },
+        {
+          "@type": "City",
+          "name": "横浜市"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "東京都"
+        }
+      ],
+      "knowsAbout": [
+        "金属研磨",
+        "バフ研磨",
+        "鏡面仕上げ",
+        "ベルト研磨",
+        "ヘアライン仕上げ",
+        "フレキ研磨",
+        "ステンレス研磨",
+        "アルミ研磨",
+        "真鍮研磨",
+        "曲面研磨"
+      ],
+      "sameAs": [
+        "https://www.instagram.com/matsu_polish/",
+        "https://www.youtube.com/channel/UCIGiSzo9TyINLuygAsuP5ew/"
+      ],
+      "department": {
+        "@id": "https://matsumoto-kenma.co.jp/web-ai/#studio"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://matsumoto-kenma.co.jp/#website",
+      "url": "https://matsumoto-kenma.co.jp/",
+      "name": "株式会社松本研磨工業",
+      "inLanguage": "ja",
+      "publisher": {
+        "@id": "https://matsumoto-kenma.co.jp/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://matsumoto-kenma.co.jp/web-ai/#studio",
+      "name": "マツケンスタジオ",
+      "alternateName": "マツケンスタジオ by 松本研磨工業",
+      "url": "https://matsumoto-kenma.co.jp/web-ai/",
+      "image": "https://matsumoto-kenma.co.jp/images/ogp-studio.jpg",
+      "description": "株式会社松本研磨工業が運営する、町工場発のWeb事業。製造業・建設業・工務店・運送業など、現場と技術のある中小企業のホームページ制作・リニューアル、検索対策、Web広告、AI活用をお手伝いします。",
+      "parentOrganization": {
+        "@id": "https://matsumoto-kenma.co.jp/#organization"
+      },
+      "sameAs": [
+        "https://www.instagram.com/matsuken_studio/",
+        "https://page.line.me/115rhdee"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "日本"
+      },
+      "knowsAbout": [
+        "ホームページ制作",
+        "ホームページリニューアル",
+        "Web集客",
+        "SEO",
+        "LLMO",
+        "サイト制作",
+        "LP制作",
+        "Web広告",
+        "CVR改善",
+        "BtoBマーケティング",
+        "AI活用"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://matsumoto-kenma.co.jp/web-ai/column/ga4/#webpage",
+      "url": "https://matsumoto-kenma.co.jp/web-ai/column/ga4/",
+      "name": "Googleアナリティクスの使い方｜GA4の導入と見方、問い合わせ数の計り方｜マツケンスタジオ",
+      "description": "Googleアナリティクス（GA4）の使い方を会社サイトの担当者向けに解説。導入、最初に見るレポートと指標の意味、問い合わせ数を計るキーイベント、Search Consoleとのつなぎ方、月1回の点検表まで公式ヘルプをもとにまとめました。",
+      "inLanguage": "ja",
+      "isPartOf": {
+        "@id": "https://matsumoto-kenma.co.jp/#website"
+      },
+      "about": {
+        "@id": "https://matsumoto-kenma.co.jp/web-ai/#studio"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://matsumoto-kenma.co.jp/images/ogp-studio.jpg"
+      },
+      "dateModified": "2026-09-27"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav class="fixed top-0 left-0 right-0 z-50 bg-paper/80 backdrop-blur-[14px] border-b border-ink/[0.08]">
+  <div class="wrap flex items-center justify-between h-[60px] md:h-[72px]">
+
+    <!-- Brand -->
+    <a href="../../../#home" class="flex items-center gap-3 md:gap-[14px]">
+      <span class="w-9 h-9 md:w-10 md:h-10 border-[1.5px] border-ink rounded-full grid place-items-center font-serif font-semibold text-lg md:text-xl bg-ink text-paper">松</span>
+      <span class="leading-[1.1]">
+        <div class="font-serif text-[13px] md:text-[15px] font-medium tracking-[.04em]">株式会社松本研磨工業</div>
+        <div class="hidden sm:block font-mono text-[10px] text-muted tracking-[.22em] mt-[2px]">創業58年・川崎</div>
+      </span>
+    </a>
+
+    <!-- Desktop menu — hidden below md -->
+    <div class="hidden md:flex gap-[2px] items-center">
+      <a href="../../../#home" class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">ホーム</a>
+
+      <!-- 金属研磨技術 メガメニュー -->
+      <div class="mega relative">
+        <button class="mega-btn flex items-center gap-1 px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors" aria-expanded="false">
+          金属研磨技術
+          <svg class="w-3 h-3 stroke-current fill-none stroke-[2] mega-caret transition-transform" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="mega-panel absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[320px] bg-navy text-paper rounded-sm shadow-[0_24px_48px_-12px_rgba(0,0,0,.35)] p-2 opacity-0 invisible translate-y-1 transition-all duration-150">
+          <div class="pb-2 mb-1 border-b border-paper/10">
+            <a href="../../../polishing/" class="block px-4 py-2.5 rounded-sm text-[13px] font-semibold hover:bg-paper/10 hover:text-paper hover:underline underline-offset-4 transition-colors">金属研磨技術 一覧 →</a>
+          </div>
+          <a href="../../../polishing/buff-polishing/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">バフ研磨</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">鏡面仕上げ</div>
+          </a>
+          <a href="../../../polishing/belt-polishing/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">ベルト研磨</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">バリ取り・形状補正</div>
+          </a>
+          <a href="../../../polishing/hairline-finish/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">ヘアライン加工</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">一方向のライン仕上げ</div>
+          </a>
+          <a href="../../../polishing/flexible-polishing/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">フレキ研磨／曲面研磨</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">複雑形状への手作業</div>
+          </a>
+        </div>
+      </div>
+
+      <a href="../../../#works" class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">加工実績</a>
+
+      <!-- Web集客・AI活用支援 メガメニュー -->
+      <div class="mega relative">
+        <button class="mega-btn flex items-center gap-1 px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors" aria-expanded="false">
+          Web集客・AI活用支援
+          <svg class="w-3 h-3 stroke-current fill-none stroke-[2] mega-caret transition-transform" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="mega-panel fixed left-1/2 -translate-x-1/2 top-[72px] mt-2 w-[860px] max-w-[92vw] bg-navy text-paper rounded-sm shadow-[0_24px_48px_-12px_rgba(0,0,0,.35)] p-7 opacity-0 invisible translate-y-1 transition-all duration-150">
+          <div class="mb-6 pb-5 border-b border-paper/10 flex items-center justify-between">
+            <a href="../../../web-ai/" class="font-serif text-[13px] font-semibold hover:text-paper hover:underline underline-offset-4 transition-colors">Web集客・AI活用支援 トップ →</a>
+            <a href="../../../web-ai/case/" class="font-serif text-[13px] font-semibold hover:text-paper hover:underline underline-offset-4 transition-colors">実績・事例 →</a>
+          </div>
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">戦略・コンサルティング</div>
+              <ul class="space-y-2">
+                <li><a href="../../../web-ai/consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">デジタルマーケティングコンサルティング</a></li>
+                <li><a href="../../../web-ai/btob-marketing/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">BtoBマーケティング支援</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">集客・改善</div>
+              <ul class="space-y-2">
+                <li><a href="../../../web-ai/seo-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">SEOコンサルティング</a></li>
+                <li><a href="../../../web-ai/ad-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">Web広告コンサルティング</a></li>
+                <li><a href="../../../web-ai/cro-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">CVR改善／CROコンサルティング</a></li>
+                <li><a href="../../../web-ai/llmo-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">LLMOコンサルティング</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">制作</div>
+              <ul class="space-y-2">
+                <li><a href="../../../web-ai/website/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">サイト制作</a></li>
+                <li><a href="../../../web-ai/lp/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">LP制作</a></li>
+                <li><a href="../../../web-ai/seo-writing/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">SEO/LLMO記事制作代行</a></li>
+                <li><a href="../../../web-ai/case-interview/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">事例インタビュー記事制作</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">AI活用支援</div>
+              <ul class="space-y-2">
+                <li><a href="../../../web-ai/ai-katsuyo/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">AI活用支援（業務効率化・自動化）</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- コラム メガメニュー -->
+      <div class="mega relative">
+        <button class="mega-btn flex items-center gap-1 px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors" aria-expanded="false">
+          コラム
+          <svg class="w-3 h-3 stroke-current fill-none stroke-[2] mega-caret transition-transform" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="mega-panel absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[320px] bg-navy text-paper rounded-sm shadow-[0_24px_48px_-12px_rgba(0,0,0,.35)] p-2 opacity-0 invisible translate-y-1 transition-all duration-150">
+          <a href="../../../column/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">研磨・金属加工コラム</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">工法・材料別の技術記事</div>
+          </a>
+          <a href="../../../web-ai/column/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">Web集客・AI活用支援コラム</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">製造業のためのWeb集客・AI活用</div>
+          </a>
+        </div>
+      </div>
+
+      <a href="../../../company/" class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">会社情報</a>
+    </div>
+
+    <!-- CTA -->
+    <div class="flex gap-2 md:gap-[10px] items-center">
+      <a href="../../../web-ai/contact/" class="inline-flex items-center gap-[10px] px-3 py-2 md:px-[18px] md:py-[11px] rounded-sm text-[11px] md:text-[13px] font-semibold tracking-[.06em] bg-ink text-paper hover:bg-accent transition-all">お問い合わせ →</a>
+      <!-- Burger — shown below md -->
+      <button class="flex md:hidden w-10 h-10 border border-ink rounded-sm items-center justify-center bg-paper" id="burgerBtn" aria-label="menu">
+        <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="fixed inset-0 z-[55] bg-navy text-paper pt-[80px] pb-8 px-6 flex flex-col gap-1 translate-x-full transition-transform duration-[350ms] ease-in-out" id="mobileMenu">
+  <button data-close class="absolute top-5 right-5 w-10 h-10 flex items-center justify-center text-paper/80 hover:text-paper" aria-label="close menu">
+    <svg class="w-6 h-6 stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+
+  <!-- LANY風：上部にCTAピル2つ -->
+  <div class="flex gap-2 mb-5">
+    <a href="../../../web-ai/contact/" data-close class="flex-1 flex items-center justify-center gap-2 py-3 rounded-full bg-accent text-paper text-[13px] font-semibold tracking-[.04em]">お問い合わせ →</a>
+  </div>
+
+  <div class="overflow-y-auto flex-1 -mr-6 pr-6">
+  <a href="../../../#home" data-close class="font-serif text-[17px] font-medium py-3 border-b border-paper/[.08] flex items-center justify-between">ホーム</a>
+
+  <details class="drawer-acc border-b border-paper/[.08]">
+    <summary class="font-serif text-[17px] font-medium py-3 flex items-center justify-between cursor-pointer list-none">
+      金属研磨技術
+      <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6] drawer-acc-icon transition-transform shrink-0" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="pb-4 flex flex-col gap-1">
+      <a href="../../../polishing/" data-close class="text-[13px] py-1.5 mb-1 pb-2.5 border-b border-paper/[.08] font-semibold text-paper">金属研磨技術 一覧 →</a>
+      <a href="../../../polishing/buff-polishing/" data-close class="text-[13px] py-1.5 opacity-85">バフ研磨</a>
+      <a href="../../../polishing/belt-polishing/" data-close class="text-[13px] py-1.5 opacity-85">ベルト研磨</a>
+      <a href="../../../polishing/hairline-finish/" data-close class="text-[13px] py-1.5 opacity-85">ヘアライン加工</a>
+      <a href="../../../polishing/flexible-polishing/" data-close class="text-[13px] py-1.5 opacity-85">フレキ研磨／曲面研磨</a>
+    </div>
+  </details>
+
+  <a href="../../../#works" data-close class="font-serif text-[17px] font-medium py-3 border-b border-paper/[.08] flex items-center justify-between">加工実績</a>
+
+  <details class="drawer-acc border-b border-paper/[.08]">
+    <summary class="font-serif text-[17px] font-medium py-3 flex items-center justify-between cursor-pointer list-none">
+      Web集客・AI活用支援
+      <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6] drawer-acc-icon transition-transform shrink-0" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="pb-4 flex flex-col gap-1">
+      <div class="flex items-center justify-between mb-1 pb-2.5 border-b border-paper/[.08]">
+        <a href="../../../web-ai/" data-close class="text-[13px] font-semibold text-paper">Web集客・AI活用支援 トップ →</a>
+        <a href="../../../web-ai/case/" data-close class="text-[13px] font-semibold text-paper">実績・事例 →</a>
+      </div>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-2 mb-1">戦略・コンサルティング</div>
+      <a href="../../../web-ai/consulting/" data-close class="text-[13px] py-1.5 opacity-85">デジタルマーケティングコンサルティング</a>
+      <a href="../../../web-ai/btob-marketing/" data-close class="text-[13px] py-1.5 opacity-85">BtoBマーケティング支援</a>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-3 mb-1">集客・改善</div>
+      <a href="../../../web-ai/seo-consulting/" data-close class="text-[13px] py-1.5 opacity-85">SEOコンサルティング</a>
+      <a href="../../../web-ai/ad-consulting/" data-close class="text-[13px] py-1.5 opacity-85">Web広告コンサルティング</a>
+      <a href="../../../web-ai/cro-consulting/" data-close class="text-[13px] py-1.5 opacity-85">CVR改善／CROコンサルティング</a>
+      <a href="../../../web-ai/llmo-consulting/" data-close class="text-[13px] py-1.5 opacity-85">LLMOコンサルティング</a>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-3 mb-1">制作</div>
+      <a href="../../../web-ai/website/" data-close class="text-[13px] py-1.5 opacity-85">サイト制作</a>
+      <a href="../../../web-ai/lp/" data-close class="text-[13px] py-1.5 opacity-85">LP制作</a>
+      <a href="../../../web-ai/seo-writing/" data-close class="text-[13px] py-1.5 opacity-85">SEO/LLMO記事制作代行</a>
+      <a href="../../../web-ai/case-interview/" data-close class="text-[13px] py-1.5 opacity-85">事例インタビュー記事制作</a>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-3 mb-1">AI活用支援</div>
+      <a href="../../../web-ai/ai-katsuyo/" data-close class="text-[13px] py-1.5 opacity-85">AI活用支援（業務効率化・自動化）</a>
+    </div>
+  </details>
+
+  <details class="drawer-acc border-b border-paper/[.08]">
+    <summary class="font-serif text-[17px] font-medium py-3 flex items-center justify-between cursor-pointer list-none">
+      コラム
+      <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6] drawer-acc-icon transition-transform shrink-0" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="pb-4 flex flex-col gap-1">
+      <a href="../../../column/" data-close class="text-[13px] py-2 opacity-85">研磨・金属加工コラム</a>
+      <a href="../../../web-ai/column/" data-close class="text-[13px] py-2 opacity-85">Web集客・AI活用支援コラム</a>
+    </div>
+  </details>
+
+  <a href="../../../company/" data-close class="font-serif text-[17px] font-medium py-3 border-b border-paper/[.08] flex items-center justify-between">会社情報</a>
+  </div>
+
+  <div class="pt-5 text-[11px] text-muted-ink/80 text-center">マツケンスタジオへのご相談は、お問い合わせフォームで受け付けています</div>
+</div>
+
+
+<main class="pt-[60px]">
+  <section class="pt-8 pb-10 md:pt-12 md:pb-14">
+    <div class="pwrap">
+      <article class="art">
+      <p class="font-mono text-[11px] tracking-[.2em] text-muted mb-5"><a href="../../../" class="hover:text-accent transition-colors">ホーム</a><span class="mx-2 opacity-40">/</span><a href="../../" class="hover:text-accent transition-colors">Web集客・AI活用支援</a><span class="mx-2 opacity-40">/</span><a href="../" class="hover:text-accent transition-colors">コラム</a><span class="mx-2 opacity-40">/</span><a href="../category/seo/" class="hover:text-accent transition-colors">SEO・集客</a></p>
+        <a href="../category/seo/" class="chip">SEO・集客</a>
+        <h1 class="font-bold leading-[1.45] mt-3 mb-4 text-ink" style="font-size:clamp(24px,3.6vw,34px)">Googleアナリティクスの使い方｜GA4の導入と見方、問い合わせ数の計り方</h1>
+        <p class="text-[13px] text-muted mb-6">公開日 <time datetime="2026-10-25">2026.10.25</time>　|　マツケンスタジオ 責任者</p>
+        <div class="points"><b>この記事で分かること</b><ul><li>Googleアナリティクス（GA4）とは何か、導入のしかた</li><li>最初に見るレポートと、よく出る指標の意味</li><li>問い合わせ数の計り方と、月に一度の点検で直すところ</li></ul></div>
+        <div class="cta-top"><p>ホームページのご相談は無料です</p><div class="bt"><a href="../../contact/" class="btn-s bg-cta-yellow text-ink hover:bg-cta-yellow-h">1分で問い合わせ →</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="btn-s bg-[#06C755] text-white hover:bg-[#05B34C]">LINEで相談</a></div></div>
+        <nav class="toc" aria-label="目次"><b>目次</b><ol><li><a href="#what">Googleアナリティクス（GA4）とは</a></li><li><a href="#setup">Googleアナリティクスの導入のしかた</a></li><li><a href="#reports">最初に見るレポート</a></li><li><a href="#metrics">よく出る指標の意味</a></li><li><a href="#key-events">問い合わせ数を計る：キーイベントの設定</a></li><li><a href="#search-console">Search Consoleとのつなぎ方</a></li><li><a href="#settings">知っておきたい設定：データの保持期間と同意の扱い</a></li><li><a href="#users">制作会社に権限を渡すとき：持ち主は自社</a></li><li><a href="#checklist">月に一度見ることの点検表</a></li><li><a href="#improve">数字を見て直す例</a></li><li><a href="#summary">まとめ</a></li><li><a href="#faq">よくある質問</a></li></ol></nav>
+        <div class="art-body">
+<p>「アクセス解析を入れておきましょう」と言われてGoogleアナリティクスを入れたものの、画面を開くと数字やグラフが多すぎて、どこを見ればよいのか分からない。制作会社が設定してくれたらしいけれど、ログインのしかたも分からない。会社のホームページを任された担当者から、よく聞く悩みです。</p>
+<p>Googleアナリティクスは、ホームページに来た人がどこから来て、どのページを見て、問い合わせまで進んだかを教えてくれる無料の道具です。機能はたくさんありますが、中小企業の会社サイトで見るところは、それほど多くありません。この記事では、Googleの公式ヘルプで確かめた内容をもとに、導入のしかたから、最初に見るレポート、問い合わせ数の計り方、月に一度の点検のしかたまでを、制作する側の目線で紹介します。</p>
+<svg viewBox="0 0 560 174" role="img" aria-label="Googleアナリティクスの使い方の要点の図" class="st-illu" style="max-width:560px" fill="none" stroke="#1B3A6B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="18" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="32" y="28" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M36 38l4 4 8-9"/><text x="62" y="44" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">測定IDのタグを設置</text><rect x="290" y="18" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="302" y="28" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M306 38l4 4 8-9"/><text x="332" y="44" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">リアルタイムで確認</text><rect x="20" y="70" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="32" y="80" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M36 90l4 4 8-9"/><text x="62" y="96" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">どこから来たかを見る</text><rect x="290" y="70" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="302" y="80" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M306 90l4 4 8-9"/><text x="332" y="96" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">どのページかを見る</text><rect x="20" y="122" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="32" y="132" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M36 142l4 4 8-9"/><text x="62" y="148" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">問い合わせを数える</text><rect x="290" y="122" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="302" y="132" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M306 142l4 4 8-9"/><text x="332" y="148" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">持ち主は自社にする</text></svg>
+
+<h2 id="what">Googleアナリティクス（GA4）とは</h2>
+<p>Googleアナリティクスは、Googleが提供しているアクセス解析の道具です。アクセス解析とは、ホームページに来た人の数や動きを数えて、記録することです。会社サイトで使うぶんには、無料版で足りることがほとんどです。</p>
+<p>今使われているのは「GA4（Googleアナリティクス4）」と呼ばれる版です。古い記事や本で見かける「ユニバーサル アナリティクス」は以前の版で、画面も数字の名前も今とは違います。調べものをするときは、GA4について書かれたものかどうかを確かめてください。Googleの公式ヘルプでも、GA4のページには「[GA4]」と付いています。</p>
+<p>Googleアナリティクスで分かることは、大きく分けると次の4つです。</p>
+<ul>
+<li><b>どれくらいの人が来たか</b>：期間ごとの人数や、訪れた回数が分かります。</li>
+<li><b>どこから来たか</b>：Googleの検索、ほかのサイトのリンク、SNS、メールなど、入り口ごとの人数が分かります。</li>
+<li><b>どのページが見られたか</b>：よく見られているページと、あまり見られていないページが分かります。</li>
+<li><b>問い合わせまで進んだか</b>：フォームの送信など、会社にとって大事な行動が何回あったかを数えられます。</li>
+</ul>
+
+<h3>Search Consoleとの違い</h3>
+<p>よく似た道具に、Googleのサーチコンソール（Search Console）があります。どちらも無料ですが、見ている場面が違います。</p>
+<table class="art-table">
+<tr><th></th><th>Googleアナリティクス</th><th>サーチコンソール</th></tr>
+<tr><td>見ている場面</td><td>サイトに来た後（どのページを見て、どう動いたか）</td><td>サイトに来る前（Googleの検索結果の中）</td></tr>
+<tr><td>分かること</td><td>来た人の数、入り口、見られたページ、問い合わせの数</td><td>検索された言葉、検索結果に表示された回数、押された回数、順位</td></tr>
+<tr><td>対象</td><td>検索、広告、SNS、メールなど、すべての入り口から来た人</td><td>Googleの検索から来る人</td></tr>
+<tr><td>入れ方</td><td>サイトに計測用のタグを入れる</td><td>サイトの持ち主であることを確かめて登録する</td></tr>
+</table>
+<p>「問い合わせが少ない」というとき、そもそも検索で見つけてもらえていないのか、サイトには来ているのに問い合わせまで進んでいないのかで、直す場所が変わります。前者はサーチコンソールで、後者はGoogleアナリティクスで調べます。2つはつなげて使うこともできます（つなぎ方は後で紹介します）。サーチコンソールの使い方は、<a href="../search-console/">サーチコンソールの使い方</a>でまとめています。</p>
+
+<h2 id="setup">Googleアナリティクスの導入のしかた</h2>
+<p>Googleアナリティクスの中は、「アカウント」「プロパティ」「データストリーム」の3段の入れ物になっています。会社ならアカウントを1つ作り、その中に会社サイト用のプロパティを1つ作り、さらにその中に「ウェブ」のデータストリームを1つ作る、という形がいちばん分かりやすいです。</p>
+<table class="art-table">
+<tr><th>入れ物</th><th>考え方</th><th>会社サイトでの例</th></tr>
+<tr><td>アカウント</td><td>いちばん外側の入れ物。会社ごとに1つ</td><td>会社名</td></tr>
+<tr><td>プロパティ</td><td>数字を集めて、レポートを見る単位</td><td>会社サイト</td></tr>
+<tr><td>データストリーム</td><td>数字が流れてくる元。ウェブ、iOSアプリ、Androidアプリから選ぶ</td><td>会社サイトのアドレス</td></tr>
+</table>
+
+<h3>手順1：アカウントとプロパティを作る</h3>
+<p>Googleの公式ヘルプに書かれている流れは、次のとおりです。</p>
+<ol>
+<li>会社で管理しているGoogleのアカウントで、analytics.google.com を開き、「測定を開始」を押します。</li>
+<li>アカウント名（会社名など）を入れて、「次へ」を押します。</li>
+<li>プロパティ名を入れ、タイムゾーンと通貨を選びます。日本の会社なら、日本と日本円にしておきます。</li>
+<li>業種、ビジネスの規模、使う目的を選んで、「作成」を押します。</li>
+</ol>
+<p>あとから追加するときは、左下の「管理」を開き、「作成」からアカウントやプロパティを選びます。</p>
+
+<h3>手順2：データストリームを作る</h3>
+<p>プロパティを作ったら、「管理」の「データストリーム」を開き、「ストリームを追加」から「ウェブ」を選びます。サイトのアドレスとストリーム名を入れて、「作成して続行」を押します。</p>
+<p>作ったデータストリームを開くと、「G-」で始まる「測定ID」が表示されます。これが、自社のサイトを見分けるための番号です。次の手順で使います。</p>
+
+<h3>手順3：サイトにタグを入れる</h3>
+<p>最後に、サイトのすべてのページに計測用のタグ（Googleタグ）を入れます。入れ方は、サイトの作り方によって3つあります。</p>
+<ul>
+<li><b>ホームページ作成サービスやCMSの設定欄に入れる</b>：設定画面にGoogleタグのID（測定ID）を入れる欄がある場合は、そこに入れるだけで済みます。CMSとは、WordPressのように、管理画面からページを更新できる仕組みのことです。</li>
+<li><b>カスタムHTMLの欄に貼る</b>：設定欄がなくても、HTMLを自由に入れられる欄がある場合は、そこにGoogleタグを貼ります。</li>
+<li><b>ページのHTMLに直接書く</b>：Googleアナリティクスの画面の「タグの実装手順を表示」からタグをコピーし、各ページの &lt;head&gt; の直後に貼ります。</li>
+</ul>
+<p>公式ヘルプによると、タグを入れてからデータが集まり始めるまで、最長で30分ほどかかることがあります。そのあと、後で紹介する「リアルタイム」のレポートを開き、自分でサイトを見ている間に人数が1人増えれば、タグは正しく動いています。</p>
+
+<h3>WordPressで作ったサイトの場合</h3>
+<p>WordPressのサイトでは、使っているテーマ（デザインのひな形）の設定欄に測定IDを入れる欄があったり、プラグイン（あとから足す機能）で入れたりと、いくつかの方法があります。どの方法でもかまいませんが、同じタグを2か所から入れてしまうと、人数が二重に数えられることがあります。前の担当者や制作会社がすでに入れていないかを、先に確かめてください。</p>
+
+<h3>制作会社に頼む場合</h3>
+<p>タグの設置は、制作会社に頼むこともできます。そのときも、<b>アカウントとプロパティは自社のGoogleアカウントで作り、制作会社には権限を渡す</b>形にしておくのがおすすめです。制作会社のアカウントでまるごと作ってもらうと、契約が終わったときに数字を見られなくなったり、持ち主の移しかえに手間がかかったりします。権限の渡し方は、記事の後半で紹介します。</p>
+<p>サイトをリニューアルするときも注意が必要です。新しいサイトにタグを入れ忘れると、その日から数字が途切れます。公開の前に、タグが入っているかを制作会社と確かめておきましょう。</p>
+
+<h2 id="reports">最初に見るレポート</h2>
+<p>画面の左側には、「ホーム」「レポート」「探索」「広告」などが並んでいます。最初は「レポート」の中にある、決まった形のレポートだけを見れば十分です。「探索」は自由に表を組み立てられる機能ですが、慣れてからでかまいません。ここでは、会社サイトの担当者が最初に見ておきたい4つを紹介します。</p>
+
+<h3>リアルタイム：今、来ている人</h3>
+<p>左のメニューの「レポート」から「リアルタイム」を開くと、過去30分と過去5分にサイトを見ている人の数が分かります。どこから来たか、どのページを見ているか、どんなイベント（後で説明します）が起きたかも表示されます。</p>
+<p>公式ヘルプでは、タグが正しく動いているかの確認や、SNSに投稿した直後の反応を見るといった使い道が紹介されています。会社サイトなら、タグを入れた直後や、ページを直した直後の確認に使うと便利です。</p>
+
+<h3>トラフィック獲得：どこから来たか</h3>
+<p>「レポート」の「集客」から「トラフィック獲得」を開くと、サイトに来た人がどの入り口から来たかが分かります。入り口は、ルールに沿って自動で「チャネル」という分類に分けられます。</p>
+<table class="art-table">
+<tr><th>よく見る分類</th><th>意味</th></tr>
+<tr><td>オーガニック検索</td><td>検索サイトの検索結果（広告ではない部分）から来た人</td></tr>
+<tr><td>ノーリファラー</td><td>アドレスを直接入れた人、ブックマークから来た人など、来た元が分からない人</td></tr>
+<tr><td>オーガニック ソーシャル</td><td>SNSの投稿（広告ではないもの）から来た人</td></tr>
+<tr><td>メール</td><td>メールに書いたリンクから来た人</td></tr>
+</table>
+<p>会社サイトでは、「オーガニック検索」がどれくらいあるかを見ると、検索で見つけてもらえているかの目安になります。展示会や名刺、チラシでアドレスを知った人は、ノーリファラーとして数えられることが多いです。</p>
+
+<h3>ページとスクリーン：どのページが見られたか</h3>
+<p>「レポート」の「エンゲージメント」から「ページとスクリーン」を開くと、ページごとの表示回数や人数が分かります。名前のとおり、アプリの画面（スクリーン）も一緒に数えるレポートですが、会社サイトならページの一覧として見てかまいません。</p>
+<p>最初はページのタイトルで並んでいます。表の左上の項目を切り替えると、ページのアドレス（ドメインより後ろの部分）で並べることもできます。タイトルが同じページがいくつもあるサイトでは、アドレスで見るほうが分かりやすいです。</p>
+<p>ここで見ておきたいのは、事業紹介、製品・サービス、事例、会社概要、採用など、見てほしいページがきちんと見られているかです。トップページばかりが見られていて、ほかのページに進んでいないなら、トップページからの道案内を見直す手がかりになります。</p>
+
+<h3>ユーザー属性：どこの地域から、どんな端末で</h3>
+<p>「ユーザー属性の詳細」のレポートでは、国、地域、都市、言語などで人数を分けて見られます。営業している地域から見られているか、思いがけない地域から見られていないかを確かめるのに使えます。</p>
+<p>年齢、性別、興味・関心のデータは、「Googleシグナル」という設定を有効にしたときに、条件を満たす人の分だけ集まります。また、見る人の身元が推測されないように、人数が少ないときは数字が表示されないしくみ（しきい値）があります。中小企業の会社サイトでは表示されないことも多いので、気にしすぎなくて大丈夫です。</p>
+<p>パソコンとスマートフォンのどちらで見られているかも、レポートで確かめられます。BtoBの会社サイトでも、スマートフォンで見る人は少なくありません。スマートフォンの割合が多いなら、スマートフォンの画面で読みやすいか、電話番号やフォームまでたどり着きやすいかを確かめましょう。</p>
+
+<h2 id="metrics">よく出る指標の意味</h2>
+<p>レポートには、似たような名前の数字がたくさん並びます。公式ヘルプの説明をもとに、会社サイトでよく見るものを言いかえておきます。</p>
+<table class="art-table">
+<tr><th>指標</th><th>意味</th><th>見るときのポイント</th></tr>
+<tr><td>アクティブユーザー数</td><td>期間の中で、サイトを訪れて何かしらの記録が残った人の数</td><td>レポートで「ユーザー」と出たら、多くはこの数字です</td></tr>
+<tr><td>新規ユーザー数</td><td>初めてサイトを訪れた人の数</td><td>新しく知ってもらえているかの目安</td></tr>
+<tr><td>セッション数</td><td>サイトを訪れた回数。初期設定では、30分なにも操作がないと1回が終わる</td><td>同じ人が午前と午後に来れば、2回と数えます</td></tr>
+<tr><td>表示回数</td><td>ページが見られた回数</td><td>1人が5ページ見れば5回です</td></tr>
+<tr><td>エンゲージメント率</td><td>「ちゃんと見てもらえた訪問」の割合</td><td>低いページは、内容や入り口を見直す手がかり</td></tr>
+<tr><td>平均エンゲージメント時間</td><td>サイトやページに注目していた時間の平均</td><td>読んでほしいページが短すぎないかを見る</td></tr>
+<tr><td>イベント数</td><td>サイトの中で起きた行動（ページを見る、スクロールする、リンクを押すなど）の回数</td><td>行動ごとに分けて見ます</td></tr>
+<tr><td>キーイベント</td><td>会社にとって大事な行動として決めたイベントの回数</td><td>問い合わせの数を計るのに使います</td></tr>
+</table>
+<h3>エンゲージメント率とは</h3>
+<p>エンゲージメント率は、GA4で大事にされている数字です。公式ヘルプでは、次のどれか1つにあてはまる訪問を「エンゲージメントのあったセッション」と呼び、その割合をエンゲージメント率としています。</p>
+<ul>
+<li>10秒より長くサイトにいた</li>
+<li>キーイベントが起きた</li>
+<li>ページを2回以上見た</li>
+</ul>
+<p>どれにもあてはまらない訪問の割合が「直帰率」です。つまり、エンゲージメント率と直帰率は、足すと100%になる裏表の関係です。直帰率が高いページは、開いてすぐに閉じられていることが多いページです。入り口で期待されたことと中身がずれていないか、最初の画面で何のページかが伝わっているかを見直すきっかけになります。</p>
+<p>なお、数字はほかの会社と比べるより、<b>自社の先月や去年の同じ月と比べる</b>ほうが役に立ちます。業種やサイトの作りによって、ふつうの値が大きく違うからです。</p>
+
+<h2 id="key-events">問い合わせ数を計る：キーイベントの設定</h2>
+<p>会社サイトでいちばん知りたいのは、「問い合わせが何件あったか」と「その人がどこから来たか」です。これを数えるのが「キーイベント」です。キーイベントは、以前は「コンバージョン」と呼ばれていた機能で、会社にとって大事な行動を選んで、別に数えられるようにするものです。</p>
+
+<h3>フォームの送信を数える</h3>
+<p>GA4には、設定を有効にするだけでいくつかの行動を自動で記録する「拡張計測機能」があります。公式ヘルプによると、初期設定で有効になっていて、データストリームの設定画面でオン・オフを切り替えられます。自動で記録される主な行動は次のとおりです。</p>
+<table class="art-table">
+<tr><th>記録される名前</th><th>記録されるとき</th></tr>
+<tr><td>page_view</td><td>ページが読み込まれたとき（オフにはできません）</td></tr>
+<tr><td>scroll</td><td>ページの下の方（縦に90%）までスクロールしたとき</td></tr>
+<tr><td>click</td><td>ほかのサイトへ出ていくリンクを押したとき</td></tr>
+<tr><td>file_download</td><td>PDFやOfficeのファイルなどをダウンロードしたとき</td></tr>
+<tr><td>form_start</td><td>その訪問の中で、初めてフォームを操作したとき</td></tr>
+<tr><td>form_submit</td><td>フォームを送信したとき</td></tr>
+</table>
+<p>このうち form_submit を問い合わせの数として使えます。記録されたイベントは「管理」の「データの表示」にある「イベント」の一覧に出てくるので、form_submit の横にある星の印を押すと、キーイベントになります。公式ヘルプによると、キーイベントの設定がレポートに反映されるまで、最大で24時間ほどかかります。</p>
+<p>ただし、フォームの作り方によっては、form_submit がうまく記録されないことがあります。また、検索窓などほかのフォームの送信も一緒に数えてしまうことがあります。そのため、<b>送信が終わったあとに出る「送信完了」のページが見られた回数</b>もあわせて確かめると確実です。完了ページのアドレスを決めておけば、「ページとスクリーン」のレポートでその回数を見られます。「管理」の「イベント」から「イベントを作成」を使えば、決まったページが見られたことを新しいイベントとして記録し、キーイベントにすることもできます。フォームの作り方や完了ページについては、<a href="../contact-form/">問い合わせフォームの項目は何を聞く？</a>でまとめています。</p>
+
+<h3>電話のタップを数える</h3>
+<p>BtoBの会社では、フォームより電話で問い合わせが来ることも多いと思います。スマートフォンで電話番号を押すと電話がかけられるようにしている場合、その「電話番号を押した回数」を数えておくと、サイトから電話につながった目安になります。</p>
+<p>ただ、電話番号のタップは、先の表の拡張計測機能の項目には入っていません。数えるには、電話番号のリンクが押されたことをイベントとして記録する設定が別に必要です。サイトの作り方によって方法が変わるので、制作会社に相談するのが早いです。記録できるようになったら、フォームと同じように星の印を押してキーイベントにします。</p>
+<p>なお、押した回数は「電話をかけようとした回数」で、実際に電話がつながった回数とは同じではありません。電話の件数は社内で受けた記録とあわせて見ましょう。</p>
+
+<h3>資料のダウンロードを数える</h3>
+<p>会社案内や製品カタログをPDFで置いている会社も多いと思います。PDFなどのダウンロードは、先の表のとおり拡張計測機能で file_download として自動で記録されます。BtoBの取引では、資料をダウンロードして社内で回覧し、しばらくしてから問い合わせが来ることもあります。ダウンロードの数は、問い合わせの一歩手前の目安として見ておくと役に立ちます。どの資料がよく持ち帰られているかが分かれば、関心の高い製品やサービスも見えてきます。大事な資料なら、form_submit と同じように星の印を押してキーイベントにしておきましょう。</p>
+<h3>キーイベントにしすぎない</h3>
+<p>標準のプロパティでは、キーイベントは30個までつけられます。ただし、何でもキーイベントにすると、どれが本当に大事な数字なのか分からなくなります。会社サイトなら、問い合わせフォームの送信、電話番号のタップ、資料のダウンロード、採用への応募くらいに絞っておくのがおすすめです。</p>
+<p>キーイベントを決めておくと、「トラフィック獲得」のレポートで、入り口ごとのキーイベントの数も見られるようになります。検索から来た人の問い合わせが多いのか、紹介や名刺から来た人が多いのかが分かると、力を入れるところが決めやすくなります。問い合わせが少ないときの見直し方は、<a href="../no-inquiry/">ホームページから問い合わせが来ない理由</a>も参考にしてください。</p>
+
+<div class="cta-mid"><span class="lb">無料相談</span><b>Googleマップや検索で見つけてもらいたい方へ</b><p>Googleマップの登録・整備から、検索で見つけてもらうためのホームページづくりまでお手伝いします。</p><div class="bt"><a href="../../contact/" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] shadow-[0_10px_24px_-10px_rgba(200,170,0,.7)] rounded-full font-bold tracking-[.04em] bg-cta-yellow text-ink hover:bg-cta-yellow-h hover:-translate-y-0.5 transition-all">1分で問い合わせ →</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] rounded-full font-bold tracking-[.04em] bg-[#06C755] text-white hover:bg-[#05B34C] hover:-translate-y-0.5 transition-all"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.4 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>LINEで相談する</a></div></div><h2 id="search-console">Search Consoleとのつなぎ方</h2>
+<p>GoogleアナリティクスとSearch Consoleをつなぐと、Googleアナリティクスの画面の中で、検索された言葉と、その人がサイトに来てからどう動いたかを並べて見られるようになります。</p>
+<h3>つなぐための条件</h3>
+<p>公式ヘルプによると、つなぐ人は次の2つの権限を両方持っている必要があります。</p>
+<ul>
+<li>Googleアナリティクスのプロパティで「編集者」以上の役割</li>
+<li>Search Consoleのプロパティで「確認済みの所有者」</li>
+</ul>
+<p>1つのウェブのデータストリームにつなげられるSearch Consoleのプロパティは1つだけで、その逆も1つずつです。</p>
+<h3>つなぐ手順</h3>
+<ol>
+<li>Googleアナリティクスの「管理」を開き、「サービス間のリンク設定」の中にある「Search Console とのリンク」を選びます。</li>
+<li>「リンク」を押し、つなぎたいSearch Consoleのプロパティを選びます。</li>
+<li>会社サイトのウェブのデータストリームを選び、設定を終えます。</li>
+</ol>
+<p>つなぐと、「Google オーガニック検索クエリ」（検索された言葉ごとの数字）と「Google オーガニック検索トラフィック」（検索から来た人が最初に開いたページごとの数字）という2つのレポートが使えるようになります。ただし、初めはレポートのメニューに表示されていないことがあります。その場合は、レポートの「ライブラリ」から、Search Consoleのレポートのまとまり（コレクション）を公開すると、左のメニューに出てきます。</p>
+<p>数字が見られるようになるまでは、つないでから48時間ほどかかります。Search Consoleのデータは最大で16か月分までさかのぼれます。検索からの入り口を増やす取り組みは、<a href="../seo-self/">SEO対策は自分でできる？</a>で紹介しています。</p>
+
+<h2 id="settings">知っておきたい設定：データの保持期間と同意の扱い</h2>
+<h3>データの保持期間を確かめる</h3>
+<p>GA4では、細かいデータをどれだけの期間とっておくかを、「2か月」か「14か月」から選べます。設定は「管理」の「データ設定」にある「データ保持」で確かめられます。</p>
+<p>公式ヘルプによると、この設定は、決まった形のレポート（標準のレポート）の数字には影響しません。影響するのは「探索」のような、細かいデータを組み立てる機能です。保持期間を過ぎたデータは、探索では見られなくなります。去年の同じ月と細かく比べたいなら、14か月にしておくと安心です。期間を長くすると、その時点でまだ残っているデータにも新しい期間が当てはまります。反対に短くすると、はみ出したデータは毎月の処理で消されます。</p>
+
+<h3>同意モードとは</h3>
+<p>サイトによっては、最初に「Cookieの利用に同意しますか」と聞く表示（同意バナー）を出しています。Cookieとは、見る人のブラウザに小さな記録を残すしくみで、Googleアナリティクスもこれを使って数えています。</p>
+<p>「同意モード」は、見る人が同意したかどうかをGoogleに伝え、それに合わせてタグの動きを変えるしくみです。公式ヘルプでは、2つの入れ方が説明されています。</p>
+<table class="art-table">
+<tr><th>入れ方</th><th>動き</th></tr>
+<tr><td>基本的な実装</td><td>同意が得られるまで、Googleタグは読み込まれない。同意しなかった人の数字は集まらない</td></tr>
+<tr><td>高度な実装</td><td>同意を聞く前にタグが読み込まれ、同意しなかった人については、Cookieを使わない信号だけを送る。GA4が足りない数字を推計して補う</td></tr>
+</table>
+<p>同意バナーを出すかどうか、どちらの入れ方にするかは、サイトの使い方や会社の考え方で決まります。同意バナーを入れると、同意しなかった人の分だけ数字が少なく見えることがある、という点は覚えておきましょう。</p>
+
+<h3>プライバシーポリシーに書いておく</h3>
+<p>Googleアナリティクスの利用規約では、使う側のサイトに、Googleアナリティクスを使っていることや、Cookieなどでデータを集めていることを、プライバシーポリシーで知らせるよう求めています。また、名前やメールアドレスなど、個人を特定できる情報をGoogleアナリティクスに送ってはいけないとも定められています。たとえば、フォームに入力されたメールアドレスが、完了ページのアドレスにそのまま入るような作りは避けてください。プライバシーポリシーの書き方は、<a href="../privacy-policy/">プライバシーポリシーの書き方</a>でまとめています。</p>
+<h2 id="users">制作会社に権限を渡すとき：持ち主は自社</h2>
+<p>Googleアナリティクスは、ほかの人に見てもらったり、設定を任せたりするときに、その人のGoogleアカウントに「役割」をつけて招きます。パスワードを教える必要はありません。公式ヘルプで説明されている役割は、次のとおりです。</p>
+<table class="art-table">
+<tr><th>役割</th><th>できること</th><th>向いている人</th></tr>
+<tr><td>管理者</td><td>すべての管理。ほかの人を追加・削除したり、役割を変えたりできる</td><td>自社（社長や担当者）</td></tr>
+<tr><td>編集者</td><td>プロパティの設定をすべて管理できる。ほかの人の追加・削除はできない</td><td>設定まで任せる制作会社</td></tr>
+<tr><td>マーケティング担当者</td><td>オーディエンス、イベント、キーイベントの作成・編集・削除ができる</td><td>計測の設定だけを任せる相手</td></tr>
+<tr><td>アナリスト</td><td>レポートを見て、自分が作った探索をほかの人と共有できる</td><td>数字を分析して報告してくれる相手</td></tr>
+<tr><td>閲覧者</td><td>設定とデータを見られる。設定は変えられない</td><td>数字を見るだけの社内の人</td></tr>
+</table>
+<p>人を追加するには、「管理」を開き、アカウントの「アカウントのアクセス管理」か、プロパティの「プロパティのアクセス管理」から、相手のGoogleアカウントと役割を選びます。</p>
+<p>大切なのは、<b>「管理者」は自社のアカウントが持つ</b>ことです。担当者が1人だけだと、その人が異動や退職をしたときに困るので、社長や別の担当者など、2人以上を管理者にしておくと安心です。制作会社には、頼む仕事に合わせて「編集者」や「マーケティング担当者」などをつけ、契約が終わったら外します。</p>
+<p>すでに制作会社のアカウントで作られている場合は、まず自社のアカウントを管理者として追加してもらいましょう。Search Consoleも同じ考え方で、持ち主は自社にしておきます。ドメインやサーバーと同じく、会社の資産として自社で持っておくものです。</p>
+
+<h2 id="checklist">月に一度見ることの点検表</h2>
+<p>Googleアナリティクスは、毎日見る必要はありません。月に一度、同じ順番で見るだけで、変化に気づけます。レポートの期間は、右上の日付のところで変えられます。先月だけでなく、季節で問い合わせが変わる業種なら、去年の同じ月とも比べてみてください。</p>
+<table class="art-table">
+<tr><th>見るところ</th><th>確かめること</th></tr>
+<tr><td>リアルタイム</td><td>自分でサイトを開いて、人数が増えるか（タグが動いているか）</td></tr>
+<tr><td>トラフィック獲得</td><td>オーガニック検索から来た人が、先月や去年の同じ月より減っていないか</td></tr>
+<tr><td>トラフィック獲得（キーイベント）</td><td>どの入り口から来た人が問い合わせにつながっているか</td></tr>
+<tr><td>ページとスクリーン</td><td>見てほしいページ（事業紹介、事例など）が見られているか。急に減ったページはないか</td></tr>
+<tr><td>ページとスクリーン（完了ページ）</td><td>送信完了ページの表示回数と、実際に届いた問い合わせの件数が大きくずれていないか</td></tr>
+<tr><td>キーイベント</td><td>フォームの送信や電話番号のタップの数が、ゼロのまま止まっていないか</td></tr>
+<tr><td>ユーザー属性・端末</td><td>営業している地域から見られているか。スマートフォンの割合が増えていないか</td></tr>
+<tr><td>Search Console のレポート</td><td>どんな言葉で検索されて来ているか。狙った言葉で来ているか</td></tr>
+<tr><td>管理（アクセス管理）</td><td>契約が終わった会社や、辞めた人の権限が残っていないか</td></tr>
+</table>
+<p>見た数字は、表計算ソフトなどに毎月メモしておくと、変化が分かりやすくなります。人数、オーガニック検索から来た人数、問い合わせの数の3つだけでもかまいません。</p>
+
+<h2 id="improve">数字を見て直す例</h2>
+<p>数字は、見るだけでは何も変わりません。ここでは、会社サイトでよくある数字の見え方と、直し方の考え方を紹介します。</p>
+<h3>人は来ているのに、問い合わせがない</h3>
+<p>トラフィック獲得では人数がそれなりにあるのに、キーイベントがほとんどない場合は、サイトの中で止まっている可能性があります。「ページとスクリーン」で、問い合わせのページがどれくらい見られているかを確かめます。問い合わせのページ自体があまり見られていないなら、各ページの終わりに問い合わせへの案内がない、ボタンが見つけにくい、といったことが考えられます。問い合わせのページは見られているのに送信が少ないなら、フォームの項目が多すぎないか、スマートフォンで入力しにくくないかを見直します。</p>
+<h3>検索から来る人が少ない</h3>
+<p>オーガニック検索から来る人が少ないなら、そもそも検索で見つけてもらえていない可能性があります。ここから先は、Search Consoleで、どんな言葉で検索結果に表示されているか、大事なページがGoogleに登録されているかを確かめます。製品名やサービスの種類、対応できる素材や地域など、お客様が実際に検索しそうな言葉が、ページの中に書かれているかも見直してみてください。</p>
+<h3>特定のページだけ、すぐに閉じられている</h3>
+<p>あるページだけエンゲージメント率が低い場合は、入り口で期待されたことと中身がずれているのかもしれません。Search Consoleとつないでいれば、検索から来た人が最初に開いたページごとの数字も見られます。検索した人が知りたいことが、ページの最初の画面で伝わっているかを確かめ、見出しや最初の文章を直します。</p>
+<h3>スマートフォンから来た人だけ、問い合わせが少ない</h3>
+<p>パソコンから来た人に比べて、スマートフォンから来た人のキーイベントが少ない場合は、スマートフォンの画面で使いにくいところがあるのかもしれません。実際に自分のスマートフォンでサイトを開き、問い合わせまでの道のりをたどってみてください。電話番号が押せるようになっているか、ボタンが小さすぎないか、フォームの入力欄が見やすいかを確かめます。社内の何人かに同じことを試してもらうと、気づかなかった使いにくさが見つかることもあります。</p>
+<h3>事例や製品のページが、ほとんど見られていない</h3>
+<p>力を入れて作った事例や製品のページなのに、「ページとスクリーン」で表示回数が少ない場合は、ページの中身より先に、そこまでの道のりを疑います。トップページやメニューから、そのページへの入り口が分かりやすく置かれているか、ほかのページの中から関係するページへのリンクがあるかを見直します。検索から直接開いてもらいたいページなら、ページのタイトルと見出しに、お客様が検索しそうな言葉が入っているかも確かめましょう。</p>
+<h3>広告やチラシの効果が分からない</h3>
+<p>広告や展示会のために専用のページ（LP）を作ると、そのページの表示回数や問い合わせの数を、会社サイトのほかのページと分けて見やすくなります。LPについては、<a href="../landing-page/">LP（ランディングページ）とは？</a>でまとめています。</p>
+<p>直したあとは、すぐに結果を決めつけず、1〜2か月ほど同じ点検表で見比べます。一度にいくつも変えず、1つずつ直して見比べると、何が効いたのかが分かりやすくなります。</p>
+
+<h2 id="summary">まとめ</h2>
+<ul>
+<li>Googleアナリティクス（GA4）は、サイトに来た人の数、入り口、見られたページ、問い合わせの数が分かる無料の道具。Search Consoleは、サイトに来る前の検索の中を見る道具</li>
+<li>アカウント、プロパティ、データストリームの順に作り、「G-」で始まる測定IDのタグをすべてのページに入れる</li>
+<li>最初は、リアルタイム、トラフィック獲得、ページとスクリーン、ユーザー属性の4つを見れば十分</li>
+<li>エンゲージメント率は、10秒より長くいた、キーイベントが起きた、2ページ以上見た、のどれかにあてはまる訪問の割合</li>
+<li>フォームの送信（form_submit）や電話番号のタップをキーイベントにして、問い合わせの数を計る。完了ページの表示回数もあわせて確かめる</li>
+<li>Search Consoleとつなぐと、検索された言葉とサイトの中での動きを並べて見られる</li>
+<li>データの保持期間を確かめ、プライバシーポリシーにGoogleアナリティクスを使っていることを書いておく</li>
+<li>管理者は自社が持ち、制作会社には頼む仕事に合った役割だけを渡す</li>
+<li>月に一度、点検表に沿って見て、数字から直すところを見つける</li>
+</ul>
+<p>マツケンスタジオでは、最初のご相談から公開後まで同じ担当がつき、公開後の更新や改善も続けてお手伝いできます。Googleアナリティクスの数字を見ても、どこを直せばよいか分からないときや、更新の手が回らないときは、月額サポートで代わりに更新することもできます。お気軽にご相談ください。</p>
+</div>
+        <h2 id="faq" class="font-bold text-[22px] mt-12 mb-4" style="scroll-margin-top:90px">よくある質問</h2>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">Googleアナリティクスは無料で使えますか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">はい、無料で使えます。Googleのアカウントがあれば始められます。大企業向けの有料版もありますが、中小企業の会社サイトなら、無料版で足りることがほとんどです。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">GA4とGoogleアナリティクスは別のものですか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">同じものです。GA4は、今使われているGoogleアナリティクスの版の呼び名です。古い記事で見かけるユニバーサル アナリティクスは以前の版で、画面や数字の名前が違うので、調べるときはGA4について書かれたものを選びましょう。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">タグを入れたのに数字が出ません。</div>
+          <p class="text-[13px] leading-[1.9] text-muted">Googleの公式ヘルプによると、データが集まり始めるまで最長で30分ほどかかることがあります。少し待ってから、リアルタイムのレポートを開き、自分でサイトを見て人数が増えるかを確かめてください。増えない場合は、測定IDの入れ間違いや、タグが一部のページにしか入っていないことが考えられます。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">ユーザーとセッションは何が違いますか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">ユーザーはサイトを訪れた人の数、セッションは訪れた回数です。同じ人が午前と午後に1回ずつ来た場合、ユーザーは1、セッションは2と数えます。初期設定では、30分なにも操作がないと1回の訪問が終わったとみなされます。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">問い合わせの数とGoogleアナリティクスの数字が合いません。</div>
+          <p class="text-[13px] leading-[1.9] text-muted">フォームの作り方によっては送信がうまく記録されなかったり、ほかのフォームの送信も一緒に数えたりすることがあります。また、Cookieの同意バナーで同意しなかった人の分は、数字が少なく出ることもあります。送信完了ページの表示回数とあわせて見て、大きくずれていないかを確かめましょう。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">制作会社がGoogleアナリティクスを設定してくれています。このままでよいですか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">自社のGoogleアカウントが管理者として入っているかを確かめましょう。制作会社のアカウントだけで作られていると、契約が終わったときに数字を見られなくなるおそれがあります。管理者は自社が持ち、制作会社には編集者など、仕事に合った役割を渡す形が安心です。</p>
+        </div>
+      </div>
+        <div class="mt-10"><div class="author"><div class="av">松</div><div><b>マツケンスタジオ 責任者</b><p>デジタルマーケティングの仕事を10年以上。上場企業での勤務や、1,000万人以上が使うサービスのマーケティングを経験し、マーケターとして企業のオウンドメディアを50万PVまで育て、数百社の集客を支援してきました。家業である松本研磨工業のホームページを作り直し、リニューアルから1か月で有効なお問い合わせを3倍にしています。</p><a href="../author/" class="text-[13px] font-bold text-accent-ink hover:underline">プロフィールを見る →</a></div></div></div>
+        <div class="mt-8"><div class="cta-end"><b>ホームページのこと、まずは気軽にご相談ください。</b><p>「何から始めればいいか分からない」という段階でも大丈夫です。町工場発のマツケンスタジオが、ドメインの取得から公開後の更新まで、まるごとお手伝いします。いまは毎月3社まで、特別な価格で制作する「事例づくりモニター」も受け付けています。</p><div class="bt"><a href="../../contact/" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] shadow-[0_10px_24px_-10px_rgba(200,170,0,.7)] rounded-full font-bold tracking-[.04em] bg-cta-yellow text-ink hover:bg-cta-yellow-h hover:-translate-y-0.5 transition-all">1分で問い合わせ →</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] rounded-full font-bold tracking-[.04em] bg-[#06C755] text-white hover:bg-[#05B34C] hover:-translate-y-0.5 transition-all"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.4 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>LINEで相談する</a><a href="../../monitor/" class="lp">事例づくりモニターを見る →</a></div></div></div>
+      </article>
+    </div>
+  </section>
+  <section class="py-14 md:py-20 st-alt">
+    <div class="pwrap">
+      <h2 class="sec-ttl">あわせて読みたい記事</h2>
+      <div class="col-grid three"><a href="../google-business-profile/" class="col-card"><span><span class="chip">SEO・集客</span></span><h3>Googleマップで選ばれる会社の共通点｜ビジネスプロフィールの整え方</h3><p>Googleマップで見つけてもらい、選ばれる会社になるために、Googleビジネスプロフィールで整えたいことをまとめました。Googleが示…</p><time datetime="2026-09-27">2026.09.27</time></a><a href="../meo/" class="col-card"><span><span class="chip">SEO・集客</span></span><h3>MEO対策とは？自分でできることと、頼むときの相場</h3><p>MEO対策とは、Googleマップで自社を見つけてもらいやすくするための取り組みです。自分でできること、業者に頼む場合の費用の考え方、気をつ…</p><time datetime="2026-10-03">2026.10.03</time></a><a href="../no-inquiry/" class="col-card"><span><span class="chip">SEO・集客</span></span><h3>ホームページから問い合わせが来ない理由｜確かめる順番と、直し方</h3><p>ホームページを作ったのに、問い合わせが来ない。その原因は「見られていない」か「見られているのに問い合わせにつながらない」のどちらかです。自分…</p><time datetime="2026-10-17">2026.10.17</time></a></div>
+    </div>
+  </section>
+
+  <section class="py-14 md:py-20">
+    <div class="pwrap">
+      <h2 class="sec-ttl">カテゴリから探す</h2>
+      <nav class="col-cats" aria-label="カテゴリ"><a href="../" class="on">すべて</a><a href="../category/homepage/" class="">ホームページ制作</a><a href="../category/renewal/" class="">リニューアル</a><a href="../category/cost/" class="">費用・発注</a><a href="../category/ai/" class="">AI検索対策</a><a href="../category/seo/" class="">SEO・集客</a><a href="../category/recruit/" class="">採用</a><a href="../category/industry/" class="">業種別</a><a href="../category/case/" class="">事例</a></nav>
+    </div>
+  </section>
+
+<div class="col-stick" id="colStick"><a href="../../contact/" class="bg-cta-yellow text-ink">1分で問い合わせ</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="bg-[#06C755] text-white">LINEで相談</a></div><script>(function(){var s=document.getElementById("colStick");if(!s)return;function u(){s.classList.toggle("show",window.scrollY>500&&(window.innerHeight+window.scrollY)<document.body.scrollHeight-700)}window.addEventListener("scroll",u,{passive:true});u()})();</script>
+</main>
+<footer class="site-footer bg-navy text-paper pt-14 md:pt-20 pb-8">
+  <div class="wrap">
+    <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-16 pb-10 md:pb-14 border-b border-paper/15">
+      <div>
+        <a href="../../../" class="inline-flex items-center gap-3">
+          <span class="w-11 h-11 rounded-full grid place-items-center font-semibold text-xl bg-paper text-ink">松</span>
+          <span class="text-[18px] md:text-[20px] font-bold tracking-[.04em] text-paper">株式会社松本研磨工業</span>
+        </a>
+        <p class="mt-5 text-[14px] leading-[1.9] text-paper/75">〒210-0851 神奈川県川崎市川崎区浜町3-9-22</p>
+        <div class="mt-6 flex flex-wrap gap-3"><a href="https://www.instagram.com/matsuken_studio/" target="_blank" rel="noopener" class="ft-sns"><svg class="w-5 h-5 stroke-current fill-none stroke-[1.5]" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>@matsuken_studio</span></a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="ft-sns"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.4 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg><span>LINEで相談</span></a></div>
+      </div>
+      <div class="lg:border-l lg:border-paper/15 lg:pl-16">
+        <h3 class="ft-head">お問い合わせ</h3>
+        <p class="text-[14px] leading-[1.9] text-paper/80 mb-5">マツケンスタジオへのご相談は、お問い合わせフォームかLINEで受け付けています。</p>
+        <a href="../../../web-ai/contact/" class="ft-btn">1分で問い合わせ</a>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-10 py-10 md:py-14 border-b border-paper/15">
+      <nav aria-label="金属研磨">
+        <h3 class="ft-head">金属研磨</h3>
+        <ul class="space-y-3">
+          <li><a href="../../../polishing/" class="ft-link">金属研磨技術の種類</a></li>
+          <li><a href="../../../polishing/buff-polishing/" class="ft-link">バフ研磨</a></li>
+          <li><a href="../../../polishing/belt-polishing/" class="ft-link">ベルト研磨</a></li>
+          <li><a href="../../../polishing/hairline-finish/" class="ft-link">ヘアライン仕上げ</a></li>
+          <li><a href="../../../polishing/flexible-polishing/" class="ft-link">フレキ研磨</a></li>
+          <li><a href="../../../#works" class="ft-link">加工実績</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="会社について">
+        <h3 class="ft-head">会社について</h3>
+        <ul class="space-y-3">
+          <li><a href="../../../company/" class="ft-link">会社情報</a></li>
+          <li><a href="../../../company/#access" class="ft-link">アクセス</a></li>
+          <li><a href="../../../#faq" class="ft-link">よくある質問</a></li>
+          <li><a href="../../../news/" class="ft-link">お知らせ</a></li>
+          <li><a href="../../../column/" class="ft-link">コラム</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Web集客・AI活用支援">
+        <h3 class="ft-head">Web集客・AI活用支援</h3>
+        <ul class="space-y-3">
+          <li><a href="../../../web-ai/" class="ft-link">サービス一覧</a></li>
+          <li><a href="../../../web-ai/seo-consulting/" class="ft-link">SEO・集客対策</a></li>
+          <li><a href="../../../web-ai/website/" class="ft-link">サイト制作・LP制作</a></li>
+          <li><a href="../../../web-ai/ai-katsuyo/" class="ft-link">AI活用支援</a></li>
+          <li><a href="../../../web-ai/case/" class="ft-link">実績・事例</a></li>
+          <li><a href="../../../web-ai/column/" class="ft-link">Web集客コラム</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-[13px] text-paper/60">
+      <a href="../../../privacy/" class="hover:text-paper hover:underline underline-offset-4">プライバシーポリシー</a>
+      <div>© 2026 株式会社松本研磨工業</div>
+    </div>
+  </div>
+</footer>
+<script>
+  const burger = document.getElementById('burgerBtn');
+  const mmenu  = document.getElementById('mobileMenu');
+  if (burger && mmenu) {
+    burger.addEventListener('click', () => mmenu.classList.toggle('translate-x-full'));
+    mmenu.querySelectorAll('[data-close]').forEach(a =>
+      a.addEventListener('click', () => mmenu.classList.add('translate-x-full'))
+    );
+  }
+  document.querySelectorAll('.mega-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const mega = btn.closest('.mega');
+      const isOpen = mega.classList.contains('open');
+      document.querySelectorAll('.mega.open').forEach(m => { m.classList.remove('open'); m.querySelector('.mega-btn').setAttribute('aria-expanded','false'); });
+      if (!isOpen) { mega.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+    });
+  });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.mega')) {
+      document.querySelectorAll('.mega.open').forEach(m => { m.classList.remove('open'); m.querySelector('.mega-btn').setAttribute('aria-expanded','false'); });
+    }
+  });
+</script>
+</body>
+</html>
