@@ -1,0 +1,1175 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5F157JYQD2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-5F157JYQD2');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WordPressの保守費用は何で決まる？保守の中身と相場の見方、自分でやる範囲｜マツケンスタジオ</title>
+<meta name="description" content="WordPressの保守費用は、どこまで任せるかで変わります。更新やバックアップなど保守の中身、費用が決まる要素、自分でやる範囲とリスク、保守契約で確かめたい項目、やめる・乗り換えるときの選択肢を、制作する側の目線でまとめました。">
+<link rel="canonical" href="https://matsumoto-kenma.co.jp/web-ai/column/wordpress-maintenance-cost/">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<meta property="og:title" content="WordPressの保守費用は何で決まる？保守の中身と相場の見方、自分でやる範囲｜マツケンスタジオ">
+<meta property="og:description" content="WordPressの保守費用は、どこまで任せるかで変わります。更新やバックアップなど保守の中身、費用が決まる要素、自分でやる範囲とリスク、保守契約で確かめたい項目、やめる・乗り換えるときの選択肢を、制作する側の目線でまとめました。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://matsumoto-kenma.co.jp/web-ai/column/wordpress-maintenance-cost/">
+<meta property="og:site_name" content="マツケンスタジオ by 松本研磨工業">
+<meta property="og:image" content="https://matsumoto-kenma.co.jp/images/ogp-studio.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="マツケンスタジオ by 松本研磨工業｜Web集客・AI活用支援">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WordPressの保守費用は何で決まる？保守の中身と相場の見方、自分でやる範囲｜マツケンスタジオ">
+<meta name="twitter:description" content="WordPressの保守費用は、どこまで任せるかで変わります。更新やバックアップなど保守の中身、費用が決まる要素、自分でやる範囲とリスク、保守契約で確かめたい項目、やめる・乗り換えるときの選択肢を、制作する側の目線でまとめました。">
+<meta name="twitter:image" content="https://matsumoto-kenma.co.jp/images/ogp-studio.jpg">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/noto-sans-jp-500.woff2" crossorigin>
+<style>
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/noto-sans-jp-400.woff2) format('woff2');}
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/noto-sans-jp-500.woff2) format('woff2');}
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/noto-sans-jp-600.woff2) format('woff2');}
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/noto-sans-jp-700.woff2) format('woff2');}
+@font-face {font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/jetbrains-mono-400.woff2) format('woff2');}
+@font-face {font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/jetbrains-mono-500.woff2) format('woff2');}
+</style>
+<link rel="stylesheet" href="/css/tailwind.css">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#F4F2ED;color:#0E0E10;font-family:'Noto Sans JP',sans-serif;font-size:15px;line-height:1.7}
+  a{color:inherit;text-decoration:none}
+  .pwrap{max-width:960px;margin:0 auto;padding:0 20px}
+  @media(min-width:768px){.pwrap{padding:0 40px}}
+  .sec-label{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.14em;color:#4A4A47;margin-bottom:16px}
+  .sec-ttl{font-size:24px;font-weight:600;line-height:1.4;margin-bottom:20px}
+  @media(min-width:768px){.sec-ttl{font-size:28px}}
+
+  /* Hero */
+  .hero-wrap{position:relative;overflow:hidden}
+  .wm{position:absolute;right:-.4em;top:-.12em;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:min(38vw,340px);line-height:1;color:rgba(244,242,237,.045);pointer-events:none;user-select:none;white-space:nowrap;z-index:0}
+  .icon-badge{width:64px;height:64px;border-radius:9999px;border:1.5px solid rgba(244,242,237,.35);display:grid;place-items:center;font-size:26px;color:#F4F2ED;flex-shrink:0}
+
+  /* Cards with accent bar */
+  .card2{position:relative;border:1px solid rgba(14,14,16,.1);background:#fff;padding:30px 24px 26px;border-top:3px solid #1B3A6B}
+  .card2.alt{border-top-color:#2E5BA6}
+  .card2 .idx{font-family:'JetBrains Mono',monospace;font-size:11px;color:#8a8a86;letter-spacing:.15em;margin-bottom:14px}
+
+  /* Spec box */
+  .spec-box{background:#E9E6DE;border-radius:4px;padding:4px 28px}
+  .spec-box div{display:grid;grid-template-columns:140px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid rgba(14,14,16,.08)}
+  .spec-box div:last-child{border-bottom:none}
+  .spec-box dt{font-size:13px;color:#4A4A47}
+  .spec-box dd{font-size:14px}
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+  .tag-pill{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;border:1px solid rgba(14,14,16,.15);padding:6px 12px;border-radius:2px;color:#4A4A47}
+
+  /* Process */
+  .step2{position:relative;padding:6px 0 30px 32px;border-left:2px solid #D9D4C8}
+  .step2:last-child{border-left:2px solid transparent;padding-bottom:2px}
+  .step2::before{content:'';position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:#1B3A6B}
+  .step2.alt::before{background:#2E5BA6}
+  .step2 .pnum{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:#8a8a86;margin-bottom:4px}
+
+  /* FAQ (matches homepage Q/A style) */
+  .faq2{display:grid;grid-template-columns:36px 1fr;gap:16px;padding:22px 0;border-top:1px solid #D9D4C8}
+  .faq2:last-child{border-bottom:1px solid #D9D4C8}
+  .faq2 .qa{font-family:'Noto Sans JP',sans-serif;font-size:22px;font-weight:600;line-height:1}
+  .faq2 .q{color:#1B3A6B}
+  .faq2 .a{color:#8a8a86}
+
+  /* Note / caution list */
+  .note-list{border-left:2px solid #0E0E10}
+  .note-list li{list-style:none;padding:18px 0 18px 22px;border-bottom:1px solid #D9D4C8}
+  .note-list li:last-child{border-bottom:none}
+  .note-list .note-ttl{font-weight:600;font-size:14px;margin-bottom:6px}
+
+  .wrap{max-width:1360px;margin:0 auto;padding:0 20px}
+  @media(min-width:768px){.wrap{padding:0 40px}}
+  .menu-link.active::after{content:"";position:absolute;left:16px;right:16px;bottom:4px;height:1px;background:#1B3A6B}
+  .mega.open .mega-panel, .mega:hover .mega-panel{opacity:1;visibility:visible;--tw-translate-y:0}
+  .mega.open .mega-caret{transform:rotate(180deg)}
+  .mega:hover .mega-caret{transform:rotate(180deg)}
+  .drawer-acc summary::-webkit-details-marker{display:none}
+  .drawer-acc[open] .drawer-acc-icon{transform:rotate(180deg)}
+  .mega-panel .grid>div{min-width:0}
+  .mega-panel li a{word-break:break-word}
+  .bg-navy .text-muted-ink,.bg-navy-2 .text-muted-ink{color:rgba(244,242,237,0.72)!important}
+</style>
+<style>
+/* site-chrome: match homepage header/footer */
+@font-face {font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/inter-400.woff2) format('woff2');}
+@font-face {font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/inter-500.woff2) format('woff2');}
+@font-face {font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/inter-600.woff2) format('woff2');}
+nav.fixed,#mobileMenu,footer{font-family:Inter,"Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Yu Gothic",sans-serif;font-size:15px;line-height:1.75;letter-spacing:.03em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+nav.fixed :is(p,li,dd,span),#mobileMenu :is(p,li,dd,span),footer :is(p,li,dd,span){letter-spacing:.035em}
+nav.fixed .font-serif,#mobileMenu .font-serif,footer .font-serif{font-weight:500}
+nav.fixed .font-serif.font-medium,#mobileMenu .font-serif.font-medium,footer .font-serif.font-medium{font-weight:600}
+nav.fixed .font-serif.font-semibold,#mobileMenu .font-serif.font-semibold,footer .font-serif.font-semibold{font-weight:700}
+</style>
+<style>/* site-footer */
+.site-footer .ft-head{font-size:15px;font-weight:700;color:#F4F2ED;letter-spacing:.04em;padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid rgba(244,242,237,.2)}
+.site-footer .ft-link{font-size:15px;color:rgba(244,242,237,.82);line-height:1.6}
+.site-footer .ft-link:hover{color:#F4F2ED;text-decoration:underline;text-underline-offset:4px}
+.site-footer .ft-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:240px;padding:15px 24px;border-radius:4px;background:#F4F2ED;color:#0E0E10;font-size:15px;font-weight:700;transition:background .2s}
+.site-footer .ft-btn::after{content:"→"}
+.site-footer .ft-btn:hover{background:#fff}
+.site-footer .ft-sns{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid rgba(244,242,237,.3);border-radius:4px;font-size:13px;color:#F4F2ED}
+.site-footer .ft-sns:hover{background:rgba(244,242,237,.1)}
+.site-footer a:focus-visible{outline:2px solid #F4F2ED;outline-offset:3px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://matsumoto-kenma.co.jp/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Web集客・AI活用支援",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Web集客コラム",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/column/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "費用・発注",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/column/category/cost/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "WordPressの保守費用は何で決まる？保守の中身と相場の見方、自分でやる範囲",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/column/wordpress-maintenance-cost/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "WordPressの保守費用は何で決まる？保守の中身と相場の見方、自分でやる範囲",
+  "description": "WordPressの保守費用は、どこまで任せるかで変わります。更新やバックアップなど保守の中身、費用が決まる要素、自分でやる範囲とリスク、保守契約で確かめたい項目、やめる・乗り換えるときの選択肢を、制作する側の目線でまとめました。",
+  "url": "https://matsumoto-kenma.co.jp/web-ai/column/wordpress-maintenance-cost/",
+  "image": "https://matsumoto-kenma.co.jp/images/ogp-studio.jpg",
+  "datePublished": "2026-11-10",
+  "dateModified": "2026-11-10",
+  "articleSection": "費用・発注",
+  "inLanguage": "ja",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://matsumoto-kenma.co.jp/web-ai/#studio",
+    "name": "マツケンスタジオ",
+    "url": "https://matsumoto-kenma.co.jp/web-ai/column/author/"
+  },
+  "publisher": {
+    "@id": "https://matsumoto-kenma.co.jp/#organization"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://matsumoto-kenma.co.jp/web-ai/column/wordpress-maintenance-cost/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "WordPressの保守費用の相場はいくらですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "会社ごとに作業の中身が違うため、決まった相場はありません。仲介サイトの解説記事では月額3,000円ほどから5万円を超えるものまで幅があると紹介されていますが、公的な調査ではありません。金額よりも、更新、バックアップ、不具合への対応のどこまでが入っているかで比べてください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "WordPressの保守は自分でできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "更新の前にバックアップを取る、本体・テーマ・プラグインを更新する、更新のあとに表示とフォームを確かめる、といった作業は自社でも取り組めます。一方で、画面が真っ白になったときの原因探しや、書きかえられたときの復旧は知識が必要です。困ったときに相談できる先を決めておくと安心です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "自動更新を有効にしておけば、保守はいりませんか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "自動更新で手間は減りますが、更新のあとに表示が崩れていないか、フォームが届くかは人が見て確かめる必要があります。WordPressの公式の案内でも、プラグインやテーマの自動更新は、特別な場合を除いて初めから自動にはなっていません。バックアップや期限の見守りも別に必要です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "保守費を払っているのに、更新のお知らせが残っています。",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "まず、契約で決めている作業の範囲と更新の間隔を確かめ、作業の記録を見せてもらいましょう。範囲に入っているのに行われていない場合は、改善をお願いするか、保守を任せる先を変えることも考えます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "保守をやめると、ホームページはどうなりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ドメインとサーバーが自社の名義なら、保守をやめてもホームページは残ります。ただ、更新やバックアップは自社で続ける必要があります。制作会社の名義になっている場合は、やめる前に名義の移し方と、データ一式を受け取れるかを確かめてください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ほとんど更新しないサイトでも、保守は必要ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "文章を書きかえなくても、本体やプラグイン、PHPの手入れは必要です。古い版のままにしておくと、書きかえられるおそれが高まります。更新がほとんどなく手入れの手間を減らしたい場合は、WordPressを使わない作り方に乗り換える方法もあります。"
+      }
+    }
+  ]
+}
+</script>
+<style>
+  /* Matsuken Studio: light theme */
+  html,body{background:#FFFFFF}
+  .pwrap{max-width:960px;margin:0 auto;padding:0 20px}
+  @media(min-width:768px){.pwrap{padding:0 40px}}
+  .pwrap.max-w-\[800px\]{max-width:880px}
+  .st-alt{background:#F4F6F9}
+  .st-cta{background:#FFF9D6}
+  .sec-label{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.14em;color:#1B3A6B;margin-bottom:16px}
+  .sec-ttl{font-size:24px;font-weight:700;line-height:1.45;margin-bottom:20px;color:#0E0E10}
+  @media(min-width:768px){.sec-ttl{font-size:30px}}
+  .st-logo{display:inline-flex;align-items:center;gap:12px}
+  .st-mark{width:40px;height:40px;border-radius:10px;background:#1B3A6B;color:#fff;display:grid;place-items:center;font-weight:700;font-size:22px;position:relative;flex-shrink:0}
+  .st-mark::after{content:'';position:absolute;right:-3px;top:-3px;width:12px;height:12px;border-radius:50%;background:#F5DE00;border:2px solid #fff}
+  .st-name{display:block;font-weight:800;font-size:20px;letter-spacing:.04em;color:#0E0E10;line-height:1.2}
+  .st-by{display:block;font-size:11px;letter-spacing:.14em;color:#5E5E65;margin-top:3px}
+  .st-hero{position:relative;overflow:hidden;background:#fff;border-bottom:1px solid #E6E9EE}
+  .st-hero::before{content:'';position:absolute;right:-120px;top:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,#FFF4B0 0%,rgba(255,244,176,0) 70%);pointer-events:none}
+  .st-hero::after{content:'';position:absolute;right:40px;bottom:40px;width:260px;height:180px;background-image:radial-gradient(#C9D2DF 1.2px,transparent 1.2px);background-size:14px 14px;opacity:.7;pointer-events:none}
+  .trust{display:grid;grid-template-columns:1fr;border-top:1px solid #E6E9EE}
+  @media(min-width:768px){.trust{grid-template-columns:repeat(3,1fr)}}
+  .trust>div{padding:20px 0}
+  @media(min-width:768px){.trust>div{padding:24px 28px}.trust>div+div{border-left:1px solid #E6E9EE}.trust>div:first-child{padding-left:0}}
+  .trust .t-big{font-size:17px;font-weight:700;color:#0E0E10;margin-bottom:4px}
+  .trust .t-sub{font-size:13px;color:#5E5E65;line-height:1.8}
+  .card2{position:relative;border:1px solid #E1E5EB;background:#fff;padding:30px 24px 26px;border-top:3px solid #1B3A6B;border-radius:6px}
+  .card2.alt{border-top-color:#2E5BA6}
+  .card2 .idx{font-family:'JetBrains Mono',monospace;font-size:11px;color:#8a8a86;letter-spacing:.15em;margin-bottom:14px}
+  .svc-list{background:#fff;border:1px solid #E1E5EB;border-radius:8px;padding:10px 28px}
+  .svc-list li{list-style:none;display:grid;grid-template-columns:22px 1fr;gap:10px;padding:14px 0;border-bottom:1px solid #EEF1F5;font-size:14px;line-height:1.8}
+  .svc-list li:last-child{border-bottom:none}
+  .svc-list li::before{content:'';width:10px;height:10px;margin-top:8px;border-radius:3px;background:#F5DE00;box-shadow:0 0 0 2px #1B3A6B inset}
+  .step2{position:relative;padding:6px 0 30px 32px;border-left:2px solid #DDE3EB}
+  .step2:last-child{border-left:2px solid transparent;padding-bottom:2px}
+  .step2::before{content:'';position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:#1B3A6B}
+  .step2.alt::before{background:#2E5BA6}
+  .step2 .pnum{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:#8a8a86;margin-bottom:4px}
+  .faq2{display:grid;grid-template-columns:36px 1fr;gap:16px;padding:22px 0;border-top:1px solid #E1E5EB}
+  .faq2:last-child{border-bottom:1px solid #E1E5EB}
+  .faq2 .qa{font-size:22px;font-weight:700;line-height:1;color:#1B3A6B}
+  .price-box{border:1px solid #E1E5EB;border-radius:8px;background:#fff;padding:32px 28px;display:grid;grid-template-columns:1fr;gap:18px}
+  @media(min-width:768px){.price-box{grid-template-columns:1fr auto;align-items:center;padding:36px 40px}}
+  .case-card{display:grid;grid-template-columns:1fr;border:1px solid #E1E5EB;border-radius:8px;overflow:hidden;background:#fff;transition:border-color .2s,box-shadow .2s}
+  .case-card:hover{border-color:#1B3A6B;box-shadow:0 10px 30px -14px rgba(27,58,107,.35)}
+  .case-card .c-img{background:linear-gradient(135deg,#EAF0F8,#FFF6C4);min-height:160px;display:grid;place-items:center;color:#1B3A6B;font-size:13px;font-weight:600;letter-spacing:.14em}
+  @media(min-width:768px){.case-card{grid-template-columns:280px 1fr}}
+  .rel-grid{display:grid;grid-template-columns:1fr;gap:28px}
+  @media(min-width:768px){.rel-grid{grid-template-columns:repeat(4,1fr)}}
+  .rel-grid a{display:block;padding:9px 0;border-bottom:1px solid #E1E5EB;font-size:14px;transition:color .15s}
+  .rel-grid a:hover{color:#2E5BA6}
+  .rel-grid a.current{color:#8a8a86;pointer-events:none}
+  .svc-card{display:block;background:#fff;border:1px solid #E1E5EB;border-radius:8px;padding:26px 24px;transition:border-color .2s,box-shadow .2s,transform .2s}
+  a.svc-card:hover{border-color:#1B3A6B;box-shadow:0 10px 30px -14px rgba(27,58,107,.35);transform:translateY(-2px)}
+  .st-illu{display:block;width:100%;height:auto;max-width:300px;margin:0 auto}
+  .st-icon{display:block;margin-bottom:12px}
+  .story p{font-size:15px;line-height:2.1;color:#26262B;margin-bottom:20px}
+  @media(min-width:768px){.story p{font-size:16px}}
+  .story-quote{font-size:clamp(20px,2.6vw,28px);font-weight:700;line-height:1.6;color:#0E0E10;padding-left:20px;border-left:4px solid #F5DE00}
+  .target-card{background:#fff;border:1px solid #E1E5EB;border-radius:8px;padding:24px}
+  .target-card .tg{display:inline-block;font-size:12px;font-weight:700;color:#1B3A6B;background:#FFF4B0;border-radius:999px;padding:4px 12px;margin-bottom:12px}
+</style>
+<style>
+  .col-cats{display:flex;flex-wrap:wrap;gap:8px}
+  .col-cats a{font-size:13px;font-weight:700;padding:7px 14px;border-radius:999px;background:#fff;border:1px solid #E1E5EB;color:#1B3A6B}
+  .col-cats a:hover,.col-cats a.on{background:#1B3A6B;color:#fff;border-color:#1B3A6B}
+  .col-grid{display:grid;grid-template-columns:1fr;gap:18px}
+  @media(min-width:768px){.col-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1024px){.col-grid.three{grid-template-columns:repeat(3,1fr)}}
+  .col-card{display:flex;flex-direction:column;background:#fff;border:1px solid #E1E5EB;border-radius:10px;padding:22px 22px 18px;transition:border-color .2s,box-shadow .2s}
+  .col-card:hover{border-color:#1B3A6B;box-shadow:0 10px 30px -16px rgba(27,58,107,.35)}
+  .chip{display:inline-block;font-size:12px;font-weight:700;color:#1B3A6B;background:#FFF4B0;border-radius:999px;padding:3px 10px}
+  .col-card h3{font-size:17px;font-weight:700;line-height:1.6;margin:12px 0 8px;color:#0E0E10}
+  .col-card p{font-size:13px;line-height:1.8;color:#5E5E65;flex:1}
+  .col-card time{font-size:12px;color:#8a8a86;margin-top:12px;font-family:'JetBrains Mono',monospace}
+  .art{max-width:760px;margin:0 auto}
+  .art-body h2{font-size:22px;font-weight:700;line-height:1.5;margin:48px 0 16px;padding-left:14px;border-left:5px solid #F5DE00;scroll-margin-top:90px}
+  @media(min-width:768px){.art-body h2{font-size:25px}}
+  .art-body h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:#1B3A6B}
+  .art-body p{font-size:16px;line-height:2;color:#26262B;margin-bottom:18px}
+  .art-body ul,.art-body ol{margin:0 0 20px 1.4em;font-size:16px;line-height:1.9;color:#26262B}
+  .art-body li{margin-bottom:6px}
+  .art-body ul,.points ul{list-style:disc}
+  .art-body ol,.toc ol{list-style:decimal}
+  .art-body li::marker,.points li::marker{color:#1B3A6B}
+  .art-body a{color:#1B3A6B;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+  .art-body .st-illu{margin:26px auto}
+  .art-table{width:100%;border-collapse:collapse;margin:8px 0 24px;font-size:14px;background:#fff;border:1px solid #E1E5EB}
+  .art-table th,.art-table td{padding:12px 14px;border-bottom:1px solid #EEF1F5;text-align:left;vertical-align:top;line-height:1.7}
+  .art-table th{background:#F4F6F9;font-weight:700;color:#1B3A6B}
+  .art-body p.ask{font-size:14px;line-height:1.8;background:#F4F6F9;border-left:4px solid #1B3A6B;border-radius:0 8px 8px 0;padding:10px 14px;color:#26262B}
+  .points{background:#FFF9D6;border-radius:10px;padding:20px 24px;margin:26px 0}
+  .points b{display:block;font-size:14px;margin-bottom:8px;color:#1B3A6B}
+  .points li{font-size:15px;line-height:1.8;margin-left:1.2em}
+  .toc{background:#F4F6F9;border-radius:10px;padding:20px 24px;margin:0 0 30px}
+  .toc b{display:block;font-size:14px;margin-bottom:8px}
+  .toc ol{margin-left:1.3em;font-size:14px;line-height:2}
+  .toc a{color:#1B3A6B}
+  .author{display:grid;grid-template-columns:56px 1fr;gap:16px;background:#fff;border:1px solid #E1E5EB;border-radius:12px;padding:22px}
+  .author .av{width:56px;height:56px;border-radius:14px;background:#1B3A6B;color:#fff;display:grid;place-items:center;font-weight:700;font-size:24px;position:relative}
+  .author .av::after{content:'';position:absolute;right:-3px;top:-3px;width:14px;height:14px;border-radius:50%;background:#F5DE00;border:2px solid #fff}
+  .author b{font-size:15px}.author p{font-size:13px;line-height:1.9;color:#4A4A50;margin-top:6px}
+  .art-body .cta-mid a{text-decoration:none}
+  .art-body .cta-mid a.bg-cta-yellow{color:#0E0E10}
+  .art-body .cta-mid a[href*="line.me"]{color:#fff}
+  .cta-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;border:1px solid #E1E5EB;border-radius:12px;padding:14px 18px;margin:-8px 0 26px;background:#fff}
+  .cta-top p{font-size:14px;font-weight:700;color:#0E0E10}
+  .cta-top .bt{display:flex;gap:8px;flex-wrap:wrap}
+  .cta-top a.btn-s{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;border-radius:999px;padding:9px 16px}
+  .cta-mid{margin:36px 0;border-radius:14px;background:#FFF9D6;padding:24px 24px 22px;position:relative;overflow:hidden}
+  .cta-mid::after{content:'';position:absolute;right:-50px;top:-50px;width:160px;height:160px;border-radius:50%;background:repeating-radial-gradient(circle,rgba(27,58,107,.08) 0 1px,transparent 1px 10px)}
+  .cta-mid .lb{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:#1B3A6B;border-radius:999px;padding:3px 10px;margin-bottom:10px}
+  .cta-mid b{display:block;font-size:18px;line-height:1.6;margin-bottom:6px;color:#0E0E10}
+  .cta-mid p{font-size:14px;line-height:1.8;color:#3A3A40;margin-bottom:16px;position:relative;z-index:1}
+  .cta-mid .bt{display:flex;flex-direction:column;gap:10px;position:relative;z-index:1}
+  @media(min-width:640px){.cta-mid .bt{flex-direction:row}}
+  .cta-end{border-radius:16px;background:#1B3A6B;color:#fff;padding:28px 26px}
+  .cta-end b{display:block;font-size:20px;line-height:1.6;margin-bottom:8px}
+  .cta-end p{font-size:14px;line-height:1.9;color:rgba(255,255,255,.85);margin-bottom:18px}
+  .cta-end .bt{display:flex;flex-direction:column;gap:10px}
+  @media(min-width:640px){.cta-end .bt{flex-direction:row;align-items:center}}
+  .cta-end .lp{font-size:14px;font-weight:700;color:#F5DE00;text-decoration:underline;text-underline-offset:3px}
+  .col-stick{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid #E1E5EB;transform:translateY(110%);transition:transform .25s}
+  .col-stick.show{transform:none}
+  .col-stick a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:999px;padding:12px 8px;font-size:14px;font-weight:700}
+  @media(min-width:768px){.col-stick{display:none}}
+  .soft-cta{background:#fff;border:1px solid #E1E5EB;border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:14px}
+  @media(min-width:768px){.soft-cta{flex-direction:row;align-items:center;justify-content:space-between}}
+  .soft-cta p{font-size:14px;line-height:1.8;color:#26262B}
+</style>
+<script type="application/ld+json" data-sd="managed">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://matsumoto-kenma.co.jp/#organization",
+      "name": "株式会社松本研磨工業",
+      "alternateName": [
+        "松本研磨工業",
+        "松本研磨"
+      ],
+      "url": "https://matsumoto-kenma.co.jp/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://matsumoto-kenma.co.jp/images/logo.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://matsumoto-kenma.co.jp/images/ogp.jpg",
+      "description": "神奈川県川崎市川崎区の金属研磨工場。1967年創業。ステンレス・アルミ・真鍮・鉄などのバフ研磨（鏡面仕上げ）、ベルト研磨、ヘアライン仕上げ、フレキ研磨を、試作の1個から小量産まで手作業で請け負っています。図面がなくても、現物や写真からお見積りできます。",
+      "telephone": "+81-44-333-8412",
+      "faxNumber": "+81-44-333-3843",
+      "address": {
+        "@type": "PostalAddress",
+        "postalCode": "210-0851",
+        "addressRegion": "神奈川県",
+        "addressLocality": "川崎市川崎区",
+        "streetAddress": "浜町3-9-22",
+        "addressCountry": "JP"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 35.5257,
+        "longitude": 139.7194
+      },
+      "hasMap": "https://maps.google.com/?q=神奈川県川崎市川崎区浜町3-9-22",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:30",
+          "closes": "18:00"
+        }
+      ],
+      "foundingDate": "1967",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "日本"
+        },
+        {
+          "@type": "City",
+          "name": "川崎市"
+        },
+        {
+          "@type": "City",
+          "name": "横浜市"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "東京都"
+        }
+      ],
+      "knowsAbout": [
+        "金属研磨",
+        "バフ研磨",
+        "鏡面仕上げ",
+        "ベルト研磨",
+        "ヘアライン仕上げ",
+        "フレキ研磨",
+        "ステンレス研磨",
+        "アルミ研磨",
+        "真鍮研磨",
+        "曲面研磨"
+      ],
+      "sameAs": [
+        "https://www.instagram.com/matsu_polish/",
+        "https://www.youtube.com/channel/UCIGiSzo9TyINLuygAsuP5ew/"
+      ],
+      "department": {
+        "@id": "https://matsumoto-kenma.co.jp/web-ai/#studio"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://matsumoto-kenma.co.jp/#website",
+      "url": "https://matsumoto-kenma.co.jp/",
+      "name": "株式会社松本研磨工業",
+      "inLanguage": "ja",
+      "publisher": {
+        "@id": "https://matsumoto-kenma.co.jp/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://matsumoto-kenma.co.jp/web-ai/#studio",
+      "name": "マツケンスタジオ",
+      "alternateName": "マツケンスタジオ by 松本研磨工業",
+      "url": "https://matsumoto-kenma.co.jp/web-ai/",
+      "image": "https://matsumoto-kenma.co.jp/images/ogp-studio.jpg",
+      "description": "株式会社松本研磨工業が運営する、町工場発のWeb事業。製造業・建設業・工務店・運送業など、現場と技術のある中小企業のホームページ制作・リニューアル、検索対策、Web広告、AI活用をお手伝いします。",
+      "parentOrganization": {
+        "@id": "https://matsumoto-kenma.co.jp/#organization"
+      },
+      "sameAs": [
+        "https://www.instagram.com/matsuken_studio/",
+        "https://page.line.me/115rhdee"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "日本"
+      },
+      "knowsAbout": [
+        "ホームページ制作",
+        "ホームページリニューアル",
+        "Web集客",
+        "SEO",
+        "LLMO",
+        "サイト制作",
+        "LP制作",
+        "Web広告",
+        "CVR改善",
+        "BtoBマーケティング",
+        "AI活用"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://matsumoto-kenma.co.jp/web-ai/column/wordpress-maintenance-cost/#webpage",
+      "url": "https://matsumoto-kenma.co.jp/web-ai/column/wordpress-maintenance-cost/",
+      "name": "WordPressの保守費用は何で決まる？保守の中身と相場の見方、自分でやる範囲｜マツケンスタジオ",
+      "description": "WordPressの保守費用は、どこまで任せるかで変わります。更新やバックアップなど保守の中身、費用が決まる要素、自分でやる範囲とリスク、保守契約で確かめたい項目、やめる・乗り換えるときの選択肢を、制作する側の目線でまとめました。",
+      "inLanguage": "ja",
+      "isPartOf": {
+        "@id": "https://matsumoto-kenma.co.jp/#website"
+      },
+      "about": {
+        "@id": "https://matsumoto-kenma.co.jp/web-ai/#studio"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://matsumoto-kenma.co.jp/images/ogp-studio.jpg"
+      },
+      "dateModified": "2026-09-27"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav class="fixed top-0 left-0 right-0 z-50 bg-paper/80 backdrop-blur-[14px] border-b border-ink/[0.08]">
+  <div class="wrap flex items-center justify-between h-[60px] md:h-[72px]">
+
+    <!-- Brand -->
+    <a href="../../../#home" class="flex items-center gap-3 md:gap-[14px]">
+      <span class="w-9 h-9 md:w-10 md:h-10 border-[1.5px] border-ink rounded-full grid place-items-center font-serif font-semibold text-lg md:text-xl bg-ink text-paper">松</span>
+      <span class="leading-[1.1]">
+        <div class="font-serif text-[13px] md:text-[15px] font-medium tracking-[.04em]">株式会社松本研磨工業</div>
+        <div class="hidden sm:block font-mono text-[10px] text-muted tracking-[.22em] mt-[2px]">創業58年・川崎</div>
+      </span>
+    </a>
+
+    <!-- Desktop menu — hidden below md -->
+    <div class="hidden md:flex gap-[2px] items-center">
+      <a href="../../../#home" class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">ホーム</a>
+
+      <!-- 金属研磨技術 メガメニュー -->
+      <div class="mega relative">
+        <button class="mega-btn flex items-center gap-1 px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors" aria-expanded="false">
+          金属研磨技術
+          <svg class="w-3 h-3 stroke-current fill-none stroke-[2] mega-caret transition-transform" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="mega-panel absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[320px] bg-navy text-paper rounded-sm shadow-[0_24px_48px_-12px_rgba(0,0,0,.35)] p-2 opacity-0 invisible translate-y-1 transition-all duration-150">
+          <div class="pb-2 mb-1 border-b border-paper/10">
+            <a href="../../../polishing/" class="block px-4 py-2.5 rounded-sm text-[13px] font-semibold hover:bg-paper/10 hover:text-paper hover:underline underline-offset-4 transition-colors">金属研磨技術 一覧 →</a>
+          </div>
+          <a href="../../../polishing/buff-polishing/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">バフ研磨</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">鏡面仕上げ</div>
+          </a>
+          <a href="../../../polishing/belt-polishing/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">ベルト研磨</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">バリ取り・形状補正</div>
+          </a>
+          <a href="../../../polishing/hairline-finish/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">ヘアライン加工</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">一方向のライン仕上げ</div>
+          </a>
+          <a href="../../../polishing/flexible-polishing/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">フレキ研磨／曲面研磨</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">複雑形状への手作業</div>
+          </a>
+        </div>
+      </div>
+
+      <a href="../../../#works" class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">加工実績</a>
+
+      <!-- Web集客・AI活用支援 メガメニュー -->
+      <div class="mega relative">
+        <button class="mega-btn flex items-center gap-1 px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors" aria-expanded="false">
+          Web集客・AI活用支援
+          <svg class="w-3 h-3 stroke-current fill-none stroke-[2] mega-caret transition-transform" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="mega-panel fixed left-1/2 -translate-x-1/2 top-[72px] mt-2 w-[860px] max-w-[92vw] bg-navy text-paper rounded-sm shadow-[0_24px_48px_-12px_rgba(0,0,0,.35)] p-7 opacity-0 invisible translate-y-1 transition-all duration-150">
+          <div class="mb-6 pb-5 border-b border-paper/10 flex items-center justify-between">
+            <a href="../../../web-ai/" class="font-serif text-[13px] font-semibold hover:text-paper hover:underline underline-offset-4 transition-colors">Web集客・AI活用支援 トップ →</a>
+            <a href="../../../web-ai/case/" class="font-serif text-[13px] font-semibold hover:text-paper hover:underline underline-offset-4 transition-colors">実績・事例 →</a>
+          </div>
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">戦略・コンサルティング</div>
+              <ul class="space-y-2">
+                <li><a href="../../../web-ai/consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">デジタルマーケティングコンサルティング</a></li>
+                <li><a href="../../../web-ai/btob-marketing/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">BtoBマーケティング支援</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">集客・改善</div>
+              <ul class="space-y-2">
+                <li><a href="../../../web-ai/seo-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">SEOコンサルティング</a></li>
+                <li><a href="../../../web-ai/ad-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">Web広告コンサルティング</a></li>
+                <li><a href="../../../web-ai/cro-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">CVR改善／CROコンサルティング</a></li>
+                <li><a href="../../../web-ai/llmo-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">LLMOコンサルティング</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">制作</div>
+              <ul class="space-y-2">
+                <li><a href="../../../web-ai/website/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">サイト制作</a></li>
+                <li><a href="../../../web-ai/lp/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">LP制作</a></li>
+                <li><a href="../../../web-ai/seo-writing/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">SEO/LLMO記事制作代行</a></li>
+                <li><a href="../../../web-ai/case-interview/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">事例インタビュー記事制作</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">AI活用支援</div>
+              <ul class="space-y-2">
+                <li><a href="../../../web-ai/ai-katsuyo/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">AI活用支援（業務効率化・自動化）</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- コラム メガメニュー -->
+      <div class="mega relative">
+        <button class="mega-btn flex items-center gap-1 px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors" aria-expanded="false">
+          コラム
+          <svg class="w-3 h-3 stroke-current fill-none stroke-[2] mega-caret transition-transform" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="mega-panel absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[320px] bg-navy text-paper rounded-sm shadow-[0_24px_48px_-12px_rgba(0,0,0,.35)] p-2 opacity-0 invisible translate-y-1 transition-all duration-150">
+          <a href="../../../column/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">研磨・金属加工コラム</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">工法・材料別の技術記事</div>
+          </a>
+          <a href="../../../web-ai/column/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">Web集客・AI活用支援コラム</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">製造業のためのWeb集客・AI活用</div>
+          </a>
+        </div>
+      </div>
+
+      <a href="../../../company/" class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">会社情報</a>
+    </div>
+
+    <!-- CTA -->
+    <div class="flex gap-2 md:gap-[10px] items-center">
+      <a href="../../../web-ai/contact/" class="inline-flex items-center gap-[10px] px-3 py-2 md:px-[18px] md:py-[11px] rounded-sm text-[11px] md:text-[13px] font-semibold tracking-[.06em] bg-ink text-paper hover:bg-accent transition-all">お問い合わせ →</a>
+      <!-- Burger — shown below md -->
+      <button class="flex md:hidden w-10 h-10 border border-ink rounded-sm items-center justify-center bg-paper" id="burgerBtn" aria-label="menu">
+        <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="fixed inset-0 z-[55] bg-navy text-paper pt-[80px] pb-8 px-6 flex flex-col gap-1 translate-x-full transition-transform duration-[350ms] ease-in-out" id="mobileMenu">
+  <button data-close class="absolute top-5 right-5 w-10 h-10 flex items-center justify-center text-paper/80 hover:text-paper" aria-label="close menu">
+    <svg class="w-6 h-6 stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+
+  <!-- LANY風：上部にCTAピル2つ -->
+  <div class="flex gap-2 mb-5">
+    <a href="../../../web-ai/contact/" data-close class="flex-1 flex items-center justify-center gap-2 py-3 rounded-full bg-accent text-paper text-[13px] font-semibold tracking-[.04em]">お問い合わせ →</a>
+  </div>
+
+  <div class="overflow-y-auto flex-1 -mr-6 pr-6">
+  <a href="../../../#home" data-close class="font-serif text-[17px] font-medium py-3 border-b border-paper/[.08] flex items-center justify-between">ホーム</a>
+
+  <details class="drawer-acc border-b border-paper/[.08]">
+    <summary class="font-serif text-[17px] font-medium py-3 flex items-center justify-between cursor-pointer list-none">
+      金属研磨技術
+      <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6] drawer-acc-icon transition-transform shrink-0" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="pb-4 flex flex-col gap-1">
+      <a href="../../../polishing/" data-close class="text-[13px] py-1.5 mb-1 pb-2.5 border-b border-paper/[.08] font-semibold text-paper">金属研磨技術 一覧 →</a>
+      <a href="../../../polishing/buff-polishing/" data-close class="text-[13px] py-1.5 opacity-85">バフ研磨</a>
+      <a href="../../../polishing/belt-polishing/" data-close class="text-[13px] py-1.5 opacity-85">ベルト研磨</a>
+      <a href="../../../polishing/hairline-finish/" data-close class="text-[13px] py-1.5 opacity-85">ヘアライン加工</a>
+      <a href="../../../polishing/flexible-polishing/" data-close class="text-[13px] py-1.5 opacity-85">フレキ研磨／曲面研磨</a>
+    </div>
+  </details>
+
+  <a href="../../../#works" data-close class="font-serif text-[17px] font-medium py-3 border-b border-paper/[.08] flex items-center justify-between">加工実績</a>
+
+  <details class="drawer-acc border-b border-paper/[.08]">
+    <summary class="font-serif text-[17px] font-medium py-3 flex items-center justify-between cursor-pointer list-none">
+      Web集客・AI活用支援
+      <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6] drawer-acc-icon transition-transform shrink-0" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="pb-4 flex flex-col gap-1">
+      <div class="flex items-center justify-between mb-1 pb-2.5 border-b border-paper/[.08]">
+        <a href="../../../web-ai/" data-close class="text-[13px] font-semibold text-paper">Web集客・AI活用支援 トップ →</a>
+        <a href="../../../web-ai/case/" data-close class="text-[13px] font-semibold text-paper">実績・事例 →</a>
+      </div>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-2 mb-1">戦略・コンサルティング</div>
+      <a href="../../../web-ai/consulting/" data-close class="text-[13px] py-1.5 opacity-85">デジタルマーケティングコンサルティング</a>
+      <a href="../../../web-ai/btob-marketing/" data-close class="text-[13px] py-1.5 opacity-85">BtoBマーケティング支援</a>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-3 mb-1">集客・改善</div>
+      <a href="../../../web-ai/seo-consulting/" data-close class="text-[13px] py-1.5 opacity-85">SEOコンサルティング</a>
+      <a href="../../../web-ai/ad-consulting/" data-close class="text-[13px] py-1.5 opacity-85">Web広告コンサルティング</a>
+      <a href="../../../web-ai/cro-consulting/" data-close class="text-[13px] py-1.5 opacity-85">CVR改善／CROコンサルティング</a>
+      <a href="../../../web-ai/llmo-consulting/" data-close class="text-[13px] py-1.5 opacity-85">LLMOコンサルティング</a>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-3 mb-1">制作</div>
+      <a href="../../../web-ai/website/" data-close class="text-[13px] py-1.5 opacity-85">サイト制作</a>
+      <a href="../../../web-ai/lp/" data-close class="text-[13px] py-1.5 opacity-85">LP制作</a>
+      <a href="../../../web-ai/seo-writing/" data-close class="text-[13px] py-1.5 opacity-85">SEO/LLMO記事制作代行</a>
+      <a href="../../../web-ai/case-interview/" data-close class="text-[13px] py-1.5 opacity-85">事例インタビュー記事制作</a>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-3 mb-1">AI活用支援</div>
+      <a href="../../../web-ai/ai-katsuyo/" data-close class="text-[13px] py-1.5 opacity-85">AI活用支援（業務効率化・自動化）</a>
+    </div>
+  </details>
+
+  <details class="drawer-acc border-b border-paper/[.08]">
+    <summary class="font-serif text-[17px] font-medium py-3 flex items-center justify-between cursor-pointer list-none">
+      コラム
+      <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6] drawer-acc-icon transition-transform shrink-0" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="pb-4 flex flex-col gap-1">
+      <a href="../../../column/" data-close class="text-[13px] py-2 opacity-85">研磨・金属加工コラム</a>
+      <a href="../../../web-ai/column/" data-close class="text-[13px] py-2 opacity-85">Web集客・AI活用支援コラム</a>
+    </div>
+  </details>
+
+  <a href="../../../company/" data-close class="font-serif text-[17px] font-medium py-3 border-b border-paper/[.08] flex items-center justify-between">会社情報</a>
+  </div>
+
+  <div class="pt-5 text-[11px] text-muted-ink/80 text-center">マツケンスタジオへのご相談は、お問い合わせフォームで受け付けています</div>
+</div>
+
+
+<main class="pt-[60px]">
+  <section class="pt-8 pb-10 md:pt-12 md:pb-14">
+    <div class="pwrap">
+      <article class="art">
+      <p class="font-mono text-[11px] tracking-[.2em] text-muted mb-5"><a href="../../../" class="hover:text-accent transition-colors">ホーム</a><span class="mx-2 opacity-40">/</span><a href="../../" class="hover:text-accent transition-colors">Web集客・AI活用支援</a><span class="mx-2 opacity-40">/</span><a href="../" class="hover:text-accent transition-colors">コラム</a><span class="mx-2 opacity-40">/</span><a href="../category/cost/" class="hover:text-accent transition-colors">費用・発注</a></p>
+        <a href="../category/cost/" class="chip">費用・発注</a>
+        <h1 class="font-bold leading-[1.45] mt-3 mb-4 text-ink" style="font-size:clamp(24px,3.6vw,34px)">WordPressの保守費用は何で決まる？保守の中身と相場の見方、自分でやる範囲</h1>
+        <p class="text-[13px] text-muted mb-6">公開日 <time datetime="2026-11-10">2026.11.10</time>　|　マツケンスタジオ 責任者</p>
+        <div class="points"><b>この記事で分かること</b><ul><li>WordPressの保守で行う作業と、費用が何で決まるか</li><li>自社で保守するときにできることと、難しいこと</li><li>保守契約で確かめたい項目と、やめる・乗り換えるときの選択肢</li></ul></div>
+        <div class="cta-top"><p>ホームページのご相談は無料です</p><div class="bt"><a href="../../contact/" class="btn-s bg-cta-yellow text-ink hover:bg-cta-yellow-h">1分で問い合わせ →</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="btn-s bg-[#06C755] text-white hover:bg-[#05B34C]">LINEで相談</a></div></div>
+        <nav class="toc" aria-label="目次"><b>目次</b><ol><li><a href="#what">WordPressの保守とは</a></li><li><a href="#tasks">WordPressの保守で行う作業</a></li><li><a href="#levels">保守プランの段階の例</a></li><li><a href="#risk">保守をしないと、何が起きるか</a></li><li><a href="#factors">WordPressの保守費用は何で決まるか</a></li><li><a href="#range">公開されている金額の幅と、見るときの注意</a></li><li><a href="#breakdown">見積りの内訳の見方</a></li><li><a href="#self">WordPressの保守を自分でやる場合</a></li><li><a href="#monthly">自社で保守するときの、月1回の手順</a></li><li><a href="#split">自社と外注の分け方</a></li><li><a href="#where">保守を頼む先の考え方</a></li><li><a href="#prepare">保守を頼む前に用意しておくこと</a></li><li><a href="#contract">保守契約で確かめたい項目</a></li><li><a href="#mismatch">保守でよくある行き違い</a></li><li><a href="#php-now">2026年の年末に向けて確かめたいこと</a></li><li><a href="#review">今の保守を見直すときの順番</a></li><li><a href="#reduce">保守費を抑えるための工夫</a></li><li><a href="#options">保守をやめる・乗り換えるときの選択肢</a></li><li><a href="#studio">マツケンスタジオの場合</a></li><li><a href="#summary">まとめ</a></li><li><a href="#faq">よくある質問</a></li></ol></nav>
+        <div class="art-body">
+<p>WordPressで会社のホームページを持っていると、制作会社から「保守費」の見積りや請求が届きます。月に数千円のところもあれば、数万円のところもあります。何に払っているのかが見えないと、高いのか安いのか判断できません。「自分たちでやれば無料なのでは」と考える方もいます。</p>
+<p>この記事では、WordPressの保守で実際に何をしているのか、費用が何で決まるのか、自社で保守するならどこまでできるのかを紹介します。あわせて、保守を頼むときに契約で確かめたい項目と、保守をやめる・乗り換えるときの選択肢もまとめました。いま払っている保守費が自社に合っているかを見直す材料にしてください。</p>
+<svg viewBox="0 0 560 174" role="img" aria-label="WordPressの保守費用は何で決まる？保守の中身と相場の見方、自分でやる範囲の要点の図" class="st-illu" style="max-width:560px" fill="none" stroke="#1B3A6B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="18" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="32" y="28" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M36 38l4 4 8-9"/><text x="62" y="44" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">本体と部品の更新</text><rect x="290" y="18" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="302" y="28" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M306 38l4 4 8-9"/><text x="332" y="44" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">PHPの版を確かめる</text><rect x="20" y="70" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="32" y="80" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M36 90l4 4 8-9"/><text x="62" y="96" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">控えと戻し方</text><rect x="290" y="70" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="302" y="80" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M306 90l4 4 8-9"/><text x="332" y="96" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">止まっていないか見る</text><rect x="20" y="122" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="32" y="132" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M36 142l4 4 8-9"/><text x="62" y="148" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">対応の範囲と時間</text><rect x="290" y="122" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="302" y="132" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M306 142l4 4 8-9"/><text x="332" y="148" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">やめるときのデータ</text></svg>
+
+<h2 id="what">WordPressの保守とは</h2>
+<p>WordPressの保守とは、公開したホームページを、安全に、止まらずに動かし続けるための手入れのことです。制作費が「作るときに一度払う費用」なのに対して、保守費は「持ち続けるあいだ払う費用」です。</p>
+<p>WordPressは、本体、見た目を決める「テーマ」、機能を足す「プラグイン」、それを動かすサーバー側の「PHP」という仕組みが組み合わさって動いています。どれも作った人たちが改良や修正を続けていて、新しい版が出ます。弱いところが見つかったときの修正も、新しい版として配られます。古いまま放っておくと、外から書きかえられるなどのおそれが高まります。保守は、この組み合わせを新しく、正しく動く状態に保つ作業です。</p>
+<h3>維持費・管理費との違い</h3>
+<p>ホームページを持ち続ける費用には、ドメイン代やサーバー代のように「どの会社でもかかる費用」と、保守や更新のように「人に頼むとかかる費用」があります。制作会社の請求では、この2つがまとめて「管理費」「保守費」と書かれていることもよくあります。保守費を見直すときは、まず実費と作業費を分けて考えると、中身が見えやすくなります。維持費全体の内訳は、<a href="../maintenance-cost/">ホームページの維持費・管理費の相場</a>で紹介しています。</p>
+<h3>更新代行や改善とは別もの</h3>
+<p>「保守」と「更新」は、似ているようで違う作業です。保守は仕組みの手入れで、お知らせを載せたり、ページを足したりする作業は、ふつうは「更新代行」や「修正」として別に扱われます。アクセスを見て問い合わせを増やすための改善も、保守とは別の作業です。保守の見積りを見るときは、どこまでが保守に入っているのかを確かめることが出発点になります。</p>
+
+<h2 id="tasks">WordPressの保守で行う作業</h2>
+<p>保守の中身は会社によって違いますが、よく含まれる作業は次のとおりです。</p>
+<table class="art-table">
+<tr><th>作業</th><th>中身</th><th>しないと起きやすいこと</th></tr>
+<tr><td>本体の更新</td><td>WordPress本体を新しい版にする</td><td>弱いところが残り、書きかえられるおそれが高まる</td></tr>
+<tr><td>テーマ・プラグインの更新</td><td>見た目や機能の部品を新しい版にする</td><td>部品の弱いところから入られる、本体と合わなくなる</td></tr>
+<tr><td>PHPのバージョンの確認</td><td>サーバー側のPHPが古くなっていないか見て、上げる準備をする</td><td>サポートが切れた版のまま動き続ける</td></tr>
+<tr><td>バックアップ</td><td>データとファイルの控えを、決まった間隔で取る</td><td>壊れたときに戻せない</td></tr>
+<tr><td>動いているかの見守り</td><td>ページが表示されているか、フォームが届くかを確かめる</td><td>止まっていることに、何日も気づかない</td></tr>
+<tr><td>不具合への対応</td><td>表示の崩れ、真っ白になる、ログインできないなどを直す</td><td>直す人を探すところから始まり、時間がかかる</td></tr>
+<tr><td>小さな修正</td><td>文章の直し、写真の差しかえなど（入る会社と入らない会社がある）</td><td>情報が古いまま残る</td></tr>
+<tr><td>期限の見守り</td><td>ドメインやSSLの期限、サーバーの契約を確かめる</td><td>期限が切れて、急に見られなくなる</td></tr>
+</table>
+<h3>本体・テーマ・プラグインの更新</h3>
+<p>保守の中心となる作業です。WordPressの公式の案内では、本体の小さな更新（修正や安全のための更新）は、多くのサイトで自動で行われる設定になっています。一方で、プラグインやテーマの自動更新は、特別な場合を除いて、初めから自動にはなっていません。管理画面で一つずつ自動更新を有効にすることはできますが、更新したあとに表示が崩れていないかは、人が見て確かめる必要があります。</p>
+<p>また、WordPressの公式の案内では、正式にサポートされているのは最新版だけで、古い版への修正の提供は「好意で行っている」という位置づけです。古い版のまま何年も置いておくのは、それだけで危ない状態だと考えたほうがよいでしょう。更新の考え方や点検の手順は、<a href="../wordpress-security/">WordPressのセキュリティ対策</a>でくわしく紹介しています。</p>
+<h3>PHPのバージョンの確認</h3>
+<p>PHPは、サーバーの上でWordPressを動かしているプログラムの言葉です。PHPにも版ごとに、修正が出る期間が決まっています。PHPの公式サイトでは、たとえばPHP 8.2の安全のための修正は2026年12月31日までとされています。WordPressの公式の案内では、推奨はPHP 8.3以上です。PHPを上げると、古いテーマやプラグインが動かなくなることがあるため、上げる前に確かめる作業が必要です。手順は<a href="../wordpress-php-version/">WordPressのPHPバージョンとは？</a>で紹介しています。</p>
+<h3>バックアップ</h3>
+<p>WordPressのデータは、記事やページの中身が入った「データベース」と、画像やテーマなどの「ファイル」に分かれています。両方そろっていないと、元に戻せません。控えを取る間隔、何世代分を残すか、どこに保存するかで、いざというときに戻せる範囲が変わります。WordPressの公式の案内でも、更新の前にバックアップを取ることがすすめられています。</p>
+<h3>動いているかの見守り</h3>
+<p>ホームページが止まっていても、社内の人は毎日自社のサイトを見るわけではありません。取引先から「サイトが見られない」と言われて初めて気づく、ということもあります。表示されているかを自動で確かめる仕組みを使い、止まったら知らせが届くようにしておくと、気づくまでの時間を短くできます。</p>
+<h3>不具合への対応</h3>
+<p>更新のあとに表示が崩れる、画面が真っ白になる、管理画面に入れなくなる、といった不具合は、どれだけ気をつけていても起こることがあります。こうしたときに、どこまでを月額の中で直してもらえるかは、保守費を比べるうえで大きな違いになります。</p>
+
+<h3>小さな修正</h3>
+<p>電話番号や営業時間の書きかえ、写真の差しかえといった小さな修正を、保守の中に入れている会社もあれば、更新代行として別にしている会社もあります。入っている場合も、「月に何回まで」「1回の作業がどのくらいの大きさまで」と決まっていることがほとんどです。ページを1枚足すような作業は、修正ではなく制作として別に見積もられるのが一般的です。</p>
+<h3>期限の見守りと、ログインまわりの点検</h3>
+<p>ドメインやサーバーの契約は、更新の手続きをしないと止まります。支払いのカードが変わっていて、気づかないうちに更新できていなかった、ということも起こります。あわせて、使っていない管理者のアカウントが残っていないか、ログインの試行を制限しているかなど、入口まわりの点検を保守に含めている会社もあります。</p>
+
+<h3>有料のテーマ・プラグインの利用期限</h3>
+<p>有料のテーマやプラグインの中には、買ってから一定の期間だけ更新を受け取れるものがあります。期限が切れると、新しい版が配られなくなり、弱いところが見つかっても直せなくなります。誰の名義で買ったのか、いつ期限が来るのかも、保守で見ておきたい項目です。制作会社の名義で買っている場合は、保守をやめたときに更新を受け取れなくなることもあるので、契約の前に確かめておきましょう。</p>
+
+<h2 id="levels">保守プランの段階の例</h2>
+<p>保守のプランは、会社ごとに名前も中身も違います。ここでは特定の会社の料金ではなく、中身の段階の例を紹介します。下の段ほど作業が増え、そのぶん費用も上がるのが一般的です。</p>
+<table class="art-table">
+<tr><th>段階の例</th><th>主な中身</th><th>向いているサイト</th></tr>
+<tr><td>更新だけ</td><td>本体・テーマ・プラグインの更新、バックアップ</td><td>会社案内が中心で、社内でも表示を確かめられる</td></tr>
+<tr><td>更新と見守り</td><td>上に加えて、止まっていないかの見守り、更新のあとの表示の確かめ、毎月の報告</td><td>問い合わせの入口になっている会社のサイト</td></tr>
+<tr><td>不具合対応つき</td><td>上に加えて、更新や不具合で崩れたときの復旧、PHPの確認</td><td>社内に仕組みが分かる人がいない</td></tr>
+<tr><td>更新代行つき</td><td>上に加えて、文章や写真の差しかえを月に決まった回数まで</td><td>更新したいが、社内に担当がいない</td></tr>
+</table>
+<p>自社のサイトがどの段に当たるかを先に考えておくと、見積りを見たときに「必要なものが入っていない」「いらないものに払っている」に気づきやすくなります。</p>
+
+<h2 id="risk">保守をしないと、何が起きるか</h2>
+<p>「ほとんど更新しないサイトだから、保守はいらないのでは」と聞かれることがあります。文章を書きかえる回数が少なくても、仕組みの手入れは必要です。保守をしないまま何年も置いておくと、次のようなことが起こりやすくなります。</p>
+<ul>
+<li><b>書きかえ（改ざん）</b>：古いプラグインの弱いところから入られ、知らないページを足されたり、別のサイトへ飛ばされたりします。</li>
+<li><b>検索結果での警告</b>：書きかえられたサイトは、検索結果やブラウザで注意の表示が出ることがあります。</li>
+<li><b>フォームが届かない</b>：サーバー側の変化で、問い合わせのメールが届かなくなっていることに気づかないことがあります。</li>
+<li><b>直せない状態になる</b>：古い版が積み重なると、まとめて上げたときに動かなくなり、作り直しに近い作業になることがあります。</li>
+</ul>
+<p>保守は、何かが起きないようにするための費用です。何も起きていないと払う意味が見えにくいのですが、起きてから直すほうが、手間も費用もかかります。もし書きかえられてしまったときの手順は、<a href="../wordpress-hacked/">WordPressの改ざんの対処法</a>にまとめています。</p>
+
+<h2 id="factors">WordPressの保守費用は何で決まるか</h2>
+<p>保守費の金額は、会社の規模や知名度よりも、「どこまで任せるか」と「サイトの手間のかかり方」で決まります。見積りを比べる前に、次の要素を自社に当てはめてみてください。</p>
+<table class="art-table">
+<tr><th>要素</th><th>費用が上がりやすい</th><th>費用が下がりやすい</th></tr>
+<tr><td>任せる作業の範囲</td><td>更新、監視、不具合対応、修正まで含む</td><td>更新とバックアップだけ</td></tr>
+<tr><td>更新のしかた</td><td>人が検証用の環境で確かめてから本番に反映</td><td>自動更新に任せ、何かあれば別料金</td></tr>
+<tr><td>プラグインの数</td><td>多い、作った人が更新をやめたものがある</td><td>少ない、よく使われているものだけ</td></tr>
+<tr><td>独自の作り込み</td><td>オリジナルのテーマ、ほかのシステムとのつながり</td><td>よく使われているテーマのまま</td></tr>
+<tr><td>サイトの役目</td><td>ネットでの販売、会員ページ、予約など止まると困る</td><td>会社案内が中心</td></tr>
+<tr><td>対応の速さ</td><td>夜間・休日も対応、すぐに動く約束がある</td><td>平日の営業時間内、数日以内</td></tr>
+<tr><td>バックアップ</td><td>毎日、何世代も、別の場所に保存</td><td>月に1回、サーバーの中だけ</td></tr>
+<tr><td>報告</td><td>毎月、作業の中身と状態を報告</td><td>報告なし</td></tr>
+</table>
+<h3>作業の範囲がいちばん大きい</h3>
+<p>同じ「月額保守」でも、本体とプラグインを更新するだけのプランと、不具合が起きたら直し、文章の修正まで受けるプランでは、かかる人の手間がまったく違います。金額だけを並べても比べられないのは、このためです。</p>
+<h3>人が確かめるかどうか</h3>
+<p>自動更新だけで済ませれば、手間は小さく済みます。ただし、更新で表示が崩れたときに気づくのは、サイトを見た人です。本番のサイトとは別に「検証用の環境」を用意して、そこで更新を試してから本番に反映するやり方は、手間がかかる分、費用も上がります。止まると困るサイトほど、この手間をかける意味があります。</p>
+<h3>サイトの作り方</h3>
+<p>プラグインが多いほど、更新のたびに確かめる場所が増えます。作った人が更新をやめたプラグインが入っていると、代わりを探したり、作り直したりする必要が出てきます。オリジナルのテーマや、ほかのシステムとつながっている部分は、作った人でないと直しにくいこともあります。保守を頼むときに「まずサイトの中を見せてください」と言われるのは、この手間を見積もるためです。</p>
+
+<h2 id="range">公開されている金額の幅と、見るときの注意</h2>
+<p>WordPressの保守費は、会社ごとに中身が違うため、決まった相場はありません。参考までに、フリーランスと発注者をつなぐ仲介サイトの解説記事では、月額3,000円ほどから5万円を超えるものまで幅があると紹介されています。これは公的な調査ではなく、その記事を書いた会社の見立てです。海外の解説記事でも、自動更新とバックアップが中心の安いプランと、人が確かめて対応する高いプランで、大きく差があると説明されています。</p>
+<p>こうした数字を見るときは、次のことに気をつけてください。</p>
+<ul>
+<li><b>中身がそろっていない</b>：同じ金額でも、不具合対応が入っているかどうかで、価値はまったく違います。</li>
+<li><b>実費が入っているかどうか</b>：サーバー代やドメイン代を含めた金額か、作業費だけかで、見え方が変わります。</li>
+<li><b>別料金の作業</b>：月額が安くても、不具合のたびに別料金がかかると、1年の合計では高くなることがあります。</li>
+</ul>
+<p>金額の幅は、「うちの見積りが極端に外れていないか」を見る手がかりにとどめ、判断は中身で行うのがおすすめです。</p>
+<h3>1年の合計で比べる</h3>
+<p>見積りを比べるときは、月額を12倍しただけでなく、1年のあいだに起こりそうな別料金も足して考えると、実際の負担に近づきます。たとえば、PHPを上げる作業、プラグインの入れかえ、年に数回の修正などです。月額が高めでも、こうした作業が中に入っていれば、1年の合計では差が小さくなることがあります。反対に、月額が安くても、別料金が重なると合計が大きくなります。</p>
+
+<h2 id="breakdown">見積りの内訳の見方</h2>
+<p>保守の見積りで「保守費 一式」とだけ書かれていたら、内訳を出してもらいましょう。次のように分けて書いてもらうと、比べやすくなります。</p>
+<table class="art-table">
+<tr><th>分け方</th><th>確かめたいこと</th></tr>
+<tr><td>実費</td><td>サーバー代、ドメイン代、有料のテーマやプラグインの利用料は、いくらで、誰の名義か</td></tr>
+<tr><td>定期の作業</td><td>本体・テーマ・プラグインの更新は、どのくらいの間隔で、誰が確かめるか</td></tr>
+<tr><td>バックアップ</td><td>間隔、何世代分、保存先、戻す作業は月額に入るか</td></tr>
+<tr><td>見守り</td><td>止まったときに、誰に、どう知らせが届くか</td></tr>
+<tr><td>不具合への対応</td><td>どこまでが月額の中で、どこからが別料金か</td></tr>
+<tr><td>修正・更新</td><td>月に何回、どの大きさの作業まで入るか</td></tr>
+<tr><td>報告</td><td>作業の中身を、いつ、どんな形で知らせてもらえるか</td></tr>
+</table>
+<h3>別料金になりやすい作業</h3>
+<p>月額の保守に入っていないことが多いのは、次のような作業です。あらかじめ、頼んだらいくらかかるかを聞いておくと安心です。</p>
+<ul>
+<li>書きかえられたときの復旧や、入られた原因の調査</li>
+<li>PHPを上げるために、古いテーマやプラグインを直す作業</li>
+<li>更新をやめたプラグインの入れかえ</li>
+<li>新しいページの追加、デザインの変更</li>
+<li>サーバーの引っ越し</li>
+</ul>
+<p>見積りの見方そのものは、<a href="../estimate-check/">ホームページの見積りの見方</a>で紹介しています。月額だけでなく、1〜3年の合計で比べると、違いが見えやすくなります。</p>
+
+<h2 id="self">WordPressの保守を自分でやる場合</h2>
+<p>保守は、自社で行うこともできます。外に払う作業費はかからなくなりますが、担当者の時間と、困ったときに自分たちで直す力が必要になります。どこまでなら自社でできて、どこからが難しいのかを分けて考えましょう。</p>
+<h3>自社でも取り組みやすいこと</h3>
+<ul>
+<li>管理画面で、更新のお知らせが出ていないかを見る</li>
+<li>バックアップを取ってから、本体・テーマ・プラグインを更新する</li>
+<li>更新したあとに、トップページ、主なページ、問い合わせフォームを開いて確かめる</li>
+<li>使っていないプラグインやテーマを削除する</li>
+<li>管理者のアカウントを整理し、強いパスワードと2段階認証を使う</li>
+<li>問い合わせフォームから、自分で送ってみて届くか確かめる</li>
+<li>ドメインとサーバーの期限、支払いのカードを確かめる</li>
+</ul>
+<h3>知識がないと難しいこと</h3>
+<ul>
+<li>更新のあとに画面が真っ白になったときの原因探しと、元に戻す作業</li>
+<li>PHPのバージョンを上げる前の確かめと、動かなくなったプラグインへの対応</li>
+<li>書きかえられたときの復旧と、入られた原因の調査</li>
+<li>サーバーの設定の変更や、サーバーの引っ越し</li>
+<li>オリジナルのテーマや、ほかのシステムとつながっている部分の修正</li>
+</ul>
+<p>難しい作業を、調べながら手探りで進めると、かえって状態を悪くしてしまうことがあります。自社で保守すると決めた場合も、困ったときに相談できる先を一つ決めておくと安心です。</p>
+<h3>自社で保守するときのリスク</h3>
+<p>自社での保守がうまくいかなくなる一番の理由は、技術よりも「続かないこと」です。担当者が忙しくなると、更新は後回しになりがちです。担当者が辞めたり異動したりすると、ログインの情報ややり方が分からなくなることもあります。次のことを決めて、記録に残しておきましょう。</p>
+<ul>
+<li>誰が、どのくらいの間隔で作業するか（たとえば月に1回）</li>
+<li>管理画面、サーバー、ドメインのログイン情報を、会社としてどこに保管するか</li>
+<li>バックアップをどこに取り、どうやって戻すか</li>
+<li>困ったときに、誰に相談するか</li>
+</ul>
+<p>月ごと・年ごとの点検の項目は、<a href="../wordpress-security/">WordPressのセキュリティ対策</a>の点検表がそのまま使えます。</p>
+
+<h2 id="monthly">自社で保守するときの、月1回の手順</h2>
+<p>自社で保守する場合は、作業の順番を決めておくと、担当者が変わっても続けやすくなります。月に1回、次の順番で進めるのが一つの形です。</p>
+<ol>
+<li><b>バックアップを取る</b>：データベースとファイルの両方を取り、サーバーとは別の場所にも保存します。</li>
+<li><b>更新のお知らせを確かめる</b>：管理画面で、本体・テーマ・プラグインに新しい版が出ていないかを見ます。</li>
+<li><b>更新の中身を読む</b>：大きな版の更新では、プラグインの説明に「この版から○○が変わる」と書かれていることがあります。気になるものは、すぐに上げずに様子を見る判断もあります。</li>
+<li><b>更新する</b>：一度にすべて上げると、崩れたときに原因が分かりにくくなります。プラグインは一つずつ上げると、原因を探しやすくなります。</li>
+<li><b>表示を確かめる</b>：トップページ、主なページ、スマートフォンでの表示、問い合わせフォームを見ます。フォームは実際に送って、届くかまで確かめます。</li>
+<li><b>記録を残す</b>：いつ、何を、どの版に上げたかと、気になったことを書いておきます。</li>
+</ol>
+<p>加えて、年に1回ほど、PHPのバージョンとサポートの期限、使っていないプラグインやアカウントがないか、ドメインとサーバーの期限を見直します。PHPの期限は年の終わりに切れることが多いので、秋ごろに確かめておくと、余裕を持って準備できます。</p>
+<h3>崩れたときに慌てないために</h3>
+<p>更新のあとに表示が崩れたら、まずはバックアップから元に戻せるかを確かめます。そのためにも、バックアップの戻し方を、一度は試しておくことをおすすめします。戻し方を知らないバックアップは、いざというときに役に立たないことがあります。</p>
+
+<h2 id="split">自社と外注の分け方</h2>
+<p>保守は、全部を自社でやるか、全部を任せるかの二択ではありません。サイトの役目と、社内の人手に合わせて分けることができます。</p>
+<table class="art-table">
+<tr><th>会社の状況</th><th>分け方の例</th></tr>
+<tr><td>会社案内が中心で、更新は年に数回。社内に少し詳しい人がいる</td><td>更新とバックアップは自社。困ったときだけ、その都度頼む</td></tr>
+<tr><td>実績やお知らせをよく足す。担当者はいるが、仕組みには詳しくない</td><td>文章の更新は自社。仕組みの手入れと不具合対応は外注</td></tr>
+<tr><td>問い合わせや採用の入口になっていて、止まると困る</td><td>仕組みの手入れ、見守り、不具合対応をまとめて外注</td></tr>
+<tr><td>社内に更新する人がいない</td><td>保守に加えて、更新も任せる</td></tr>
+</table>
+<p>「更新を自社でするか」と「仕組みの手入れを自社でするか」は、分けて考えるのがコツです。文章を直すのは得意でも、仕組みの手入れは苦手、という会社は少なくありません。</p>
+
+<div class="cta-mid"><span class="lb">無料相談</span><b>費用や見積りで迷ったら</b><p>見積りの内容が分からない、何にいくらかかるのか知りたい。そんな段階でも、気軽にご相談ください。</p><div class="bt"><a href="../../contact/" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] shadow-[0_10px_24px_-10px_rgba(200,170,0,.7)] rounded-full font-bold tracking-[.04em] bg-cta-yellow text-ink hover:bg-cta-yellow-h hover:-translate-y-0.5 transition-all">1分で問い合わせ →</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] rounded-full font-bold tracking-[.04em] bg-[#06C755] text-white hover:bg-[#05B34C] hover:-translate-y-0.5 transition-all"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.4 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>LINEで相談する</a></div></div><h2 id="where">保守を頼む先の考え方</h2>
+<p>保守を頼む先には、いくつかの種類があります。どれが良いというより、自社のサイトの作り方と、求める対応に合うかで考えます。</p>
+<table class="art-table">
+<tr><th>頼む先</th><th>良いところ</th><th>気をつけたいところ</th></tr>
+<tr><td>サイトを作った制作会社</td><td>作りを知っているので、不具合の原因を見つけやすい</td><td>保守の中身や報告が見えにくいことがある</td></tr>
+<tr><td>別の制作会社</td><td>保守の範囲や報告を、改めて決め直せる</td><td>最初にサイトの中を調べる手間と費用がかかることがある</td></tr>
+<tr><td>個人の技術者</td><td>やりとりが早く、柔軟に頼みやすい</td><td>休みや急な用事のときに、代わりの人がいないことがある</td></tr>
+<tr><td>サーバー会社などの保守サービス</td><td>決まった作業を、決まった料金で頼める</td><td>オリジナルの作り込みや、サイトの中身の修正は対象外のことが多い</td></tr>
+</table>
+<p>どの先に頼む場合も、作業の範囲と、困ったときの連絡先がはっきりしていることが大切です。初めて話すときに、サイトの中を見たうえで「ここは手間がかかりそうです」と具体的に説明してくれる先は、見積りの根拠も分かりやすい傾向があります。</p>
+
+<h2 id="prepare">保守を頼む前に用意しておくこと</h2>
+<p>見積りをお願いする前に、次のことをまとめておくと、話が早く進み、見積りも正確になります。</p>
+<ul>
+<li>管理画面、サーバー、ドメインのログイン情報と、それぞれの名義</li>
+<li>入っているテーマとプラグインの一覧（管理画面の画面を写したものでも十分です）</li>
+<li>いまのWordPressとPHPのバージョン</li>
+<li>サイトで止まると困る部分（問い合わせフォーム、採用の応募、予約など）</li>
+<li>これまでに起きた不具合や、困っていること</li>
+<li>文章や写真の更新を、自社でするか、任せたいか</li>
+</ul>
+<p>ログイン情報が分からない場合は、今の制作会社やサーバー会社に問い合わせて、先に手元にそろえておきましょう。保守を頼む先を変えるときにも、同じ情報が必要になります。</p>
+
+<h2 id="contract">保守契約で確かめたい項目</h2>
+<p>保守を頼むときは、金額より先に、契約の中身を確かめておきましょう。とくに次の項目は、あとでもめやすいところです。</p>
+<table class="art-table">
+<tr><th>項目</th><th>確かめたいこと</th></tr>
+<tr><td>作業の範囲</td><td>月額で何をするか。どの作業が別料金か。一覧にしてもらえるか</td></tr>
+<tr><td>更新のしかた</td><td>自動か、人が確かめるか。更新したあとに表示を見てもらえるか</td></tr>
+<tr><td>対応する時間</td><td>平日の何時から何時までか。連絡してから動くまでの目安</td></tr>
+<tr><td>止まったときの復旧</td><td>どこまで元に戻してもらえるか。復旧の費用は月額に入るか</td></tr>
+<tr><td>バックアップ</td><td>間隔、何世代分、保存先。自社にも控えを渡してもらえるか</td></tr>
+<tr><td>名義と権限</td><td>ドメイン、サーバー、有料のテーマやプラグインは誰の名義か。自社も管理者として入れるか</td></tr>
+<tr><td>報告</td><td>作業の中身と状態を、いつ、どんな形で知らせてもらえるか</td></tr>
+<tr><td>契約期間と解約</td><td>最低契約期間、解約の連絡はいつまでか、違約金はあるか</td></tr>
+<tr><td>解約したときのデータ</td><td>サイトのデータ一式を渡してもらえるか。費用はかかるか</td></tr>
+</table>
+<h3>名義と、解約したときのデータがいちばん大切</h3>
+<p>ドメインやサーバーが制作会社の名義になっていると、保守をやめたいときに、サイトやメールを移す手続きが大きくなります。解約したらデータを渡してもらえない契約だと、作り直すしかなくなることもあります。保守を頼むときは、ドメインとサーバーを自社の名義にしておくこと、自社も管理者のアカウントを持っておくこと、解約したときにデータ一式を受け取れることを、最初に確かめておきましょう。</p>
+<h3>「何もしていないのでは」と感じたら</h3>
+<p>保守費を払っているのに、管理画面を開くと更新のお知らせがたくさん残っている、という相談を受けることがあります。毎月の報告がない場合は、何をしているのかを聞いてみましょう。作業の記録を見せてもらえれば、払っている金額が中身に合っているか判断できます。</p>
+
+<h2 id="mismatch">保守でよくある行き違い</h2>
+<p>保守の契約で困りごとが起きるのは、たいてい「どちらがやると思っていたか」が食い違ったときです。よく聞く例を挙げます。</p>
+<h3>更新したら崩れた。直す費用は誰が持つか</h3>
+<p>保守の会社が更新をしたあとに表示が崩れた場合、直す作業が月額の中に入るのか、別料金になるのかは、契約によって違います。更新を頼んでいるのに、崩れたあとの対応は別料金、という形だと、思わぬ出費になります。更新とセットで、崩れたときの戻し方まで約束に入っているかを確かめておきましょう。</p>
+<h3>バックアップは取っていたが、戻せなかった</h3>
+<p>バックアップを取っていても、同じサーバーの中にしか置いていなかったために、サーバーの不具合で一緒に失われた、ということがあります。また、古い世代しか残っておらず、最近の更新が戻らないこともあります。保存先と世代数は、言葉だけでなく具体的に聞いておくと安心です。</p>
+<h3>「保守」に何が入るのか、互いに違うものを思い浮かべていた</h3>
+<p>発注する側は「困ったら何でも見てもらえる」と思っていて、受ける側は「本体とプラグインの更新だけ」と考えていた、という行き違いはよく起こります。作業の範囲を一覧にして、両方が同じものを見ている状態にしておくことが、いちばんの予防になります。</p>
+
+<h2 id="php-now">2026年の年末に向けて確かめたいこと</h2>
+<p>PHPの公式サイトでは、PHP 8.2の安全のための修正は2026年12月31日までとされています。いまのサイトがPHP 8.2以前で動いている場合は、年末に向けてPHPを上げる準備が必要です。保守を頼んでいる場合は、次のことを今のうちに聞いておきましょう。</p>
+<ul>
+<li>いまのサイトは、どのPHPのバージョンで動いているか</li>
+<li>新しいPHPに上げる予定と、その時期</li>
+<li>上げる作業は月額の中に入るか、別料金か</li>
+<li>動かなくなりそうなテーマやプラグインがあるか</li>
+</ul>
+<p>保守を頼んでいない場合は、サーバーの管理画面でPHPのバージョンを確かめられます。確かめ方と上げる手順は、<a href="../wordpress-php-version/">WordPressのPHPバージョンとは？</a>で紹介しています。</p>
+
+<h2 id="review">今の保守を見直すときの順番</h2>
+<p>すでに保守を頼んでいて、費用や中身を見直したいときは、次の順番で確かめると整理しやすくなります。</p>
+<ol>
+<li><b>契約書と請求書を並べる</b>：月額の中に、サーバー代やドメイン代などの実費が入っているかを分けます。</li>
+<li><b>作業の範囲を書き出す</b>：契約に書かれている作業と、実際に行われている作業を見比べます。</li>
+<li><b>管理画面を見る</b>：更新のお知らせが残っていないか、使っていないプラグインがないかを見ます。</li>
+<li><b>名義と権限を確かめる</b>：ドメイン、サーバー、有料の部品の名義と、自社が管理者として入れるかを見ます。</li>
+<li><b>自社に必要な段階を決める</b>：先に紹介した段階の例のうち、自社に合うのはどれかを考えます。</li>
+<li><b>今の会社に相談する</b>：まずは今の会社に、範囲や報告の見直しを相談します。それでも合わないときに、ほかの選択肢を考えます。</li>
+</ol>
+<p>いきなり解約や乗り換えを考えるより、まず中身を見える状態にすることが近道です。中身が分かれば、今の金額が合っているかどうかも、自然と判断できるようになります。</p>
+
+<h2 id="reduce">保守費を抑えるための工夫</h2>
+<p>保守の費用を下げたいときは、値引きを頼むより先に、手間のかかる部分を減らすほうが近道です。</p>
+<ul>
+<li><b>使っていないプラグインを消す</b>：更新のたびに確かめる場所が減り、入られる入口も減ります。</li>
+<li><b>似た機能のプラグインを一つにまとめる</b>：同じ役目のものが複数入っていることがあります。</li>
+<li><b>更新を自社でする部分を決める</b>：文章や写真の差しかえを自社でできれば、更新代行の費用はかかりません。</li>
+<li><b>止まると困る部分を見極める</b>：すべてに手厚い対応を求めず、問い合わせフォームなど大切な部分に絞って確かめてもらう形もあります。</li>
+<li><b>使っていないページを整理する</b>：古いページや機能が残っていると、それだけ手入れの手間が増えます。</li>
+</ul>
+<p>ただ、費用を下げることだけを考えて、バックアップや更新まで減らすのはおすすめしません。書きかえられてから直す費用のほうが、ずっと大きくなることがあります。</p>
+
+<h2 id="options">保守をやめる・乗り換えるときの選択肢</h2>
+<p>いまの保守に納得できない場合や、費用を見直したい場合は、次のような選択肢があります。</p>
+<table class="art-table">
+<tr><th>選択肢</th><th>中身</th><th>向いている会社</th></tr>
+<tr><td>プランを見直す</td><td>同じ会社のまま、作業の範囲を広げる・狭める</td><td>今の会社の対応には満足している</td></tr>
+<tr><td>保守だけ別の会社に移す</td><td>サイトはそのまま、保守を任せる先を変える</td><td>サイトの中身には満足しているが、保守の対応に不満がある</td></tr>
+<tr><td>自社での保守に切りかえる</td><td>作業費をなくし、社内で手入れを続ける</td><td>更新が少なく、社内に担当できる人がいる</td></tr>
+<tr><td>WordPressをやめる</td><td>手入れの少ない作り方に乗り換える</td><td>ほとんど更新せず、保守の手間と費用を減らしたい</td></tr>
+</table>
+<h3>保守だけ移すときの順番</h3>
+<ol>
+<li>今の契約の解約条件と、最低契約期間を確かめる</li>
+<li>ドメイン、サーバー、管理画面のログイン情報と名義を確かめる</li>
+<li>新しく頼む先に、サイトの中を見てもらい、見積りをもらう</li>
+<li>今の会社から、データ一式とログイン情報を受け取る</li>
+<li>新しい先に引き継いでから、今の契約を解約する</li>
+</ol>
+<p>解約を先にすると、引き継ぐ前にデータを受け取れなくなることがあります。順番に気をつけてください。制作会社や管理会社を変えるときの流れは、<a href="../change-web-company/">ホームページの制作会社を乗り換える手順</a>で紹介しています。</p>
+<h3>自社での保守に切りかえるとき</h3>
+<p>外注をやめて自社で保守する場合は、解約の前に、今の会社から引き継ぎを受けておきましょう。ログイン情報、バックアップの取り方と戻し方、入っているプラグインの役目、過去に起きた不具合と直し方を聞いておくと、切りかえたあとに迷いにくくなります。有料のテーマやプラグインが今の会社の名義で買われている場合は、自社の名義で買い直す必要があるかも確かめます。切りかえたあとの数か月は、困ったときにその都度相談できる先を残しておくと安心です。</p>
+<h3>WordPressをやめるという選択</h3>
+<p>お知らせをほとんど更新しない会社案内のサイトなら、WordPressを使わない作り方に乗り換えることで、本体やプラグインの更新そのものをなくせる場合があります。一方で、記事を自分たちで足したい会社には、WordPressのままのほうが合うこともあります。乗り換え先の比べ方と手順は、<a href="../wordpress-migration/">WordPressから乗り換えるには？</a>にまとめています。</p>
+
+<h2 id="studio">マツケンスタジオの場合</h2>
+<p>マツケンスタジオでは、ドメインとサーバーをお客様の名義のまま作り、最初の相談から公開後まで同じ担当が見ています。公開後の更新や改善も続けてご相談いただけ、社内での更新が難しい場合は、月額サポートで代わりに更新することもできます。今の保守の中身が自社に合っているか分からない、という段階からでもご相談ください。</p>
+
+<h2 id="summary">まとめ</h2>
+<p>WordPressの保守は、本体・テーマ・プラグインの更新、PHPの確認、バックアップ、見守り、不具合への対応などで、ホームページを安全に動かし続けるための手入れです。保守費の金額は、どこまで任せるか、人が確かめるか、サイトの作りがどれだけ手間を必要とするかで変わります。公開されている金額の幅は目安にとどめ、中身で比べましょう。</p>
+<p>自社で保守する場合は、更新とバックアップ、表示の確かめまでは取り組みやすい一方で、不具合の原因探しや書きかえからの復旧は難しい作業です。外注する場合は、作業の範囲、対応する時間、復旧、名義、解約したときのデータを契約の前に確かめておくと、あとで困りにくくなります。今の保守に納得できないときは、プランの見直し、保守先の変更、自社への切りかえ、WordPressをやめる、という選択肢から、自社に合うものを選んでください。</p>
+</div>
+        <h2 id="faq" class="font-bold text-[22px] mt-12 mb-4" style="scroll-margin-top:90px">よくある質問</h2>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">WordPressの保守費用の相場はいくらですか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">会社ごとに作業の中身が違うため、決まった相場はありません。仲介サイトの解説記事では月額3,000円ほどから5万円を超えるものまで幅があると紹介されていますが、公的な調査ではありません。金額よりも、更新、バックアップ、不具合への対応のどこまでが入っているかで比べてください。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">WordPressの保守は自分でできますか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">更新の前にバックアップを取る、本体・テーマ・プラグインを更新する、更新のあとに表示とフォームを確かめる、といった作業は自社でも取り組めます。一方で、画面が真っ白になったときの原因探しや、書きかえられたときの復旧は知識が必要です。困ったときに相談できる先を決めておくと安心です。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">自動更新を有効にしておけば、保守はいりませんか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">自動更新で手間は減りますが、更新のあとに表示が崩れていないか、フォームが届くかは人が見て確かめる必要があります。WordPressの公式の案内でも、プラグインやテーマの自動更新は、特別な場合を除いて初めから自動にはなっていません。バックアップや期限の見守りも別に必要です。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">保守費を払っているのに、更新のお知らせが残っています。</div>
+          <p class="text-[13px] leading-[1.9] text-muted">まず、契約で決めている作業の範囲と更新の間隔を確かめ、作業の記録を見せてもらいましょう。範囲に入っているのに行われていない場合は、改善をお願いするか、保守を任せる先を変えることも考えます。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">保守をやめると、ホームページはどうなりますか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">ドメインとサーバーが自社の名義なら、保守をやめてもホームページは残ります。ただ、更新やバックアップは自社で続ける必要があります。制作会社の名義になっている場合は、やめる前に名義の移し方と、データ一式を受け取れるかを確かめてください。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">ほとんど更新しないサイトでも、保守は必要ですか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">文章を書きかえなくても、本体やプラグイン、PHPの手入れは必要です。古い版のままにしておくと、書きかえられるおそれが高まります。更新がほとんどなく手入れの手間を減らしたい場合は、WordPressを使わない作り方に乗り換える方法もあります。</p>
+        </div>
+      </div>
+        <div class="mt-10"><div class="author"><div class="av">松</div><div><b>マツケンスタジオ 責任者</b><p>デジタルマーケティングの仕事を10年以上。上場企業での勤務や、1,000万人以上が使うサービスのマーケティングを経験し、マーケターとして企業のオウンドメディアを50万PVまで育て、数百社の集客を支援してきました。家業である松本研磨工業のホームページを作り直し、リニューアルから1か月で有効なお問い合わせを3倍にしています。</p><a href="../author/" class="text-[13px] font-bold text-accent-ink hover:underline">プロフィールを見る →</a></div></div></div>
+        <div class="mt-8"><div class="cta-end"><b>ホームページのこと、まずは気軽にご相談ください。</b><p>「何から始めればいいか分からない」という段階でも大丈夫です。町工場発のマツケンスタジオが、ドメインの取得から公開後の更新まで、まるごとお手伝いします。いまは毎月3社まで、特別な価格で制作する「事例づくりモニター」も受け付けています。</p><div class="bt"><a href="../../contact/" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] shadow-[0_10px_24px_-10px_rgba(200,170,0,.7)] rounded-full font-bold tracking-[.04em] bg-cta-yellow text-ink hover:bg-cta-yellow-h hover:-translate-y-0.5 transition-all">1分で問い合わせ →</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] rounded-full font-bold tracking-[.04em] bg-[#06C755] text-white hover:bg-[#05B34C] hover:-translate-y-0.5 transition-all"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.4 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>LINEで相談する</a><a href="../../monitor/" class="lp">事例づくりモニターを見る →</a></div></div></div>
+      </article>
+    </div>
+  </section>
+  <section class="py-14 md:py-20 st-alt">
+    <div class="pwrap">
+      <h2 class="sec-ttl">あわせて読みたい記事</h2>
+      <div class="col-grid three"><a href="../homepage-cost/" class="col-card"><span><span class="chip">費用・発注</span></span><h3>ホームページ制作の費用は何で決まる？中小企業が知っておきたい5つの要素</h3><p>ホームページ制作の費用は、ページ数・原稿と写真・デザイン・機能・作ったあとの管理の5つで決まります。中小企業が見積りを取る前に知っておきたい…</p><time datetime="2026-09-27">2026.09.27</time></a><a href="../choose-web-company/" class="col-card"><span><span class="chip">費用・発注</span></span><h3>ホームページ制作会社の選び方｜依頼する前に確かめたい7つのこと</h3><p>ホームページ制作会社を選ぶときに、依頼する前に確かめたい7つのことをまとめました。実績の業種、任せられる範囲、ドメインの名義、作ったあとの管…</p><time datetime="2026-09-27">2026.09.27</time></a><a href="../estimate-check/" class="col-card"><span><span class="chip">費用・発注</span></span><h3>ホームページの見積りの見方｜「一式」のまま依頼しないために</h3><p>ホームページ制作の見積りを受け取ったら、どこを見ればいいのか。「一式」の見積りで起きやすい困りごと、項目ごとの確かめ方、複数の見積りを比べる…</p><time datetime="2026-09-27">2026.09.27</time></a></div>
+    </div>
+  </section>
+
+  <section class="py-14 md:py-20">
+    <div class="pwrap">
+      <h2 class="sec-ttl">カテゴリから探す</h2>
+      <nav class="col-cats" aria-label="カテゴリ"><a href="../" class="on">すべて</a><a href="../category/homepage/" class="">ホームページ制作</a><a href="../category/renewal/" class="">リニューアル</a><a href="../category/cost/" class="">費用・発注</a><a href="../category/ai/" class="">AI検索対策</a><a href="../category/seo/" class="">SEO・集客</a><a href="../category/recruit/" class="">採用</a><a href="../category/industry/" class="">業種別</a><a href="../category/case/" class="">事例</a></nav>
+    </div>
+  </section>
+
+<div class="col-stick" id="colStick"><a href="../../contact/" class="bg-cta-yellow text-ink">1分で問い合わせ</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="bg-[#06C755] text-white">LINEで相談</a></div><script>(function(){var s=document.getElementById("colStick");if(!s)return;function u(){s.classList.toggle("show",window.scrollY>500&&(window.innerHeight+window.scrollY)<document.body.scrollHeight-700)}window.addEventListener("scroll",u,{passive:true});u()})();</script>
+</main>
+<footer class="site-footer bg-navy text-paper pt-14 md:pt-20 pb-8">
+  <div class="wrap">
+    <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-16 pb-10 md:pb-14 border-b border-paper/15">
+      <div>
+        <a href="../../../" class="inline-flex items-center gap-3">
+          <span class="w-11 h-11 rounded-full grid place-items-center font-semibold text-xl bg-paper text-ink">松</span>
+          <span class="text-[18px] md:text-[20px] font-bold tracking-[.04em] text-paper">株式会社松本研磨工業</span>
+        </a>
+        <p class="mt-5 text-[14px] leading-[1.9] text-paper/75">〒210-0851 神奈川県川崎市川崎区浜町3-9-22</p>
+        <div class="mt-6 flex flex-wrap gap-3"><a href="https://www.instagram.com/matsuken_studio/" target="_blank" rel="noopener" class="ft-sns"><svg class="w-5 h-5 stroke-current fill-none stroke-[1.5]" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>@matsuken_studio</span></a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="ft-sns"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.4 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg><span>LINEで相談</span></a></div>
+      </div>
+      <div class="lg:border-l lg:border-paper/15 lg:pl-16">
+        <h3 class="ft-head">お問い合わせ</h3>
+        <p class="text-[14px] leading-[1.9] text-paper/80 mb-5">マツケンスタジオへのご相談は、お問い合わせフォームかLINEで受け付けています。</p>
+        <a href="../../../web-ai/contact/" class="ft-btn">1分で問い合わせ</a>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-10 py-10 md:py-14 border-b border-paper/15">
+      <nav aria-label="金属研磨">
+        <h3 class="ft-head">金属研磨</h3>
+        <ul class="space-y-3">
+          <li><a href="../../../polishing/" class="ft-link">金属研磨技術の種類</a></li>
+          <li><a href="../../../polishing/buff-polishing/" class="ft-link">バフ研磨</a></li>
+          <li><a href="../../../polishing/belt-polishing/" class="ft-link">ベルト研磨</a></li>
+          <li><a href="../../../polishing/hairline-finish/" class="ft-link">ヘアライン仕上げ</a></li>
+          <li><a href="../../../polishing/flexible-polishing/" class="ft-link">フレキ研磨</a></li>
+          <li><a href="../../../#works" class="ft-link">加工実績</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="会社について">
+        <h3 class="ft-head">会社について</h3>
+        <ul class="space-y-3">
+          <li><a href="../../../company/" class="ft-link">会社情報</a></li>
+          <li><a href="../../../company/#access" class="ft-link">アクセス</a></li>
+          <li><a href="../../../#faq" class="ft-link">よくある質問</a></li>
+          <li><a href="../../../news/" class="ft-link">お知らせ</a></li>
+          <li><a href="../../../column/" class="ft-link">コラム</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Web集客・AI活用支援">
+        <h3 class="ft-head">Web集客・AI活用支援</h3>
+        <ul class="space-y-3">
+          <li><a href="../../../web-ai/" class="ft-link">サービス一覧</a></li>
+          <li><a href="../../../web-ai/seo-consulting/" class="ft-link">SEO・集客対策</a></li>
+          <li><a href="../../../web-ai/website/" class="ft-link">サイト制作・LP制作</a></li>
+          <li><a href="../../../web-ai/ai-katsuyo/" class="ft-link">AI活用支援</a></li>
+          <li><a href="../../../web-ai/case/" class="ft-link">実績・事例</a></li>
+          <li><a href="../../../web-ai/column/" class="ft-link">Web集客コラム</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-[13px] text-paper/60">
+      <a href="../../../privacy/" class="hover:text-paper hover:underline underline-offset-4">プライバシーポリシー</a>
+      <div>© 2026 株式会社松本研磨工業</div>
+    </div>
+  </div>
+</footer>
+<script>
+  const burger = document.getElementById('burgerBtn');
+  const mmenu  = document.getElementById('mobileMenu');
+  if (burger && mmenu) {
+    burger.addEventListener('click', () => mmenu.classList.toggle('translate-x-full'));
+    mmenu.querySelectorAll('[data-close]').forEach(a =>
+      a.addEventListener('click', () => mmenu.classList.add('translate-x-full'))
+    );
+  }
+  document.querySelectorAll('.mega-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const mega = btn.closest('.mega');
+      const isOpen = mega.classList.contains('open');
+      document.querySelectorAll('.mega.open').forEach(m => { m.classList.remove('open'); m.querySelector('.mega-btn').setAttribute('aria-expanded','false'); });
+      if (!isOpen) { mega.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+    });
+  });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.mega')) {
+      document.querySelectorAll('.mega.open').forEach(m => { m.classList.remove('open'); m.querySelector('.mega-btn').setAttribute('aria-expanded','false'); });
+    }
+  });
+</script>
+</body>
+</html>

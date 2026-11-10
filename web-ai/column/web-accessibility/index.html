@@ -1,0 +1,1017 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5F157JYQD2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-5F157JYQD2');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ウェブアクセシビリティの義務化とは？中小企業のサイトで何をすればいいか｜マツケンスタジオ</title>
+<meta name="description" content="ウェブアクセシビリティは民間企業も義務になったのか。2024年4月施行の改正障害者差別解消法で義務になったことと努力義務のこと、JIS X 8341-3とWCAGの関係、中小企業がまず直せる7つの点、点検方法、方針の書き方を紹介します。">
+<link rel="canonical" href="https://matsumoto-kenma.co.jp/web-ai/column/web-accessibility/">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<meta property="og:title" content="ウェブアクセシビリティの義務化とは？中小企業のサイトで何をすればいいか｜マツケンスタジオ">
+<meta property="og:description" content="ウェブアクセシビリティは民間企業も義務になったのか。2024年4月施行の改正障害者差別解消法で義務になったことと努力義務のこと、JIS X 8341-3とWCAGの関係、中小企業がまず直せる7つの点、点検方法、方針の書き方を紹介します。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://matsumoto-kenma.co.jp/web-ai/column/web-accessibility/">
+<meta property="og:site_name" content="マツケンスタジオ by 松本研磨工業">
+<meta property="og:image" content="https://matsumoto-kenma.co.jp/images/ogp-studio.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="マツケンスタジオ by 松本研磨工業｜Web集客・AI活用支援">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ウェブアクセシビリティの義務化とは？中小企業のサイトで何をすればいいか｜マツケンスタジオ">
+<meta name="twitter:description" content="ウェブアクセシビリティは民間企業も義務になったのか。2024年4月施行の改正障害者差別解消法で義務になったことと努力義務のこと、JIS X 8341-3とWCAGの関係、中小企業がまず直せる7つの点、点検方法、方針の書き方を紹介します。">
+<meta name="twitter:image" content="https://matsumoto-kenma.co.jp/images/ogp-studio.jpg">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/noto-sans-jp-500.woff2" crossorigin>
+<style>
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/noto-sans-jp-400.woff2) format('woff2');}
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/noto-sans-jp-500.woff2) format('woff2');}
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/noto-sans-jp-600.woff2) format('woff2');}
+@font-face {font-family:'Noto Sans JP';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/noto-sans-jp-700.woff2) format('woff2');}
+@font-face {font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/jetbrains-mono-400.woff2) format('woff2');}
+@font-face {font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/jetbrains-mono-500.woff2) format('woff2');}
+</style>
+<link rel="stylesheet" href="/css/tailwind.css">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#F4F2ED;color:#0E0E10;font-family:'Noto Sans JP',sans-serif;font-size:15px;line-height:1.7}
+  a{color:inherit;text-decoration:none}
+  .pwrap{max-width:960px;margin:0 auto;padding:0 20px}
+  @media(min-width:768px){.pwrap{padding:0 40px}}
+  .sec-label{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.14em;color:#4A4A47;margin-bottom:16px}
+  .sec-ttl{font-size:24px;font-weight:600;line-height:1.4;margin-bottom:20px}
+  @media(min-width:768px){.sec-ttl{font-size:28px}}
+
+  /* Hero */
+  .hero-wrap{position:relative;overflow:hidden}
+  .wm{position:absolute;right:-.4em;top:-.12em;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:min(38vw,340px);line-height:1;color:rgba(244,242,237,.045);pointer-events:none;user-select:none;white-space:nowrap;z-index:0}
+  .icon-badge{width:64px;height:64px;border-radius:9999px;border:1.5px solid rgba(244,242,237,.35);display:grid;place-items:center;font-size:26px;color:#F4F2ED;flex-shrink:0}
+
+  /* Cards with accent bar */
+  .card2{position:relative;border:1px solid rgba(14,14,16,.1);background:#fff;padding:30px 24px 26px;border-top:3px solid #1B3A6B}
+  .card2.alt{border-top-color:#2E5BA6}
+  .card2 .idx{font-family:'JetBrains Mono',monospace;font-size:11px;color:#8a8a86;letter-spacing:.15em;margin-bottom:14px}
+
+  /* Spec box */
+  .spec-box{background:#E9E6DE;border-radius:4px;padding:4px 28px}
+  .spec-box div{display:grid;grid-template-columns:140px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid rgba(14,14,16,.08)}
+  .spec-box div:last-child{border-bottom:none}
+  .spec-box dt{font-size:13px;color:#4A4A47}
+  .spec-box dd{font-size:14px}
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+  .tag-pill{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;border:1px solid rgba(14,14,16,.15);padding:6px 12px;border-radius:2px;color:#4A4A47}
+
+  /* Process */
+  .step2{position:relative;padding:6px 0 30px 32px;border-left:2px solid #D9D4C8}
+  .step2:last-child{border-left:2px solid transparent;padding-bottom:2px}
+  .step2::before{content:'';position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:#1B3A6B}
+  .step2.alt::before{background:#2E5BA6}
+  .step2 .pnum{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:#8a8a86;margin-bottom:4px}
+
+  /* FAQ (matches homepage Q/A style) */
+  .faq2{display:grid;grid-template-columns:36px 1fr;gap:16px;padding:22px 0;border-top:1px solid #D9D4C8}
+  .faq2:last-child{border-bottom:1px solid #D9D4C8}
+  .faq2 .qa{font-family:'Noto Sans JP',sans-serif;font-size:22px;font-weight:600;line-height:1}
+  .faq2 .q{color:#1B3A6B}
+  .faq2 .a{color:#8a8a86}
+
+  /* Note / caution list */
+  .note-list{border-left:2px solid #0E0E10}
+  .note-list li{list-style:none;padding:18px 0 18px 22px;border-bottom:1px solid #D9D4C8}
+  .note-list li:last-child{border-bottom:none}
+  .note-list .note-ttl{font-weight:600;font-size:14px;margin-bottom:6px}
+
+  .wrap{max-width:1360px;margin:0 auto;padding:0 20px}
+  @media(min-width:768px){.wrap{padding:0 40px}}
+  .menu-link.active::after{content:"";position:absolute;left:16px;right:16px;bottom:4px;height:1px;background:#1B3A6B}
+  .mega.open .mega-panel, .mega:hover .mega-panel{opacity:1;visibility:visible;--tw-translate-y:0}
+  .mega.open .mega-caret{transform:rotate(180deg)}
+  .mega:hover .mega-caret{transform:rotate(180deg)}
+  .drawer-acc summary::-webkit-details-marker{display:none}
+  .drawer-acc[open] .drawer-acc-icon{transform:rotate(180deg)}
+  .mega-panel .grid>div{min-width:0}
+  .mega-panel li a{word-break:break-word}
+  .bg-navy .text-muted-ink,.bg-navy-2 .text-muted-ink{color:rgba(244,242,237,0.72)!important}
+</style>
+<style>
+/* site-chrome: match homepage header/footer */
+@font-face {font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/inter-400.woff2) format('woff2');}
+@font-face {font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/inter-500.woff2) format('woff2');}
+@font-face {font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/inter-600.woff2) format('woff2');}
+nav.fixed,#mobileMenu,footer{font-family:Inter,"Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Yu Gothic",sans-serif;font-size:15px;line-height:1.75;letter-spacing:.03em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+nav.fixed :is(p,li,dd,span),#mobileMenu :is(p,li,dd,span),footer :is(p,li,dd,span){letter-spacing:.035em}
+nav.fixed .font-serif,#mobileMenu .font-serif,footer .font-serif{font-weight:500}
+nav.fixed .font-serif.font-medium,#mobileMenu .font-serif.font-medium,footer .font-serif.font-medium{font-weight:600}
+nav.fixed .font-serif.font-semibold,#mobileMenu .font-serif.font-semibold,footer .font-serif.font-semibold{font-weight:700}
+</style>
+<style>/* site-footer */
+.site-footer .ft-head{font-size:15px;font-weight:700;color:#F4F2ED;letter-spacing:.04em;padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid rgba(244,242,237,.2)}
+.site-footer .ft-link{font-size:15px;color:rgba(244,242,237,.82);line-height:1.6}
+.site-footer .ft-link:hover{color:#F4F2ED;text-decoration:underline;text-underline-offset:4px}
+.site-footer .ft-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:240px;padding:15px 24px;border-radius:4px;background:#F4F2ED;color:#0E0E10;font-size:15px;font-weight:700;transition:background .2s}
+.site-footer .ft-btn::after{content:"→"}
+.site-footer .ft-btn:hover{background:#fff}
+.site-footer .ft-sns{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid rgba(244,242,237,.3);border-radius:4px;font-size:13px;color:#F4F2ED}
+.site-footer .ft-sns:hover{background:rgba(244,242,237,.1)}
+.site-footer a:focus-visible{outline:2px solid #F4F2ED;outline-offset:3px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://matsumoto-kenma.co.jp/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Web集客・AI活用支援",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Web集客コラム",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/column/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "ホームページ制作",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/column/category/homepage/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "ウェブアクセシビリティの義務化とは？中小企業のサイトで何をすればいいか",
+      "item": "https://matsumoto-kenma.co.jp/web-ai/column/web-accessibility/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ウェブアクセシビリティの義務化とは？中小企業のサイトで何をすればいいか",
+  "description": "ウェブアクセシビリティは民間企業も義務になったのか。2024年4月施行の改正障害者差別解消法で義務になったことと努力義務のこと、JIS X 8341-3とWCAGの関係、中小企業がまず直せる7つの点、点検方法、方針の書き方を紹介します。",
+  "url": "https://matsumoto-kenma.co.jp/web-ai/column/web-accessibility/",
+  "image": "https://matsumoto-kenma.co.jp/images/ogp-studio.jpg",
+  "datePublished": "2026-11-10",
+  "dateModified": "2026-11-10",
+  "articleSection": "ホームページ制作",
+  "inLanguage": "ja",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://matsumoto-kenma.co.jp/web-ai/#studio",
+    "name": "マツケンスタジオ",
+    "url": "https://matsumoto-kenma.co.jp/web-ai/column/author/"
+  },
+  "publisher": {
+    "@id": "https://matsumoto-kenma.co.jp/#organization"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://matsumoto-kenma.co.jp/web-ai/column/web-accessibility/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "民間企業のホームページもアクセシビリティ対応が義務になったのですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "2024年4月1日に施行された改正障害者差別解消法で義務になったのは、障害のある人から申し出があったときに対応する合理的配慮の提供です。サイトを前もって誰でも使えるように整えることは環境の整備にあたり、内閣府の障害者白書では努力義務とされています。法律の扱いで迷う場合は、内閣府の公式情報を確かめ、専門家に相談してください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "努力義務なら、何もしなくても問題ないですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "努力義務は、対応に努めることが求められているものです。サイトが使いにくいままだと、申し出があるたびに個別の対応が必要になります。前もって整えておくほど、困る人も個別の対応も減らせるので、影響の大きいページから少しずつ進めるのがおすすめです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "JIS X 8341-3とWCAGは、どちらに合わせればよいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "デジタル庁の資料では、JIS X 8341-3:2016はWCAG 2.0と同じ内容の日本の規格とされています。国内ではJISを基準に方針を書くことが多く、そのうえでWCAG 2.1や2.2で追加された項目に取り組むこともできます。中小企業は、まず代替テキストや色の差など影響の大きい点から始めるとよいでしょう。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "自社のサイトがどれくらい対応できているか、自分で確かめられますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "マウスを使わずTabキーとEnterキーだけで操作できるか、パソコンやスマートフォンの読み上げ機能で画像の説明やリンクが伝わるか、拡大しても文字が切れないかなどは、担当者でも確かめられます。自動の点検ツールも役立ちますが、分かるのは一部なので、人の目での確認と組み合わせます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ウェブアクセシビリティ方針は載せないといけませんか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "法律で掲載が決められているものではありません。ただ、対象範囲、目指す基準、期限、連絡先を書いておくと、取り組む姿勢と困ったときの窓口を示せます。書く項目は、ウェブアクセシビリティ基盤委員会の方針策定ガイドラインが参考になります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "アクセシビリティ対応のために、サイトを作り直す必要がありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "代替テキスト、リンクの文言、PDFだけの情報をページの文章にするなどは、今のサイトのまま直せることが多いです。色の組み合わせやフォームの作りなど、作りに関わる部分は直し方によって手間が変わるので、点検の結果を見てから、直すか作り直すかを考えます。"
+      }
+    }
+  ]
+}
+</script>
+<style>
+  /* Matsuken Studio: light theme */
+  html,body{background:#FFFFFF}
+  .pwrap{max-width:960px;margin:0 auto;padding:0 20px}
+  @media(min-width:768px){.pwrap{padding:0 40px}}
+  .pwrap.max-w-\[800px\]{max-width:880px}
+  .st-alt{background:#F4F6F9}
+  .st-cta{background:#FFF9D6}
+  .sec-label{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.14em;color:#1B3A6B;margin-bottom:16px}
+  .sec-ttl{font-size:24px;font-weight:700;line-height:1.45;margin-bottom:20px;color:#0E0E10}
+  @media(min-width:768px){.sec-ttl{font-size:30px}}
+  .st-logo{display:inline-flex;align-items:center;gap:12px}
+  .st-mark{width:40px;height:40px;border-radius:10px;background:#1B3A6B;color:#fff;display:grid;place-items:center;font-weight:700;font-size:22px;position:relative;flex-shrink:0}
+  .st-mark::after{content:'';position:absolute;right:-3px;top:-3px;width:12px;height:12px;border-radius:50%;background:#F5DE00;border:2px solid #fff}
+  .st-name{display:block;font-weight:800;font-size:20px;letter-spacing:.04em;color:#0E0E10;line-height:1.2}
+  .st-by{display:block;font-size:11px;letter-spacing:.14em;color:#5E5E65;margin-top:3px}
+  .st-hero{position:relative;overflow:hidden;background:#fff;border-bottom:1px solid #E6E9EE}
+  .st-hero::before{content:'';position:absolute;right:-120px;top:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,#FFF4B0 0%,rgba(255,244,176,0) 70%);pointer-events:none}
+  .st-hero::after{content:'';position:absolute;right:40px;bottom:40px;width:260px;height:180px;background-image:radial-gradient(#C9D2DF 1.2px,transparent 1.2px);background-size:14px 14px;opacity:.7;pointer-events:none}
+  .trust{display:grid;grid-template-columns:1fr;border-top:1px solid #E6E9EE}
+  @media(min-width:768px){.trust{grid-template-columns:repeat(3,1fr)}}
+  .trust>div{padding:20px 0}
+  @media(min-width:768px){.trust>div{padding:24px 28px}.trust>div+div{border-left:1px solid #E6E9EE}.trust>div:first-child{padding-left:0}}
+  .trust .t-big{font-size:17px;font-weight:700;color:#0E0E10;margin-bottom:4px}
+  .trust .t-sub{font-size:13px;color:#5E5E65;line-height:1.8}
+  .card2{position:relative;border:1px solid #E1E5EB;background:#fff;padding:30px 24px 26px;border-top:3px solid #1B3A6B;border-radius:6px}
+  .card2.alt{border-top-color:#2E5BA6}
+  .card2 .idx{font-family:'JetBrains Mono',monospace;font-size:11px;color:#8a8a86;letter-spacing:.15em;margin-bottom:14px}
+  .svc-list{background:#fff;border:1px solid #E1E5EB;border-radius:8px;padding:10px 28px}
+  .svc-list li{list-style:none;display:grid;grid-template-columns:22px 1fr;gap:10px;padding:14px 0;border-bottom:1px solid #EEF1F5;font-size:14px;line-height:1.8}
+  .svc-list li:last-child{border-bottom:none}
+  .svc-list li::before{content:'';width:10px;height:10px;margin-top:8px;border-radius:3px;background:#F5DE00;box-shadow:0 0 0 2px #1B3A6B inset}
+  .step2{position:relative;padding:6px 0 30px 32px;border-left:2px solid #DDE3EB}
+  .step2:last-child{border-left:2px solid transparent;padding-bottom:2px}
+  .step2::before{content:'';position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:#1B3A6B}
+  .step2.alt::before{background:#2E5BA6}
+  .step2 .pnum{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:#8a8a86;margin-bottom:4px}
+  .faq2{display:grid;grid-template-columns:36px 1fr;gap:16px;padding:22px 0;border-top:1px solid #E1E5EB}
+  .faq2:last-child{border-bottom:1px solid #E1E5EB}
+  .faq2 .qa{font-size:22px;font-weight:700;line-height:1;color:#1B3A6B}
+  .price-box{border:1px solid #E1E5EB;border-radius:8px;background:#fff;padding:32px 28px;display:grid;grid-template-columns:1fr;gap:18px}
+  @media(min-width:768px){.price-box{grid-template-columns:1fr auto;align-items:center;padding:36px 40px}}
+  .case-card{display:grid;grid-template-columns:1fr;border:1px solid #E1E5EB;border-radius:8px;overflow:hidden;background:#fff;transition:border-color .2s,box-shadow .2s}
+  .case-card:hover{border-color:#1B3A6B;box-shadow:0 10px 30px -14px rgba(27,58,107,.35)}
+  .case-card .c-img{background:linear-gradient(135deg,#EAF0F8,#FFF6C4);min-height:160px;display:grid;place-items:center;color:#1B3A6B;font-size:13px;font-weight:600;letter-spacing:.14em}
+  @media(min-width:768px){.case-card{grid-template-columns:280px 1fr}}
+  .rel-grid{display:grid;grid-template-columns:1fr;gap:28px}
+  @media(min-width:768px){.rel-grid{grid-template-columns:repeat(4,1fr)}}
+  .rel-grid a{display:block;padding:9px 0;border-bottom:1px solid #E1E5EB;font-size:14px;transition:color .15s}
+  .rel-grid a:hover{color:#2E5BA6}
+  .rel-grid a.current{color:#8a8a86;pointer-events:none}
+  .svc-card{display:block;background:#fff;border:1px solid #E1E5EB;border-radius:8px;padding:26px 24px;transition:border-color .2s,box-shadow .2s,transform .2s}
+  a.svc-card:hover{border-color:#1B3A6B;box-shadow:0 10px 30px -14px rgba(27,58,107,.35);transform:translateY(-2px)}
+  .st-illu{display:block;width:100%;height:auto;max-width:300px;margin:0 auto}
+  .st-icon{display:block;margin-bottom:12px}
+  .story p{font-size:15px;line-height:2.1;color:#26262B;margin-bottom:20px}
+  @media(min-width:768px){.story p{font-size:16px}}
+  .story-quote{font-size:clamp(20px,2.6vw,28px);font-weight:700;line-height:1.6;color:#0E0E10;padding-left:20px;border-left:4px solid #F5DE00}
+  .target-card{background:#fff;border:1px solid #E1E5EB;border-radius:8px;padding:24px}
+  .target-card .tg{display:inline-block;font-size:12px;font-weight:700;color:#1B3A6B;background:#FFF4B0;border-radius:999px;padding:4px 12px;margin-bottom:12px}
+</style>
+<style>
+  .col-cats{display:flex;flex-wrap:wrap;gap:8px}
+  .col-cats a{font-size:13px;font-weight:700;padding:7px 14px;border-radius:999px;background:#fff;border:1px solid #E1E5EB;color:#1B3A6B}
+  .col-cats a:hover,.col-cats a.on{background:#1B3A6B;color:#fff;border-color:#1B3A6B}
+  .col-grid{display:grid;grid-template-columns:1fr;gap:18px}
+  @media(min-width:768px){.col-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1024px){.col-grid.three{grid-template-columns:repeat(3,1fr)}}
+  .col-card{display:flex;flex-direction:column;background:#fff;border:1px solid #E1E5EB;border-radius:10px;padding:22px 22px 18px;transition:border-color .2s,box-shadow .2s}
+  .col-card:hover{border-color:#1B3A6B;box-shadow:0 10px 30px -16px rgba(27,58,107,.35)}
+  .chip{display:inline-block;font-size:12px;font-weight:700;color:#1B3A6B;background:#FFF4B0;border-radius:999px;padding:3px 10px}
+  .col-card h3{font-size:17px;font-weight:700;line-height:1.6;margin:12px 0 8px;color:#0E0E10}
+  .col-card p{font-size:13px;line-height:1.8;color:#5E5E65;flex:1}
+  .col-card time{font-size:12px;color:#8a8a86;margin-top:12px;font-family:'JetBrains Mono',monospace}
+  .art{max-width:760px;margin:0 auto}
+  .art-body h2{font-size:22px;font-weight:700;line-height:1.5;margin:48px 0 16px;padding-left:14px;border-left:5px solid #F5DE00;scroll-margin-top:90px}
+  @media(min-width:768px){.art-body h2{font-size:25px}}
+  .art-body h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:#1B3A6B}
+  .art-body p{font-size:16px;line-height:2;color:#26262B;margin-bottom:18px}
+  .art-body ul,.art-body ol{margin:0 0 20px 1.4em;font-size:16px;line-height:1.9;color:#26262B}
+  .art-body li{margin-bottom:6px}
+  .art-body ul,.points ul{list-style:disc}
+  .art-body ol,.toc ol{list-style:decimal}
+  .art-body li::marker,.points li::marker{color:#1B3A6B}
+  .art-body a{color:#1B3A6B;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+  .art-body .st-illu{margin:26px auto}
+  .art-table{width:100%;border-collapse:collapse;margin:8px 0 24px;font-size:14px;background:#fff;border:1px solid #E1E5EB}
+  .art-table th,.art-table td{padding:12px 14px;border-bottom:1px solid #EEF1F5;text-align:left;vertical-align:top;line-height:1.7}
+  .art-table th{background:#F4F6F9;font-weight:700;color:#1B3A6B}
+  .art-body p.ask{font-size:14px;line-height:1.8;background:#F4F6F9;border-left:4px solid #1B3A6B;border-radius:0 8px 8px 0;padding:10px 14px;color:#26262B}
+  .points{background:#FFF9D6;border-radius:10px;padding:20px 24px;margin:26px 0}
+  .points b{display:block;font-size:14px;margin-bottom:8px;color:#1B3A6B}
+  .points li{font-size:15px;line-height:1.8;margin-left:1.2em}
+  .toc{background:#F4F6F9;border-radius:10px;padding:20px 24px;margin:0 0 30px}
+  .toc b{display:block;font-size:14px;margin-bottom:8px}
+  .toc ol{margin-left:1.3em;font-size:14px;line-height:2}
+  .toc a{color:#1B3A6B}
+  .author{display:grid;grid-template-columns:56px 1fr;gap:16px;background:#fff;border:1px solid #E1E5EB;border-radius:12px;padding:22px}
+  .author .av{width:56px;height:56px;border-radius:14px;background:#1B3A6B;color:#fff;display:grid;place-items:center;font-weight:700;font-size:24px;position:relative}
+  .author .av::after{content:'';position:absolute;right:-3px;top:-3px;width:14px;height:14px;border-radius:50%;background:#F5DE00;border:2px solid #fff}
+  .author b{font-size:15px}.author p{font-size:13px;line-height:1.9;color:#4A4A50;margin-top:6px}
+  .art-body .cta-mid a{text-decoration:none}
+  .art-body .cta-mid a.bg-cta-yellow{color:#0E0E10}
+  .art-body .cta-mid a[href*="line.me"]{color:#fff}
+  .cta-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;border:1px solid #E1E5EB;border-radius:12px;padding:14px 18px;margin:-8px 0 26px;background:#fff}
+  .cta-top p{font-size:14px;font-weight:700;color:#0E0E10}
+  .cta-top .bt{display:flex;gap:8px;flex-wrap:wrap}
+  .cta-top a.btn-s{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;border-radius:999px;padding:9px 16px}
+  .cta-mid{margin:36px 0;border-radius:14px;background:#FFF9D6;padding:24px 24px 22px;position:relative;overflow:hidden}
+  .cta-mid::after{content:'';position:absolute;right:-50px;top:-50px;width:160px;height:160px;border-radius:50%;background:repeating-radial-gradient(circle,rgba(27,58,107,.08) 0 1px,transparent 1px 10px)}
+  .cta-mid .lb{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:#1B3A6B;border-radius:999px;padding:3px 10px;margin-bottom:10px}
+  .cta-mid b{display:block;font-size:18px;line-height:1.6;margin-bottom:6px;color:#0E0E10}
+  .cta-mid p{font-size:14px;line-height:1.8;color:#3A3A40;margin-bottom:16px;position:relative;z-index:1}
+  .cta-mid .bt{display:flex;flex-direction:column;gap:10px;position:relative;z-index:1}
+  @media(min-width:640px){.cta-mid .bt{flex-direction:row}}
+  .cta-end{border-radius:16px;background:#1B3A6B;color:#fff;padding:28px 26px}
+  .cta-end b{display:block;font-size:20px;line-height:1.6;margin-bottom:8px}
+  .cta-end p{font-size:14px;line-height:1.9;color:rgba(255,255,255,.85);margin-bottom:18px}
+  .cta-end .bt{display:flex;flex-direction:column;gap:10px}
+  @media(min-width:640px){.cta-end .bt{flex-direction:row;align-items:center}}
+  .cta-end .lp{font-size:14px;font-weight:700;color:#F5DE00;text-decoration:underline;text-underline-offset:3px}
+  .col-stick{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid #E1E5EB;transform:translateY(110%);transition:transform .25s}
+  .col-stick.show{transform:none}
+  .col-stick a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:999px;padding:12px 8px;font-size:14px;font-weight:700}
+  @media(min-width:768px){.col-stick{display:none}}
+  .soft-cta{background:#fff;border:1px solid #E1E5EB;border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:14px}
+  @media(min-width:768px){.soft-cta{flex-direction:row;align-items:center;justify-content:space-between}}
+  .soft-cta p{font-size:14px;line-height:1.8;color:#26262B}
+</style>
+<script type="application/ld+json" data-sd="managed">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://matsumoto-kenma.co.jp/#organization",
+      "name": "株式会社松本研磨工業",
+      "alternateName": [
+        "松本研磨工業",
+        "松本研磨"
+      ],
+      "url": "https://matsumoto-kenma.co.jp/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://matsumoto-kenma.co.jp/images/logo.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://matsumoto-kenma.co.jp/images/ogp.jpg",
+      "description": "神奈川県川崎市川崎区の金属研磨工場。1967年創業。ステンレス・アルミ・真鍮・鉄などのバフ研磨（鏡面仕上げ）、ベルト研磨、ヘアライン仕上げ、フレキ研磨を、試作の1個から小量産まで手作業で請け負っています。図面がなくても、現物や写真からお見積りできます。",
+      "telephone": "+81-44-333-8412",
+      "faxNumber": "+81-44-333-3843",
+      "address": {
+        "@type": "PostalAddress",
+        "postalCode": "210-0851",
+        "addressRegion": "神奈川県",
+        "addressLocality": "川崎市川崎区",
+        "streetAddress": "浜町3-9-22",
+        "addressCountry": "JP"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 35.5257,
+        "longitude": 139.7194
+      },
+      "hasMap": "https://maps.google.com/?q=神奈川県川崎市川崎区浜町3-9-22",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:30",
+          "closes": "18:00"
+        }
+      ],
+      "foundingDate": "1967",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "日本"
+        },
+        {
+          "@type": "City",
+          "name": "川崎市"
+        },
+        {
+          "@type": "City",
+          "name": "横浜市"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "東京都"
+        }
+      ],
+      "knowsAbout": [
+        "金属研磨",
+        "バフ研磨",
+        "鏡面仕上げ",
+        "ベルト研磨",
+        "ヘアライン仕上げ",
+        "フレキ研磨",
+        "ステンレス研磨",
+        "アルミ研磨",
+        "真鍮研磨",
+        "曲面研磨"
+      ],
+      "sameAs": [
+        "https://www.instagram.com/matsu_polish/",
+        "https://www.youtube.com/channel/UCIGiSzo9TyINLuygAsuP5ew/"
+      ],
+      "department": {
+        "@id": "https://matsumoto-kenma.co.jp/web-ai/#studio"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://matsumoto-kenma.co.jp/#website",
+      "url": "https://matsumoto-kenma.co.jp/",
+      "name": "株式会社松本研磨工業",
+      "inLanguage": "ja",
+      "publisher": {
+        "@id": "https://matsumoto-kenma.co.jp/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://matsumoto-kenma.co.jp/web-ai/#studio",
+      "name": "マツケンスタジオ",
+      "alternateName": "マツケンスタジオ by 松本研磨工業",
+      "url": "https://matsumoto-kenma.co.jp/web-ai/",
+      "image": "https://matsumoto-kenma.co.jp/images/ogp-studio.jpg",
+      "description": "株式会社松本研磨工業が運営する、町工場発のWeb事業。製造業・建設業・工務店・運送業など、現場と技術のある中小企業のホームページ制作・リニューアル、検索対策、Web広告、AI活用をお手伝いします。",
+      "parentOrganization": {
+        "@id": "https://matsumoto-kenma.co.jp/#organization"
+      },
+      "sameAs": [
+        "https://www.instagram.com/matsuken_studio/",
+        "https://page.line.me/115rhdee"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "日本"
+      },
+      "knowsAbout": [
+        "ホームページ制作",
+        "ホームページリニューアル",
+        "Web集客",
+        "SEO",
+        "LLMO",
+        "サイト制作",
+        "LP制作",
+        "Web広告",
+        "CVR改善",
+        "BtoBマーケティング",
+        "AI活用"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://matsumoto-kenma.co.jp/web-ai/column/web-accessibility/#webpage",
+      "url": "https://matsumoto-kenma.co.jp/web-ai/column/web-accessibility/",
+      "name": "ウェブアクセシビリティの義務化とは？中小企業のサイトで何をすればいいか｜マツケンスタジオ",
+      "description": "ウェブアクセシビリティは民間企業も義務になったのか。2024年4月施行の改正障害者差別解消法で義務になったことと努力義務のこと、JIS X 8341-3とWCAGの関係、中小企業がまず直せる7つの点、点検方法、方針の書き方を紹介します。",
+      "inLanguage": "ja",
+      "isPartOf": {
+        "@id": "https://matsumoto-kenma.co.jp/#website"
+      },
+      "about": {
+        "@id": "https://matsumoto-kenma.co.jp/web-ai/#studio"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://matsumoto-kenma.co.jp/images/ogp-studio.jpg"
+      },
+      "dateModified": "2026-09-27"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav class="fixed top-0 left-0 right-0 z-50 bg-paper/80 backdrop-blur-[14px] border-b border-ink/[0.08]">
+  <div class="wrap flex items-center justify-between h-[60px] md:h-[72px]">
+
+    <!-- Brand -->
+    <a href="../../../#home" class="flex items-center gap-3 md:gap-[14px]">
+      <span class="w-9 h-9 md:w-10 md:h-10 border-[1.5px] border-ink rounded-full grid place-items-center font-serif font-semibold text-lg md:text-xl bg-ink text-paper">松</span>
+      <span class="leading-[1.1]">
+        <div class="font-serif text-[13px] md:text-[15px] font-medium tracking-[.04em]">株式会社松本研磨工業</div>
+        <div class="hidden sm:block font-mono text-[10px] text-muted tracking-[.22em] mt-[2px]">創業58年・川崎</div>
+      </span>
+    </a>
+
+    <!-- Desktop menu — hidden below md -->
+    <div class="hidden md:flex gap-[2px] items-center">
+      <a href="../../../#home" class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">ホーム</a>
+
+      <!-- 金属研磨技術 メガメニュー -->
+      <div class="mega relative">
+        <button class="mega-btn flex items-center gap-1 px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors" aria-expanded="false">
+          金属研磨技術
+          <svg class="w-3 h-3 stroke-current fill-none stroke-[2] mega-caret transition-transform" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="mega-panel absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[320px] bg-navy text-paper rounded-sm shadow-[0_24px_48px_-12px_rgba(0,0,0,.35)] p-2 opacity-0 invisible translate-y-1 transition-all duration-150">
+          <div class="pb-2 mb-1 border-b border-paper/10">
+            <a href="../../../polishing/" class="block px-4 py-2.5 rounded-sm text-[13px] font-semibold hover:bg-paper/10 hover:text-paper hover:underline underline-offset-4 transition-colors">金属研磨技術 一覧 →</a>
+          </div>
+          <a href="../../../polishing/buff-polishing/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">バフ研磨</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">鏡面仕上げ</div>
+          </a>
+          <a href="../../../polishing/belt-polishing/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">ベルト研磨</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">バリ取り・形状補正</div>
+          </a>
+          <a href="../../../polishing/hairline-finish/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">ヘアライン加工</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">一方向のライン仕上げ</div>
+          </a>
+          <a href="../../../polishing/flexible-polishing/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">フレキ研磨／曲面研磨</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">複雑形状への手作業</div>
+          </a>
+        </div>
+      </div>
+
+      <a href="../../../#works" class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">加工実績</a>
+
+      <!-- Web集客・AI活用支援 メガメニュー -->
+      <div class="mega relative">
+        <button class="mega-btn flex items-center gap-1 px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors" aria-expanded="false">
+          Web集客・AI活用支援
+          <svg class="w-3 h-3 stroke-current fill-none stroke-[2] mega-caret transition-transform" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="mega-panel fixed left-1/2 -translate-x-1/2 top-[72px] mt-2 w-[860px] max-w-[92vw] bg-navy text-paper rounded-sm shadow-[0_24px_48px_-12px_rgba(0,0,0,.35)] p-7 opacity-0 invisible translate-y-1 transition-all duration-150">
+          <div class="mb-6 pb-5 border-b border-paper/10 flex items-center justify-between">
+            <a href="../../../web-ai/" class="font-serif text-[13px] font-semibold hover:text-paper hover:underline underline-offset-4 transition-colors">Web集客・AI活用支援 トップ →</a>
+            <a href="../../../web-ai/case/" class="font-serif text-[13px] font-semibold hover:text-paper hover:underline underline-offset-4 transition-colors">実績・事例 →</a>
+          </div>
+          <div class="grid grid-cols-4 gap-8">
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">戦略・コンサルティング</div>
+              <ul class="space-y-2">
+                <li><a href="../../../web-ai/consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">デジタルマーケティングコンサルティング</a></li>
+                <li><a href="../../../web-ai/btob-marketing/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">BtoBマーケティング支援</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">集客・改善</div>
+              <ul class="space-y-2">
+                <li><a href="../../../web-ai/seo-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">SEOコンサルティング</a></li>
+                <li><a href="../../../web-ai/ad-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">Web広告コンサルティング</a></li>
+                <li><a href="../../../web-ai/cro-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">CVR改善／CROコンサルティング</a></li>
+                <li><a href="../../../web-ai/llmo-consulting/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">LLMOコンサルティング</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">制作</div>
+              <ul class="space-y-2">
+                <li><a href="../../../web-ai/website/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">サイト制作</a></li>
+                <li><a href="../../../web-ai/lp/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">LP制作</a></li>
+                <li><a href="../../../web-ai/seo-writing/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">SEO/LLMO記事制作代行</a></li>
+                <li><a href="../../../web-ai/case-interview/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">事例インタビュー記事制作</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mb-3">AI活用支援</div>
+              <ul class="space-y-2">
+                <li><a href="../../../web-ai/ai-katsuyo/" class="font-serif text-[13px] hover:text-paper hover:underline underline-offset-4 transition-colors">AI活用支援（業務効率化・自動化）</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- コラム メガメニュー -->
+      <div class="mega relative">
+        <button class="mega-btn flex items-center gap-1 px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors" aria-expanded="false">
+          コラム
+          <svg class="w-3 h-3 stroke-current fill-none stroke-[2] mega-caret transition-transform" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="mega-panel absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[320px] bg-navy text-paper rounded-sm shadow-[0_24px_48px_-12px_rgba(0,0,0,.35)] p-2 opacity-0 invisible translate-y-1 transition-all duration-150">
+          <a href="../../../column/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">研磨・金属加工コラム</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">工法・材料別の技術記事</div>
+          </a>
+          <a href="../../../web-ai/column/" class="block px-4 py-3 rounded-sm hover:bg-paper/10 transition-colors">
+            <div class="font-serif text-[14px] font-medium">Web集客・AI活用支援コラム</div>
+            <div class="font-mono text-[11px] text-muted-ink mt-1">製造業のためのWeb集客・AI活用</div>
+          </a>
+        </div>
+      </div>
+
+      <a href="../../../company/" class="menu-link relative px-4 py-[10px] text-[13px] font-medium tracking-[.06em] hover:text-accent transition-colors">会社情報</a>
+    </div>
+
+    <!-- CTA -->
+    <div class="flex gap-2 md:gap-[10px] items-center">
+      <a href="../../../web-ai/contact/" class="inline-flex items-center gap-[10px] px-3 py-2 md:px-[18px] md:py-[11px] rounded-sm text-[11px] md:text-[13px] font-semibold tracking-[.06em] bg-ink text-paper hover:bg-accent transition-all">お問い合わせ →</a>
+      <!-- Burger — shown below md -->
+      <button class="flex md:hidden w-10 h-10 border border-ink rounded-sm items-center justify-center bg-paper" id="burgerBtn" aria-label="menu">
+        <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="fixed inset-0 z-[55] bg-navy text-paper pt-[80px] pb-8 px-6 flex flex-col gap-1 translate-x-full transition-transform duration-[350ms] ease-in-out" id="mobileMenu">
+  <button data-close class="absolute top-5 right-5 w-10 h-10 flex items-center justify-center text-paper/80 hover:text-paper" aria-label="close menu">
+    <svg class="w-6 h-6 stroke-current fill-none stroke-[1.6]" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+
+  <!-- LANY風：上部にCTAピル2つ -->
+  <div class="flex gap-2 mb-5">
+    <a href="../../../web-ai/contact/" data-close class="flex-1 flex items-center justify-center gap-2 py-3 rounded-full bg-accent text-paper text-[13px] font-semibold tracking-[.04em]">お問い合わせ →</a>
+  </div>
+
+  <div class="overflow-y-auto flex-1 -mr-6 pr-6">
+  <a href="../../../#home" data-close class="font-serif text-[17px] font-medium py-3 border-b border-paper/[.08] flex items-center justify-between">ホーム</a>
+
+  <details class="drawer-acc border-b border-paper/[.08]">
+    <summary class="font-serif text-[17px] font-medium py-3 flex items-center justify-between cursor-pointer list-none">
+      金属研磨技術
+      <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6] drawer-acc-icon transition-transform shrink-0" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="pb-4 flex flex-col gap-1">
+      <a href="../../../polishing/" data-close class="text-[13px] py-1.5 mb-1 pb-2.5 border-b border-paper/[.08] font-semibold text-paper">金属研磨技術 一覧 →</a>
+      <a href="../../../polishing/buff-polishing/" data-close class="text-[13px] py-1.5 opacity-85">バフ研磨</a>
+      <a href="../../../polishing/belt-polishing/" data-close class="text-[13px] py-1.5 opacity-85">ベルト研磨</a>
+      <a href="../../../polishing/hairline-finish/" data-close class="text-[13px] py-1.5 opacity-85">ヘアライン加工</a>
+      <a href="../../../polishing/flexible-polishing/" data-close class="text-[13px] py-1.5 opacity-85">フレキ研磨／曲面研磨</a>
+    </div>
+  </details>
+
+  <a href="../../../#works" data-close class="font-serif text-[17px] font-medium py-3 border-b border-paper/[.08] flex items-center justify-between">加工実績</a>
+
+  <details class="drawer-acc border-b border-paper/[.08]">
+    <summary class="font-serif text-[17px] font-medium py-3 flex items-center justify-between cursor-pointer list-none">
+      Web集客・AI活用支援
+      <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6] drawer-acc-icon transition-transform shrink-0" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="pb-4 flex flex-col gap-1">
+      <div class="flex items-center justify-between mb-1 pb-2.5 border-b border-paper/[.08]">
+        <a href="../../../web-ai/" data-close class="text-[13px] font-semibold text-paper">Web集客・AI活用支援 トップ →</a>
+        <a href="../../../web-ai/case/" data-close class="text-[13px] font-semibold text-paper">実績・事例 →</a>
+      </div>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-2 mb-1">戦略・コンサルティング</div>
+      <a href="../../../web-ai/consulting/" data-close class="text-[13px] py-1.5 opacity-85">デジタルマーケティングコンサルティング</a>
+      <a href="../../../web-ai/btob-marketing/" data-close class="text-[13px] py-1.5 opacity-85">BtoBマーケティング支援</a>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-3 mb-1">集客・改善</div>
+      <a href="../../../web-ai/seo-consulting/" data-close class="text-[13px] py-1.5 opacity-85">SEOコンサルティング</a>
+      <a href="../../../web-ai/ad-consulting/" data-close class="text-[13px] py-1.5 opacity-85">Web広告コンサルティング</a>
+      <a href="../../../web-ai/cro-consulting/" data-close class="text-[13px] py-1.5 opacity-85">CVR改善／CROコンサルティング</a>
+      <a href="../../../web-ai/llmo-consulting/" data-close class="text-[13px] py-1.5 opacity-85">LLMOコンサルティング</a>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-3 mb-1">制作</div>
+      <a href="../../../web-ai/website/" data-close class="text-[13px] py-1.5 opacity-85">サイト制作</a>
+      <a href="../../../web-ai/lp/" data-close class="text-[13px] py-1.5 opacity-85">LP制作</a>
+      <a href="../../../web-ai/seo-writing/" data-close class="text-[13px] py-1.5 opacity-85">SEO/LLMO記事制作代行</a>
+      <a href="../../../web-ai/case-interview/" data-close class="text-[13px] py-1.5 opacity-85">事例インタビュー記事制作</a>
+      <div class="font-mono text-[11px] font-semibold tracking-[.18em] text-paper/80 mt-3 mb-1">AI活用支援</div>
+      <a href="../../../web-ai/ai-katsuyo/" data-close class="text-[13px] py-1.5 opacity-85">AI活用支援（業務効率化・自動化）</a>
+    </div>
+  </details>
+
+  <details class="drawer-acc border-b border-paper/[.08]">
+    <summary class="font-serif text-[17px] font-medium py-3 flex items-center justify-between cursor-pointer list-none">
+      コラム
+      <svg class="w-4 h-4 stroke-current fill-none stroke-[1.6] drawer-acc-icon transition-transform shrink-0" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="pb-4 flex flex-col gap-1">
+      <a href="../../../column/" data-close class="text-[13px] py-2 opacity-85">研磨・金属加工コラム</a>
+      <a href="../../../web-ai/column/" data-close class="text-[13px] py-2 opacity-85">Web集客・AI活用支援コラム</a>
+    </div>
+  </details>
+
+  <a href="../../../company/" data-close class="font-serif text-[17px] font-medium py-3 border-b border-paper/[.08] flex items-center justify-between">会社情報</a>
+  </div>
+
+  <div class="pt-5 text-[11px] text-muted-ink/80 text-center">マツケンスタジオへのご相談は、お問い合わせフォームで受け付けています</div>
+</div>
+
+
+<main class="pt-[60px]">
+  <section class="pt-8 pb-10 md:pt-12 md:pb-14">
+    <div class="pwrap">
+      <article class="art">
+      <p class="font-mono text-[11px] tracking-[.2em] text-muted mb-5"><a href="../../../" class="hover:text-accent transition-colors">ホーム</a><span class="mx-2 opacity-40">/</span><a href="../../" class="hover:text-accent transition-colors">Web集客・AI活用支援</a><span class="mx-2 opacity-40">/</span><a href="../" class="hover:text-accent transition-colors">コラム</a><span class="mx-2 opacity-40">/</span><a href="../category/homepage/" class="hover:text-accent transition-colors">ホームページ制作</a></p>
+        <a href="../category/homepage/" class="chip">ホームページ制作</a>
+        <h1 class="font-bold leading-[1.45] mt-3 mb-4 text-ink" style="font-size:clamp(24px,3.6vw,34px)">ウェブアクセシビリティの義務化とは？中小企業のサイトで何をすればいいか</h1>
+        <p class="text-[13px] text-muted mb-6">公開日 <time datetime="2026-11-10">2026.11.10</time>　|　マツケンスタジオ 責任者</p>
+        <div class="points"><b>この記事で分かること</b><ul><li>2024年4月から義務になった「合理的配慮の提供」と、努力義務の「環境の整備」の違い</li><li>JIS X 8341-3とWCAGの関係と、中小企業のサイトでまず直せる7つの点</li><li>自社サイトの簡単な点検方法と、ウェブアクセシビリティ方針の書き方の考え方</li></ul></div>
+        <div class="cta-top"><p>ホームページのご相談は無料です</p><div class="bt"><a href="../../contact/" class="btn-s bg-cta-yellow text-ink hover:bg-cta-yellow-h">1分で問い合わせ →</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="btn-s bg-[#06C755] text-white hover:bg-[#05B34C]">LINEで相談</a></div></div>
+        <nav class="toc" aria-label="目次"><b>目次</b><ol><li><a href="#what">ウェブアクセシビリティとは</a></li><li><a href="#law">「義務化」と言われるのは何か</a></li><li><a href="#jis">JIS X 8341-3とWCAGの関係</a></li><li><a href="#first-steps">中小企業のサイトでまずできる7つのこと</a></li><li><a href="#check">自社サイトの簡単な点検方法</a></li><li><a href="#policy">ウェブアクセシビリティ方針の書き方の考え方</a></li><li><a href="#process">無理なく進める順番</a></li><li><a href="#summary">まとめ</a></li><li><a href="#faq">よくある質問</a></li></ol></nav>
+        <div class="art-body">
+<p>「2024年4月から、民間企業もホームページのアクセシビリティ対応が義務になったと聞いた」「うちの会社のサイトも、今すぐ直さないといけないのか」。こうした相談を受けることが増えました。ネット上でも「ウェブアクセシビリティ義務化」という言葉をよく見かけます。</p>
+<p>ただ、法律で義務になったことと、努力義務のままのことは分けて考える必要があります。この記事では、内閣府やデジタル庁が公開している情報をもとに、何が変わったのかを整理し、そのうえで中小企業のサイトでまずできることと、点検の方法を、制作する側の目線で紹介します。法律の判断が必要な場面では、専門家や公式の窓口に確かめてください。</p>
+
+<svg viewBox="0 0 560 174" role="img" aria-label="ウェブアクセシビリティの義務化とは？中小企業のサイトで何をすればいいかの要点の図" class="st-illu" style="max-width:560px" fill="none" stroke="#1B3A6B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="18" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="32" y="28" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M36 38l4 4 8-9"/><text x="62" y="44" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">画像に代替テキスト</text><rect x="290" y="18" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="302" y="28" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M306 38l4 4 8-9"/><text x="332" y="44" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">文字と背景の濃さの差</text><rect x="20" y="70" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="32" y="80" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M36 90l4 4 8-9"/><text x="62" y="96" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">見出しを順番どおりに</text><rect x="290" y="70" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="302" y="80" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M306 90l4 4 8-9"/><text x="332" y="96" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">行き先が分かるリンク</text><rect x="20" y="122" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="32" y="132" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M36 142l4 4 8-9"/><text x="62" y="148" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">フォームに項目名</text><rect x="290" y="122" width="256" height="40" rx="8" fill="#fff" stroke="#C9D2DF"/><rect x="302" y="132" width="20" height="20" rx="4" fill="#F5DE00" stroke="none"/><path d="M306 142l4 4 8-9"/><text x="332" y="148" text-anchor="start" font-size="13" font-weight="500" fill="#1B3A6B" stroke="none">動画に字幕を付ける</text></svg>
+
+<h2 id="what">ウェブアクセシビリティとは</h2>
+<p>ウェブアクセシビリティは、ホームページを<b>誰でも使える状態にしておくこと</b>です。目が見えにくい人、耳が聞こえにくい人、手が不自由でマウスが使いにくい人、高齢で小さい文字が読みにくい人など、いろいろな人が同じ情報にたどり着けるようにします。</p>
+<p>たとえば、目が見えない人は、画面の文字を音声で読み上げるソフト（スクリーンリーダー）を使ってホームページを見ています。このとき、写真に説明の文字が付いていないと、そこに何が写っているのか分かりません。マウスを使えない人は、キーボードだけで操作します。ボタンがキーボードで押せない作りだと、問い合わせフォームを送れません。</p>
+<p>アクセシビリティは、障害のある人だけのためのものでもありません。屋外の明るい場所でスマートフォンを見る人、音を出せない電車の中で動画を見る人、老眼で細い文字が読みにくい人にとっても、見やすく使いやすいサイトになります。</p>
+
+<h2 id="law">「義務化」と言われるのは何か</h2>
+<p>「義務化」の話のもとになっているのは、障害者差別解消法の改正です。内閣府の障害者白書によると、改正法は2021年6月に公布され、<b>2024年4月1日に施行</b>されました。</p>
+<h3>義務になったのは「合理的配慮の提供」</h3>
+<p>改正の大きな点は、事業者による「合理的配慮の提供」が、それまでの努力義務から<b>義務</b>に改められたことです。行政機関などは、改正前から義務とされていました。</p>
+<p>合理的配慮とは、障害のある人から「こうしてほしい」という申し出（意思の表明）があったときに、負担が重すぎない範囲で、困りごと（社会的なバリア）を取り除くための対応をすることです。ホームページに置きかえると、たとえば次のような場面が考えられます。</p>
+<ul>
+<li>「フォームが読み上げソフトでうまく使えないので、メールで問い合わせたい」と言われた</li>
+<li>「PDFの資料が読めないので、文字の形で送ってほしい」と頼まれた</li>
+<li>「動画の内容を文章で教えてほしい」と相談された</li>
+</ul>
+<p>こうした申し出に、個別に話し合いながら対応するのが合理的配慮です。負担が重すぎるかどうかは、事業への影響や実現できるかなどを考えて、一件ずつ総合的に判断するとされています。重すぎると判断した場合も、理由を丁寧に説明し、理解を得るよう努めることが望ましいとされています。</p>
+<h3>サイトを前もって整えるのは「環境の整備」で、努力義務</h3>
+<p>一方、不特定多数の人に向けて、前もってサイトを使いやすく整えておくことは「環境の整備」にあたります。障害者白書では、環境の整備は行政機関などと事業者の<b>努力義務</b>とされ、その例に「情報アクセシビリティの向上」があげられています。</p>
+<p>デジタル庁のニュース記事でも、2024年4月から民間事業者も合理的配慮の提供が義務になったこと、合理的配慮を的確に行うための環境の整備は努力義務であることが説明されています。</p>
+<table class="art-table">
+<tr><th>項目</th><th>どういうことか</th><th>事業者の扱い</th></tr>
+<tr><td>合理的配慮の提供</td><td>申し出があったときに、個別に対応すること</td><td>2024年4月1日から義務</td></tr>
+<tr><td>環境の整備</td><td>前もって、誰でも使えるように整えておくこと（サイトの対応はここに入る）</td><td>努力義務</td></tr>
+</table>
+<h3>誤解されやすい点</h3>
+<p>つまり、「2024年4月から、すべての民間企業のサイトがアクセシビリティ規格に合っていないといけなくなった」という意味ではありません。見出しだけを見ると、そう読めてしまう記事もあるので注意が必要です。</p>
+<p>とはいえ、「努力義務だから何もしなくてよい」とも言えません。サイトが使いにくいままだと、申し出があるたびに個別の対応が必要になります。前もって整えておけば、困る人が減り、個別の対応も少なくてすみます。白書でも、環境の整備は合理的配慮の基礎になるもので、両方を両輪として進めることが大切だとされています。</p>
+<p>また、デジタル庁のニュース記事では、障害を理由にサービスの提供を断ったり、制限をつけたりする「不当な差別的取扱い」は禁止されている点にもふれています。法律の細かい扱いや罰則などは、内閣府の障害者差別解消法のページで最新の情報を確かめてください。</p>
+
+<h2 id="jis">JIS X 8341-3とWCAGの関係</h2>
+<p>アクセシビリティ対応を調べると、「JIS X 8341-3」と「WCAG（ダブリューキャグ）」という二つの名前が出てきます。</p>
+<table class="art-table">
+<tr><th>名前</th><th>何か</th></tr>
+<tr><td>WCAG</td><td>ウェブの標準を決める国際的な団体（W3C）が出している、ウェブのアクセシビリティの指針。改訂が重ねられ、2.0、2.1、2.2と版がある</td></tr>
+<tr><td>JIS X 8341-3:2016</td><td>日本の規格（JIS）。デジタル庁の資料では、WCAG 2.0と同じ内容の規格とされている</td></tr>
+</table>
+<p>どちらも、「画像に代替テキストを付ける」「文字と背景の色の差を十分にとる」のような、守るべき項目（達成基準）が並んでいます。項目には、レベルA、AA、AAAの三つの段階があり、Aが最低限、AAがその上、AAAがさらに高い段階です。</p>
+<p>デジタル庁は、JIS X 8341-3に準拠することを前提にアクセシビリティを進めていて、はじめて取り組む行政職員や事業者向けに「ウェブアクセシビリティ導入ガイドブック」を公開しています（2025年10月16日の版が出ています）。専門用語を減らし、図を多く使った内容なので、担当者が最初に読む資料として向いています。</p>
+<p>新しいWCAG 2.1や2.2には、スマートフォンでの操作などに関わる項目が追加されています。JISに合わせながら、WCAGの新しい項目にも取り組むことはできます。ただ、中小企業がはじめから全部を目指す必要はありません。まずは、影響の大きいところから直していくのが現実的です。</p>
+
+<h2 id="first-steps">中小企業のサイトでまずできる7つのこと</h2>
+<p>ここからは、制作の現場で直すことが多く、効果も分かりやすいところを紹介します。どれも、サイトを作り直さなくても、今のページを少しずつ直していけるものです。</p>
+<h3>1. 画像に代替テキストを付ける</h3>
+<p>代替テキストは、画像の代わりに読み上げられる説明の文字です。HTMLでは「alt属性」と呼ばれます。読み上げソフトを使う人は、これを聞いて画像の中身を知ります。</p>
+<ul>
+<li>工場や製品の写真なら「〇〇工場の外観」「〇〇の製品写真」のように、何が写っているかを短く書く</li>
+<li>文字が入った画像（バナーや図）は、画像の中の文字と同じ内容を入れる</li>
+<li>飾りだけの線や模様は、読み上げないよう空にしておく</li>
+</ul>
+<p>「画像1」「IMG_0012」のような名前が入ったままになっているサイトもよく見かけます。WordPressなどでは、画像ごとに代替テキストを入れる欄があります。</p>
+<h3>2. 文字と背景の色の差を十分にとる</h3>
+<p>薄いグレーの文字を白い背景に置くと、おしゃれに見えますが、読みにくくなります。WCAGでは、レベルAAの基準として、文字と背景の明るさの差（コントラスト比）を、通常の文字で4.5対1以上、大きな文字で3対1以上とすることが定められています。</p>
+<p>色の差は、無料のコントラストチェックツールに色の値を入れると確かめられます。写真の上に文字を重ねている部分は、特に読みにくくなりやすいところです。また、「赤字の項目は必須」のように、色だけで意味を伝えるのも避け、「必須」と文字でも書きます。</p>
+<h3>3. 見出しを順番どおりに使う</h3>
+<p>読み上げソフトを使う人は、見出しを飛びながらページの中身をつかみます。見出しは、大見出し（h1）、中見出し（h2）、小見出し（h3）と、<b>順番どおりに入れ子</b>にします。</p>
+<p>よくあるのは、「文字を大きくしたいから」という理由で見出しのタグを使ったり、逆に見出しなのに太字にしただけだったりするケースです。見た目と構造を分けて考えると、検索エンジンにもページの内容が伝わりやすくなります。</p>
+<h3>4. リンクの文言で行き先が分かるようにする</h3>
+<p>「こちら」「詳しくはここ」というリンクは、前後の文を読まないと行き先が分かりません。読み上げソフトでは、リンクだけを一覧で聞くこともあるため、「こちら」が並ぶと区別がつきません。</p>
+<p>「会社案内のPDFをダウンロード」「採用情報を見る」のように、<b>リンクの文字だけで行き先が分かる</b>書き方にします。PDFや別のサイトに移るリンクは、そのことも書いておくと親切です。</p>
+<h3>5. フォームの入力欄に項目名を付ける</h3>
+<p>問い合わせフォームは、会社にとって一番大事なページの一つです。入力欄の中に薄い文字で「お名前」と書いてあるだけ（入力すると消える）の作りは、読み上げソフトで項目名が伝わらなかったり、入力中に何の欄か分からなくなったりします。</p>
+<ul>
+<li>入力欄ごとに、見えるところに項目名（ラベル）を付ける</li>
+<li>必須の項目は、色だけでなく「必須」と文字で書く</li>
+<li>入力に間違いがあったときは、どの欄の何が違うのかを文字で知らせる</li>
+<li>画像の文字を読み取らせる認証など、使えない人がいる仕組みには代わりの方法を用意する</li>
+</ul>
+<p>フォームの近くに電話番号やメールアドレスも書いておくと、フォームが使いにくい人も問い合わせできます。問い合わせが少ないときの見直し方は、<a href="../no-inquiry/">ホームページから問い合わせが来ない理由</a>でも紹介しています。</p>
+<h3>6. 動画に字幕を付ける</h3>
+<p>工場の紹介や作業の様子を動画で見せる会社が増えています。音声で説明している動画は、耳が聞こえにくい人には内容が伝わりません。音を出せない場所で見ている人も同じです。</p>
+<p>YouTubeなどには字幕を付ける機能があります。自動で付く字幕は間違いが出ることがあるので、確かめて直してから公開します。動画の要点をページの文章でも書いておくと、動画を見られない人にも伝わります。</p>
+<h3>7. PDFだけに頼らない</h3>
+<p>会社案内、製品カタログ、価格表などを、PDFだけで載せているサイトは少なくありません。紙のデータをスキャンしたPDFは、文字が画像になっていて読み上げられず、スマートフォンでは拡大しないと読めません。</p>
+<p>大事な情報は、<b>ページの本文（HTML）にも書く</b>のがおすすめです。PDFは「印刷したい人向けの資料」として添える形にすると、検索にも見つかりやすくなります。ページに載せる文章や写真の準備は、<a href="../homepage-photo-text/">ホームページに載せる写真と文章の用意のしかた</a>を参考にしてください。</p>
+
+<div class="cta-mid"><span class="lb">無料相談</span><b>何から始めればいいか分からない方へ</b><p>載せたい内容がまとまっていなくても大丈夫です。聞き取りをしながら、合うページ構成をご提案します。</p><div class="bt"><a href="../../contact/" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] shadow-[0_10px_24px_-10px_rgba(200,170,0,.7)] rounded-full font-bold tracking-[.04em] bg-cta-yellow text-ink hover:bg-cta-yellow-h hover:-translate-y-0.5 transition-all">1分で問い合わせ →</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] rounded-full font-bold tracking-[.04em] bg-[#06C755] text-white hover:bg-[#05B34C] hover:-translate-y-0.5 transition-all"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.4 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>LINEで相談する</a></div></div><h2 id="check">自社サイトの簡単な点検方法</h2>
+<p>専門の試験をしなくても、担当者が自分で確かめられることはあります。デジタル庁のニュース記事でも、キーボードだけで操作してみることや、読み上げを実際に試すことがすすめられています。次の点検を、トップページ、主なサービスのページ、問い合わせフォームの三つから始めてみてください。</p>
+<table class="art-table">
+<tr><th>点検すること</th><th>やり方</th><th>見るところ</th></tr>
+<tr><td>キーボードだけで使えるか</td><td>マウスを使わず、Tabキーで進み、Enterキーで押す</td><td>メニューやボタンにたどり着けるか。今どこを選んでいるかが見えるか。フォームを送れるか</td></tr>
+<tr><td>読み上げで分かるか</td><td>パソコンやスマートフォンに入っている読み上げ機能を使う</td><td>画像の説明、リンクの文言、フォームの項目名が伝わるか</td></tr>
+<tr><td>拡大しても読めるか</td><td>ブラウザで200％ほどに拡大する。スマートフォンで指で広げる</td><td>文字が切れたり、重なったりしないか</td></tr>
+<tr><td>色の差は十分か</td><td>コントラストチェックツールに文字と背景の色を入れる</td><td>薄い文字、写真の上の文字</td></tr>
+<tr><td>見出しの順番</td><td>ブラウザの拡張機能などで見出しの一覧を出す</td><td>h1→h2→h3の順になっているか</td></tr>
+<tr><td>画像・動画・PDF</td><td>ページを一つずつ見ていく</td><td>代替テキスト、字幕、PDFだけの情報がないか</td></tr>
+</table>
+<p>点検ツールには、Googleが無料で提供している「Lighthouse」（Chromeの開発者ツールに入っています）のように、ページを自動でチェックしてくれるものもあります。ただ、自動のチェックで分かるのは一部です。代替テキストの中身が合っているか、リンクの文言が分かりやすいかなどは、人の目で確かめる必要があります。</p>
+<p>点検して見つかったことは、表にまとめて「すぐ直せるもの」「制作会社に頼むもの」に分けておくと、進めやすくなります。サイトの古さや直す箇所が多い場合は、<a href="../renewal-signs/">ホームページのリニューアルを考えたい6つのサイン</a>もあわせて見てください。</p>
+
+<h2 id="policy">ウェブアクセシビリティ方針の書き方の考え方</h2>
+<p>ウェブアクセシビリティ方針は、「自社のサイトで、どこまでを、どの基準で、いつまでに対応するか」を示すページです。官公庁や自治体のサイトではよく見かけますが、民間企業でも載せる会社が出てきています。法律で載せることが決められているものではありませんが、取り組む姿勢と、困ったときの連絡先を示せます。</p>
+<h3>書く項目</h3>
+<p>ウェブアクセシビリティ基盤委員会（WAIC）が公開している「ウェブアクセシビリティ方針策定ガイドライン」では、JIS X 8341-3に沿って方針を作る場合、次の項目をあげています。</p>
+<table class="art-table">
+<tr><th>項目</th><th>書く内容</th><th>扱い</th></tr>
+<tr><td>対象範囲</td><td>どのサイトが対象か。ドメインやURLで示す。原則はサイト全体</td><td>必須</td></tr>
+<tr><td>目標とする適合レベル</td><td>レベルA、AA、AAAのどれを目指すか</td><td>必須</td></tr>
+<tr><td>目標とする対応度</td><td>「準拠」「一部準拠」「配慮」のどれを目指すか</td><td>推奨</td></tr>
+<tr><td>目標を達成する期限</td><td>いつまでに対応するか</td><td>推奨</td></tr>
+<tr><td>担当部署・連絡先</td><td>問い合わせ先の部署名、できれば電話やメール</td><td>推奨</td></tr>
+<tr><td>分かっている問題点</td><td>今残っている問題と、どう対応するか</td><td>推奨</td></tr>
+</table>
+<p>「準拠」「一部準拠」「配慮」は、JISへの対応の度合いを示す言葉です。「準拠」と「一部準拠」は、試験をしたうえで使う表記とされています。「配慮」は、JISを使って作ったことを示す表記で、試験をしたかどうかは問われません。どの言葉を使うかは、WAICの「対応度表記ガイドライン」で決まりを確かめてから選びます。</p>
+<h3>中小企業が書くときのポイント</h3>
+<ul>
+<li><b>できることを書く</b>：はじめから高い目標を書くより、今の状態と、これから直す予定を正直に書くほうが信頼されます。</li>
+<li><b>連絡先をはっきり書く</b>：使いにくいところがあったときに、どこへ連絡すればよいかが分かれば、合理的配慮の申し出も受けやすくなります。</li>
+<li><b>段階的に広げてよい</b>：まずは主なページから対応し、ほかのページは時期を書いて順に広げる、という書き方もガイドラインで示されています。</li>
+<li><b>見直す日を書く</b>：方針は一度書いて終わりではなく、点検のたびに更新します。</li>
+</ul>
+<p>方針のページは、プライバシーポリシーと同じように、フッターなどから行けるところに置くのが一般的です。プライバシーポリシーの作り方は<a href="../privacy-policy/">プライバシーポリシーの書き方</a>で紹介しています。</p>
+
+<h2 id="process">無理なく進める順番</h2>
+<p>アクセシビリティ対応は、いっぺんに全部やろうとすると止まってしまいがちです。中小企業のサイトなら、次の順番で進めると取り組みやすくなります。</p>
+<ol>
+<li><b>点検する</b>：トップページ、主なサービスのページ、問い合わせフォームを、先ほどの方法で確かめる。</li>
+<li><b>すぐ直せるものから直す</b>：代替テキスト、リンクの文言、PDFだけの情報など、文章の追加や修正で直せるもの。</li>
+<li><b>作りに関わるものを直す</b>：色の組み合わせ、見出しの構造、フォームの作りなど。制作会社に相談することが多いところです。</li>
+<li><b>申し出の窓口を決める</b>：使いにくいと言われたときに、誰がどう対応するかを社内で決めておく。</li>
+<li><b>方針を書いて、定期的に見直す</b>：新しいページを足すときも、同じ点を確かめる習慣にする。</li>
+</ol>
+<p>新しいページやお知らせを足すたびに、代替テキストやリンクの文言を気にかけるだけでも、サイト全体の状態は少しずつよくなります。更新の頻度の考え方は、<a href="../homepage-update-frequency/">ホームページの更新頻度はどれくらい？</a>の記事も参考にしてください。</p>
+<p>マツケンスタジオでは、作り直しだけでなく、公開後の更新や改善も続けて受け持てます。社内で更新するのが難しい場合は、月額のサポートで代わりに更新することもできます。最初の相談から公開後まで同じ担当が受け持つので、「どこから直せばいいか分からない」という段階からでも相談できます。</p>
+
+<h2 id="summary">まとめ</h2>
+<p>2024年4月1日に施行された改正障害者差別解消法で、民間の事業者も「合理的配慮の提供」が義務になりました。一方、サイトを前もって誰でも使えるように整える「環境の整備」は、努力義務とされています。「すべての会社のサイトが規格に合っていないといけなくなった」という意味ではありませんが、前もって整えておくほど、困る人も個別の対応も減らせます。</p>
+<p>まずは、画像の代替テキスト、文字と背景の色の差、見出しの順番、リンクの文言、フォームの項目名、動画の字幕、PDFだけに頼らないこと。この七つを、主なページから点検してみてください。キーボードだけで操作してみる、読み上げ機能で聞いてみる、という簡単な確かめ方でも、多くのことが分かります。法律の扱いで迷うときは、内閣府やデジタル庁の公式の情報を確かめ、必要に応じて専門家に相談してください。</p>
+</div>
+        <h2 id="faq" class="font-bold text-[22px] mt-12 mb-4" style="scroll-margin-top:90px">よくある質問</h2>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">民間企業のホームページもアクセシビリティ対応が義務になったのですか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">2024年4月1日に施行された改正障害者差別解消法で義務になったのは、障害のある人から申し出があったときに対応する合理的配慮の提供です。サイトを前もって誰でも使えるように整えることは環境の整備にあたり、内閣府の障害者白書では努力義務とされています。法律の扱いで迷う場合は、内閣府の公式情報を確かめ、専門家に相談してください。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">努力義務なら、何もしなくても問題ないですか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">努力義務は、対応に努めることが求められているものです。サイトが使いにくいままだと、申し出があるたびに個別の対応が必要になります。前もって整えておくほど、困る人も個別の対応も減らせるので、影響の大きいページから少しずつ進めるのがおすすめです。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">JIS X 8341-3とWCAGは、どちらに合わせればよいですか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">デジタル庁の資料では、JIS X 8341-3:2016はWCAG 2.0と同じ内容の日本の規格とされています。国内ではJISを基準に方針を書くことが多く、そのうえでWCAG 2.1や2.2で追加された項目に取り組むこともできます。中小企業は、まず代替テキストや色の差など影響の大きい点から始めるとよいでしょう。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">自社のサイトがどれくらい対応できているか、自分で確かめられますか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">マウスを使わずTabキーとEnterキーだけで操作できるか、パソコンやスマートフォンの読み上げ機能で画像の説明やリンクが伝わるか、拡大しても文字が切れないかなどは、担当者でも確かめられます。自動の点検ツールも役立ちますが、分かるのは一部なので、人の目での確認と組み合わせます。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">ウェブアクセシビリティ方針は載せないといけませんか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">法律で掲載が決められているものではありません。ただ、対象範囲、目指す基準、期限、連絡先を書いておくと、取り組む姿勢と困ったときの窓口を示せます。書く項目は、ウェブアクセシビリティ基盤委員会の方針策定ガイドラインが参考になります。</p>
+        </div>
+      </div>
+      <div class="faq2">
+        <div class="qa">Q</div>
+        <div>
+          <div class="font-bold text-[14px] mb-2">アクセシビリティ対応のために、サイトを作り直す必要がありますか？</div>
+          <p class="text-[13px] leading-[1.9] text-muted">代替テキスト、リンクの文言、PDFだけの情報をページの文章にするなどは、今のサイトのまま直せることが多いです。色の組み合わせやフォームの作りなど、作りに関わる部分は直し方によって手間が変わるので、点検の結果を見てから、直すか作り直すかを考えます。</p>
+        </div>
+      </div>
+        <div class="mt-10"><div class="author"><div class="av">松</div><div><b>マツケンスタジオ 責任者</b><p>デジタルマーケティングの仕事を10年以上。上場企業での勤務や、1,000万人以上が使うサービスのマーケティングを経験し、マーケターとして企業のオウンドメディアを50万PVまで育て、数百社の集客を支援してきました。家業である松本研磨工業のホームページを作り直し、リニューアルから1か月で有効なお問い合わせを3倍にしています。</p><a href="../author/" class="text-[13px] font-bold text-accent-ink hover:underline">プロフィールを見る →</a></div></div></div>
+        <div class="mt-8"><div class="cta-end"><b>ホームページのこと、まずは気軽にご相談ください。</b><p>「何から始めればいいか分からない」という段階でも大丈夫です。町工場発のマツケンスタジオが、ドメインの取得から公開後の更新まで、まるごとお手伝いします。いまは毎月3社まで、特別な価格で制作する「事例づくりモニター」も受け付けています。</p><div class="bt"><a href="../../contact/" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] shadow-[0_10px_24px_-10px_rgba(200,170,0,.7)] rounded-full font-bold tracking-[.04em] bg-cta-yellow text-ink hover:bg-cta-yellow-h hover:-translate-y-0.5 transition-all">1分で問い合わせ →</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-[10px] px-8 py-3.5 md:px-9 md:py-[18px] text-[15px] md:text-[16px] rounded-full font-bold tracking-[.04em] bg-[#06C755] text-white hover:bg-[#05B34C] hover:-translate-y-0.5 transition-all"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.4 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>LINEで相談する</a><a href="../../monitor/" class="lp">事例づくりモニターを見る →</a></div></div></div>
+      </article>
+    </div>
+  </section>
+  <section class="py-14 md:py-20 st-alt">
+    <div class="pwrap">
+      <h2 class="sec-ttl">あわせて読みたい記事</h2>
+      <div class="col-grid three"><a href="../homepage-pages/" class="col-card"><span><span class="chip">ホームページ制作</span></span><h3>ホームページは何ページ必要？1ページ・5ページ・20ページの違いと選び方</h3><p>ホームページは何ページあればいいのか。1ページ（LP）、2〜5ページ（名刺代わり）、6〜20ページ（標準的な会社のサイト）、21ページ以上の…</p><time datetime="2026-09-27">2026.09.27</time></a><a href="../homepage-flow/" class="col-card"><span><span class="chip">ホームページ制作</span></span><h3>ホームページ制作の流れと期間｜依頼から公開まで、何をいつ決めるか</h3><p>ホームページ制作は、相談から公開まで何を、どんな順番で進めるのか。6つの段階ごとに決めること、期間の目安、公開が延びやすい理由、依頼する側が…</p><time datetime="2026-10-04">2026.10.04</time></a><a href="../homepage-photo-text/" class="col-card"><span><span class="chip">ホームページ制作</span></span><h3>ホームページに載せる写真と文章の用意のしかた｜自分たちで進めるときのコツ</h3><p>ホームページに載せる写真と文章を、どう用意すればいいのか。文章の3つの用意のしかた、書くときのコツ、撮っておきたい写真、スマホで撮るときのコ…</p><time datetime="2026-10-04">2026.10.04</time></a></div>
+    </div>
+  </section>
+
+  <section class="py-14 md:py-20">
+    <div class="pwrap">
+      <h2 class="sec-ttl">カテゴリから探す</h2>
+      <nav class="col-cats" aria-label="カテゴリ"><a href="../" class="on">すべて</a><a href="../category/homepage/" class="">ホームページ制作</a><a href="../category/renewal/" class="">リニューアル</a><a href="../category/cost/" class="">費用・発注</a><a href="../category/ai/" class="">AI検索対策</a><a href="../category/seo/" class="">SEO・集客</a><a href="../category/recruit/" class="">採用</a><a href="../category/industry/" class="">業種別</a><a href="../category/case/" class="">事例</a></nav>
+    </div>
+  </section>
+
+<div class="col-stick" id="colStick"><a href="../../contact/" class="bg-cta-yellow text-ink">1分で問い合わせ</a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="bg-[#06C755] text-white">LINEで相談</a></div><script>(function(){var s=document.getElementById("colStick");if(!s)return;function u(){s.classList.toggle("show",window.scrollY>500&&(window.innerHeight+window.scrollY)<document.body.scrollHeight-700)}window.addEventListener("scroll",u,{passive:true});u()})();</script>
+</main>
+<footer class="site-footer bg-navy text-paper pt-14 md:pt-20 pb-8">
+  <div class="wrap">
+    <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-16 pb-10 md:pb-14 border-b border-paper/15">
+      <div>
+        <a href="../../../" class="inline-flex items-center gap-3">
+          <span class="w-11 h-11 rounded-full grid place-items-center font-semibold text-xl bg-paper text-ink">松</span>
+          <span class="text-[18px] md:text-[20px] font-bold tracking-[.04em] text-paper">株式会社松本研磨工業</span>
+        </a>
+        <p class="mt-5 text-[14px] leading-[1.9] text-paper/75">〒210-0851 神奈川県川崎市川崎区浜町3-9-22</p>
+        <div class="mt-6 flex flex-wrap gap-3"><a href="https://www.instagram.com/matsuken_studio/" target="_blank" rel="noopener" class="ft-sns"><svg class="w-5 h-5 stroke-current fill-none stroke-[1.5]" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>@matsuken_studio</span></a><a href="https://page.line.me/115rhdee" target="_blank" rel="noopener" class="ft-sns"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.4 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg><span>LINEで相談</span></a></div>
+      </div>
+      <div class="lg:border-l lg:border-paper/15 lg:pl-16">
+        <h3 class="ft-head">お問い合わせ</h3>
+        <p class="text-[14px] leading-[1.9] text-paper/80 mb-5">マツケンスタジオへのご相談は、お問い合わせフォームかLINEで受け付けています。</p>
+        <a href="../../../web-ai/contact/" class="ft-btn">1分で問い合わせ</a>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-10 py-10 md:py-14 border-b border-paper/15">
+      <nav aria-label="金属研磨">
+        <h3 class="ft-head">金属研磨</h3>
+        <ul class="space-y-3">
+          <li><a href="../../../polishing/" class="ft-link">金属研磨技術の種類</a></li>
+          <li><a href="../../../polishing/buff-polishing/" class="ft-link">バフ研磨</a></li>
+          <li><a href="../../../polishing/belt-polishing/" class="ft-link">ベルト研磨</a></li>
+          <li><a href="../../../polishing/hairline-finish/" class="ft-link">ヘアライン仕上げ</a></li>
+          <li><a href="../../../polishing/flexible-polishing/" class="ft-link">フレキ研磨</a></li>
+          <li><a href="../../../#works" class="ft-link">加工実績</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="会社について">
+        <h3 class="ft-head">会社について</h3>
+        <ul class="space-y-3">
+          <li><a href="../../../company/" class="ft-link">会社情報</a></li>
+          <li><a href="../../../company/#access" class="ft-link">アクセス</a></li>
+          <li><a href="../../../#faq" class="ft-link">よくある質問</a></li>
+          <li><a href="../../../news/" class="ft-link">お知らせ</a></li>
+          <li><a href="../../../column/" class="ft-link">コラム</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Web集客・AI活用支援">
+        <h3 class="ft-head">Web集客・AI活用支援</h3>
+        <ul class="space-y-3">
+          <li><a href="../../../web-ai/" class="ft-link">サービス一覧</a></li>
+          <li><a href="../../../web-ai/seo-consulting/" class="ft-link">SEO・集客対策</a></li>
+          <li><a href="../../../web-ai/website/" class="ft-link">サイト制作・LP制作</a></li>
+          <li><a href="../../../web-ai/ai-katsuyo/" class="ft-link">AI活用支援</a></li>
+          <li><a href="../../../web-ai/case/" class="ft-link">実績・事例</a></li>
+          <li><a href="../../../web-ai/column/" class="ft-link">Web集客コラム</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-[13px] text-paper/60">
+      <a href="../../../privacy/" class="hover:text-paper hover:underline underline-offset-4">プライバシーポリシー</a>
+      <div>© 2026 株式会社松本研磨工業</div>
+    </div>
+  </div>
+</footer>
+<script>
+  const burger = document.getElementById('burgerBtn');
+  const mmenu  = document.getElementById('mobileMenu');
+  if (burger && mmenu) {
+    burger.addEventListener('click', () => mmenu.classList.toggle('translate-x-full'));
+    mmenu.querySelectorAll('[data-close]').forEach(a =>
+      a.addEventListener('click', () => mmenu.classList.add('translate-x-full'))
+    );
+  }
+  document.querySelectorAll('.mega-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const mega = btn.closest('.mega');
+      const isOpen = mega.classList.contains('open');
+      document.querySelectorAll('.mega.open').forEach(m => { m.classList.remove('open'); m.querySelector('.mega-btn').setAttribute('aria-expanded','false'); });
+      if (!isOpen) { mega.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+    });
+  });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.mega')) {
+      document.querySelectorAll('.mega.open').forEach(m => { m.classList.remove('open'); m.querySelector('.mega-btn').setAttribute('aria-expanded','false'); });
+    }
+  });
+</script>
+</body>
+</html>
